@@ -1,3 +1,5 @@
+import { TrendingUp, DollarSign, Clock, Shield } from "lucide-react";
+
 export default function Benefits() {
   return (
     <section className="py-20 bg-white">
@@ -16,7 +18,7 @@ export default function Benefits() {
           {/* Beneficio 1 */}
           <div className="text-center group">
             <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white text-2xl font-bold">🚀</span>
+              <TrendingUp className="text-white" size={32} />
             </div>
             <h3 className="text-xl font-semibold text-dark-custom mb-2">Mayor Productividad</h3>
             <p className="text-gray-custom">Su equipo se enfoca en tareas de alto valor agregado.</p>
@@ -25,7 +27,7 @@ export default function Benefits() {
           {/* Beneficio 2 */}
           <div className="text-center group">
             <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-red-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white text-2xl font-bold">💸</span>
+              <DollarSign className="text-white" size={32} />
             </div>
             <h3 className="text-xl font-semibold text-dark-custom mb-2">Reducción de Costos</h3>
             <p className="text-gray-custom">ROI positivo en los primeros 6 meses de implementación.</p>
@@ -34,7 +36,7 @@ export default function Benefits() {
           {/* Beneficio 3 */}
           <div className="text-center group">
             <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white text-2xl font-bold">⚡</span>
+              <Clock className="text-white" size={32} />
             </div>
             <h3 className="text-xl font-semibold text-dark-custom mb-2">Ahorro de Tiempo</h3>
             <p className="text-gray-custom">Hasta 70% menos tiempo en tareas repetitivas y administrativas.</p>
@@ -43,7 +45,7 @@ export default function Benefits() {
           {/* Beneficio 4 */}
           <div className="text-center group">
             <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white text-2xl font-bold">🛡️</span>
+              <Shield className="text-white" size={32} />
             </div>
             <h3 className="text-xl font-semibold text-dark-custom mb-2">Menos Errores</h3>
             <p className="text-gray-custom">Reducción del 95% en errores humanos y mayor precisión en procesos.</p>
