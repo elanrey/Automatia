@@ -13,13 +13,13 @@ export default function Benefits() {
       gradient: "from-orange-600 to-red-600"
     },
     {
-      iconClass: "fas fa-hourglass-half",
+      iconClass: "fas fa-cogs",
       title: "Ahorro de Tiempo",
       description: "Hasta 70% menos tiempo en tareas repetitivas y administrativas.",
       gradient: "from-primary-custom to-primary-dark-custom"
     },
     {
-      iconClass: "fas fa-check-circle",
+      iconClass: "fas fa-robot",
       title: "Menos Errores", 
       description: "Reducción del 95% en errores humanos y mayor precisión en procesos.",
       gradient: "from-secondary-custom to-emerald-600"
