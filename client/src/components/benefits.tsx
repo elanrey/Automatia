@@ -39,20 +39,41 @@ export default function Benefits() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="text-center group">
-              <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <i className={`${benefit.iconClass} text-white text-2xl`} style={{ 
-                  fontFamily: '"Font Awesome 6 Free"', 
-                  fontWeight: '900',
-                  display: 'inline-block'
-                }}></i>
-                <span className="text-xs text-white absolute top-0 left-0 bg-red-500">{index}</span>
+          {benefits.map((benefit, index) => {
+            // Usar estructura diferente para los dos primeros elementos
+            if (index < 2) {
+              return (
+                <div key={index} className="text-center group" style={{position: 'relative', zIndex: 100}}>
+                  <div className="w-16 h-16 bg-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i className={`${benefit.iconClass} text-white text-2xl`}></i>
+                    <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs p-1">{index}</div>
+                  </div>
+                  <h3 className="text-xl font-semibold text-dark-custom mb-2">{benefit.title}</h3>
+                  <p className="text-gray-custom text-xs">Estructura DIFERENTE: {benefit.iconClass}</p>
+                </div>
+              );
+            }
+            // Estructura normal para los otros dos
+            return (
+              <div key={index} className="text-center group">
+                <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 relative`} style={{zIndex: 10}}>
+                  <i 
+                    className={`${benefit.iconClass} text-white text-2xl`} 
+                    style={{ 
+                      fontFamily: '"Font Awesome 6 Free"', 
+                      fontWeight: '900',
+                      display: 'inline-block',
+                      zIndex: 20,
+                      position: 'relative'
+                    }}
+                  ></i>
+                  <span className="text-xs text-white absolute top-0 left-0 bg-red-500 z-30">{index}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-dark-custom mb-2">{benefit.title}</h3>
+                <p className="text-gray-custom text-xs">Clase: {benefit.iconClass}</p>
               </div>
-              <h3 className="text-xl font-semibold text-dark-custom mb-2">{benefit.title}</h3>
-              <p className="text-gray-custom text-xs">Clase: {benefit.iconClass}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
