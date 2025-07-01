@@ -60,9 +60,7 @@ export default function Header() {
 
   return (
     <header
-      className={`bg-gradient-to-r from-primary-custom to-primary-dark-custom text-white fixed w-full z-50 transition-shadow duration-300 ${
-        isScrolled ? "shadow-lg" : ""
-      }`}
+      className="from-primary-custom to-primary-dark-custom text-white fixed w-full z-50 transition-shadow duration-300 shadow-lg bg-[#00000091]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#00000000]">
         <nav className="flex justify-between items-center py-4">
