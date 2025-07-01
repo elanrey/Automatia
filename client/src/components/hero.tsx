@@ -25,7 +25,6 @@ export default function Hero() {
           backgroundPosition: "center"
         }}
       ></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
@@ -67,7 +66,7 @@ export default function Hero() {
               </div>
               <div className="space-y-3">
                 <div className="h-4 bg-gradient-to-r from-primary-custom to-secondary-custom rounded animate-pulse"></div>
-                <div className="h-3 bg-gray-200 rounded w-3/4"></div>
+                <div className="h-3 rounded w-3/4 bg-[#a8a8a8]"></div>
                 <div className="h-3 bg-gray-200 rounded w-1/2"></div>
                 <div className="grid grid-cols-3 gap-2 mt-4">
                   <div className="h-16 bg-secondary-custom/20 rounded"></div>
