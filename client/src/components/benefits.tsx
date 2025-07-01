@@ -42,10 +42,15 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div key={index} className="text-center group">
               <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <i className={`${benefit.iconClass} text-white text-2xl`}></i>
+                <i className={`${benefit.iconClass} text-white text-2xl`} style={{ 
+                  fontFamily: '"Font Awesome 6 Free"', 
+                  fontWeight: '900',
+                  display: 'inline-block'
+                }}></i>
+                <span className="text-xs text-white absolute top-0 left-0 bg-red-500">{index}</span>
               </div>
               <h3 className="text-xl font-semibold text-dark-custom mb-2">{benefit.title}</h3>
-              <p className="text-gray-custom">{benefit.description}</p>
+              <p className="text-gray-custom text-xs">Clase: {benefit.iconClass}</p>
             </div>
           ))}
         </div>
