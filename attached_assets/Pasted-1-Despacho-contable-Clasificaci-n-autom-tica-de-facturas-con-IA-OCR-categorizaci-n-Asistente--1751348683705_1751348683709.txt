@@ -1,0 +1,109 @@
+1. Despacho contable
+Clasificación automática de facturas con IA (OCR + categorización).
+
+Asistente para clientes en WhatsApp que responde dudas frecuentes (fechas SAT, CFDI, etc.).
+
+Generación automática de reportes mensuales en PDF y envío por correo.
+
+Alerta de vencimientos fiscales vía SMS o correo usando reglas automatizadas.
+
+Análisis de comportamiento financiero de clientes con IA para sugerir mejoras.
+
+2. Clínica o consultorio médico
+Agente para agendar citas automáticamente vía WhatsApp y Google Calendar.
+
+Recordatorios automáticos de citas con opción de confirmación o reprogramación.
+
+Transcripción de notas médicas por voz usando IA.
+
+Encuestas post-consulta para evaluar la atención y automatizar mejoras.
+
+Segmentación de pacientes para campañas de salud preventiva (vacunas, chequeos).
+
+3. Escuela o academia (presencial u online)
+Chatbot que responde dudas sobre inscripción, precios y horarios.
+
+Evaluaciones automáticas con retroalimentación generada por IA.
+
+Detección temprana de alumnos con bajo rendimiento mediante análisis de calificaciones.
+
+Automatización de certificados personalizados tras terminar cursos.
+
+Secuencias de emails automatizadas para captar leads y convertirlos en alumnos.
+
+4. Restaurante o cafetería
+Sistema de reservaciones automatizado por WhatsApp con confirmación.
+
+Encuestas automáticas post-visita y segmentación para promociones.
+
+Reconocimiento de platillos más vendidos y predicción de demanda con IA.
+
+Recomendaciones personalizadas a clientes según historial de pedidos.
+
+Control de inventario con alertas predictivas basadas en consumo histórico.
+
+5. Inmobiliaria
+Bot conversacional para mostrar propiedades filtrando por zona, precio, etc.
+
+Análisis de leads para detectar compradores más probables.
+
+Recordatorios automáticos para visitas programadas y seguimiento post-visita.
+
+Generación automática de contratos personalizados.
+
+Campañas automatizadas para propiedades nuevas según preferencias del cliente.
+
+6. Tienda en línea o ecommerce
+Recomendador de productos personalizado según historial y navegación.
+
+Asistente IA en la web para dudas, recomendaciones y devoluciones.
+
+Notificaciones automatizadas por carrito abandonado.
+
+Generación de contenido automático (descripciones de productos, SEO, etc.).
+
+Análisis de reseñas con IA para detectar problemas o necesidades de mejora.
+
+7. Agencia de marketing
+Generación automática de contenidos para redes sociales y blogs con IA.
+
+Chatbot para captar leads en la página web.
+
+Automatización de reportes de campañas con métricas clave.
+
+IA para analizar rendimiento de anuncios y sugerir mejoras.
+
+Secuencia de onboarding automática para nuevos clientes.
+
+8. Taller mecánico
+Agente para agendar servicios por WhatsApp con recordatorios automáticos.
+
+Chatbot que da estatus del vehículo (en revisión, listo, etc.).
+
+Análisis de historial de servicios para predecir mantenimientos futuros.
+
+Encuesta post-servicio automatizada y solicitud de reseña.
+
+Generación automática de cotizaciones con base en diagnóstico.
+
+9. Consultoría (negocios, legal, etc.)
+IA que analiza documentos y sugiere mejoras (contratos, propuestas, etc.).
+
+Agente para agendar sesiones y enviar recordatorios.
+
+Secuencia automatizada para convertir prospectos en clientes.
+
+Resumen automático de reuniones grabadas.
+
+Generación de minutas de acción y seguimiento automático.
+
+10. Gimnasio o centro de entrenamiento
+Asistente virtual para registro, pagos y dudas frecuentes.
+
+Rutinas personalizadas con IA según objetivos del usuario.
+
+Recordatorios automáticos para asistir y evitar abandonos.
+
+Segmentación y promociones automatizadas por nivel de asistencia.
+
+Generación de reportes de progreso físicos con visualizaciones.

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Link } from "wouter";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,6 +38,13 @@ export default function Header() {
       >
         Servicios
       </button>
+      <Link
+        href="/casos-de-uso"
+        onClick={() => onLinkClick?.()}
+        className="text-white hover:text-secondary-custom transition-colors duration-300 font-medium"
+      >
+        Casos por Industria
+      </Link>
       <button
         onClick={() => {
           scrollToSection("casos-exito");
@@ -64,14 +72,14 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#00000000]">
         <nav className="flex justify-between items-center py-4">
-          <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-secondary-custom rounded-lg flex items-center justify-center">
               <i className="fas fa-robot text-white text-lg"></i>
             </div>
             <span className="text-xl font-bold">
               Automat<span className="italic">IA</span>
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
