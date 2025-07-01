@@ -95,9 +95,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 AutomatIA. Todos los derechos reservados. | Diseñado para transformar tu negocio con IA.
-          </p>
+          <p className="text-gray-400">© 2025 AutomatIA. Todos los derechos reservados. | Diseñado para transformar tu negocio con IA.</p>
         </div>
       </div>
     </footer>
