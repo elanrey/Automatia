@@ -1,13 +1,13 @@
 export default function Benefits() {
   const benefits = [
     {
-      iconClass: "fas fa-clock",
+      iconClass: "fas fa-stopwatch",
       title: "Ahorro de Tiempo",
       description: "Hasta 70% menos tiempo en tareas repetitivas y administrativas.",
       gradient: "from-primary-custom to-primary-dark-custom"
     },
     {
-      iconClass: "fas fa-shield-alt",
+      iconClass: "fas fa-check-circle",
       title: "Menos Errores", 
       description: "Reducción del 95% en errores humanos y mayor precisión en procesos.",
       gradient: "from-secondary-custom to-emerald-600"
