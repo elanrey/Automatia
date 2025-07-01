@@ -67,7 +67,7 @@ export default function Hero() {
               <div className="space-y-3">
                 <div className="h-4 bg-gradient-to-r from-primary-custom to-secondary-custom rounded animate-pulse"></div>
                 <div className="h-3 rounded w-3/4 bg-[#a8a8a8]"></div>
-                <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                <div className="h-3 rounded w-1/2 bg-[#a8a8a8]"></div>
                 <div className="grid grid-cols-3 gap-2 mt-4">
                   <div className="h-16 bg-secondary-custom/20 rounded"></div>
                   <div className="h-16 bg-primary-custom/20 rounded"></div>
