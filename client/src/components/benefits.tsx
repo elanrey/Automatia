@@ -1,18 +1,6 @@
 export default function Benefits() {
   const benefits = [
     {
-      iconClass: "fas fa-dollar-sign",
-      title: "Ahorro de Tiempo",
-      description: "Hasta 70% menos tiempo en tareas repetitivas y administrativas.",
-      gradient: "from-primary-custom to-primary-dark-custom"
-    },
-    {
-      iconClass: "fas fa-chart-bar",
-      title: "Menos Errores", 
-      description: "Reducción del 95% en errores humanos y mayor precisión en procesos.",
-      gradient: "from-secondary-custom to-emerald-600"
-    },
-    {
       iconClass: "fas fa-chart-bar",
       title: "Mayor Productividad",
       description: "Su equipo se enfoca en tareas de alto valor agregado.",
@@ -23,6 +11,18 @@ export default function Benefits() {
       title: "Reducción de Costos",
       description: "ROI positivo en los primeros 6 meses de implementación.",
       gradient: "from-orange-600 to-red-600"
+    },
+    {
+      iconClass: "fas fa-clock",
+      title: "Ahorro de Tiempo",
+      description: "Hasta 70% menos tiempo en tareas repetitivas y administrativas.",
+      gradient: "from-primary-custom to-primary-dark-custom"
+    },
+    {
+      iconClass: "fas fa-shield-alt",
+      title: "Menos Errores", 
+      description: "Reducción del 95% en errores humanos y mayor precisión en procesos.",
+      gradient: "from-secondary-custom to-emerald-600"
     }
   ];
 
