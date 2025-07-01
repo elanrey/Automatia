@@ -69,7 +69,7 @@ export default function Hero() {
                 <div className="h-3 rounded w-3/4 bg-[#a8a8a8]"></div>
                 <div className="h-3 rounded w-1/2 bg-[#a8a8a8]"></div>
                 <div className="grid grid-cols-3 gap-2 mt-4">
-                  <div className="h-16 bg-secondary-custom/20 rounded"></div>
+                  <div className="h-16 rounded bg-[#8c1c1ca1]"></div>
                   <div className="h-16 rounded bg-[#a68932b3]"></div>
                   <div className="h-16 bg-emerald-100 rounded"></div>
                 </div>
