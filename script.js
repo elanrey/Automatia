@@ -143,6 +143,102 @@ function initializeHeroAnimations() {
       heroTitle.classList.add('animate-fade-in');
     }, 500);
   }
+  
+  // Create dynamic particles
+  createDynamicParticles();
+}
+
+function createDynamicParticles() {
+  const heroParticles = document.querySelector('.hero-particles');
+  if (!heroParticles) return;
+  
+  // Create a single layer with more particles for warp speed effect
+  const particleLayer = document.createElement('div');
+  particleLayer.className = 'particle-layer-main';
+  particleLayer.style.cssText = `
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  `;
+  
+  // Create more particles for the warp effect
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'dynamic-particle';
+    
+    // Calculate random angle and distance for radial movement
+    const angle = Math.random() * Math.PI * 2; // 0 to 2π radians
+    const distance = Math.random() * 800 + 200; // Distance to travel
+    const startDistance = Math.random() * 50 + 10; // Starting distance from center
+    
+    // Calculate movement vectors
+    const deltaX = Math.cos(angle) * distance;
+    const deltaY = Math.sin(angle) * distance;
+    const startX = Math.cos(angle) * startDistance;
+    const startY = Math.sin(angle) * startDistance;
+    
+    const size = Math.random() * 2 + 0.5; // 0.5px to 2.5px
+    const opacity = Math.random() * 0.3 + 0.15; // 0.15 to 0.45
+    const duration = Math.random() * 3 + 2; // 2s to 5s - faster for warp effect
+    const delay = Math.random() * duration;
+    
+    particle.style.cssText = `
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      background: linear-gradient(${angle}rad, rgba(255,255,255,${opacity}) 0%, rgba(255,255,255,${opacity * 0.3}) 50%, transparent 100%);
+      border-radius: 50%;
+      left: calc(50% + ${startX}px);
+      top: calc(50% + ${startY}px);
+      animation: particle-warp ${duration}s ease-out infinite;
+      animation-delay: -${delay}s;
+      --end-x: ${deltaX}px;
+      --end-y: ${deltaY}px;
+      transform-origin: center;
+    `;
+    
+    particleLayer.appendChild(particle);
+  }
+  
+  heroParticles.appendChild(particleLayer);
+  
+  // Add CSS animation for warp speed effect
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes particle-warp {
+      0% {
+        transform: translate(0px, 0px) scale(0.1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      20% {
+        transform: translate(calc(var(--end-x) * 0.1), calc(var(--end-y) * 0.1)) scale(0.3);
+      }
+      40% {
+        transform: translate(calc(var(--end-x) * 0.3), calc(var(--end-y) * 0.3)) scale(0.6);
+      }
+      60% {
+        transform: translate(calc(var(--end-x) * 0.6), calc(var(--end-y) * 0.6)) scale(1);
+      }
+      80% {
+        transform: translate(calc(var(--end-x) * 0.85), calc(var(--end-y) * 0.85)) scale(1.5);
+        opacity: 0.8;
+      }
+      95% {
+        transform: translate(var(--end-x), var(--end-y)) scale(2);
+        opacity: 0.2;
+      }
+      100% {
+        transform: translate(var(--end-x), var(--end-y)) scale(2.5);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 function animateCounter(element) {

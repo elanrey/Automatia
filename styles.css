@@ -316,20 +316,21 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.2), transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: particle-float 20s linear infinite;
+  overflow: hidden;
 }
 
-@keyframes particle-float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-100px) rotate(360deg); }
+/* Simplified background particles - very subtle */
+.hero-particles::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 25% 20%, rgba(255,255,255,0.1), transparent),
+    radial-gradient(1px 1px at 75% 40%, rgba(255,255,255,0.08), transparent),
+    radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.12), transparent),
+    radial-gradient(1px 1px at 60% 80%, rgba(255,255,255,0.09), transparent);
+  background-repeat: no-repeat;
 }
 
 .hero-gradient-orb {
