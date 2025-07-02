@@ -152,75 +152,81 @@ function createDynamicParticles() {
   const heroParticles = document.querySelector('.hero-particles');
   if (!heroParticles) return;
   
-  // Create multiple particle layers for depth effect
-  for (let layer = 0; layer < 3; layer++) {
-    const particleLayer = document.createElement('div');
-    particleLayer.className = `particle-layer particle-layer-${layer}`;
-    particleLayer.style.cssText = `
+  // Create a single layer with more random particles
+  const particleLayer = document.createElement('div');
+  particleLayer.className = 'particle-layer-main';
+  particleLayer.style.cssText = `
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  `;
+  
+  // Create individual particles with more randomness
+  for (let i = 0; i < 20; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'dynamic-particle';
+    
+    // More random positioning and properties
+    const startX = Math.random() * 120 - 10; // -10% to 110% to account for drift
+    const driftX = (Math.random() - 0.5) * 40; // Random horizontal drift
+    const size = Math.random() * 3 + 1; // 1px to 4px
+    const opacity = Math.random() * 0.4 + 0.2; // 0.2 to 0.6
+    const duration = Math.random() * 8 + 12; // 12s to 20s
+    const delay = Math.random() * duration;
+    
+    particle.style.cssText = `
       position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: ${layer};
+      width: ${size}px;
+      height: ${size}px;
+      background: radial-gradient(circle, rgba(255,255,255,${opacity}) 0%, transparent 70%);
+      border-radius: 50%;
+      left: ${startX}%;
+      animation: particle-fall-random ${duration}s linear infinite;
+      animation-delay: -${delay}s;
+      --drift-x: ${driftX}px;
     `;
     
-    // Create individual particles for this layer
-    for (let i = 0; i < 8; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'dynamic-particle';
-      
-      const size = (layer + 1) * 2; // Larger particles in higher layers
-      const opacity = 0.3 - layer * 0.1; // Less opacity for background layers
-      const duration = 12 + layer * 3; // Slower for background layers
-      const delay = Math.random() * duration;
-      
-      particle.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        background: radial-gradient(circle, rgba(255,255,255,${opacity}) 0%, transparent 70%);
-        border-radius: 50%;
-        left: ${Math.random() * 100}%;
-        animation: particle-fall-depth ${duration}s linear infinite;
-        animation-delay: -${delay}s;
-      `;
-      
-      particleLayer.appendChild(particle);
-    }
-    
-    heroParticles.appendChild(particleLayer);
+    particleLayer.appendChild(particle);
   }
   
-  // Add CSS animation for dynamic particles
+  heroParticles.appendChild(particleLayer);
+  
+  // Add CSS animation for dynamic particles with random movement
   const style = document.createElement('style');
   style.textContent = `
-    @keyframes particle-fall-depth {
+    @keyframes particle-fall-random {
       0% {
-        transform: translateY(-10vh) scale(0.3);
+        transform: translateY(-15vh) translateX(0px) scale(0.2);
         opacity: 0;
       }
-      5% {
+      8% {
         opacity: 1;
       }
-      10% {
-        transform: translateY(0vh) scale(0.5);
+      15% {
+        transform: translateY(0vh) translateX(calc(var(--drift-x) * 0.2)) scale(0.4);
       }
-      25% {
-        transform: translateY(25vh) scale(0.7);
+      30% {
+        transform: translateY(30vh) translateX(calc(var(--drift-x) * 0.4)) scale(0.7);
       }
       50% {
-        transform: translateY(50vh) scale(1);
+        transform: translateY(50vh) translateX(calc(var(--drift-x) * 0.6)) scale(1);
       }
-      75% {
-        transform: translateY(75vh) scale(1.4);
+      70% {
+        transform: translateY(70vh) translateX(calc(var(--drift-x) * 0.8)) scale(1.5);
         opacity: 0.8;
       }
-      90% {
-        transform: translateY(90vh) scale(1.8);
-        opacity: 0.4;
+      85% {
+        transform: translateY(85vh) translateX(var(--drift-x)) scale(2);
+        opacity: 0.5;
+      }
+      95% {
+        transform: translateY(95vh) translateX(var(--drift-x)) scale(2.5);
+        opacity: 0.2;
       }
       100% {
-        transform: translateY(110vh) scale(2.2);
+        transform: translateY(110vh) translateX(var(--drift-x)) scale(3);
         opacity: 0;
       }
     }
