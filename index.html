@@ -56,27 +56,137 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-overlay"></div>
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-gradient-orb hero-gradient-orb-1"></div>
+            <div class="hero-gradient-orb hero-gradient-orb-2"></div>
+            <div class="hero-gradient-orb hero-gradient-orb-3"></div>
+        </div>
         <div class="container hero-content">
             <div class="hero-grid">
                 <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-robot"></i>
+                        <span>Automatización Inteligente</span>
+                    </div>
                     <h1 class="hero-title">
-                        Automatización de Procesos Potenciada por 
-                        <span class="text-primary">Inteligencia Artificial</span>
+                        <span class="hero-title-line">Transforma tu Negocio con</span>
+                        <span class="hero-title-highlight">
+                            <span class="text-gradient">Inteligencia Artificial</span>
+                            <div class="hero-title-underline"></div>
+                        </span>
+                        <span class="hero-title-line">y Automatización</span>
                     </h1>
                     <p class="hero-description">
-                        ¿Tu negocio pierde tiempo en tareas manuales o tiene información valiosa sin aprovechar? 
-                        Transformamos esos problemas en procesos automáticos con IA. Eliminamos el trabajo repetitivo 
-                        y creamos asistentes inteligentes que responden con tus propios documentos.
+                        <strong>¿Tu empresa pierde tiempo en tareas repetitivas?</strong><br>
+                        Eliminamos el trabajo manual, creamos asistentes virtuales inteligentes 
+                        y optimizamos tus procesos con IA. Transformamos problemas en soluciones automáticas.
                     </p>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">70%</div>
+                            <div class="hero-stat-label">Menos tiempo en tareas repetitivas</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">95%</div>
+                            <div class="hero-stat-label">Reducción de errores humanos</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">6</div>
+                            <div class="hero-stat-label">Meses para ROI positivo</div>
+                        </div>
+                    </div>
+                    
                     <div class="hero-buttons">
-                        <button onclick="scrollToSection('contacto')" class="btn btn-primary">
-                            Contáctanos
+                        <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
+                            <i class="fas fa-rocket"></i>
+                            <span>Automatizar mi Negocio</span>
                         </button>
-                        <button onclick="scrollToSection('servicios')" class="btn btn-outline">
-                            Ver Servicios
+                        <button onclick="scrollToSection('servicios')" class="btn btn-outline btn-hero">
+                            <i class="fas fa-play"></i>
+                            <span>Ver Casos de Éxito</span>
                         </button>
+                    </div>
+                    
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consulta gratuita</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Implementación rápida</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte personalizado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-card hero-card-main">
+                        <div class="hero-card-header">
+                            <div class="hero-card-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="hero-card-title">AutomatIA Dashboard</div>
+                        </div>
+                        <div class="hero-card-content">
+                            <div class="hero-chart">
+                                <div class="hero-chart-bar" style="height: 60%"></div>
+                                <div class="hero-chart-bar" style="height: 85%"></div>
+                                <div class="hero-chart-bar" style="height: 45%"></div>
+                                <div class="hero-chart-bar" style="height: 70%"></div>
+                                <div class="hero-chart-bar" style="height: 90%"></div>
+                            </div>
+                            <div class="hero-metrics">
+                                <div class="hero-metric">
+                                    <div class="hero-metric-icon bg-gradient-primary">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <div class="hero-metric-text">
+                                        <div class="hero-metric-number">142</div>
+                                        <div class="hero-metric-label">Tareas Automatizadas</div>
+                                    </div>
+                                </div>
+                                <div class="hero-metric">
+                                    <div class="hero-metric-icon bg-gradient-secondary">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="hero-metric-text">
+                                        <div class="hero-metric-number">8.5h</div>
+                                        <div class="hero-metric-label">Tiempo Ahorrado/día</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-card hero-card-floating hero-card-chat">
+                        <div class="hero-chat-message">
+                            <div class="hero-chat-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="hero-chat-bubble">
+                                ¡Proceso completado! Se automatizaron 25 facturas en 2 minutos.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-card hero-card-floating hero-card-notification">
+                        <div class="hero-notification">
+                            <div class="hero-notification-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="hero-notification-text">
+                                <div class="hero-notification-title">Tarea Completada</div>
+                                <div class="hero-notification-desc">Datos sincronizados automáticamente</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

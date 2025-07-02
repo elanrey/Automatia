@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeCarousel();
   initializeHeader();
   initializeContactForm();
+  initializeHeroAnimations();
   startAutoPlay();
 });
 
@@ -98,6 +99,67 @@ document.addEventListener('click', function(e) {
     toggleMobileMenu();
   }
 });
+
+// Hero animations
+function initializeHeroAnimations() {
+  // Animate hero stats with counting effect
+  const heroStats = document.querySelectorAll('.hero-stat-number');
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  heroStats.forEach(stat => statsObserver.observe(stat));
+  
+  // Animate hero chart bars
+  const chartBars = document.querySelectorAll('.hero-chart-bar');
+  const chartObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        chartObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  chartBars.forEach(bar => {
+    bar.style.animationPlayState = 'paused';
+    chartObserver.observe(bar);
+  });
+  
+  // Add typing effect to hero title
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    setTimeout(() => {
+      heroTitle.classList.add('animate-fade-in');
+    }, 500);
+  }
+}
+
+function animateCounter(element) {
+  const target = element.textContent;
+  const isPercentage = target.includes('%');
+  const targetNumber = parseFloat(target);
+  let current = 0;
+  const increment = targetNumber / 50; // 50 steps
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= targetNumber) {
+      current = targetNumber;
+      clearInterval(timer);
+    }
+    element.textContent = Math.floor(current) + (isPercentage ? '%' : '');
+  }, 40);
+}
 
 // Smooth scrolling function
 function scrollToSection(sectionId) {
