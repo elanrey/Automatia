@@ -2,61 +2,59 @@
 
 ## Overview
 
-AutomatIA is a modern full-stack web application designed to showcase and provide AI-powered automation services for businesses. The platform focuses on eliminating manual tasks, implementing intelligent virtual assistants, and optimizing business processes through artificial intelligence integration.
+AutomatIA is a web application designed to showcase and provide AI-powered automation services for businesses. The platform focuses on eliminating manual tasks, implementing intelligent virtual assistants, and optimizing business processes through artificial intelligence integration. 
+
+**Current State**: The application has been converted from a React/TypeScript full-stack application to a pure HTML/CSS/JavaScript static website while maintaining all original functionality and design.
 
 ## System Architecture
 
-### Frontend Architecture
+### Current Architecture (Static Website)
+- **Frontend**: Pure HTML5, CSS3, and vanilla JavaScript
+- **Styling**: Custom CSS with CSS variables and modern responsive design
+- **Interactions**: Vanilla JavaScript with modern ES6+ features
+- **Forms**: Custom form validation and submission handling
+- **Animations**: CSS animations and transitions with Intersection Observer API
+- **Icons**: Font Awesome 6.4.0 for consistent iconography
+- **Fonts**: Google Fonts (Inter) for typography
+
+### Previous Architecture (Migrated From)
 - **Framework**: React 18 with TypeScript
 - **Routing**: Wouter (lightweight client-side routing)
 - **Styling**: Tailwind CSS with shadcn/ui component library
 - **State Management**: React Query (TanStack Query) for server state
 - **Form Handling**: React Hook Form with Zod validation
 - **Build Tool**: Vite for development and production builds
-
-### Backend Architecture
-- **Runtime**: Node.js with Express.js server
-- **Language**: TypeScript with ES modules
-- **API Design**: RESTful endpoints for contact management
-- **Middleware**: Custom logging and error handling
-
-### Data Storage Solutions
-- **Primary Database**: PostgreSQL (configured for production)
-- **ORM**: Drizzle ORM for type-safe database operations
-- **Development Storage**: In-memory storage implementation
-- **Database Provider**: Neon Database (serverless PostgreSQL)
+- **Backend**: Node.js with Express.js server
+- **Database**: PostgreSQL with Drizzle ORM
 
 ## Key Components
 
-### Frontend Components
+### Current Static Website Components
 1. **Landing Page System**
    - Hero section with compelling value proposition
-   - Services carousel showcasing automation solutions
+   - Interactive services carousel with autoplay functionality
    - Case studies demonstrating real-world success
    - Benefits section highlighting business value
-   - Contact form for lead generation
+   - Contact form with client-side validation
 
-2. **UI Component Library**
-   - Comprehensive shadcn/ui implementation
-   - Accessible components (Radix UI primitives)
-   - Consistent design system with CSS variables
-   - Dark/light theme support
+2. **Interactive Features**
+   - Smooth scrolling navigation between sections
+   - Responsive mobile hamburger menu
+   - Animated services carousel with indicators
+   - Form validation with real-time feedback
+   - Toast notifications for user feedback
+   - Intersection Observer for scroll animations
 
 3. **Responsive Design**
-   - Mobile-first approach
-   - Hamburger menu for mobile navigation
-   - Smooth scrolling and section navigation
+   - Mobile-first CSS approach
+   - Flexible grid layouts
+   - Adaptive typography and spacing
+   - Touch-friendly interface elements
 
-### Backend Components
-1. **Contact Management API**
-   - POST `/api/contact` - Create new contact submissions
-   - GET `/api/contacts` - Retrieve all contacts (admin functionality)
-   - Zod schema validation for data integrity
-
-2. **Storage Abstraction**
-   - Interface-based storage design (IStorage)
-   - Memory storage for development
-   - Database storage ready for production deployment
+### File Structure
+- `index.html` - Main HTML structure and content
+- `styles.css` - All CSS styles with CSS variables
+- `script.js` - JavaScript functionality and interactions
 
 ## Data Flow
 
@@ -103,7 +101,14 @@ AutomatIA is a modern full-stack web application designed to showcase and provid
 ## Changelog
 ```
 Changelog:
-- July 01, 2025. Initial setup
+- July 02, 2025. Converted from React/TypeScript full-stack to pure HTML/CSS/JavaScript
+  - Maintained all original functionality and design
+  - Created standalone index.html with complete page structure
+  - Implemented custom CSS with modern features (variables, grid, flexbox)
+  - Added vanilla JavaScript for interactivity (carousel, forms, navigation)
+  - Preserved responsive design and animations
+  - Added accessibility features and keyboard navigation
+- July 01, 2025. Initial React/TypeScript setup
 ```
 
 ## User Preferences
