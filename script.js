@@ -143,6 +143,89 @@ function initializeHeroAnimations() {
       heroTitle.classList.add('animate-fade-in');
     }, 500);
   }
+  
+  // Create dynamic particles
+  createDynamicParticles();
+}
+
+function createDynamicParticles() {
+  const heroParticles = document.querySelector('.hero-particles');
+  if (!heroParticles) return;
+  
+  // Create multiple particle layers for depth effect
+  for (let layer = 0; layer < 3; layer++) {
+    const particleLayer = document.createElement('div');
+    particleLayer.className = `particle-layer particle-layer-${layer}`;
+    particleLayer.style.cssText = `
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: ${layer};
+    `;
+    
+    // Create individual particles for this layer
+    for (let i = 0; i < 8; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'dynamic-particle';
+      
+      const size = (layer + 1) * 2; // Larger particles in higher layers
+      const opacity = 0.3 - layer * 0.1; // Less opacity for background layers
+      const duration = 12 + layer * 3; // Slower for background layers
+      const delay = Math.random() * duration;
+      
+      particle.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        background: radial-gradient(circle, rgba(255,255,255,${opacity}) 0%, transparent 70%);
+        border-radius: 50%;
+        left: ${Math.random() * 100}%;
+        animation: particle-fall-depth ${duration}s linear infinite;
+        animation-delay: -${delay}s;
+      `;
+      
+      particleLayer.appendChild(particle);
+    }
+    
+    heroParticles.appendChild(particleLayer);
+  }
+  
+  // Add CSS animation for dynamic particles
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes particle-fall-depth {
+      0% {
+        transform: translateY(-10vh) scale(0.3);
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      10% {
+        transform: translateY(0vh) scale(0.5);
+      }
+      25% {
+        transform: translateY(25vh) scale(0.7);
+      }
+      50% {
+        transform: translateY(50vh) scale(1);
+      }
+      75% {
+        transform: translateY(75vh) scale(1.4);
+        opacity: 0.8;
+      }
+      90% {
+        transform: translateY(90vh) scale(1.8);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(110vh) scale(2.2);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 function animateCounter(element) {
