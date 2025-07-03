@@ -163,15 +163,15 @@ function createDynamicParticles() {
     overflow: hidden;
   `;
   
-  // Create more particles for the warp effect
-  for (let i = 0; i < 50; i++) {
+  // Create many more particles for dense warp effect
+  for (let i = 0; i < 120; i++) {
     const particle = document.createElement('div');
     particle.className = 'dynamic-particle';
     
     // Calculate random angle and distance for radial movement
     const angle = Math.random() * Math.PI * 2; // 0 to 2π radians
-    const distance = Math.random() * 800 + 200; // Distance to travel
-    const startDistance = Math.random() * 50 + 10; // Starting distance from center
+    const distance = Math.random() * 1000 + 300; // Distance to travel
+    const startDistance = Math.random() * 30 + 5; // Starting distance from center
     
     // Calculate movement vectors
     const deltaX = Math.cos(angle) * distance;
@@ -179,20 +179,20 @@ function createDynamicParticles() {
     const startX = Math.cos(angle) * startDistance;
     const startY = Math.sin(angle) * startDistance;
     
-    const size = Math.random() * 2 + 0.5; // 0.5px to 2.5px
-    const opacity = Math.random() * 0.3 + 0.15; // 0.15 to 0.45
-    const duration = Math.random() * 3 + 2; // 2s to 5s - faster for warp effect
+    const size = Math.random() * 1.5 + 0.5; // 0.5px to 2px - smaller for more subtle effect
+    const opacity = Math.random() * 0.25 + 0.1; // 0.1 to 0.35 - more subtle
+    const duration = Math.random() * 4 + 3; // 3s to 7s - longer duration for smoother movement
     const delay = Math.random() * duration;
     
     particle.style.cssText = `
       position: absolute;
       width: ${size}px;
       height: ${size}px;
-      background: linear-gradient(${angle}rad, rgba(255,255,255,${opacity}) 0%, rgba(255,255,255,${opacity * 0.3}) 50%, transparent 100%);
+      background: radial-gradient(circle, rgba(255,255,255,${opacity}) 0%, rgba(255,255,255,${opacity * 0.5}) 40%, transparent 100%);
       border-radius: 50%;
       left: calc(50% + ${startX}px);
       top: calc(50% + ${startY}px);
-      animation: particle-warp ${duration}s ease-out infinite;
+      animation: particle-warp-smooth ${duration}s linear infinite;
       animation-delay: -${delay}s;
       --end-x: ${deltaX}px;
       --end-y: ${deltaY}px;
@@ -204,36 +204,55 @@ function createDynamicParticles() {
   
   heroParticles.appendChild(particleLayer);
   
-  // Add CSS animation for warp speed effect
+  // Add CSS animation for smooth warp speed effect
   const style = document.createElement('style');
   style.textContent = `
-    @keyframes particle-warp {
+    @keyframes particle-warp-smooth {
       0% {
-        transform: translate(0px, 0px) scale(0.1);
+        transform: translate(0px, 0px) scale(0.2);
         opacity: 0;
       }
-      10% {
-        opacity: 1;
+      5% {
+        opacity: 0.3;
       }
-      20% {
-        transform: translate(calc(var(--end-x) * 0.1), calc(var(--end-y) * 0.1)) scale(0.3);
+      15% {
+        transform: translate(calc(var(--end-x) * 0.05), calc(var(--end-y) * 0.05)) scale(0.4);
+        opacity: 0.6;
       }
-      40% {
-        transform: translate(calc(var(--end-x) * 0.3), calc(var(--end-y) * 0.3)) scale(0.6);
-      }
-      60% {
-        transform: translate(calc(var(--end-x) * 0.6), calc(var(--end-y) * 0.6)) scale(1);
-      }
-      80% {
-        transform: translate(calc(var(--end-x) * 0.85), calc(var(--end-y) * 0.85)) scale(1.5);
+      25% {
+        transform: translate(calc(var(--end-x) * 0.15), calc(var(--end-y) * 0.15)) scale(0.6);
         opacity: 0.8;
       }
+      35% {
+        transform: translate(calc(var(--end-x) * 0.25), calc(var(--end-y) * 0.25)) scale(0.8);
+        opacity: 1;
+      }
+      45% {
+        transform: translate(calc(var(--end-x) * 0.35), calc(var(--end-y) * 0.35)) scale(1);
+        opacity: 1;
+      }
+      55% {
+        transform: translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5)) scale(1.2);
+        opacity: 0.9;
+      }
+      65% {
+        transform: translate(calc(var(--end-x) * 0.65), calc(var(--end-y) * 0.65)) scale(1.4);
+        opacity: 0.8;
+      }
+      75% {
+        transform: translate(calc(var(--end-x) * 0.8), calc(var(--end-y) * 0.8)) scale(1.6);
+        opacity: 0.6;
+      }
+      85% {
+        transform: translate(calc(var(--end-x) * 0.9), calc(var(--end-y) * 0.9)) scale(1.8);
+        opacity: 0.4;
+      }
       95% {
-        transform: translate(var(--end-x), var(--end-y)) scale(2);
-        opacity: 0.2;
+        transform: translate(calc(var(--end-x) * 0.98), calc(var(--end-y) * 0.98)) scale(2);
+        opacity: 0.1;
       }
       100% {
-        transform: translate(var(--end-x), var(--end-y)) scale(2.5);
+        transform: translate(var(--end-x), var(--end-y)) scale(2.2);
         opacity: 0;
       }
     }
