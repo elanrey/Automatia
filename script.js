@@ -164,7 +164,7 @@ function createDynamicParticles() {
   `;
   
   // Create many more particles for dense warp effect
-  for (let i = 0; i < 120; i++) {
+  for (let i = 0; i < 2000; i++) {
     const particle = document.createElement('div');
     particle.className = 'dynamic-particle';
     
@@ -179,7 +179,7 @@ function createDynamicParticles() {
     const startX = Math.cos(angle) * startDistance;
     const startY = Math.sin(angle) * startDistance;
     
-    const size = Math.random() * 1.5 + 0.5; // 0.5px to 2px - smaller for more subtle effect
+    const size = Math.random() * 1.5 + 1.5; // 0.5px to 2px - smaller for more subtle effect
     const opacity = Math.random() * 0.25 + 0.1; // 0.1 to 0.35 - more subtle
     const duration = Math.random() * 4 + 3; // 3s to 7s - longer duration for smoother movement
     const delay = Math.random() * duration;
@@ -233,15 +233,15 @@ function createDynamicParticles() {
       }
       55% {
         transform: translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5)) scale(1.2);
-        opacity: 0.9;
+        opacity: 1;
       }
       65% {
         transform: translate(calc(var(--end-x) * 0.65), calc(var(--end-y) * 0.65)) scale(1.4);
-        opacity: 0.8;
+        opacity: 1;
       }
       75% {
         transform: translate(calc(var(--end-x) * 0.8), calc(var(--end-y) * 0.8)) scale(1.6);
-        opacity: 0.6;
+        opacity: 1;
       }
       85% {
         transform: translate(calc(var(--end-x) * 0.9), calc(var(--end-y) * 0.9)) scale(1.8);
