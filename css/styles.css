@@ -64,6 +64,54 @@ body {
   }
 }
 
+/* Sectores Section */
+.sectores-list {
+ margin-top: 3rem;
+ display: grid;
+ gap: 2rem;
+ /* Default to single column on smaller screens */
+ grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+ .sectores-list {
+ grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+ }
+}
+
+.sector-card {
+ background-color: var(--white);
+ border-radius: var(--radius-xl);
+ box-shadow: var(--shadow-sm);
+ padding: 2rem;
+ transition: var(--transition);
+}
+
+.sector-card h2 {
+ font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+ margin-bottom: 1rem;
+}
+
+ .sector-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sectores-list li {
+  font-size: 1.125rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem; /* Espacio para el bullet */
+  position: relative;
+}
+
+.sector-card:hover {
+ transform: translateY(-4px);
+ box-shadow: var(--shadow-lg);
+}
 @media (min-width: 1024px) {
   .container {
     padding: 0 2rem;

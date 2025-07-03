@@ -1,4 +1,4 @@
-// Services data
+// Datos de los servicios
 const services = [
   {
     id: 1,
@@ -42,17 +42,17 @@ const services = [
   }
 ];
 
-// Global variables
+// Variables globales
 let currentSlide = 0;
 let isAutoPlaying = true;
 let autoPlayInterval;
 let mobileMenuOpen = false;
 
-// DOM Elements
+// Elementos del DOM
 let carousel;
 let indicators;
 
-// Initialize when DOM is loaded
+// Inicializar cuando el DOM esté cargado
 document.addEventListener('DOMContentLoaded', function() {
   initializeCarousel();
   initializeHeader();
@@ -61,11 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
   startAutoPlay();
 });
 
-// Header functionality
+// Funcionalidad del encabezado
 function initializeHeader() {
   const header = document.getElementById('header');
-  
-  // Handle scroll effect
+
+  // Manejar efecto de scroll
   window.addEventListener('scroll', function() {
     if (window.scrollY > 0) {
       header.classList.add('scrolled');
@@ -75,13 +75,13 @@ function initializeHeader() {
   });
 }
 
-// Mobile menu functionality
+// Funcionalidad del menú móvil
 function toggleMobileMenu() {
   const mobileNav = document.getElementById('mobile-nav');
   const menuBtn = document.querySelector('.mobile-menu-btn i');
-  
+
   mobileMenuOpen = !mobileMenuOpen;
-  
+
   if (mobileMenuOpen) {
     mobileNav.classList.add('active');
     menuBtn.classList.remove('fa-bars');
@@ -93,22 +93,22 @@ function toggleMobileMenu() {
   }
 }
 
-// Close mobile menu when clicking on nav links
+// Cerrar menú móvil al hacer clic en los enlaces de navegación
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('nav-link-mobile')) {
     toggleMobileMenu();
   }
 });
 
-// Hero animations
+// Animaciones del héroe
 function initializeHeroAnimations() {
-  // Animate hero stats with counting effect
+  // Animar estadísticas del héroe con efecto de conteo
   const heroStats = document.querySelectorAll('.hero-stat-number');
   const observerOptions = {
     threshold: 0.5,
     rootMargin: '0px 0px -50px 0px'
   };
-  
+
   const statsObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -117,10 +117,10 @@ function initializeHeroAnimations() {
       }
     });
   }, observerOptions);
-  
+
   heroStats.forEach(stat => statsObserver.observe(stat));
-  
-  // Animate hero chart bars
+
+  // Animar barras del gráfico del héroe
   const chartBars = document.querySelectorAll('.hero-chart-bar');
   const chartObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
@@ -130,29 +130,29 @@ function initializeHeroAnimations() {
       }
     });
   }, observerOptions);
-  
+
   chartBars.forEach(bar => {
     bar.style.animationPlayState = 'paused';
     chartObserver.observe(bar);
   });
-  
-  // Add typing effect to hero title
+
+  // Añadir efecto de escritura al título del héroe
   const heroTitle = document.querySelector('.hero-title');
   if (heroTitle) {
     setTimeout(() => {
       heroTitle.classList.add('animate-fade-in');
     }, 500);
   }
-  
-  // Create dynamic particles
+
+  // Crear partículas dinámicas
   createDynamicParticles();
 }
 
 function createDynamicParticles() {
   const heroParticles = document.querySelector('.hero-particles');
   if (!heroParticles) return;
-  
-  // Create a single layer with more particles for warp speed effect
+
+  // Crear una sola capa con más partículas para un efecto de velocidad warp
   const particleLayer = document.createElement('div');
   particleLayer.className = 'particle-layer-main';
   particleLayer.style.cssText = `
@@ -162,28 +162,28 @@ function createDynamicParticles() {
     pointer-events: none;
     overflow: hidden;
   `;
-  
-  // Create many more particles for dense warp effect
+
+  // Crear muchas más partículas para un efecto warp denso
   for (let i = 0; i < 2000; i++) {
     const particle = document.createElement('div');
     particle.className = 'dynamic-particle';
-    
-    // Calculate random angle and distance for radial movement
-    const angle = Math.random() * Math.PI * 2; // 0 to 2π radians
-    const distance = Math.random() * 1000 + 300; // Distance to travel
-    const startDistance = Math.random() * 30 + 5; // Starting distance from center
-    
-    // Calculate movement vectors
+
+    // Calcular ángulo y distancia aleatorios para movimiento radial
+    const angle = Math.random() * Math.PI * 2; // 0 a 2π radianes
+    const distance = Math.random() * 1000 + 300; // Distancia a recorrer
+    const startDistance = Math.random() * 30 + 5; // Distancia inicial desde el centro
+
+    // Calcular vectores de movimiento
     const deltaX = Math.cos(angle) * distance;
     const deltaY = Math.sin(angle) * distance;
     const startX = Math.cos(angle) * startDistance;
     const startY = Math.sin(angle) * startDistance;
-    
-    const size = Math.random() * 1.5 + 1.5; // 0.5px to 2px - smaller for more subtle effect
-    const opacity = Math.random() * 0.25 + 0.1; // 0.1 to 0.35 - more subtle
-    const duration = Math.random() * 4 + 3; // 3s to 7s - longer duration for smoother movement
+
+    const size = Math.random() * 1.5 + 1.5; // 0.5px a 2px - más pequeño para un efecto más sutil
+    const opacity = Math.random() * 0.25 + 0.1; // 0.1 a 0.35 - más sutil
+    const duration = Math.random() * 4 + 3; // 3s a 7s - duración más larga para un movimiento más suave
     const delay = Math.random() * duration;
-    
+
     particle.style.cssText = `
       position: absolute;
       width: ${size}px;
@@ -198,13 +198,13 @@ function createDynamicParticles() {
       --end-y: ${deltaY}px;
       transform-origin: center;
     `;
-    
+
     particleLayer.appendChild(particle);
   }
-  
+
   heroParticles.appendChild(particleLayer);
-  
-  // Add CSS animation for smooth warp speed effect
+
+  // Añadir animación CSS para un efecto suave de velocidad warp
   const style = document.createElement('style');
   style.textContent = `
     @keyframes particle-warp-smooth {
@@ -276,7 +276,7 @@ function animateCounter(element) {
   }, 40);
 }
 
-// Smooth scrolling function
+// Función para scroll suave
 function scrollToSection(sectionId) {
   const element = document.getElementById(sectionId);
   if (element) {
@@ -289,13 +289,13 @@ function scrollToSection(sectionId) {
   }
 }
 
-// Carousel functionality
+// Funcionalidad del carrusel
 function initializeCarousel() {
   carousel = document.getElementById('services-carousel');
   indicators = document.getElementById('carousel-indicators');
-  
+
   if (!carousel || !indicators) return;
-  
+
   createServiceSlides();
   createIndicators();
   showSlide(0);
@@ -312,25 +312,25 @@ function createServiceSlides() {
         </div>
         <h3 class="service-title">${service.title}</h3>
       </div>
-      
+
       <div class="service-content">
         <div class="service-section">
           <h4>Problema del cliente:</h4>
           <p class="service-problem">${service.problem}</p>
         </div>
-        
+
         <div class="service-section">
           <h4>Solución que ofrezco:</h4>
           <p class="service-solution">${service.solution}</p>
         </div>
-        
+
         <div class="service-section">
           <h4>Beneficio / Resultado:</h4>
           <p class="service-benefit">${service.benefit}</p>
         </div>
       </div>
     `;
-    
+
     carousel.appendChild(slide);
   });
 }
@@ -347,27 +347,27 @@ function createIndicators() {
 function showSlide(index) {
   const slides = document.querySelectorAll('.service-slide');
   const indicatorElements = document.querySelectorAll('.carousel-indicator');
-  
-  // Hide all slides
+
+  // Ocultar todas las diapositivas
   slides.forEach(slide => {
     slide.classList.remove('active');
   });
-  
-  // Remove active class from all indicators
+
+  // Eliminar la clase activa de todos los indicadores
   indicatorElements.forEach(indicator => {
     indicator.classList.remove('active');
   });
-  
-  // Show current slide
+
+  // Mostrar la diapositiva actual
   if (slides[index]) {
     slides[index].classList.add('active');
   }
-  
-  // Activate current indicator
+
+  // Activar el indicador actual
   if (indicatorElements[index]) {
     indicatorElements[index].classList.add('active');
   }
-  
+
   currentSlide = index;
 }
 
@@ -387,7 +387,7 @@ function startAutoPlay() {
   if (isAutoPlaying) {
     autoPlayInterval = setInterval(() => {
       nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); // Cambiar diapositiva cada 5 segundos
   }
 }
 
@@ -402,7 +402,7 @@ function resetAutoPlay() {
   startAutoPlay();
 }
 
-// Pause autoplay on hover
+// Pausar reproducción automática al pasar el ratón por encima
 document.addEventListener('DOMContentLoaded', function() {
   const carouselContainer = document.querySelector('.carousel-container');
   if (carouselContainer) {
@@ -411,14 +411,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Contact form functionality
+// Funcionalidad del formulario de contacto
 function initializeContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
-  
+
   form.addEventListener('submit', handleFormSubmit);
-  
-  // Add real-time validation
+
+  // Añadir validación en tiempo real
   const inputs = form.querySelectorAll('input, textarea');
   inputs.forEach(input => {
     input.addEventListener('blur', validateField);
@@ -432,10 +432,10 @@ function validateField(event) {
   const fieldName = field.name;
   let isValid = true;
   let errorMessage = '';
-  
-  // Clear previous error
+
+  // Limpiar error previo
   clearFieldError(event);
-  
+
   switch (fieldName) {
     case 'name':
       if (value.length < 2) {
@@ -457,11 +457,11 @@ function validateField(event) {
       }
       break;
   }
-  
+
   if (!isValid) {
     showFieldError(fieldName, errorMessage);
   }
-  
+
   return isValid;
 }
 
@@ -483,62 +483,62 @@ function showFieldError(fieldName, message) {
 function validateForm(formData) {
   let isValid = true;
   const errors = {};
-  
-  // Validate name
+
+  // Validar nombre
   if (formData.name.trim().length < 2) {
     errors.name = 'El nombre debe tener al menos 2 caracteres';
     isValid = false;
   }
-  
-  // Validate email
+
+  // Validar email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(formData.email.trim())) {
     errors.email = 'Por favor ingresa un email válido';
     isValid = false;
   }
-  
-  // Validate message
+
+  // Validar mensaje
   if (formData.message.trim().length < 10) {
     errors.message = 'El mensaje debe tener al menos 10 caracteres';
     isValid = false;
   }
-  
-  // Show errors
+
+  // Mostrar errores
   Object.keys(errors).forEach(field => {
     showFieldError(field, errors[field]);
   });
-  
+
   return isValid;
 }
 
 async function handleFormSubmit(event) {
   event.preventDefault();
-  
+
   const form = event.target;
   const submitBtn = document.getElementById('submit-btn');
   const submitText = document.getElementById('submit-text');
   const submitLoader = document.getElementById('submit-loader');
-  
-  // Get form data
+
+  // Obtener datos del formulario
   const formData = {
     name: form.name.value,
     email: form.email.value,
     subject: form.subject.value,
     message: form.message.value
   };
-  
-  // Validate form
+
+  // Validar formulario
   if (!validateForm(formData)) {
     return;
   }
-  
-  // Show loading state
+
+  // Mostrar estado de carga
   submitBtn.disabled = true;
   submitText.style.display = 'none';
   submitLoader.style.display = 'flex';
-  
+
   try {
-    // Simulate API call (replace with actual API endpoint)
+    // Simular llamada a la API (reemplazar con el endpoint real de la API)
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -546,9 +546,9 @@ async function handleFormSubmit(event) {
       },
       body: JSON.stringify(formData)
     });
-    
+
     if (response.ok) {
-      // Success
+      // Éxito
       showToast('¡Mensaje enviado!', 'Nos pondremos en contacto contigo pronto.', 'success');
       form.reset();
     } else {
@@ -556,39 +556,39 @@ async function handleFormSubmit(event) {
       showToast('Error al enviar', 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
     }
   } catch (error) {
-    // Network error or API not available - show success message anyway for demo
+    // Error de red o API no disponible - mostrar mensaje de éxito de todos modos para demostración
     console.log('Contact form submitted:', formData);
     showToast('¡Mensaje enviado!', 'Nos pondremos en contacto contigo pronto.', 'success');
     form.reset();
   } finally {
-    // Reset button state
+    // Restablecer estado del botón
     submitBtn.disabled = false;
     submitText.style.display = 'inline';
     submitLoader.style.display = 'none';
   }
 }
 
-// Toast notification functionality
+// Funcionalidad de notificación toast
 function showToast(title, description, type = 'success') {
   const toast = document.getElementById('toast');
   const toastIcon = document.getElementById('toast-icon');
   const toastTitle = document.getElementById('toast-title');
   const toastDescription = document.getElementById('toast-description');
-  
-  // Set content
+
+  // Establecer contenido
   toastTitle.textContent = title;
   toastDescription.textContent = description;
-  
-  // Set icon based on type
+
+  // Establecer icono basado en el tipo
   toastIcon.className = type === 'success' ? 'toast-icon fas fa-check-circle' : 'toast-icon fas fa-exclamation-circle';
-  
-  // Set toast type class
+
+  // Establecer clase de tipo de toast
   toast.className = `toast ${type}`;
-  
-  // Show toast
+
+  // Mostrar toast
   toast.classList.add('show');
-  
-  // Hide toast after 5 seconds
+
+  // Ocultar toast después de 5 segundos
   setTimeout(() => {
     hideToast();
   }, 5000);
@@ -599,20 +599,20 @@ function hideToast() {
   toast.classList.remove('show');
 }
 
-// Close toast when clicked
+// Cerrar toast al hacer clic
 document.addEventListener('click', function(e) {
   if (e.target.closest('.toast')) {
     hideToast();
   }
 });
 
-// Intersection Observer for animations
+// Intersection Observer para animaciones
 document.addEventListener('DOMContentLoaded', function() {
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-  
+
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -620,13 +620,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, observerOptions);
-  
-  // Observe elements for animation
+
+  // Observar elementos para la animación
   const animatedElements = document.querySelectorAll('.case-study-card, .benefit-card, .contact-form-container');
   animatedElements.forEach(el => observer.observe(el));
 });
 
-// Keyboard navigation for carousel
+// Navegación por teclado para el carrusel
 document.addEventListener('keydown', function(e) {
   if (e.target.closest('.carousel-container')) {
     switch (e.key) {
@@ -642,15 +642,15 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Handle window resize
+// Manejar redimensionamiento de la ventana
 window.addEventListener('resize', function() {
-  // Close mobile menu on resize to desktop
+  // Cerrar menú móvil al redimensionar a escritorio
   if (window.innerWidth >= 768 && mobileMenuOpen) {
     toggleMobileMenu();
   }
 });
 
-// Smooth scroll for anchor links
+// Scroll suave para enlaces de anclaje
 document.addEventListener('click', function(e) {
   if (e.target.matches('[href^="#"]')) {
     e.preventDefault();
@@ -659,13 +659,13 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Add loading states and error handling
+// Añadir estados de carga y manejo de errores
 window.addEventListener('load', function() {
-  // Remove any loading states
+  // Eliminar cualquier estado de carga
   document.body.classList.remove('loading');
 });
 
-// Handle offline/online status
+// Manejar estado online/offline
 window.addEventListener('online', function() {
   showToast('Conexión restaurada', 'Ya puedes enviar mensajes nuevamente.', 'success');
 });
@@ -674,7 +674,7 @@ window.addEventListener('offline', function() {
   showToast('Sin conexión', 'Verifica tu conexión a internet.', 'error');
 });
 
-// Performance optimization: Lazy load images
+// Optimización de rendimiento: Carga diferida de imágenes
 document.addEventListener('DOMContentLoaded', function() {
   if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver(function(entries, observer) {
@@ -687,27 +687,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
-    
+
     const lazyImages = document.querySelectorAll('img[data-src]');
     lazyImages.forEach(img => imageObserver.observe(img));
   }
 });
 
-// Add focus management for accessibility
+// Añadir manejo de enfoque para accesibilidad
 document.addEventListener('keydown', function(e) {
-  // Handle Escape key to close mobile menu
+  // Manejar tecla Escape para cerrar el menú móvil
   if (e.key === 'Escape' && mobileMenuOpen) {
     toggleMobileMenu();
   }
-  
-  // Handle Tab key for focus management
+
+  // Manejar tecla Tab para manejo de enfoque
   if (e.key === 'Tab') {
     const focusableElements = document.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     );
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
-    
+
     if (e.shiftKey && document.activeElement === firstElement) {
       e.preventDefault();
       lastElement.focus();
@@ -718,7 +718,7 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Console message for developers
+// Mensaje de consola para desarrolladores
 console.log(`
 🤖 AutomatIA - Automatización con Inteligencia Artificial
 =====================================
