@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutomatIA - Automatización de Procesos con Inteligencia Artificial</title>
     <meta name="description" content="Transformamos su negocio con soluciones de automatización de procesos e inteligencia artificial. Eliminamos tareas manuales y creamos asistentes virtuales inteligentes.">
-    
+
     <!-- Open Graph tags -->
     <meta property="og:title" content="AutomatIA - Automatización de Procesos con IA">
     <meta property="og:description" content="Transformamos su negocio con soluciones de automatización e inteligencia artificial. Eliminamos tareas manuales repetitivas.">
     <meta property="og:type" content="website">
-    
-    <!-- Font Awesome  -->
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -30,27 +30,27 @@
                     <span class="logo-text">Automat<em>IA</em></span>
                 </div>
             </div>
-            
+
             <!-- Desktop Navigation -->
             <nav class="nav-desktop">
-                <button onclick="scrollToSection('servicios')" class="nav-link">Servicios</button>
-                <button onclick="scrollToSection('casos-exito')" class="nav-link">Casos de Éxito</button>
                 <button onclick="scrollToSection('beneficios')" class="nav-link">Beneficios</button>
- <button onclick="window.location.href='/sectores.html'" class="nav-link">Sectores</button>
+                <button onclick="scrollToSection('servicios')" class="nav-link">Servicios</button>
+                <button onclick="window.location.href='casos.html'" class="nav-link">Casos de Éxito</button>
+                <button onclick="window.location.href='/sectores.html'" class="nav-link">Sectores</button>
                 <button onclick="scrollToSection('contacto')" class="nav-link">Contacto</button>
             </nav>
-            
+
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
-            
+
             <!-- Mobile Navigation -->
             <nav id="mobile-nav" class="nav-mobile">
-                <button onclick="scrollToSection('servicios')" class="nav-link-mobile">Servicios</button>
-                <button onclick="scrollToSection('casos-exito')" class="nav-link-mobile">Casos de Éxito</button>
                 <button onclick="scrollToSection('beneficios')" class="nav-link-mobile">Beneficios</button>
- <button onclick="window.location.href='/sectores.html'" class="nav-link-mobile">Sectores</button>
+                <button onclick="scrollToSection('servicios')" class="nav-link-mobile">Servicios</button>
+                <button onclick="window.location.href='casos.html'" class="nav-link-mobile">Casos de Éxito</button>
+                <button onclick="window.location.href='/sectores.html'" class="nav-link-mobile">Sectores</button>
                 <button onclick="scrollToSection('contacto')" class="nav-link-mobile">Contacto</button>
             </nav>
         </div>
@@ -67,7 +67,6 @@
         <div class="container hero-content">
             <div class="hero-grid">
                 <div class="hero-text">
-                    
                     <h1 class="hero-title">
                         <span class="hero-title-line">Transforma tu Negocio con</span>
                         <span class="hero-title-highlight">
@@ -80,36 +79,19 @@
                     </h1>
                     <p class="hero-description">
                         <strong>¿Tu empresa pierde tiempo en tareas repetitivas?</strong><br>
-                        Eliminamos el trabajo manual, creamos asistentes virtuales inteligentes 
+                        Eliminamos el trabajo manual, creamos asistentes virtuales inteligentes
                         y optimizamos tus procesos con IA. Transformamos problemas en soluciones automáticas.
                     </p>
-                    
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <div class="hero-stat-number">70%</div>
-                            <div class="hero-stat-label">Menos tiempo en tareas repetitivas</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="hero-stat-number">95%</div>
-                            <div class="hero-stat-label">Reducción de errores humanos</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="hero-stat-number">6</div>
-                            <div class="hero-stat-label">Meses para ROI positivo</div>
-                        </div>
-                    </div>
-                    
                     <div class="hero-buttons">
                         <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
                             <i class="fas fa-rocket"></i>
                             <span>Automatizar mi Negocio</span>
                         </button>
-                        <button onclick="scrollToSection('servicios')" class="btn btn-outline btn-hero">
+                        <button onclick="window.location.href='casos.html'" class="btn btn-outline btn-hero">
                             <i class="fas fa-play"></i>
                             <span>Ver Casos de Éxito</span>
                         </button>
                     </div>
-                    
                     <div class="hero-features">
                         <div class="hero-feature">
                             <i class="fas fa-check-circle"></i>
@@ -125,7 +107,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="hero-visual">
                     <div class="hero-card hero-card-main">
                         <div class="hero-card-header">
@@ -166,7 +147,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="hero-card hero-card-floating hero-card-chat">
                         <div class="hero-chat-message">
                             <div class="hero-chat-avatar">
@@ -177,7 +157,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="hero-card hero-card-floating hero-card-notification">
                         <div class="hero-notification">
                             <div class="hero-notification-icon">
@@ -189,10 +168,70 @@
                             </div>
                         </div>
                     </div>
+                    <div class="hero-stats hero-card-floating">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">70%</div>
+                            <div class="hero-stat-label">Menos tiempo en tareas repetitivas</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">95%</div>
+                            <div class="hero-stat-label">Reducción de errores humanos</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">6</div>
+                            <div class="hero-stat-label">Meses para ROI positivo</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+<!-- Benefits Section -->
+<section id="beneficios" class="benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">¿Por qué elegir nuestras soluciones?</h2>
+            <p class="section-description">
+                Beneficios tangibles que transformarán la manera en que su empresa opera y compite en el mercado.
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-purple">
+                    <i class="fas fa-trending-up"></i>
+                </div>
+                <h3 class="benefit-title">Mayor Productividad</h3>
+                <p class="benefit-description">Su equipo se enfoca en tareas de alto valor agregado.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-orange">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3 class="benefit-title">Reducción de Costos</h3>
+                <p class="benefit-description">ROI positivo en los primeros 6 meses de implementación.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-blue">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="benefit-title">Ahorro de Tiempo</h3>
+                <p class="benefit-description">Hasta 70% menos tiempo en tareas repetitivas y administrativas.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-emerald">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="benefit-title">Menos Errores</h3>
+                <p class="benefit-description">Reducción del 95% en errores humanos y mayor precisión en procesos.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section id="servicios" class="services">
@@ -203,13 +242,13 @@
                     Soluciones personalizadas que eliminan tareas repetitivas y optimizan sus procesos comerciales
                 </p>
             </div>
-            
+
             <!-- Services Carousel -->
             <div class="carousel-container">
                 <div class="carousel" id="services-carousel">
                     <!-- Service slides will be generated by JavaScript -->
                 </div>
-                
+
                 <!-- Carousel Controls -->
                 <div class="carousel-controls">
                     <button class="carousel-btn carousel-prev" onclick="prevSlide()">
@@ -219,7 +258,7 @@
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
-                
+
                 <!-- Carousel Indicators -->
                 <div class="carousel-indicators" id="carousel-indicators">
                     <!-- Indicators will be generated by JavaScript -->
@@ -234,118 +273,136 @@
             <div class="section-header">
                 <h2 class="section-title">Casos de Éxito en Automatización e Inteligencia Artificial</h2>
                 <p class="section-description">
-                    Resultados reales de empresas que han transformado sus operaciones con nuestras soluciones 
-                    de automatización e IA.
+                   <a href="casos.html"> Haz clic aquí para ver nuestros casos de éxito detallados.</a>
                 </p>
             </div>
-            
-            <div class="case-studies-grid">
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <div class="case-study-icon bg-gradient-primary">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="case-study-title">Eficiencia en la Gestión de Nuevos Clientes</h3>
-                    </div>
-                    
-                    <div class="case-study-content">
-                        <div class="case-study-section">
-                            <h4 class="case-study-subtitle">Problema del cliente:</h4>
-                            <p>Una empresa de servicios financieros dedicaba un equipo completo a procesar manualmente las solicitudes de nuevos clientes. Esto implicaba revisar documentos, ingresar datos en múltiples sistemas y validar información, generando retrasos y una alta tasa de errores.</p>
-                        </div>
-                        
-                        <div class="case-study-section">
-                            <h4 class="case-study-subtitle">Solución implementada:</h4>
-                            <p>Diseñé un sistema que toma automáticamente las solicitudes, extrae la información clave de los documentos y la verifica en tiempo real. Luego distribuye los datos entre los sistemas internos sin intervención humana.</p>
-                        </div>
-                        
-                        <div class="case-study-result bg-emerald">
-                            <h4 class="case-study-subtitle">Resultado / Beneficio obtenido:</h4>
-                            <p class="result-text">La empresa redujo el tiempo de procesamiento en un 70% y los errores humanos en un 95%.</p>
-                            <p class="impact-text">
-                                <strong>Esto permitió que:</strong> El equipo se enfocara en atención personalizada y generación de valor, dejando atrás tareas mecánicas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <div class="case-study-icon bg-gradient-secondary">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3 class="case-study-title">Soporte al Cliente 24/7 con IA</h3>
-                    </div>
-                    
-                    <div class="case-study-content">
-                        <div class="case-study-section">
-                            <h4 class="case-study-subtitle">Problema del cliente:</h4>
-                            <p>Una compañía de seguros recibía cientos de llamadas diarias con preguntas repetidas sobre pólizas y coberturas. Los agentes se saturaban con estas consultas, lo que afectaba la atención de casos más importantes.</p>
-                        </div>
-                        
-                        <div class="case-study-section">
-                            <h4 class="case-study-subtitle">Solución implementada:</h4>
-                            <p>Desarrollé un asistente virtual inteligente en su sitio web, entrenado con la documentación interna: pólizas, preguntas frecuentes y procedimientos. El asistente comprende preguntas mal formuladas y responde de forma clara.</p>
-                        </div>
-                        
-                        <div class="case-study-result bg-blue">
-                            <h4 class="case-study-subtitle">Resultado / Beneficio obtenido:</h4>
-                            <p class="result-text">El 80% de las preguntas frecuentes ahora se resuelven automáticamente. Bajaron los tiempos de espera y mejoró la satisfacción del cliente.</p>
-                            <p class="impact-text">
-                                <strong>Esto permitió que:</strong> La empresa ofreciera soporte constante y de alta calidad, y su equipo se dedicara a tareas de mayor impacto.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             <!-- El contenido detallado de los casos de estudio ha sido movido a casos.html -->
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="beneficios" class="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">¿Por qué elegir nuestras soluciones?</h2>
-                <p class="section-description">
-                    Beneficios tangibles que transformarán la manera en que su empresa opera y compite en el mercado.
-                </p>
+    
+
+<!-- Sectores Section (Moved from sectores.html) -->
+<section class="sectores" style="padding: 5rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Aplicaciones de IA por Sector</h2>
+            <p class="section-description">Explora cómo la automatización y la inteligencia artificial pueden aplicarse específicamente a tu tipo de negocio. Aquí te mostramos ejemplos de soluciones adaptadas a diferentes industrias.</p>
+        </div>
+
+        <div class="sectores-list">
+            <div class="sector-card">
+                <h2>Despacho contable</h2>
+                <ul>
+                    <li>Clasificación automática de facturas con IA (OCR + categorización).</li>
+                    <li>Asistente para clientes en WhatsApp que responde dudas frecuentes (fechas SAT, CFDI, etc.).</li>
+                    <li>Generación automática de reportes mensuales en PDF y envío por correo.</li>
+                    <li>Alerta de vencimientos fiscales vía SMS o correo usando reglas automatizadas.</li>
+                    <li>Análisis de comportamiento financiero de clientes con IA para sugerir mejoras.</li>
+                </ul>
             </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon bg-gradient-purple">
-                        <i class="fas fa-trending-up"></i>
-                    </div>
-                    <h3 class="benefit-title">Mayor Productividad</h3>
-                    <p class="benefit-description">Su equipo se enfoca en tareas de alto valor agregado.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon bg-gradient-orange">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 class="benefit-title">Reducción de Costos</h3>
-                    <p class="benefit-description">ROI positivo en los primeros 6 meses de implementación.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon bg-gradient-blue">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="benefit-title">Ahorro de Tiempo</h3>
-                    <p class="benefit-description">Hasta 70% menos tiempo en tareas repetitivas y administrativas.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon bg-gradient-emerald">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="benefit-title">Menos Errores</h3>
-                    <p class="benefit-description">Reducción del 95% en errores humanos y mayor precisión en procesos.</p>
-                </div>
+
+            <div class="sector-card">
+                <h2>Clínica o consultorio médico</h2>
+                <ul>
+                    <li>Agente para agendar citas automáticamente vía WhatsApp y Google Calendar.</li>
+                    <li>Recordatorios automáticos de citas con opción de confirmación o reprogramación.</li>
+                    <li>Transcripción de notas médicas por voz usando IA.</li>
+                    <li>Encuestas post-consulta para evaluar la atención y automatizar mejoras.</li>
+                    <li>Segmentación de pacientes para campañas de salud preventiva (vacunas, chequeos).</li>
+                </ul>
+            </div>
+
+            <div class="sector-card">
+                <h2>Escuela o academia (presencial u online)</h2>
+                <ul>
+                    <li>Chatbot que responde dudas sobre inscripción, precios y horarios.</li>
+                    <li>Evaluaciones automáticas con retroalimentación generada por IA.</li>
+                    <li>Detección temprana de alumnos con bajo rendimiento mediante análisis de calificaciones.</li>
+                    <li>Automatización de certificados personalizados tras terminar cursos.</li>
+                    <li>Secuencias de emails automatizadas para captar leads y convertirlos en alumnos.</li>
+                </ul>
+            </div>
+
+            <div class="sector-card">
+                <h2>Restaurante o cafetería</h2>
+                <ul>
+                    <li>Sistema de reservaciones automatizado por WhatsApp con confirmación.</li>
+                    <li>Encuestas automáticas post-visita y segmentación para promociones.</li>
+                    <li>Reconocimiento de platillos más vendidos y predicción de demanda con IA.</li>
+                    <li>Recomendaciones personalizadas a clientes según historial de pedidos.</li>
+                    <li>Control de inventario con alertas predictivas basadas en consumo histórico.</li>
+                </ul>
+            </div>
+
+            <div class="sector-card">
+                <h2>Inmobiliaria</h2>
+                <ul>
+                    <li>Bot conversacional para mostrar propiedades filtrando por zona, precio, etc.</li>
+                    <li>Análisis de leads para detectar compradores más probables.</li>
+                    <li>Recordatorios automáticos para visitas programadas y seguimiento post-visita.</li>
+                    <li>Generación automática de contratos personalizados.</li>
+                    <li>Campañas automatizadas para propiedades nuevas según preferencias del cliente.</li>
+                </ul>
+            </div>
+
+            <div class="sector-card">
+                <h2>Tienda en línea o ecommerce</h2>
+                <ul>
+                    <li>Recomendador de productos personalizado según historial y navegación.</li>
+                    <li>Asistente IA en la web para dudas, recomendaciones y devoluciones.</li>
+                    <li>Notificaciones automatizadas por carrito abandonado.</li>
+                    <li>Generación de contenido automático (descripciones de productos, SEO, etc.).</li>
+                    <li>Análisis de reseñas con IA para detectar problemas o necesidades de mejora.</li>
+                </ul>
+            </div>
+
+            <div class="sector-card">
+                <h2>Agencia de marketing</h2>
+                <ul>
+                    <li>Generación automática de contenidos para redes sociales y blogs con IA.</li>
+                    <li>Chatbot para captar leads en la página web.</li>
+                    <li>Automatización de reportes de campañas con métricas clave.</li>
+                    <li>IA para analizar rendimiento de anuncios y sugerir mejoras.</li>
+                    <li>Secuencia de onboarding automática para nuevos clientes.</li>
+                </ul>
+            </div>
+
+             <div class="sector-card">
+                <h2>Taller mecánico</h2>
+                <ul>
+                    <li>Agente para agendar servicios por WhatsApp con recordatorios automáticos.</li>
+                    <li>Chatbot que da estatus del vehículo (en revisión, listo, etc.).</li>
+                    <li>Análisis de historial de servicios para predecir mantenimientos futuros.</li>
+                    <li>Encuesta post-servicio automatizada y solicitud de reseña.</li>
+                    <li>Generación automática de cotizaciones con base en diagnóstico.</li>
+                </ul>
+            </div>
+
+            <div class="sector-card">
+                <h2>Consultoría (negocios, legal, etc.)</h2>
+                <ul>
+                    <li>IA que analiza documentos y sugiere mejoras (contratos, propuestas, etc.).</li>
+                    <li>Agente para agendar sesiones y enviar recordatorios.</li>
+                    <li>Secuencia automatizada para convertir prospectos en clientes.</li>
+                    <li>Resumen automático de reuniones grabadas.</li>
+                    <li>Generación de minutas de acción y seguimiento automático.</li>
+                </ul>
+            </div>
+
+             <div class="sector-card">
+                <h2>Gimnasio o centro de entrenamiento</h2>
+                <ul>
+                    <li>Asistente virtual para registro, pagos y dudas frecuentes.</li>
+                    <li>Rutinas personalizadas con IA según objetivos del usuario.</li>
+                    <li>Recordatorios automáticos para asistir y evitar abandonos.</li>
+                    <li>Segmentación y promociones automatizadas por nivel de asistencia.</li>
+                    <li>Generación de reportes de progreso físicos con visualizaciones.</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contacto" class="contact">
@@ -354,11 +411,11 @@
                 <div class="contact-info">
                     <h2 class="contact-title">¿Listo para Automatizar tu Negocio?</h2>
                     <p class="contact-description">
-                        Contáctanos hoy mismo y descubre cómo la inteligencia artificial puede transformar 
-                        tu empresa. Te ayudamos a identificar oportunidades de automatización y diseñamos 
+                        Contáctanos hoy mismo y descubre cómo la inteligencia artificial puede transformar
+                        tu empresa. Te ayudamos a identificar oportunidades de automatización y diseñamos
                         soluciones personalizadas para tus necesidades específicas.
                     </p>
-                    
+
                     <div class="contact-benefits">
                         <div class="contact-benefit">
                             <i class="fas fa-check-circle text-secondary"></i>
@@ -374,7 +431,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form-container">
                     <form id="contact-form" class="contact-form">
                         <div class="form-group">
@@ -382,24 +439,24 @@
                             <input type="text" id="name" name="name" class="form-input" required>
                             <span class="form-error" id="name-error"></span>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email" class="form-label">Email *</label>
                             <input type="email" id="email" name="email" class="form-input" required>
                             <span class="form-error" id="email-error"></span>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="subject" class="form-label">Asunto</label>
                             <input type="text" id="subject" name="subject" class="form-input">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message" class="form-label">Mensaje *</label>
                             <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
                             <span class="form-error" id="message-error"></span>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
                             <span id="submit-text">Enviar Mensaje</span>
                             <span id="submit-loader" class="submit-loader" style="display: none;">
@@ -424,7 +481,7 @@
                         <span class="logo-text">Automat<em>IA</em></span>
                     </div>
                     <p class="footer-description">
-                        Transformamos la forma en que trabajas con soluciones de automatización y procesos 
+                        Transformamos la forma en que trabajas con soluciones de automatización y procesos
                         potenciados por inteligencia artificial.
                     </p>
                     <div class="social-links">
@@ -434,17 +491,17 @@
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links">
                     <h3 class="footer-links-title">Enlaces Rápidos</h3>
                     <ul class="footer-links-list">
                         <li><button onclick="scrollToSection('servicios')" class="footer-link">Servicios</button></li>
-                        <li><button onclick="scrollToSection('casos-exito')" class="footer-link">Casos de Éxito</button></li>
- <li><button onclick="window.location.href='/sectores.html'" class="footer-link">Sectores</button></li>
+                        <li><button onclick="window.location.href='casos.html'" class="footer-link">Casos de Éxito</button></li>
+                        <li><button onclick="scrollToSection('beneficios')" class="footer-link">Beneficios</button></li>
                         <li><button onclick="scrollToSection('contacto')" class="footer-link">Contacto</button></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-services">
                     <h3 class="footer-links-title">Servicios</h3>
                     <ul class="footer-links-list">
@@ -455,7 +512,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>© 2025 AutomatIA. Todos los derechos reservados. | Diseñado para transformar tu negocio con IA.</p>
             </div>
