@@ -164,7 +164,7 @@ function createDynamicParticles() {
   `;
 
   // Crear muchas más partículas para un efecto warp denso
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < 1000; i++) {
     const particle = document.createElement('div');
     particle.className = 'dynamic-particle';
 
@@ -180,7 +180,7 @@ function createDynamicParticles() {
     const startY = Math.sin(angle) * startDistance;
 
     const size = Math.random() * 1.5 + 1.5; // 0.5px a 2px - más pequeño para un efecto más sutil
-    const opacity = Math.random() * 0.25 + 0.1; // 0.1 a 0.35 - más sutil
+    const opacity = Math.random() * 0.25 + 0.3; // 0.1 a 0.3 - más sutil
     const duration = Math.random() * 4 + 3; // 3s a 7s - duración más larga para un movimiento más suave
     const delay = Math.random() * duration;
 

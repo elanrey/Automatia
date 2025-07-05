@@ -574,9 +574,9 @@ body {
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(3, 200px);
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .hero-stat {
@@ -679,7 +679,8 @@ body {
 
 .hero-visual {
   position: relative;
-  display: flex;
+  display: flex; /* Apply flexbox */
+  flex-direction: column; /* Stack children vertically */
   justify-content: center;
   align-items: center;
 }
@@ -695,8 +696,9 @@ body {
 
 .hero-card-main {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   padding: 1.5rem;
+  z-index: 1; /* Ensure it's above any background elements if needed */
 }
 
 .hero-card-header {
@@ -786,10 +788,6 @@ body {
 .hero-metric-label {
   font-size: 0.75rem;
   color: hsl(0, 0%, 70%);
-}
-
-.hero-card-floating {
-  position: absolute;
 }
 
 .hero-card-chat {
