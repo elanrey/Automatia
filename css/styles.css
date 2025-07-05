@@ -393,7 +393,7 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(40px);
-  animation: float 6s ease-in-out infinite;
+  
 }
 
 .hero-gradient-orb-1 {
@@ -402,7 +402,7 @@ body {
   background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
   top: 20%;
   left: 10%;
-  animation-delay: 0s;
+  
 }
 
 .hero-gradient-orb-2 {
@@ -411,7 +411,7 @@ body {
   background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
   top: 60%;
   right: 20%;
-  animation-delay: 2s;
+  
 }
 
 .hero-gradient-orb-3 {
@@ -420,7 +420,7 @@ body {
   background: radial-gradient(circle, hsl(282, 85%, 60%) 0%, transparent 70%);
   top: 30%;
   right: 10%;
-  animation-delay: 4s;
+  
 }
 
 @keyframes float {
@@ -477,13 +477,11 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { 
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-    transform: scale(1);
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   }
-  50% { 
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-    transform: scale(1.02);
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 1);
   }
 }
 
@@ -699,12 +697,6 @@ body {
   width: 100%;
   max-width: 400px;
   padding: 1.5rem;
-  animation: float-card 6s ease-in-out infinite;
-}
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
 }
 
 .hero-card-header {
@@ -798,12 +790,6 @@ body {
 
 .hero-card-floating {
   position: absolute;
-  animation: float-gentle 4s ease-in-out infinite;
-}
-
-@keyframes float-gentle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
 }
 
 .hero-card-chat {
