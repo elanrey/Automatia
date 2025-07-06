@@ -95,8 +95,8 @@ body {
 }
 
  .sector-card ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: disc;
+  padding-left: 1.5rem;
 }
 
 .sectores-list li {
