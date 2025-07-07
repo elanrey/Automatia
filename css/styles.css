@@ -705,39 +705,48 @@ body {
 .hero-card-main {
   width: 100%;
   max-width: 500px;
-  padding: 1.5rem;
+  padding: 0; /* Elimina todo el padding */
   z-index: 1; /* Ensure it's above any background elements if needed */
 }
 
 .hero-card-header {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  background-color: var(--gray);
   margin-bottom: 1rem;
+  padding: 0.5rem 0; /* Reducido el padding vertical */
+  border-top-left-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-xl);
 }
 
 .hero-card-dots {
+  position: absolute;
+  left: 1.5rem; /* Ajustado para que esté alineado con el contenido */
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   gap: 0.25rem;
 }
 
 .hero-card-dots span {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: var(--secondary);
+  background: hsl(0, 84%, 60%); /* Red */
 }
 
 .hero-card-dots span:nth-child(2) {
-  background: hsl(45, 100%, 60%);
+  background: hsl(45, 100%, 60%); /* Yellow */
 }
 
 .hero-card-dots span:nth-child(3) {
-  background: hsl(0, 84%, 60%);
+  background: var(--secondary); /* Green/Teal */
 }
 
 .hero-card-title {
-  font-size: 0.875rem;
+  font-size: 1rem; /* Aumentado el tamaño de la fuente */
   font-weight: 600;
   color: var(--white);
 }
@@ -761,9 +770,10 @@ body {
   0% { height: 0%; }
 }
 
-.hero-metrics {
+.hero-card-content {
   display: grid;
   gap: 0.75rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 
 .hero-metric {
