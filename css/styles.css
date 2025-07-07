@@ -1,14 +1,14 @@
 /* CSS Variables */
 :root {
   /* Colors */
-  --primary: hsl(217, 91%, 60%);
-  --primary-dark: hsl(224, 76%, 48%);
-  --secondary: hsl(158, 64%, 52%);
-  --dark: hsl(222, 47%, 11%);
-  --light: hsl(210, 40%, 98%);
-  --gray: hsl(215, 16%, 47%);
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(222, 84%, 4.9%);
+  --primary: #1d45fa;            
+  --primary-dark: #4f46e5;            
+  --secondary: #06b6d4;
+  --dark: #0f1729;
+  --light: #f8fafc;
+  --gray: #666666;
+  --white: #ffffff;
+  --black: #000000;
   
   /* Spacing */
   --container-max-width: 1280px;
@@ -253,18 +253,18 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--white);
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .logo-text {
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--white);
 }
 
 .logo-text em {
   font-style: italic;
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .nav-desktop {
@@ -460,25 +460,33 @@ body {
   }
 }
 
-.hero-badge {
+.logo-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: var(--primary-dark);
+  justify-content: center;
+  width: 2.5rem; /* Ancho fijo para hacerlo cuadrado */
+  height: 2.5rem; /* Alto fijo para hacerlo cuadrado */
+  background-color: var(--primary);
   backdrop-filter: blur(5px);
-  border: 2px solid rgba(255, 255, 255, 1);
-  padding: 0.5rem 0.8rem;
-  border-radius: 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--primary-dark);
-  margin: 1.5rem;
-  animation: pulse-glow 3s ease-in-out infinite;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: var(--radius-lg); /* Esquinas redondeadas */
+  color: var(--white); /* Color del icono si se usa */
+  font-size: 1rem; /* Tamaño del icono si se usa */
+}
+
+.logo-badge img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor */
+}
+
+.logo-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
   }
   50% {
     box-shadow: 0 0 40px rgba(255, 255, 255, 1);
