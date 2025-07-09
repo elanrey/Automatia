@@ -722,18 +722,18 @@ document.addEventListener('keydown', function(e) {
 console.log(`
 🤖 AutomatIA - Automatización con Inteligencia Artificial
 =====================================
-Esta página ha sido convertida de React a HTML/CSS/JS puro
-manteniendo toda la funcionalidad original.
+Automatizamos procesos para que tu negocio sea más eficiente y productivo.
+Visita nuestro sitio web para más información: https://automatIA.com
 
 Características implementadas:
-✅ Navegación suave entre secciones
-✅ Carrusel de servicios con autoplay
-✅ Formulario de contacto con validación
-✅ Diseño responsive
-✅ Animaciones y transiciones
-✅ Notificaciones toast
-✅ Menú móvil
-✅ Accesibilidad mejorada
+- Navegación suave entre secciones
+- Carrusel de servicios con autoplay
+- Formulario de contacto con validación
+- Diseño responsive
+- Animaciones y transiciones
+- Notificaciones toast
+- Menú móvil
+- Accesibilidad mejorada
 
-Desarrollado con amor y código limpio 💚
+Desarrollado con amor y código limpio por Elanrey.
 `);
