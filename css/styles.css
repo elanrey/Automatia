@@ -189,11 +189,11 @@ body {
 }
 
 .bg-gradient-purple {
-  background: linear-gradient(135deg, rgb(212, 139, 243), rgb(128, 18, 202));
+  background: linear-gradient(135deg, rgb(217, 157, 243), rgb(128, 18, 202));
 }
 
 .bg-gradient-orange {
-  background: linear-gradient(135deg, rgb(236, 142, 35), rgb(239, 67, 67));
+  background: linear-gradient(135deg, rgb(247, 196, 138), rgb(202, 74, 35));
 }
 
 .bg-gradient-blue {
