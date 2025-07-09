@@ -281,6 +281,7 @@ body {
   cursor: pointer;
   transition: var(--transition);
   padding: 0.5rem 0;
+  text-decoration: none;
 }
 
 .nav-link:hover {
@@ -333,10 +334,15 @@ body {
   text-align: left;
   border-radius: var(--radius);
   transition: var(--transition);
+  text-decoration: none;
 }
 
 .nav-link-mobile.nav-link-active {
   text-decoration: none !important;
+}
+
+.nav-link.nav-link-active {
+  text-decoration: none;
 }
 
 .nav-link-mobile:hover {

@@ -22,20 +22,21 @@
 </head>
 <body>
     <!-- Header -->
-    <header id="header" class="header scrolled">
+    <header id="header" class="header">
         <div class="header-container">
             <div class="logo">
-                <div class="hero-badge">
+                <div class="logo-badge logo-pulse-glow">
                     <img src="img/logo.png"/>
-                    <span class="logo-text">Automat<em>IA</em></span>
                 </div>
+                <span class="logo-text">Automat<em>IA</em></span>
             </div>
 
             <!-- Desktop Navigation -->
             <nav class="nav-desktop">
+                <button onclick="window.location.href='index.html#beneficios'" class="nav-link">Beneficios</button>
                 <button onclick="window.location.href='index.html#servicios'" class="nav-link">Servicios</button>
                 <a href="casos.html" class="nav-link nav-link-active">Casos de Éxito</a>
-                <button onclick="window.location.href='index.html#beneficios'" class="nav-link">Beneficios</button>
+                <a href="sectores.html" class="nav-link">Sectores</a>
                 <button onclick="window.location.href='index.html#contacto'" class="nav-link">Contacto</button>
             </nav>
 
@@ -46,9 +47,10 @@
 
             <!-- Mobile Navigation -->
             <nav id="mobile-nav" class="nav-mobile">
-                 <button onclick="window.location.href='index.html#servicios'" class="nav-link-mobile">Servicios</button>
-                <a href="casos.html" class="nav-link-mobile nav-link-active">Casos de Éxito</a>
                 <button onclick="window.location.href='index.html#beneficios'" class="nav-link-mobile">Beneficios</button>
+                <button onclick="window.location.href='index.html#servicios'" class="nav-link-mobile">Servicios</button>
+                <a href="casos.html" class="nav-link-mobile nav-link-active">Casos de Éxito</a>
+                <a href="sectores.html" class="nav-link-mobile">Sectores</a>
                 <button onclick="window.location.href='index.html#contacto'" class="nav-link-mobile">Contacto</button>
             </nav>
         </div>
@@ -223,6 +225,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
