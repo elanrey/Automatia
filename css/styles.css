@@ -347,38 +347,50 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 100vh; /* Full height for immersion */
   display: flex;
   align-items: center;
-  padding-top: var(--header-height);
+  justify-content: center;
+  background: #000; /* Deep space black */
   overflow: hidden;
-  background: radial-gradient(circle, rgb(32, 32, 128), rgb(0, 0, 0));
-}
-
-@media (min-width: 768px) {
-  .hero {
-    min-height: 100vh;
-  }
+  perspective: 300px; /* This creates the 3D space */
 }
 
 .hero-particles {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  transform-style: preserve-3d;
 }
 
-.hero-particles::before {
-  content: '';
+.star {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(1px 1px at 25% 20%, rgba(255, 255, 255, 0.1), transparent),
-    radial-gradient(1px 1px at 75% 40%, rgba(255, 255, 255, 0.08), transparent),
-    radial-gradient(1px 1px at 40% 60%, rgba(255, 255, 255, 0.12), transparent),
-    radial-gradient(1px 1px at 60% 80%, rgba(255, 255, 255, 0.09), transparent);
-  background-repeat: no-repeat;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  /* The streak is a long box-shadow that gives a trail effect */
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+  animation-name: lightspeed-3d;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* JS will set top, left, and animation timings */
+}
+
+@keyframes lightspeed-3d {
+  from {
+    transform: translateZ(-300px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  to {
+    transform: translateZ(300px);
+    opacity: 0;
+  }
 }
 
 @keyframes float {

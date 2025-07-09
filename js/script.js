@@ -149,115 +149,29 @@ function initializeHeroAnimations() {
 }
 
 function createDynamicParticles() {
-  const heroParticles = document.querySelector('.hero-particles');
-  if (!heroParticles) return;
+  const container = document.querySelector('.hero-particles');
+  if (!container) return;
+  container.innerHTML = '';
+  const starCount = 400; // A lot of stars for a dense field
 
-  // Crear una sola capa con más partículas para un efecto de velocidad warp
-  const particleLayer = document.createElement('div');
-  particleLayer.className = 'particle-layer-main';
-  particleLayer.style.cssText = `
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-  `;
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
 
-  // Crear muchas más partículas para un efecto warp denso
-  for (let i = 0; i < 1000; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'dynamic-particle';
+    // Set random X and Y position across the whole screen
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
 
-    // Calcular ángulo y distancia aleatorios para movimiento radial
-    const angle = Math.random() * Math.PI * 2; // 0 a 2π radianes
-    const distance = Math.random() * 1000 + 300; // Distancia a recorrer
-    const startDistance = Math.random() * 30 + 5; // Distancia inicial desde el centro
+    // Random animation timings to simulate depth
+    const duration = Math.random() * 2 + 1; // 1s to 3s
+    const delay = Math.random() * 3;
 
-    // Calcular vectores de movimiento
-    const deltaX = Math.cos(angle) * distance;
-    const deltaY = Math.sin(angle) * distance;
-    const startX = Math.cos(angle) * startDistance;
-    const startY = Math.sin(angle) * startDistance;
+    // The animation itself handles the Z-axis (depth) movement
+    star.style.animationDuration = `${duration}s`;
+    star.style.animationDelay = `-${delay}s`; // Negative delay starts animation partway through its cycle
 
-    const size = Math.random() * 1.5 + 1.5; // 0.5px a 2px - más pequeño para un efecto más sutil
-    const opacity = Math.random() * 0.25 + 0.3; // 0.1 a 0.3 - más sutil
-    const duration = Math.random() * 4 + 3; // 3s a 7s - duración más larga para un movimiento más suave
-    const delay = Math.random() * duration;
-
-    particle.style.cssText = `
-      position: absolute;
-      width: ${size}px;
-      height: ${size}px;
-      background: radial-gradient(circle, rgba(255,255,255,${opacity}) 0%, rgba(255,255,255,${opacity * 0.5}) 40%, transparent 100%);
-      border-radius: 50%;
-      left: calc(50% + ${startX}px);
-      top: calc(50% + ${startY}px);
-      animation: particle-warp-smooth ${duration}s linear infinite;
-      animation-delay: -${delay}s;
-      --end-x: ${deltaX}px;
-      --end-y: ${deltaY}px;
-      transform-origin: center;
-    `;
-
-    particleLayer.appendChild(particle);
+    container.appendChild(star);
   }
-
-  heroParticles.appendChild(particleLayer);
-
-  // Añadir animación CSS para un efecto suave de velocidad warp
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes particle-warp-smooth {
-      0% {
-        transform: translate(0px, 0px) scale(0.2);
-        opacity: 0;
-      }
-      5% {
-        opacity: 0.3;
-      }
-      15% {
-        transform: translate(calc(var(--end-x) * 0.05), calc(var(--end-y) * 0.05)) scale(0.4);
-        opacity: 0.6;
-      }
-      25% {
-        transform: translate(calc(var(--end-x) * 0.15), calc(var(--end-y) * 0.15)) scale(0.6);
-        opacity: 0.8;
-      }
-      35% {
-        transform: translate(calc(var(--end-x) * 0.25), calc(var(--end-y) * 0.25)) scale(0.8);
-        opacity: 1;
-      }
-      45% {
-        transform: translate(calc(var(--end-x) * 0.35), calc(var(--end-y) * 0.35)) scale(1);
-        opacity: 1;
-      }
-      55% {
-        transform: translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5)) scale(1.2);
-        opacity: 1;
-      }
-      65% {
-        transform: translate(calc(var(--end-x) * 0.65), calc(var(--end-y) * 0.65)) scale(1.4);
-        opacity: 1;
-      }
-      75% {
-        transform: translate(calc(var(--end-x) * 0.8), calc(var(--end-y) * 0.8)) scale(1.6);
-        opacity: 1;
-      }
-      85% {
-        transform: translate(calc(var(--end-x) * 0.9), calc(var(--end-y) * 0.9)) scale(1.8);
-        opacity: 0.4;
-      }
-      95% {
-        transform: translate(calc(var(--end-x) * 0.98), calc(var(--end-y) * 0.98)) scale(2);
-        opacity: 0.1;
-      }
-      100% {
-        transform: translate(var(--end-x), var(--end-y)) scale(2.2);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
 }
 
 function animateCounter(element) {
