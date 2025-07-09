@@ -162,9 +162,14 @@ function createDynamicParticles() {
     star.style.top = `${Math.random() * 100}%`;
     star.style.left = `${Math.random() * 100}%`;
 
-    // Random animation timings to simulate depth
-    const duration = Math.random() * 2 + 1; // 1s to 3s
-    const delay = Math.random() * 3;
+    // Random size for the star (bigger range)
+    const size = Math.random() * 4 + 1; // Size from 1px to 5px
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+
+    // Random animation timings to simulate depth (slower)
+    const duration = Math.random() * 3 + 3; // Slower: duration from 3s to 6s
+    const delay = Math.random() * 5;
 
     // The animation itself handles the Z-axis (depth) movement
     star.style.animationDuration = `${duration}s`;
