@@ -39,7 +39,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -359,6 +358,7 @@ body {
   justify-content: center;
   background: radial-gradient(circle, rgb(10, 10, 80), rgb(0, 0, 0));
   overflow: hidden;
+  padding-top: 20px; /* Add space for fixed header */
   perspective: 300px; /* This creates the 3D space */
 }
 
@@ -480,7 +480,7 @@ body {
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -489,19 +489,19 @@ body {
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.7rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 }
 
 @media (min-width: 1280px) {
   .hero-title {
-    font-size: 4rem;
+    font-size: 3.7rem;
   }
 }
 
@@ -1475,7 +1475,7 @@ body {
 @media (max-width: 640px) {
   .hero {
     align-items: flex-start; /* Override vertical centering */
-    padding-top: 5rem; /* Adjust title position */
+    padding-top: 6rem; /* Adjust title position */
   }
 
   .header {
@@ -1483,7 +1483,7 @@ body {
   }
 
   .hero-content {
-    padding-top: 6rem; /* Even more space above title */
+    padding-top: 7rem; /* Even more space above title */
   }
 
   .container {
@@ -1491,7 +1491,7 @@ body {
   }
 
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .hero-stats {

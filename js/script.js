@@ -580,6 +580,10 @@ document.addEventListener('click', function(e) {
 
 // Añadir estados de carga y manejo de errores
 window.addEventListener('load', function() {
+  history.scrollRestoration = 'manual'; // Disable browser scroll restoration
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 10); // Small delay to ensure it's the last scroll operation
   // Eliminar cualquier estado de carga
   document.body.classList.remove('loading');
 });
