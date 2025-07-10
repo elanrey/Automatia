@@ -39,9 +39,6 @@
   box-sizing: border-box;
 }
 
-html {
-}
-
 body {
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.6;
@@ -379,6 +376,7 @@ body {
   font-size: 2rem; /* Slightly smaller */
   font-weight: 700;
   color: var(--white);
+  text-decoration: none;
 }
 
 .logo-text em {
