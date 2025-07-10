@@ -489,6 +489,11 @@ body {
   perspective: 300px; /* This creates the 3D space */
 }
 
+.hero-small {
+  min-height: 50vh; /* Half height */
+  padding-top: 80px; /* Adjust padding for smaller height */
+}
+
 .hero-particles {
   position: absolute;
   top: 0;
