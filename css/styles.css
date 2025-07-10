@@ -147,7 +147,7 @@ body {
 
 /* FAQ Section */
 .faq {
-  padding: var(--section-padding);
+  padding: 0rem 0 5rem 0; /* Reduced top padding */
   background-color: var(--white);
 }
 
@@ -185,7 +185,8 @@ body {
 }
 
 .faq-question:hover {
-  background-color: var(--gray-light);
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 .faq-question.active {
@@ -488,7 +489,7 @@ body {
 }
 
 .hero-small {
-  min-height: 50vh; /* Half height */
+  min-height: 30vh; /* Half height */
   padding-top: 80px; /* Adjust padding for smaller height */
 }
 
@@ -1621,7 +1622,7 @@ body {
   }
 
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .hero-stats {
