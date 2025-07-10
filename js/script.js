@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeHeader();
   initializeContactForm();
   initializeHeroAnimations();
+  initializeFaqAccordion();
   startAutoPlay();
   handleInitialHashScroll(); // Nueva llamada para manejar el scroll inicial
 });
@@ -219,6 +220,32 @@ function scrollToSection(sectionId) {
     });
     history.replaceState(null, '', `#${sectionId}`);
   }
+}
+
+function initializeFaqAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.closest('.faq-item');
+      const faqAnswer = faqItem.querySelector('.faq-answer');
+      const faqIcon = question.querySelector('.faq-icon');
+
+      // Toggle active class on question
+      question.classList.toggle('active');
+      // Toggle show class on answer
+      faqAnswer.classList.toggle('show');
+
+      // Toggle icon rotation
+      if (faqAnswer.classList.contains('show')) {
+        faqIcon.classList.remove('fa-chevron-down');
+        faqIcon.classList.add('fa-chevron-up');
+      } else {
+        faqIcon.classList.remove('fa-chevron-up');
+        faqIcon.classList.add('fa-chevron-down');
+      }
+    });
+  });
 }
 
 // Funcionalidad del carrusel
