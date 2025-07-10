@@ -59,7 +59,19 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeContactForm();
   initializeHeroAnimations();
   startAutoPlay();
+  handleInitialHashScroll(); // Nueva llamada para manejar el scroll inicial
 });
+
+// Función para manejar el scroll a la sección inicial si hay un hash en la URL
+function handleInitialHashScroll() {
+  if (window.location.hash) {
+    const sectionId = window.location.hash.substring(1);
+    // Pequeño retraso para asegurar que todos los elementos estén renderizados
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 100);
+  }
+}
 
 // Funcionalidad del encabezado
 function initializeHeader() {
@@ -205,6 +217,7 @@ function scrollToSection(sectionId) {
       top: targetPosition,
       behavior: 'smooth'
     });
+    history.replaceState(null, '', `#${sectionId}`);
   }
 }
 
@@ -581,9 +594,6 @@ document.addEventListener('click', function(e) {
 // Añadir estados de carga y manejo de errores
 window.addEventListener('load', function() {
   history.scrollRestoration = 'manual'; // Disable browser scroll restoration
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 10); // Small delay to ensure it's the last scroll operation
   // Eliminar cualquier estado de carga
   document.body.classList.remove('loading');
 });

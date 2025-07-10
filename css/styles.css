@@ -7,6 +7,7 @@
   --dark: #0f1729;
   --light: #f8fafc;
   --gray: #666666;
+  --gray-light: #e0e0e0;
   --white: #ffffff;
   --black: #000000;
 
@@ -78,38 +79,67 @@ body {
 }
 
 .sector-card {
-  background-color: var(--white);
+  background-color: #f0f0f0;
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   padding: 2rem;
   transition: var(--transition);
+  border: 1px solid #ccc;
+}
+
+.sector-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* Increased gap for better spacing */
+  margin-bottom: 1.5rem;
+}
+
+.sector-icon {
+  width: 4rem; /* Slightly larger icon */
+  height: 4rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.75rem; /* Larger icon font size */
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .sector-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem; /* Slightly larger title */
   font-weight: 700;
   color: var(--dark);
-  margin-bottom: 1rem;
+  line-height: 1.2; /* Adjust line height for better readability */
 }
 
 .sector-card ul {
-  list-style: disc;
-  padding-left: 1.5rem;
+  list-style: none;
+  padding-left: 0;
 }
 
 .sectores-list li {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: var(--gray);
-  line-height: 1.8;
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  /* Espacio para el bullet */
-  position: relative;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.sectores-list li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: var(--secondary);
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+  padding-top: 0.1rem; /* Ajuste fino para la alineación vertical */
 }
 
 .sector-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px); /* More pronounced lift effect */
+  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.15), 0 12px 15px -6px rgba(0, 0, 0, 0.08); /* Stronger shadow */
 }
 
 @media (min-width: 1024px) {
@@ -179,14 +209,17 @@ body {
 }
 
 /* Gradients */
-.bg-gradient-primary {
-  background: linear-gradient(0deg, rgb(108, 206, 80), rgb(64, 128, 64));
+.bg-gradient-red {
+  background: linear-gradient(135deg, rgb(255, 178, 174), rgb(199, 16, 16));
 }
 
-.bg-gradient-secondary {
-  background: linear-gradient(180deg, rgb(108, 206, 80), rgb(64, 128, 64));
+.bg-gradient-blue {
+  background: linear-gradient(135deg, rgb(180, 216, 250), rgb(29, 79, 215));
 }
 
+.bg-gradient-green {
+  background: linear-gradient(135deg, rgb(128, 230, 158), rgb(24, 126, 19));
+}
 .bg-gradient-purple {
   background: linear-gradient(135deg, rgb(217, 157, 243), rgb(128, 18, 202));
 }
@@ -195,12 +228,18 @@ body {
   background: linear-gradient(135deg, rgb(247, 196, 138), rgb(202, 74, 35));
 }
 
-.bg-gradient-blue {
-  background: linear-gradient(135deg, rgb(133, 184, 231), rgb(29, 79, 215));
+.bg-gradient-pink {
+  background: linear-gradient(135deg, rgb(255, 182, 193), rgb(245, 90, 167));
 }
 
-.bg-gradient-emerald {
-  background: linear-gradient(135deg, rgb(111, 233, 148), rgb(24, 126, 19));
+.bg-gradient-yellow {
+  background: linear-gradient(135deg, rgb(245, 236, 155), rgb(201, 161, 4));
+}
+.bg-gradient-gray {
+  background: linear-gradient(135deg, rgb(229, 229, 229), rgb(169, 169, 169));
+}
+.bg-gradient-brown {
+  background: linear-gradient(135deg, rgb(211, 185, 152), rgb(124, 60, 14));
 }
 
 /* Header Styles */
