@@ -818,6 +818,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2rem; /* Added padding for mobile */
 }
 
 .hero-card {
@@ -1252,7 +1253,7 @@ body {
 
 .case-study-content {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .case-study-section h4 {
@@ -1608,6 +1609,7 @@ body {
   .hero {
     align-items: flex-start; /* Override vertical centering */
     padding-top: 6rem; /* Adjust title position */
+    min-height: auto; /* Allow height to adjust to content */
   }
 
   .header {
@@ -1616,6 +1618,7 @@ body {
 
   .hero-content {
     padding-top: 7rem; /* Even more space above title */
+    padding-bottom: 5rem; /* Added to give more space below animation */
   }
 
   .container {
@@ -1685,4 +1688,183 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Animation CSS */
+.automation-container {
+    /* Animation specific CSS Variables */
+    --background-start: #1e3c72;
+    --background-end: #2a5298;
+    --excel-green: #217346;
+    --envelope-color: #f0f0f0;
+    --text-dark: #333;
+    --text-light: #fff;
+
+    position: relative;
+    width: 650px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-light);
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* --- Excel Sheet Styling --- */
+.excel-sheet {
+    border-collapse: collapse;
+    width: 90%;
+    table-layout: fixed;
+    z-index: 10; /* Above the clones */
+    opacity: 1; /* Start fully opaque */
+    transition: opacity 1s ease-out; /* Add opacity transition */
+}
+
+.excel-sheet.fade-out {
+    opacity: 0;
+}
+
+.excel-sheet th, .excel-sheet td {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background-color 1s ease-out, border-color 1s ease-out; /* Only background/border fade */
+    box-sizing: border-box;
+}
+
+.excel-sheet th {
+    background-color: var(--excel-green);
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.excel-sheet td {
+    color: var(--text-dark);
+    background-color: #fff;
+}
+
+/* --- Animated Elements --- */
+.data-row-clone {
+    position: absolute;
+    display: flex;
+    align-items: center; /* Align content vertically */
+    font-size: 14px;
+    z-index: 11; /* Above excel sheet once it fades */
+    opacity: 1; /* Always visible initially, covered by excel sheet */
+    /* Only transform transition here, opacity will be controlled by JS */
+    transition: transform 1.2s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+.data-row-clone > div {
+    padding: 10px 15px;
+    white-space: nowrap;
+    color: var(--text-dark);
+    box-sizing: border-box; /* CRITICAL for perfect alignment */
+}
+
+.envelope {
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    background-color: var(--envelope-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 15;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.envelope.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.envelope::before { /* Top flap (inverted triangle) */
+    content: '';
+    position: absolute;
+    top: 0; /* Position at the top of the envelope */
+    left: 0;
+    width: 0; /* Use border trick for triangle */
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 25px solid #e0e0e0;
+    transform-origin: top center; /* Rotate from the top edge */
+    transition: transform 0.4s ease-in-out 0.1s;
+    z-index: 2;
+}
+
+.envelope::after { /* Inner opening part */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #f8f8f8;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.envelope.open::before { transform: rotateX(180deg); }
+.envelope.open::after { opacity: 1; }
+.envelope.launched { transition: transform 2s ease-in, opacity 2s ease-in; }
+
+#envelope1 { top: 15%; left: 15%; }
+#envelope2 { top: 15%; right: 15%; }
+#envelope3 { bottom: 15%; left: 15%; }
+#envelope4 { bottom: 15%; right: 15%; }
+#envelope5 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+@media (max-width: 768px) {
+    .automation-container {
+        width: 90%; /* Make it fluid */
+        height: 300px; /* Smaller height */
+        margin-top: -20px; /* Adjusted top margin to move it down a bit */
+    }
+
+    .excel-sheet th:nth-child(1), .excel-sheet td:nth-child(1) {
+        width: 45%; /* Make Email column wider */
+    }
+
+    .excel-sheet th:nth-child(2), .excel-sheet td:nth-child(2) {
+        width: 25%; /* Make Name column narrower */
+    }
+
+    .excel-sheet th, .excel-sheet td {
+        padding: 6px 8px; /* Even smaller padding */
+        font-size: 10px; /* Even smaller font size */
+    }
+
+    .data-row-clone {
+        font-size: 10px; /* Even smaller font size for clones */
+    }
+
+    .data-row-clone > div {
+        padding: 6px 8px; /* Even smaller padding for clone cells */
+    }
+
+    .envelope {
+        width: 60px; /* Smaller envelopes */
+        height: 38px;
+    }
+
+    .envelope::before {
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 19px solid #e0e0e0;
+    }
+
+    #envelope1 { top: 10%; left: 10%; }
+    #envelope2 { top: 10%; right: 10%; }
+    #envelope3 { bottom: 10%; left: 10%; }
+    #envelope4 { bottom: 10%; right: 10%; }
+    #envelope5 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
 }
