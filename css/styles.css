@@ -1720,6 +1720,7 @@ body {
     z-index: 10; /* Above the clones */
     opacity: 1; /* Start fully opaque */
     transition: opacity 1s ease-out; /* Add opacity transition */
+    border: 2px solid #000000; /* Borde para la tabla completa */
 }
 
 .excel-sheet.fade-out {

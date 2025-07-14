@@ -229,7 +229,7 @@ function initializeExcelToEmailAnimation() {
     }
 
     async function startAnimation() {
-        envelopes.forEach(e => e.classList.add('visible'));
+        setTimeout(() => { envelopes.forEach(e => e.classList.add('visible')); }, 2000); // Retraso para la aparición de los sobres
 
         // Fade out the entire original Excel sheet
         const excelSheet = document.querySelector('.excel-sheet');
