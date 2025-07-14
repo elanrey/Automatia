@@ -1727,24 +1727,24 @@ body {
 }
 
 .excel-sheet th, .excel-sheet td {
-    border: 1px solid #ddd;
-    padding: 10px 15px;
+    border: 2px solid #000000;
+    padding: 12px 18px;
     text-align: left;
-    font-size: 14px;
+    font-size: 15px;
     white-space: nowrap;
     transition: background-color 1s ease-out, border-color 1s ease-out; /* Only background/border fade */
     box-sizing: border-box;
 }
 
 .excel-sheet th {
-    background-color: var(--excel-green);
-    color: var(--text-light);
+    background-color: rgba(33, 115, 70, 0.8); /* Verde de Excel con 80% de opacidad */
+    color: #ffffff;
     font-weight: bold;
 }
 
 .excel-sheet td {
-    color: var(--text-dark);
-    background-color: #fff;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.3); /* Blanco con 30% de opacidad */
 }
 
 /* --- Animated Elements --- */
@@ -1752,7 +1752,7 @@ body {
     position: absolute;
     display: flex;
     align-items: center; /* Align content vertically */
-    font-size: 14px;
+    font-size: 15px; /* Ajustado para coincidir con la tabla */
     z-index: 11; /* Above excel sheet once it fades */
     opacity: 1; /* Always visible initially, covered by excel sheet */
     /* Only transform transition here, opacity will be controlled by JS */
@@ -1760,9 +1760,10 @@ body {
 }
 
 .data-row-clone > div {
-    padding: 10px 15px;
+    padding: 12px 18px; /* Ajustado para coincidir con la tabla */
     white-space: nowrap;
-    color: var(--text-dark);
+    color: var(--text-dark); /* Texto oscuro para los clones */
+    background-color: transparent; /* Fondo transparente para las celdas clonadas */
     box-sizing: border-box; /* CRITICAL for perfect alignment */
 }
 

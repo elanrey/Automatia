@@ -236,7 +236,7 @@ function initializeExcelToEmailAnimation() {
         excelSheet.classList.add('fade-out');
 
         // Wait for excel sheet to fade out, revealing the clones underneath
-        await new Promise(resolve => setTimeout(resolve, 1200));
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
         // Animate clones to envelopes
         await animateClonesToEnvelopes();
@@ -246,7 +246,7 @@ function initializeExcelToEmailAnimation() {
         launchEnvelopes();
 
         // Wait for envelopes to launch and then reset and restart animation
-        await new Promise(resolve => setTimeout(resolve, 3000)); // Adjusted delay after launch
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Aumentado el tiempo para que la tabla sea visible más tiempo
         resetExcelToEmailAnimation();
         await new Promise(resolve => setTimeout(resolve, 750)); // Adjusted delay to ensure excel sheet is visible
         prepareClones(); // Re-prepare clones for the next cycle
@@ -856,107 +856,3 @@ Características implementadas:
 Desarrollado con amor y código limpio por Elanrey.
 `);
 
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.automation-container');
-    const tableRows = Array.from(document.querySelectorAll('.excel-sheet tbody tr'));
-    const envelopes = Array.from(document.querySelectorAll('.envelope'));
-    const animationLayer = document.getElementById('animation-layer');
-    let clones = [];
-
-    function prepareClones() {
-        const containerRect = container.getBoundingClientRect();
-
-        tableRows.forEach(row => {
-            const rowRect = row.getBoundingClientRect();
-            const clone = document.createElement('div');
-            clone.classList.add('data-row-clone');
-            
-            Array.from(row.children).forEach(cell => {
-                const cellClone = document.createElement('div');
-                cellClone.textContent = cell.textContent;
-                cellClone.style.width = `${cell.getBoundingClientRect().width}px`;
-                clone.appendChild(cellClone);
-            });
-
-            clone.style.left = `${rowRect.left - containerRect.left}px`;
-            clone.style.top = `${rowRect.top - containerRect.top}px`;
-            
-            animationLayer.appendChild(clone);
-            clones.push(clone);
-        });
-    }
-
-    async function startAnimation() {
-        envelopes.forEach(e => e.classList.add('visible'));
-
-        // Fade out the entire original Excel sheet
-        const excelSheet = document.querySelector('.excel-sheet');
-        excelSheet.classList.add('fade-out');
-
-        // Wait for excel sheet to fade out, revealing the clones underneath
-        await new Promise(resolve => setTimeout(resolve, 1200));
-
-        // Animate clones to envelopes
-        await animateClonesToEnvelopes();
-
-        // Launch envelopes
-        await new Promise(resolve => setTimeout(resolve, 300));
-        launchEnvelopes();
-    }
-
-    function animateClonesToEnvelopes() {
-        const containerRect = container.getBoundingClientRect();
-        const promises = clones.map((clone, index) => {
-            return new Promise(resolve => {
-                const targetEnvelope = envelopes[index];
-                const targetRect = targetEnvelope.getBoundingClientRect();
-                const cloneRect = clone.getBoundingClientRect();
-
-                // Stagger the start of each animation
-                setTimeout(() => {
-                    // Force reflow to ensure initial state is rendered
-                    clone.offsetHeight; 
-
-                    const targetX = targetRect.left - containerRect.left + (targetRect.width / 2) - (cloneRect.width / 2);
-                    const targetY = targetRect.top - containerRect.top + (targetRect.height / 2) - (cloneRect.height / 2);
-
-                    // Apply transform immediately
-                    clone.style.transform = `translate(${targetX - clone.offsetLeft}px, ${targetY - clone.offsetTop}px) scale(0.1)`;
-
-                    // After a short delay, start fading out
-                    setTimeout(() => {
-                        clone.style.opacity = 0;
-                    }, 800); // Start fading after 0.8s of movement
-
-                    clone.addEventListener('transitionend', (event) => {
-                        // Ensure we only listen for the transform transition end
-                        if (event.propertyName === 'transform') {
-                            targetEnvelope.classList.add('open');
-                            setTimeout(() => {
-                                targetEnvelope.classList.remove('open');
-                                clone.remove();
-                                resolve();
-                            }, 400);
-                        }
-                    }, { once: true });
-                }, index * 150);
-            });
-        });
-        return Promise.all(promises);
-    }
-
-    function launchEnvelopes() {
-        envelopes.forEach(envelope => {
-            envelope.classList.add('launched');
-            const angle = (Math.random() - 0.5) * 2 * Math.PI;
-            const distance = Math.max(window.innerWidth, window.innerHeight);
-            const translateX = Math.cos(angle) * distance;
-            const translateY = Math.sin(angle) * distance;
-            envelope.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${Math.random() * 720 - 360}deg)`;
-            envelope.style.opacity = 0;
-        });
-    }
-
-    prepareClones();
-    setTimeout(startAnimation, 1500);
-});
