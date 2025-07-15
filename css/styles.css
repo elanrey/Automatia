@@ -1705,11 +1705,10 @@ body {
     height: 350px; /* Reduced height */
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: var(--text-light);
-    border: 1px solid #ccc;
+    justify-content: flex-start;
+    
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    
 }
 
 /* --- Excel Sheet Styling --- */
@@ -1721,6 +1720,7 @@ body {
     opacity: 1; /* Start fully opaque */
     transition: opacity 1s ease-out; /* Add opacity transition */
     border: 1px solid #000000; /* Thinner border */
+    margin-left: 20px;
 }
 
 .excel-sheet.fade-out {
@@ -1734,17 +1734,18 @@ body {
     white-space: nowrap;
     transition: background-color 1s ease-out, border-color 1s ease-out; /* Only background/border fade */
     box-sizing: border-box;
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .excel-sheet th {
-    background-color: rgba(33, 115, 70, 0.8); /* Verde de Excel con 80% de opacidad */
+    background-color: #217346; /* Verde de Excel sin opacidad */
     color: #ffffff;
     font-weight: bold;
 }
 
 .excel-sheet td {
     color: transparent;
-    background-color: rgba(255, 255, 255, 0.3); /* Blanco con 30% de opacidad */
+    background-color: #ffffff; /* Blanco sin transparencia */
 }
 
 /* --- Animated Elements --- */
@@ -1762,7 +1763,7 @@ body {
 .data-row-clone > div {
     padding: 12px 18px; /* Ajustado para coincidir con la tabla */
     white-space: nowrap;
-    color: var(--text-dark); /* Texto oscuro para los clones */
+    color: transparent; /* Texto transparente inicialmente */
     background-color: transparent; /* Fondo transparente para las celdas clonadas */
     box-sizing: border-box; /* CRITICAL for perfect alignment */
 }
@@ -1818,11 +1819,11 @@ body {
 .envelope.open::after { opacity: 1; }
 .envelope.launched { transition: transform 2s ease-in, opacity 2s ease-in; }
 
-#envelope1 { top: 20%; left: 5%; }
-#envelope2 { top: 35%; left: 5%; }
-#envelope3 { top: 50%; left: 5%; }
-#envelope4 { top: 65%; left: 5%; }
-#envelope5 { top: 80%; left: 5%; }
+#envelope1 { top: 20%; left: 85%; }
+#envelope2 { top: 35%; left: 85%; }
+#envelope3 { top: 50%; left: 85%; }
+#envelope4 { top: 65%; left: 85%; }
+#envelope5 { top: 80%; left: 85%; }
 
 @media (max-width: 768px) {
     .automation-container {

@@ -195,6 +195,21 @@ function createDynamicParticles() {
   }
 }
 
+function typeText(element, text, delay, callback) {
+    let i = 0;
+    element.style.color = 'var(--text-dark)'; // Make text visible when typing starts
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, delay);
+        } else if (callback) {
+            callback();
+        }
+    }
+    type();
+}
+
 function initializeExcelToEmailAnimation() {
     console.log('Initializing Excel to Email Animation...');
     const container = document.querySelector('.automation-container');
@@ -204,6 +219,21 @@ function initializeExcelToEmailAnimation() {
     const envelopes = Array.from(document.querySelectorAll('.envelope'));
     const animationLayer = document.getElementById('animation-layer');
     let clones = [];
+
+    // New function to animate typing row by row
+    async function animateRowsTyping() {
+        for (let i = 0; i < clones.length; i++) {
+            const clone = clones[i];
+            const cells = Array.from(clone.children);
+            for (let j = 0; j < cells.length; j++) {
+                const cell = cells[j];
+                await new Promise(resolve => {
+                    typeText(cell, cell.dataset.fullText, 20, resolve); // Pass resolve to typeText
+                });
+            }
+            await new Promise(resolve => setTimeout(resolve, 100)); // Short delay between rows
+        }
+    }
 
     function prepareClones() {
         const containerRect = container.getBoundingClientRect();
@@ -215,7 +245,8 @@ function initializeExcelToEmailAnimation() {
             
             Array.from(row.children).forEach(cell => {
                 const cellClone = document.createElement('div');
-                cellClone.textContent = cell.textContent;
+                cellClone.dataset.fullText = cell.textContent;
+                cellClone.textContent = ''; // Start with empty text
                 cellClone.style.width = `${cell.getBoundingClientRect().width}px`;
                 clone.appendChild(cellClone);
             });
@@ -229,13 +260,19 @@ function initializeExcelToEmailAnimation() {
     }
 
     async function startAnimation() {
-        setTimeout(() => { envelopes.forEach(e => e.classList.add('visible')); }, 2000); // Retraso para la aparición de los sobres
+        setTimeout(() => { envelopes.forEach(e => e.classList.add('visible')); }, 250); // Retraso para la aparición de los sobres
 
         // The table no longer fades out.
         const excelSheet = document.querySelector('.excel-sheet');
 
         // Wait a bit before starting the clone animation
-        await new Promise(resolve => setTimeout(resolve, 2500));
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        // Animate typing row by row
+        await animateRowsTyping();
+
+        // Animate typing row by row
+        await animateRowsTyping();
 
         // Animate clones to envelopes
         await animateClonesToEnvelopes();
@@ -271,20 +308,21 @@ function initializeExcelToEmailAnimation() {
                     // Apply transform immediately
                     clone.style.transform = `translate(${targetX - clone.offsetLeft}px, ${targetY - clone.offsetTop}px) scale(0.2)`;
 
-                    // After a short delay, start fading out
-                    setTimeout(() => {
-                        clone.style.opacity = 0;
-                    }, 1000); // Start fading after 0.8s of movement
-
                     clone.addEventListener('transitionend', (event) => {
                         // Ensure we only listen for the transform transition end
                         if (event.propertyName === 'transform') {
-                            targetEnvelope.classList.add('open');
+                            clone.style.opacity = 0; // Start fading out the clone
+                            targetEnvelope.classList.add('open'); // Open the envelope
+
+                            // After a short delay, close the envelope and remove the clone
                             setTimeout(() => {
-                                targetEnvelope.classList.remove('open');
-                                clone.remove();
-                                resolve();
-                            }, 400);
+                                targetEnvelope.classList.remove('open'); // Close the envelope
+                                // After envelope closes, remove the clone and resolve
+                                setTimeout(() => {
+                                    clone.remove();
+                                    resolve();
+                                }, 100); // Allow envelope to close
+                            }, 400); // Allow clone to fade and envelope to be open briefly
                         }
                     }, { once: true });
                 }, index * 150);
