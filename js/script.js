@@ -231,12 +231,11 @@ function initializeExcelToEmailAnimation() {
     async function startAnimation() {
         setTimeout(() => { envelopes.forEach(e => e.classList.add('visible')); }, 2000); // Retraso para la aparición de los sobres
 
-        // Fade out the entire original Excel sheet
+        // The table no longer fades out.
         const excelSheet = document.querySelector('.excel-sheet');
-        excelSheet.classList.add('fade-out');
 
-        // Wait for excel sheet to fade out, revealing the clones underneath
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        // Wait a bit before starting the clone animation
+        await new Promise(resolve => setTimeout(resolve, 2500));
 
         // Animate clones to envelopes
         await animateClonesToEnvelopes();
@@ -270,12 +269,12 @@ function initializeExcelToEmailAnimation() {
                     const targetY = targetRect.top - containerRect.top + (targetRect.height / 2) - (cloneRect.height / 2);
 
                     // Apply transform immediately
-                    clone.style.transform = `translate(${targetX - clone.offsetLeft}px, ${targetY - clone.offsetTop}px) scale(0.1)`;
+                    clone.style.transform = `translate(${targetX - clone.offsetLeft}px, ${targetY - clone.offsetTop}px) scale(0.2)`;
 
                     // After a short delay, start fading out
                     setTimeout(() => {
                         clone.style.opacity = 0;
-                    }, 800); // Start fading after 0.8s of movement
+                    }, 1000); // Start fading after 0.8s of movement
 
                     clone.addEventListener('transitionend', (event) => {
                         // Ensure we only listen for the transform transition end

@@ -1701,8 +1701,8 @@ body {
     --text-light: #fff;
 
     position: relative;
-    width: 650px;
-    height: 400px;
+    width: 550px; /* Reduced width */
+    height: 350px; /* Reduced height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1715,12 +1715,12 @@ body {
 /* --- Excel Sheet Styling --- */
 .excel-sheet {
     border-collapse: collapse;
-    width: 90%;
+    width: 80%; /* Reduced width */
     table-layout: fixed;
     z-index: 10; /* Above the clones */
     opacity: 1; /* Start fully opaque */
     transition: opacity 1s ease-out; /* Add opacity transition */
-    border: 2px solid #000000; /* Borde para la tabla completa */
+    border: 1px solid #000000; /* Thinner border */
 }
 
 .excel-sheet.fade-out {
@@ -1728,10 +1728,9 @@ body {
 }
 
 .excel-sheet th, .excel-sheet td {
-    border: 2px solid #000000;
-    padding: 12px 18px;
-    text-align: left;
-    font-size: 15px;
+    border: 1px solid #000000; /* Thinner border */
+    padding: 8px 12px; /* Reduced padding */
+    font-size: 13px; /* Reduced font size */
     white-space: nowrap;
     transition: background-color 1s ease-out, border-color 1s ease-out; /* Only background/border fade */
     box-sizing: border-box;
@@ -1744,7 +1743,7 @@ body {
 }
 
 .excel-sheet td {
-    color: #000000;
+    color: transparent;
     background-color: rgba(255, 255, 255, 0.3); /* Blanco con 30% de opacidad */
 }
 
@@ -1754,7 +1753,7 @@ body {
     display: flex;
     align-items: center; /* Align content vertically */
     font-size: 15px; /* Ajustado para coincidir con la tabla */
-    z-index: 11; /* Above excel sheet once it fades */
+    z-index: 12; /* Above excel sheet once it fades */
     opacity: 1; /* Always visible initially, covered by excel sheet */
     /* Only transform transition here, opacity will be controlled by JS */
     transition: transform 1.2s cubic-bezier(0.6, -0.28, 0.74, 0.05);
@@ -1770,12 +1769,12 @@ body {
 
 .envelope {
     position: absolute;
-    width: 80px;
-    height: 50px;
+    width: 60px; /* Reduced width */
+    height: 40px; /* Reduced height */
     background-color: var(--envelope-color);
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 15;
+    z-index: 10;
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -1794,9 +1793,9 @@ body {
     left: 0;
     width: 0; /* Use border trick for triangle */
     height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-top: 25px solid #e0e0e0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 20px solid #e0e0e0;
     transform-origin: top center; /* Rotate from the top edge */
     transition: transform 0.4s ease-in-out 0.1s;
     z-index: 2;
@@ -1819,11 +1818,11 @@ body {
 .envelope.open::after { opacity: 1; }
 .envelope.launched { transition: transform 2s ease-in, opacity 2s ease-in; }
 
-#envelope1 { top: 15%; left: 15%; }
-#envelope2 { top: 15%; right: 15%; }
-#envelope3 { bottom: 15%; left: 15%; }
-#envelope4 { bottom: 15%; right: 15%; }
-#envelope5 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+#envelope1 { top: 20%; left: 5%; }
+#envelope2 { top: 35%; left: 5%; }
+#envelope3 { top: 50%; left: 5%; }
+#envelope4 { top: 65%; left: 5%; }
+#envelope5 { top: 80%; left: 5%; }
 
 @media (max-width: 768px) {
     .automation-container {
