@@ -1753,13 +1753,13 @@ body {
     background-color: #217346; /* Verde de Excel sin opacidad */
     color: #ffffff;
     font-weight: bold;
-    border: 1px solid transparent; /* Bordes transparentes inicialmente */
+    border: 1px solid #000000; /* Bordes negros nuevamente */
 }
 
 .excel-sheet td {
     color: transparent;
     background-color: #ffffff; /* Blanco sin transparencia */
-    border: 1px solid transparent; /* Bordes transparentes inicialmente */
+    border: 1px solid #000000; /* Bordes negros nuevamente */
 }
 
 /* --- Animated Elements --- */

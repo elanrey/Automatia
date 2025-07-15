@@ -22,6 +22,12 @@ const allUsers = [
     { name: "Sergio Vázquez", email: "sergio.vazquez@email.com" }
 ];
 
+const allSubjects = [
+    "Consulta", "Soporte", "Pedido", "Factura", "Reclamo",
+    "Oferta", "Actualización", "Confirmación", "Bienvenida", "Recordatorio",
+    "Urgente", "Información", "Seguimiento", "Cotización", "Novedad"
+];
+
 // Datos de los servicios
 const services = [
   {
@@ -222,7 +228,6 @@ function createDynamicParticles() {
 function typeText(element, text, delay, callback) {
     let i = 0;
     element.style.color = 'var(--text-dark)'; // Make text visible when typing starts
-    element.style.borderColor = '#000000'; // Make border visible when typing starts
     function type() {
         if (i < text.length) {
             element.textContent += text.charAt(i);
@@ -254,9 +259,11 @@ function initializeExcelToEmailAnimation() {
     // Función para actualizar la tabla con nuevos datos
     function updateTable(users) {
         excelSheetBody.innerHTML = ''; // Limpiar tabla existente
-        users.forEach(user => {
+        const selectedSubjects = allSubjects.sort(() => 0.5 - Math.random()).slice(0, users.length); // Seleccionar 5 asuntos aleatorios
+
+        users.forEach((user, index) => {
             const row = document.createElement('tr');
-            row.innerHTML = `<td>${user.email}</td><td>${user.name}</td><td>Subject</td>`; // Asunto genérico
+            row.innerHTML = `<td>${user.email}</td><td>${user.name}</td><td>${selectedSubjects[index]}</td>`; // Asignar asunto aleatorio
             excelSheetBody.appendChild(row);
         });
     }
@@ -315,8 +322,6 @@ function initializeExcelToEmailAnimation() {
         // Preparar los clones para la nueva tabla
         prepareClones();
 
-        setTimeout(() => { envelopes.forEach(e => e.classList.add('visible')); }, 250); // Retraso para la aparición de los sobres
-
         // The table no longer fades out.
         const excelSheet = document.querySelector('.excel-sheet');
 
@@ -325,6 +330,9 @@ function initializeExcelToEmailAnimation() {
 
         // Animate typing row by row
         await animateRowsTyping();
+
+        // Make envelopes visible after typing is done
+        envelopes.forEach(e => e.classList.add('visible'));
 
         // Animate clones to envelopes
         await animateClonesToEnvelopes();
