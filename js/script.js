@@ -1,3 +1,27 @@
+// Datos de los usuarios para la animación de la tabla
+const allUsers = [
+    { name: "Ana García", email: "ana.garcia@email.com" },
+    { name: "Luis Pérez", email: "luis.perez@email.com" },
+    { name: "Sofía Rodríguez", email: "sofia.rodriguez@email.com" },
+    { name: "Carlos Sánchez", email: "carlos.sanchez@email.com" },
+    { name: "María López", email: "maria.lopez@email.com" },
+    { name: "Javier Fernández", email: "javier.fernandez@email.com" },
+    { name: "Laura González", email: "laura.gonzalez@email.com" },
+    { name: "Diego Martínez", email: "diego.martinez@email.com" },
+    { name: "Elena Ruiz", email: "elena.ruiz@email.com" },
+    { name: "Pablo Díaz", email: "pablo.diaz@email.com" },
+    { name: "Carmen Hernández", email: "carmen.hernandez@email.com" },
+    { name: "Jorge Moreno", email: "jorge.moreno@email.com" },
+    { name: "Isabel Jiménez", email: "isabel.jimenez@email.com" },
+    { name: "Ricardo Alonso", email: "ricardo.alons@email.com" },
+    { name: "Natalia Gutiérrez", email: "natalia.gutierrez@email.com" },
+    { name: "Fernando Romero", email: "fernando.romero@email.com" },
+    { name: "Andrea Navarro", email: "andrea.navarro@email.com" },
+    { name: "Miguel Torres", email: "miguel.torres@email.com" },
+    { name: "Patricia Gil", email: "patricia.gil@email.com" },
+    { name: "Sergio Vázquez", email: "sergio.vazquez@email.com" }
+];
+
 // Datos de los servicios
 const services = [
   {
@@ -215,10 +239,26 @@ function initializeExcelToEmailAnimation() {
     const container = document.querySelector('.automation-container');
     if (!container) return; // Asegurarse de que el contenedor de la animación exista
 
-    const tableRows = Array.from(document.querySelectorAll('.excel-sheet tbody tr'));
+    const excelSheetBody = document.querySelector('.excel-sheet tbody');
     const envelopes = Array.from(document.querySelectorAll('.envelope'));
     const animationLayer = document.getElementById('animation-layer');
     let clones = [];
+
+    // Función para seleccionar 5 usuarios aleatorios
+    function getRandomUsers(count) {
+        const shuffled = allUsers.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
+
+    // Función para actualizar la tabla con nuevos datos
+    function updateTable(users) {
+        excelSheetBody.innerHTML = ''; // Limpiar tabla existente
+        users.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${user.email}</td><td>${user.name}</td><td>Subject</td>`; // Asunto genérico
+            excelSheetBody.appendChild(row);
+        });
+    }
 
     // New function to animate typing row by row
     async function animateRowsTyping() {
@@ -236,7 +276,14 @@ function initializeExcelToEmailAnimation() {
     }
 
     function prepareClones() {
+        // Limpiar clones anteriores
+        while (animationLayer.firstChild) {
+            animationLayer.removeChild(animationLayer.firstChild);
+        }
+        clones = [];
+
         const containerRect = container.getBoundingClientRect();
+        const tableRows = Array.from(document.querySelectorAll('.excel-sheet tbody tr'));
 
         tableRows.forEach(row => {
             const rowRect = row.getBoundingClientRect();
@@ -260,6 +307,13 @@ function initializeExcelToEmailAnimation() {
     }
 
     async function startAnimation() {
+        // Seleccionar y actualizar la tabla con nuevos datos
+        const selectedUsers = getRandomUsers(5);
+        updateTable(selectedUsers);
+
+        // Preparar los clones para la nueva tabla
+        prepareClones();
+
         setTimeout(() => { envelopes.forEach(e => e.classList.add('visible')); }, 250); // Retraso para la aparición de los sobres
 
         // The table no longer fades out.
@@ -267,9 +321,6 @@ function initializeExcelToEmailAnimation() {
 
         // Wait a bit before starting the clone animation
         await new Promise(resolve => setTimeout(resolve, 1500));
-
-        // Animate typing row by row
-        await animateRowsTyping();
 
         // Animate typing row by row
         await animateRowsTyping();
@@ -285,7 +336,6 @@ function initializeExcelToEmailAnimation() {
         await new Promise(resolve => setTimeout(resolve, 5000)); // Aumentado el tiempo para que la tabla sea visible más tiempo
         resetExcelToEmailAnimation();
         await new Promise(resolve => setTimeout(resolve, 750)); // Adjusted delay to ensure excel sheet is visible
-        prepareClones(); // Re-prepare clones for the next cycle
         setTimeout(startAnimation, 250); // Adjusted delay before restarting
     }
 
@@ -363,28 +413,8 @@ function initializeExcelToEmailAnimation() {
         clones.length = 0; // Clear the clones array
     }
 
-    prepareClones();
+    // Iniciar la animación
     setTimeout(startAnimation, 1500);
-}
-
-function resetExcelToEmailAnimation() {
-    const excelSheet = document.querySelector('.excel-sheet');
-    const envelopes = Array.from(document.querySelectorAll('.envelope'));
-    const animationLayer = document.getElementById('animation-layer');
-
-    excelSheet.classList.remove('fade-out');
-
-    envelopes.forEach(e => {
-        e.classList.remove('visible', 'open', 'launched');
-        e.style.transform = ''; // Reset transform
-        e.style.opacity = ''; // Reset opacity
-    });
-
-    // Remove all clones from the animation layer
-    while (animationLayer.firstChild) {
-        animationLayer.removeChild(animationLayer.firstChild);
-    }
-    clones.length = 0; // Clear the clones array
 }
 
 function animateCounter(element) {
