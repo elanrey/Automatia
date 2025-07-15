@@ -222,6 +222,7 @@ function createDynamicParticles() {
 function typeText(element, text, delay, callback) {
     let i = 0;
     element.style.color = 'var(--text-dark)'; // Make text visible when typing starts
+    element.style.borderColor = '#000000'; // Make border visible when typing starts
     function type() {
         if (i < text.length) {
             element.textContent += text.charAt(i);
@@ -320,7 +321,7 @@ function initializeExcelToEmailAnimation() {
         const excelSheet = document.querySelector('.excel-sheet');
 
         // Wait a bit before starting the clone animation
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise(resolve => setTimeout(resolve, 100));
 
         // Animate typing row by row
         await animateRowsTyping();
@@ -333,7 +334,7 @@ function initializeExcelToEmailAnimation() {
         launchEnvelopes();
 
         // Wait for envelopes to launch and then reset and restart animation
-        await new Promise(resolve => setTimeout(resolve, 5000)); // Aumentado el tiempo para que la tabla sea visible más tiempo
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Tiempo de visibilidad de la tabla ajustado
         resetExcelToEmailAnimation();
         await new Promise(resolve => setTimeout(resolve, 750)); // Adjusted delay to ensure excel sheet is visible
         setTimeout(startAnimation, 250); // Adjusted delay before restarting
