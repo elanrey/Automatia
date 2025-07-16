@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomatIA - Soluciones para Despachos Contables</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <meta name="description" content="Automatiza la clasificación de facturas, generación de reportes y comunicación con clientes para tu despacho contable. Ahorra tiempo y reduce errores con IA.">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="AutomatIA - Soluciones para Despachos Contables">
+    <meta property="og:description" content="Automatiza la clasificación de facturas, generación de reportes y comunicación con clientes para tu despacho contable.">
+    <meta property="og:type" content="website">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-badge logo-pulse-glow">
+                    <img src="../img/logo-small.png"/>
+                </div>
+                <a href="../index.html" class="logo-text">Automat<em>IA</em></a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html#beneficios" class="nav-link">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link">Servicios</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+                <a href="casos.html" class="nav-link">Casos de Éxito</a>
+                <a href="index.html#sectores" class="nav-link">Sectores</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="nav-mobile">
+                <a href="index.html#beneficios" class="nav-link-mobile">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link-mobile">Servicios</a>
+                <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
+                <a href="casos.html" class="nav-link-mobile">Casos de Éxito</a>
+                <a href="index.html#sectores" class="nav-link-mobile">Sectores</a>
+                <a href="faq.html" class="nav-link-mobile">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-particles"></div>
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-title-line">Optimiza tu Despacho Contable</span>
+                        <span class="hero-title-highlight">
+                            <span class="text-gradient">con Inteligencia Artificial</span>
+                        </span>
+                    </h1>
+                    <p class="hero-description">
+                        <strong>¿Cansado de la carga manual de CFDI y la generación de reportes?</strong><br>
+                        Automatizamos la clasificación de facturas, creamos asistentes para tus clientes y generamos informes fiscales al instante. Libera a tu equipo para que se enfoque en la estrategia financiera.
+                    </p>
+                    <div class="hero-buttons">
+                        <button onclick="window.location.href='casos.html'" class="btn btn-primary btn-hero">
+                            <span>Ver Casos de Éxito</span>
+                        </button>
+                        <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
+                            <span>Solicitar Consulta Gratuita</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Visual specific to accounting could go here -->
+                    <img src="../img/costos.png" alt="Automatización para Contadores" style="width: 80%; margin: auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Solutions Section for Accountants -->
+<section id="soluciones-contables" class="sectores" style="padding: 5rem 0; background-color: #f9f9f9;">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Soluciones de IA para tu Despacho</h2>
+            <p class="section-description">Ejemplos concretos de cómo podemos transformar tus operaciones diarias.</p>
+        </div>
+        <div class="sectores-list">
+            <div class="sector-card">
+                <h2>Automatización de Tareas Clave</h2>
+                <ul>
+                    <li><strong>Clasificación automática de facturas:</strong> Usa IA para leer (OCR) y categorizar CFDI de ingresos y gastos, reduciendo errores y ahorrando horas de trabajo.</li>
+                    <li><strong>Generación de reportes:</strong> Automatiza la creación de reportes mensuales en PDF (ISR, IVA) y envíalos por correo a tus clientes de forma programada.</li>
+                    <li><strong>Alertas de vencimientos:</strong> Configura alertas automáticas por SMS o correo para recordar a tus clientes las fechas límite del SAT.</li>
+                </ul>
+            </div>
+            <div class="sector-card">
+                <h2>Mejora la Atención al Cliente</h2>
+                <ul>
+                    <li><strong>Asistente Virtual 24/7:</strong> Implementa un chatbot en WhatsApp que responda al instante dudas frecuentes sobre facturación, estatus de trámites y fechas fiscales.</li>
+                    <li><strong>Análisis proactivo:</strong> Utiliza IA para analizar el comportamiento financiero de tus clientes y ofrecerles asesoría estratégica para mejorar su salud fiscal.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section id="beneficios" class="benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Beneficios Directos para tu Despacho</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-purple">
+                    <img src="../img/productividad.png" alt="Productividad" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Más Rentabilidad</h3>
+                <p class="benefit-description">Atiende a más clientes con el mismo equipo al eliminar cuellos de botella operativos.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-red">
+                    <img src="../img/costos.png" alt="Reduccion de Costos" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Reduce el Error Humano</h3>
+                <p class="benefit-description">Minimiza los errores de captura y cálculo que pueden costar caro a tus clientes.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-blue">
+                    <img src="../img/tiempo.png" alt="Ahorro de Tiempo" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Libera a tu Equipo</h3>
+                <p class="benefit-description">Tu personal podrá dedicarse a la consultoría fiscal y a tareas de mayor valor.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="contact-title">¿Listo para Automatizar tu Despacho?</h2>
+                    <p class="contact-description">
+                        Contáctanos hoy mismo y recibe una consulta gratuita. Analizaremos tus procesos y te mostraremos un plan de automatización a la medida.
+                    </p>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre completo *</label>
+                            <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">¿Qué proceso te gustaría automatizar? *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                            <span>Solicitar Consulta</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-badge">
+                            <img src="../img/logo.png"/>
+                        </div>
+                        <span class="logo-text">Automat<em>IA</em></span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-links-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="casos.html" class="footer-link">Casos de Éxito</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 AutomatIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

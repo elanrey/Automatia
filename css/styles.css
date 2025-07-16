@@ -482,10 +482,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle, rgb(10, 10, 80), rgb(0, 0, 0));
   overflow: hidden;
   padding-top: 20px; /* Add space for fixed header */
   perspective: 300px; /* This creates the 3D space */
+  background-color: #000; /* Fallback background */
 }
 
 .hero-small {
@@ -499,7 +499,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  background: radial-gradient(circle, rgb(10, 10, 80), rgb(0, 0, 0));
   transform-style: preserve-3d;
+  z-index: 1; /* Behind content */
 }
 
 .star {
@@ -541,7 +543,7 @@ body {
 
 .hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   padding: 2rem 1rem; /* Reducido el padding superior/inferior para móviles */
 }
 
@@ -1884,4 +1886,41 @@ body {
     #envelope3 { bottom: 10%; left: 10%; }
     #envelope4 { bottom: 10%; right: 10%; }
     #envelope5 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+}
+
+/* Interactive Selector Styles */
+.interactive-selector {
+    background: rgba(15, 23, 41, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: var(--shadow-xl);
+    text-align: center;
+}
+
+.interactive-selector h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+#sector-selector {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--dark);
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-lg);
+    border: 2px solid transparent;
+}
+
+#sector-selector:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px hsla(195, 91%, 95%, 0.5);
+}
 }

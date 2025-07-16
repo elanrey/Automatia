@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomatIA - Soluciones para Consultorías</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <meta name="description" content="Automatiza el análisis de documentos, la gestión de reuniones y la captación de clientes para tu consultoría. Optimiza tus procesos y enfócate en el valor estratégico con IA.">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="AutomatIA - Soluciones para Consultorías">
+    <meta property="og:description" content="Automatiza el análisis de documentos, la gestión de reuniones y la captación de clientes para tu consultoría.">
+    <meta property="og:type" content="website">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-badge logo-pulse-glow">
+                    <img src="../img/logo-small.png"/>
+                </div>
+                <a href="../index.html" class="logo-text">Automat<em>IA</em></a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html#beneficios" class="nav-link">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link">Servicios</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+                <a href="casos.html" class="nav-link">Casos de Éxito</a>
+                <a href="index.html#sectores" class="nav-link">Sectores</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="nav-mobile">
+                <a href="index.html#beneficios" class="nav-link-mobile">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link-mobile">Servicios</a>
+                <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
+                <a href="casos.html" class="nav-link-mobile">Casos de Éxito</a>
+                <a href="index.html#sectores" class="nav-link-mobile">Sectores</a>
+                <a href="faq.html" class="nav-link-mobile">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-particles"></div>
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-title-line">Potencia tu Consultoría</span>
+                        <span class="hero-title-highlight">
+                            <span class="text-gradient">con Inteligencia Artificial</span>
+                        </span>
+                    </h1>
+                    <p class="hero-description">
+                        <strong>¿La gestión de documentos y reuniones consume tu tiempo de asesoría?</strong><br>
+                        Implementamos IA para analizar documentos, automatizamos la programación de sesiones y generamos minutas de acción. Libera a tus consultores para que se enfoquen en la estrategia y el valor que aportan a tus clientes.
+                    </p>
+                    <div class="hero-buttons">
+                        <button onclick="window.location.href='casos.html'" class="btn btn-primary btn-hero">
+                            <span>Ver Casos de Éxito</span>
+                        </button>
+                        <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
+                            <span>Solicitar Asesoría Gratuita</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Visual specific to consulting could go here -->
+                    <img src="../img/productividad.png" alt="Automatización para Consultorías" style="width: 80%; margin: auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Solutions Section for Consulting -->
+<section id="soluciones-consultoria" class="sectores" style="padding: 5rem 0; background-color: #f9f9f9;">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Soluciones de IA para tu Consultoría</h2>
+            <p class="section-description">Ejemplos de cómo la IA puede optimizar tus procesos internos y la entrega de valor a tus clientes.</p>
+        </div>
+        <div class="sectores-list">
+            <div class="sector-card">
+                <h2>Optimización de Procesos Internos</h2>
+                <ul>
+                    <li><strong>Análisis Inteligente de Documentos:</strong> Usa IA para revisar contratos, propuestas y reportes, identificando puntos clave, inconsistencias y sugiriendo mejoras.</li>
+                    <li><strong>Gestión de Reuniones Automatizada:</strong> Un agente virtual que agenda sesiones, envía recordatorios, transcribe reuniones y genera minutas de acción con seguimiento automático.</li>
+                </ul>
+            </div>
+            <div class="sector-card">
+                <h2>Captación y Gestión de Clientes</h2>
+                <ul>
+                    <li><strong>Secuencias de Onboarding Automatizadas:</strong> Programa el envío de información clave y tareas para nuevos clientes, asegurando una integración fluida y profesional.</li>
+                    <li><strong>Calificación de Prospectos con IA:</strong> Analiza la información de nuevos leads para identificar aquellos con mayor potencial, permitiendo a tus consultores priorizar su tiempo.</li>
+                    <li><strong>Generación de Propuestas Personalizadas:</strong> Automatiza la creación de propuestas de servicio con base en las necesidades específicas de cada cliente, agilizando el proceso de venta.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section id="beneficios" class="benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Beneficios Directos para tu Consultoría</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-purple">
+                    <img src="../img/productividad.png" alt="Productividad" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Mayor Eficiencia Operativa</h3>
+                <p class="benefit-description">Reduce el tiempo en tareas administrativas y documentales, liberando a tu equipo para la consultoría.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-red">
+                    <img src="../img/costos.png" alt="Reduccion de Costos" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Decisiones Más Inteligentes</h3>
+                <p class="benefit-description">Accede a análisis de documentos y datos de clientes que te permiten ofrecer un valor estratégico superior.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-blue">
+                    <img src="../img/tiempo.png" alt="Ahorro de Tiempo" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Clientes Más Satisfechos</h3>
+                <p class="benefit-description">Ofrece un servicio más rápido, preciso y personalizado, mejorando la retención y las referencias.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="contact-title">¿Listo para Optimizar tu Consultoría?</h2>
+                    <p class="contact-description">
+                        Contáctanos para una consulta gratuita. Analizaremos tus procesos y te mostraremos cómo la automatización con IA puede potenciar tu negocio de consultoría.
+                    </p>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre completo *</label>
+                            <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">¿Qué proceso te gustaría automatizar? *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                            <span>Solicitar Asesoría</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-badge">
+                            <img src="../img/logo.png"/>
+                        </div>
+                        <span class="logo-text">Automat<em>IA</em></span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-links-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="casos.html" class="footer-link">Casos de Éxito</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 AutomatIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

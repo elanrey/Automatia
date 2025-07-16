@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutomatIA - Automatización de Procesos con Inteligencia Artificial</title>
     <link rel="icon" href="img/logo.png" type="image/png">
-    <meta name="description" content="Transformamos su negocio con soluciones de automatización de procesos e inteligencia artificial. Eliminamos tareas manuales y creamos asistentes virtuales inteligentes.">
+    <meta name="description" content="Transforma tu negocio con soluciones de automatización e inteligencia artificial. Reducción de costos, mayor productividad y ahorro de tiempo.">
 
     <!-- Open Graph tags -->
     <meta property="og:title" content="AutomatIA - Automatización de Procesos con IA">
@@ -104,26 +104,22 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="automation-container">
-                        <div id="animation-layer"></div>
-                        <div class="envelope" id="envelope1"></div>
-                        <div class="envelope" id="envelope2"></div>
-                        <div class="envelope" id="envelope3"></div>
-                        <div class="envelope" id="envelope4"></div>
-                        <div class="envelope" id="envelope5"></div>
-                        <table class="excel-sheet">
-                            <thead>
-                                <tr><th>Email</th><th>Name</th><th>Subject</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>john@example.com</td><td>J. Doe</td><td>Order #123</td></tr>
-                                <tr><td>jane@example.com</td><td>J. Smith</td><td>Invoice</td></tr>
-                                <tr><td>peter@example.com</td><td>P. Jones</td><td>Confirmed</td></tr>
-                                <tr><td>anna@example.com</td><td>A. Williams</td><td>Update</td></tr>
-                                <tr><td>sam@example.com</td><td>S. Brown</td><td>Welcome</td></tr>
-                            </tbody>
-                        </table>
-                        <div id="animation-layer"></div>
+                    <div class="interactive-selector">
+                        <h3>Descubre soluciones para tu sector</h3>
+                        <select id="sector-selector" class="form-input">
+                            <option value="" disabled selected>Elige tu tipo de negocio</option>
+                            <option value="sectores/contadores.html">Despacho Contable</option>
+                            <option value="sectores/medicos.html">Clínica o Consultorio Médico</option>
+                            <option value="sectores/escuelas.html">Escuela o Academia</option>
+                            <option value="sectores/restaurantes.html">Restaurante o Cafetería</option>
+                            <option value="sectores/inmobiliarias.html">Inmobiliaria</option>
+                            <option value="sectores/ecommerce.html">Tienda en Línea (eCommerce)</option>
+                            <option value="sectores/marketing.html">Agencia de Marketing</option>
+                            <option value="sectores/talleres.html">Taller Mecánico</option>
+                            <option value="sectores/consultoria.html">Consultoría</option>
+                            <option value="sectores/gimnasios.html">Gimnasio</option>
+                        </select>
+                        <button onclick="redirectToSector()" class="btn btn-primary btn-full">Ver Soluciones</button>
                     </div>
                 </div>
             </div>
@@ -222,130 +218,6 @@
              <!-- El contenido detallado de los casos de estudio ha sido movido a casos.html -->
         </div>
     </section>
-
-    
-
-<!-- Sectores Section (Moved from sectores.html) -->
-<section class="sectores" style="padding: 5rem 0;">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Aplicaciones de IA por Sector</h2>
-            <p class="section-description">Explora cómo la automatización y la inteligencia artificial pueden aplicarse específicamente a tu tipo de negocio. Aquí te mostramos ejemplos de soluciones adaptadas a diferentes industrias.</p>
-        </div>
-
-        <div class="sectores-list">
-            <div class="sector-card">
-                <h2>Despacho contable</h2>
-                <ul>
-                    <li>Clasificación automática de facturas con IA (OCR + categorización).</li>
-                    <li>Asistente para clientes en WhatsApp que responde dudas frecuentes (fechas SAT, CFDI, etc.).</li>
-                    <li>Generación automática de reportes mensuales en PDF y envío por correo.</li>
-                    <li>Alerta de vencimientos fiscales vía SMS o correo usando reglas automatizadas.</li>
-                    <li>Análisis de comportamiento financiero de clientes con IA para sugerir mejoras.</li>
-                </ul>
-            </div>
-
-            <div class="sector-card">
-                <h2>Clínica o consultorio médico</h2>
-                <ul>
-                    <li>Agente para agendar citas automáticamente vía WhatsApp y Google Calendar.</li>
-                    <li>Recordatorios automáticos de citas con opción de confirmación o reprogramación.</li>
-                    <li>Transcripción de notas médicas por voz usando IA.</li>
-                    <li>Encuestas post-consulta para evaluar la atención y automatizar mejoras.</li>
-                    <li>Segmentación de pacientes para campañas de salud preventiva (vacunas, chequeos).</li>
-                </ul>
-            </div>
-
-            <div class="sector-card">
-                <h2>Escuela o academia (presencial u online)</h2>
-                <ul>
-                    <li>Chatbot que responde dudas sobre inscripción, precios y horarios.</li>
-                    <li>Evaluaciones automáticas con retroalimentación generada por IA.</li>
-                    <li>Detección temprana de alumnos con bajo rendimiento mediante análisis de calificaciones.</li>
-                    <li>Automatización de certificados personalizados tras terminar cursos.</li>
-                    <li>Secuencias de emails automatizadas para captar leads y convertirlos en alumnos.</li>
-                </ul>
-            </div>
-
-            <div class="sector-card">
-                <h2>Restaurante o cafetería</h2>
-                <ul>
-                    <li>Sistema de reservaciones automatizado por WhatsApp con confirmación.</li>
-                    <li>Encuestas automáticas post-visita y segmentación para promociones.</li>
-                    <li>Reconocimiento de platillos más vendidos y predicción de demanda con IA.</li>
-                    <li>Recomendaciones personalizadas a clientes según historial de pedidos.</li>
-                    <li>Control de inventario con alertas predictivas basadas en consumo histórico.</li>
-                </ul>
-            </div>
-
-            <div class="sector-card">
-                <h2>Inmobiliaria</h2>
-                <ul>
-                    <li>Bot conversacional para mostrar propiedades filtrando por zona, precio, etc.</li>
-                    <li>Análisis de leads para detectar compradores más probables.</li>
-                    <li>Recordatorios automáticos para visitas programadas y seguimiento post-visita.</li>
-                    <li>Generación automática de contratos personalizados.</li>
-                    <li>Campañas automatizadas para propiedades nuevas según preferencias del cliente.</li>
-                </ul>
-            </div>
-
-            <div class="sector-card">
-                <h2>Tienda en línea o ecommerce</h2>
-                <ul>
-                    <li>Recomendador de productos personalizado según historial y navegación.</li>
-                    <li>Asistente IA en la web para dudas, recomendaciones y devoluciones.</li>
-                    <li>Notificaciones automatizadas por carrito abandonado.</li>
-                    <li>Generación de contenido automático (descripciones de productos, SEO, etc.).</li>
-                    <li>Análisis de reseñas con IA para detectar problemas o necesidades de mejora.</li>
-                </ul>
-            </div>
-
-            <div class="sector-card">
-                <h2>Agencia de marketing</h2>
-                <ul>
-                    <li>Generación automática de contenidos para redes sociales y blogs con IA.</li>
-                    <li>Chatbot para captar leads en la página web.</li>
-                    <li>Automatización de reportes de campañas con métricas clave.</li>
-                    <li>IA para analizar rendimiento de anuncios y sugerir mejoras.</li>
-                    <li>Secuencia de onboarding automática para nuevos clientes.</li>
-                </ul>
-            </div>
-
-             <div class="sector-card">
-                <h2>Taller mecánico</h2>
-                <ul>
-                    <li>Agente para agendar servicios por WhatsApp con recordatorios automáticos.</li>
-                    <li>Chatbot que da estatus del vehículo (en revisión, listo, etc.).</li>
-                    <li>Análisis de historial de servicios para predecir mantenimientos futuros.</li>
-                    <li>Encuesta post-servicio automatizada y solicitud de reseña.</li>
-                    <li>Generación automática de cotizaciones con base en diagnóstico.</li>
-                </ul>
-            </div>
-
-            <div class="sector-card">
-                <h2>Consultoría (negocios, legal, etc.)</h2>
-                <ul>
-                    <li>IA que analiza documentos y sugiere mejoras (contratos, propuestas, etc.).</li>
-                    <li>Agente para agendar sesiones y enviar recordatorios.</li>
-                    <li>Secuencia automatizada para convertir prospectos en clientes.</li>
-                    <li>Resumen automático de reuniones grabadas.</li>
-                    <li>Generación de minutas de acción y seguimiento automático.</li>
-                </ul>
-            </div>
-
-             <div class="sector-card">
-                <h2>Gimnasio o centro de entrenamiento</h2>
-                <ul>
-                    <li>Asistente virtual para registro, pagos y dudas frecuentes.</li>
-                    <li>Rutinas personalizadas con IA según objetivos del usuario.</li>
-                    <li>Recordatorios automáticos para asistir y evitar abandonos.</li>
-                    <li>Segmentación y promociones automatizadas por nivel de asistencia.</li>
-                    <li>Generación de reportes de progreso físicos con visualizaciones.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 
     <!-- Contact Section -->
     <section id="contacto" class="contact">

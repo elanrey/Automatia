@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomatIA - Soluciones para Restaurantes y Cafeterías</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <meta name="description" content="Automatiza las reservaciones, optimiza el inventario y personaliza la experiencia de tus clientes con IA. Aumenta la eficiencia de tu restaurante o cafetería.">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="AutomatIA - Soluciones para Restaurantes y Cafeterías">
+    <meta property="og:description" content="Automatiza las reservaciones, optimiza el inventario y personaliza la experiencia de tus clientes con IA.">
+    <meta property="og:type" content="website">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-badge logo-pulse-glow">
+                    <img src="../img/logo-small.png"/>
+                </div>
+                <a href="../index.html" class="logo-text">Automat<em>IA</em></a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html#beneficios" class="nav-link">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link">Servicios</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+                <a href="casos.html" class="nav-link">Casos de Éxito</a>
+                <a href="index.html#sectores" class="nav-link">Sectores</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="nav-mobile">
+                <a href="index.html#beneficios" class="nav-link-mobile">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link-mobile">Servicios</a>
+                <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
+                <a href="casos.html" class="nav-link-mobile">Casos de Éxito</a>
+                <a href="index.html#sectores" class="nav-link-mobile">Sectores</a>
+                <a href="faq.html" class="nav-link-mobile">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-particles"></div>
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-title-line">Revoluciona tu Restaurante</span>
+                        <span class="hero-title-highlight">
+                            <span class="text-gradient">con Inteligencia Artificial</span>
+                        </span>
+                    </h1>
+                    <p class="hero-description">
+                        <strong>¿La gestión de reservas y el control de inventario te quitan el sueño?</strong><br>
+                        Implementamos sistemas de reserva automáticos por WhatsApp, predecimos la demanda de platillos con IA y enviamos promociones personalizadas para llenar tus mesas. Dedícate a crear experiencias culinarias, no a la logística.
+                    </p>
+                    <div class="hero-buttons">
+                        <button onclick="window.location.href='casos.html'" class="btn btn-primary btn-hero">
+                            <span>Ver Casos de Éxito</span>
+                        </button>
+                        <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
+                            <span>Solicitar Demostración Gratuita</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Visual specific to restaurants could go here -->
+                    <img src="../img/productividad.png" alt="Automatización para Restaurantes" style="width: 80%; margin: auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Solutions Section for Restaurants -->
+<section id="soluciones-restaurantes" class="sectores" style="padding: 5rem 0; background-color: #f9f9f9;">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Soluciones de IA para tu Restaurante o Cafetería</h2>
+            <p class="section-description">Ejemplos de cómo la IA puede optimizar desde la cocina hasta la mesa.</p>
+        </div>
+        <div class="sectores-list">
+            <div class="sector-card">
+                <h2>Optimización de la Operación</h2>
+                <ul>
+                    <li><strong>Sistema de Reservas Inteligente:</strong> Un bot en WhatsApp que gestiona reservas, confirma y envía recordatorios, reduciendo las ausencias y liberando a tu personal.</li>
+                    <li><strong>Predicción de Demanda:</strong> Usa IA para analizar ventas históricas y predecir qué platillos serán más populares, optimizando la compra de ingredientes y reduciendo el desperdicio.</li>
+                    <li><strong>Control de Inventario Automatizado:</strong> Recibe alertas predictivas cuando un ingrediente esté por agotarse, basándose en el consumo en tiempo real.</li>
+                </ul>
+            </div>
+            <div class="sector-card">
+                <h2>Fidelización y Marketing</h2>
+                <ul>
+                    <li><strong>Recomendaciones Personalizadas:</strong> Analiza el historial de pedidos de tus clientes para ofrecer sugerencias y promociones a medida que aumentan el ticket promedio.</li>
+                    <li><strong>Encuestas de Satisfacción Automáticas:</strong> Envía una encuesta por WhatsApp después de cada visita para medir la satisfacción y obtener reseñas valiosas para tu negocio.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section id="beneficios" class="benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Beneficios Directos para tu Negocio</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-purple">
+                    <img src="../img/productividad.png" alt="Productividad" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Mesas Siempre Llenas</h3>
+                <p class="benefit-description">Optimiza la ocupación y reduce las ausencias con un sistema de reservas inteligente.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-red">
+                    <img src="../img/costos.png" alt="Reduccion de Costos" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Menos Desperdicio</h3>
+                <p class="benefit-description">Compra de forma más inteligente y reduce los costos de inventario gracias a la predicción de demanda.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-blue">
+                    <img src="../img/tiempo.png" alt="Ahorro de Tiempo" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Clientes Más Fieles</h3>
+                <p class="benefit-description">Sorprende a tus clientes con un servicio personalizado que los hará volver.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="contact-title">¿Listo para Cocinar el Futuro?</h2>
+                    <p class="contact-description">
+                        Contáctanos para una demostración gratuita y descubre cómo la IA puede llevar la eficiencia y la experiencia del cliente a otro nivel en tu restaurante.
+                    </p>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre completo *</label>
+                            <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">¿Qué proceso te gustaría automatizar? *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                            <span>Solicitar Demostración</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-badge">
+                            <img src="../img/logo.png"/>
+                        </div>
+                        <span class="logo-text">Automat<em>IA</em></span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-links-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="../index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="casos.html" class="footer-link">Casos de Éxito</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 AutomatIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

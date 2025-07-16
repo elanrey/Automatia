@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeCarousel();
   initializeHeader();
   initializeContactForm();
-  initializeHeroAnimations();
+  initializeParticles(); // <-- Llamada a la nueva función de partículas
   initializeFaqAccordion();
   startAutoPlay();
   handleInitialHashScroll(); // Nueva llamada para manejar el scroll inicial
@@ -223,6 +223,10 @@ function createDynamicParticles() {
 
     container.appendChild(star);
   }
+}
+
+function initializeParticles() {
+    createDynamicParticles();
 }
 
 function typeText(element, text, delay, callback) {
@@ -931,4 +935,14 @@ Características implementadas:
 
 Desarrollado con amor y código limpio por Elanrey.
 `);
+
+function redirectToSector() {
+    const selector = document.getElementById('sector-selector');
+    const selectedValue = selector.value;
+    if (selectedValue) {
+        window.location.href = selectedValue;
+    } else {
+        alert('Por favor, elige un sector de la lista.');
+    }
+}
 
