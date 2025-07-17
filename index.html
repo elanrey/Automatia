@@ -80,10 +80,23 @@
                         Eliminamos el trabajo manual, creamos asistentes virtuales inteligentes
                         y optimizamos tus procesos con IA. Transformamos problemas en soluciones automáticas.
                     </p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">95%</div>
+                            <div class="hero-stat-label">Reducción de Errores</div>
+                        </div>
+
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">70%</div>
+                            <div class="hero-stat-label">Ahorro de Tiempo</div>
+                        </div>
+
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">6</div>
+                            <div class="hero-stat-label">Meses para ROI</div>
+                        </div>
+                    </div>
                     <div class="hero-buttons">
-                        <button onclick="window.location.href='casos.html'" class="btn btn-primary btn-hero">
-                            <span>Casos de Éxito</span>
-                        </button>
                         <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
                             <span>Automatizar mi Negocio</span>
                         </button>
@@ -106,20 +119,10 @@
                 <div class="hero-visual">
                     <div class="interactive-selector">
                         <h3>Descubre soluciones para tu sector</h3>
-                        <select id="sector-selector" class="form-input">
-                            <option value="" disabled selected>Elige tu tipo de negocio</option>
-                            <option value="sectores/contadores.html">Despacho Contable</option>
-                            <option value="sectores/medicos.html">Clínica o Consultorio Médico</option>
-                            <option value="sectores/escuelas.html">Escuela o Academia</option>
-                            <option value="sectores/restaurantes.html">Restaurante o Cafetería</option>
-                            <option value="sectores/inmobiliarias.html">Inmobiliaria</option>
-                            <option value="sectores/ecommerce.html">Tienda en Línea (eCommerce)</option>
-                            <option value="sectores/marketing.html">Agencia de Marketing</option>
-                            <option value="sectores/talleres.html">Taller Mecánico</option>
-                            <option value="sectores/consultoria.html">Consultoría</option>
-                            <option value="sectores/gimnasios.html">Gimnasio</option>
-                        </select>
-                        <button onclick="redirectToSector()" class="btn btn-primary btn-full">Ver Soluciones</button>
+                        <div class="search-container">
+                            <input type="text" id="sector-search" class="form-input" placeholder="Busca tu tipo de negocio...">
+                            <div id="search-results" class="search-results"></div>
+                        </div>
                     </div>
                 </div>
             </div>
