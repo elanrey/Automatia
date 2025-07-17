@@ -62,7 +62,7 @@ const services = [
     title: "1. Automatización de Tareas Repetitivas",
     icon: "fas fa-cogs",
     gradient: "from-blue-50 to-indigo-50",
-    iconBg: "bg-gradient-primary",
+    iconBg: "bg-gradient-blue",
     problem: '"Mi equipo pierde horas cada día haciendo tareas manuales, como copiar y pegar datos, mover archivos o rellenar formularios. Es lento, propenso a errores y nos quita tiempo para lo importante."',
     solution: "Diseño flujos automáticos que imitan y ejecutan esas tareas repetitivas en su lugar. El sistema se encarga de realizar automáticamente lo que antes hacía su personal, desde la entrada de datos hasta la generación de informes.",
     benefit: "Ahorro masivo de tiempo para su personal, reducción drástica de errores, mayor eficiencia operativa y la libertad de enfocar sus recursos en actividades de mayor valor para su negocio."
@@ -72,7 +72,7 @@ const services = [
     title: "2. Asistentes Virtuales Inteligentes",
     icon: "fas fa-robot",
     gradient: "from-emerald-50 to-teal-50",
-    iconBg: "bg-gradient-secondary",
+    iconBg: "bg-gradient-green",
     problem: '"Mis clientes o mi propio equipo preguntan siempre lo mismo y tardamos en encontrar la respuesta en nuestros manuales, documentos o archivos. Necesitamos una forma rápida de acceder a nuestra propia información."',
     solution: "Desarrollo un asistente virtual (chatbot) que se entrena con sus documentos, manuales, reportes o cualquier archivo relevante. Este asistente puede responder preguntas, buscar información específica y brindar respuestas claras y precisas.",
     benefit: "Mejora en la atención al cliente o soporte interno, respuestas rápidas y consistentes, y una reducción significativa en la carga de trabajo de su equipo."
@@ -520,6 +520,9 @@ function initializeCarousel() {
 
   if (!carousel || !indicators) return;
 
+  // Limpiar cualquier contenido HTML pre-existente (para SEO)
+  carousel.innerHTML = '';
+
   createServiceSlides();
   createIndicators();
   showSlide(0);
@@ -546,7 +549,7 @@ function createServiceSlides() {
         <div class="service-section">
           <h4>Solución que ofrezco:</h4>
           <p class="service-solution">${service.solution}</p>
-        }
+        </div>
 
         <div class="service-section">
           <h4>Beneficio / Resultado:</h4>

@@ -1016,16 +1016,13 @@ body {
 }
 
 /* Section Styles */
-.section-header {
+.services .section-header {
+  margin-bottom: 0;
   text-align: center;
-  margin-bottom: 4rem;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 1rem;
+.services .section-header .section-title {
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -1043,7 +1040,7 @@ body {
 
 /* Services Section */
 .services {
-  padding: var(--section-padding);
+  padding: 0 0 5rem 0;
   background-color: var(--white);
 }
 
@@ -1076,11 +1073,9 @@ body {
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
