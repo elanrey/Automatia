@@ -32,6 +32,10 @@
   --transition-fast: all 0.15s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -1975,4 +1979,8 @@ body {
 .search-result-item:not(:last-child) {
     border-bottom: 1px solid var(--gray-light);
 }
+
+.benefit-card-icon {
+  width: 50px;
+  height: 50px;
 }
