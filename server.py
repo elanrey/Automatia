@@ -87,10 +87,10 @@ def main():
     
     # Create the server
     with socketserver.TCPServer(("0.0.0.0", PORT), AutomatIAHandler) as httpd:
-        print(f"🚀 AutomatIA server starting on port {PORT}")
-        print(f"🌐 Visit: http://localhost:{PORT}")
-        print(f"📧 Contact form submissions will be logged here")
-        print("-" * 50)
+        print(f"╭────────────────────────────────────────╮")
+        print(f"│ AutomatIA Server starting on port {PORT} │ ")
+        print(f"│ Visit: http://localhost:{PORT}           │ ")
+        print(f"╰────────────────────────────────────────╯")
         
         try:
             httpd.serve_forever()

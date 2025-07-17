@@ -1338,6 +1338,13 @@ body {
 
 .benefit-description {
   color: var(--gray);
+  margin-bottom: 0.5rem; /* Add some space for the source */
+}
+
+.benefit-source {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #999;
 }
 
 /* Contact Section */
