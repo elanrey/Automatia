@@ -1287,22 +1287,32 @@ body {
 .benefits {
   padding: var(--section-padding);
   background-color: var(--white);
+  scroll-margin-top: var(--header-height); /* Adjust for fixed header */
+}
+
+.benefits .section-header {
+  text-align: center;
+  margin-bottom: 3rem; /* Added margin for spacing */
 }
 
 .benefits-grid {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem 1rem; /* Increased row gap, kept column gap */
+  max-width: 800px; /* Added max-width to constrain the grid */
+  margin: 0 auto; /* Centered the grid within its container */
 }
 
 @media (min-width: 768px) {
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1rem; /* Increased row gap for larger screens */
   }
 }
 
 @media (min-width: 1024px) {
   .benefits-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1rem; /* Increased row gap for even larger screens */
   }
 }
 
@@ -1338,12 +1348,18 @@ body {
 .benefit-description {
   color: var(--gray);
   margin-bottom: 0.5rem; /* Add some space for the source */
+  max-width: 300px; /* Increased width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .benefit-source {
-  font-size: 0.8rem;
+  font-size: 1rem; /* Reverted font size */
   font-style: italic;
   color: #999;
+  max-width: 300px; /* Increased width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Contact Section */
