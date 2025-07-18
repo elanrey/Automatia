@@ -1,96 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutomatIA - Soluciones para Agencias de Marketing</title>
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <meta name="description" content="Automatiza la generación de contenido, la captación de leads y el análisis de campañas para tu agencia de marketing. Aumenta la eficiencia y los resultados con IA.">
-
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="AutomatIA - Soluciones para Agencias de Marketing">
-    <meta property="og:description" content="Automatiza la generación de contenido, la captación de leads y el análisis de campañas para tu agencia de marketing.">
-    <meta property="og:type" content="website">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-badge logo-pulse-glow">
-                    <img src="../img/logo-small.png"/>
-                </div>
-                <a href="../index.html" class="logo-text">Automat<em>IA</em></a>
-            </div>
-
-            <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <a href="../index.html#beneficios" class="nav-link">Beneficios</a>
-                <a href="../index.html#servicios" class="nav-link">Servicios</a>
-                <a href="../index.html#contacto" class="nav-link">Contacto</a>
-                <a href="../casos.html" class="nav-link">Casos de Éxito</a>
-                <a href="../index.html#sectores" class="nav-link">Sectores</a>
-                <a href="../faq.html" class="nav-link">FAQ</a>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <!-- Mobile Navigation -->
-            <nav id="mobile-nav" class="nav-mobile">
-                <a href="../index.html#beneficios" class="nav-link-mobile">Beneficios</a>
-                <a href="../index.html#servicios" class="nav-link-mobile">Servicios</a>
-                <a href="../index.html#contacto" class="nav-link-mobile">Contacto</a>
-                <a href="../casos.html" class="nav-link-mobile">Casos de Éxito</a>
-                <a href="../index.html#sectores" class="nav-link-mobile">Sectores</a>
-                <a href="../faq.html" class="nav-link-mobile">FAQ</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-particles"></div>
-        <div class="container hero-content">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="hero-title-line">Potencia tu Agencia de Marketing</span>
-                        <span class="hero-title-highlight">
-                            <span class="text-gradient">con Inteligencia Artificial</span>
-                        </span>
-                    </h1>
-                    <p class="hero-description">
-                        <strong>¿La creación de contenido y el análisis de datos consumen tus recursos?</strong><br>
-                        Automatizamos la generación de textos para redes sociales y blogs, creamos chatbots para captar leads y analizamos el rendimiento de campañas con IA. Libera a tu equipo para que se enfoque en la estrategia creativa y el crecimiento de tus clientes.
-                    </p>
-                    <div class="hero-buttons">
-                        <button onclick="window.location.href='../casos.html'" class="btn btn-primary btn-hero">
-                            <span>Ver Casos de Éxito</span>
-                        </button>
-                        <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
-                            <span>Solicitar Demostración Gratuita</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <!-- Visual specific to marketing could go here -->
-                    <img src="../img/productividad.png" alt="Automatización para Agencias de Marketing" style="width: 80%; margin: auto; display: block;">
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-particles"></div>
+    <div class="container hero-content">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Potencia tu Agencia de Marketing</span>
+                    <span class="hero-title-highlight">
+                        <span class="text-gradient">con Inteligencia Artificial</span>
+                    </span>
+                </h1>
+                <p class="hero-description">
+                    <strong>¿La creación de contenido y el análisis de datos consumen tus recursos?</strong><br>
+                    Automatizamos la generación de textos para redes sociales y blogs, creamos chatbots para captar leads y analizamos el rendimiento de campañas con IA. Libera a tu equipo para que se enfoque en la estrategia creativa y el crecimiento de tus clientes.
+                </p>
+                <div class="hero-buttons">
+                    <button onclick="window.location.href='../casos.html'" class="btn btn-primary btn-hero">
+                        <span>Ver Casos de Éxito</span>
+                    </button>
+                    <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
+                        <span>Solicitar Demostración Gratuita</span>
+                    </button>
                 </div>
             </div>
+            <div class="hero-visual">
+                <!-- Visual specific to marketing could go here -->
+                <img src="../img/productividad.png" alt="Automatización para Agencias de Marketing" style="width: 80%; margin: auto; display: block;">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <!-- Solutions Section for Marketing Agencies -->
 <section id="soluciones-marketing" class="sectores" style="padding: 5rem 0; background-color: #f9f9f9;">
@@ -152,66 +91,34 @@
 </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2 class="contact-title">¿Listo para Impulsar tu Agencia?</h2>
-                    <p class="contact-description">
-                        Contáctanos para una consulta gratuita. Analizaremos tus procesos internos y te mostraremos cómo la automatización con IA puede llevar tu agencia al siguiente nivel.
-                    </p>
-                </div>
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nombre completo *</label>
-                            <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">¿Qué proceso te gustaría automatizar? *</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
-                            <span>Solicitar Asesoría</span>
-                        </button>
-                    </form>
-                </div>
+<section id="contacto" class="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2 class="contact-title">¿Listo para Impulsar tu Agencia?</h2>
+                <p class="contact-description">
+                    Contáctanos para una consulta gratuita. Analizaremos tus procesos internos y te mostraremos cómo la automatización con IA puede llevar tu agencia al siguiente nivel.
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <div class="logo-badge">
-                            <img src="../img/logo.png"/>
-                        </div>
-                        <span class="logo-text">Automat<em>IA</em></span>
+            <div class="contact-form-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre completo *</label>
+                        <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
                     </div>
-                </div>
-                <div class="footer-links">
-                    <h3 class="footer-links-title">Enlaces Rápidos</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="../index.html" class="footer-link">Inicio</a></li>
-                        <li><a href="../casos.html" class="footer-link">Casos de Éxito</a></li>
-                        <li><a href="../faq.html" class="footer-link">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 AutomatIA. Todos los derechos reservados.</p>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">¿Qué proceso te gustaría automatizar? *</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                        <span>Solicitar Asesoría</span>
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="../js/script.js"></script>
-</body>
-</html>
+    </div>
+</section>

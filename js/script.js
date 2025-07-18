@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeContactForm();
   initializeParticles(); // <-- Llamada a la nueva función de partículas
   initializeFaqAccordion();
+  initializeModal(); // <-- AÑADIDO
   startAutoPlay();
   handleInitialHashScroll(); // Nueva llamada para manejar el scroll inicial
 });
@@ -833,6 +834,75 @@ document.addEventListener('click', function(e) {
   }
 });
 
+function hideToast() {
+  const toast = document.getElementById('toast');
+  toast.classList.remove('show');
+}
+
+// Funcionalidad del Modal de Sectores
+let sectorModal, modalBody, closeModalBtn;
+
+function initializeModal() {
+    sectorModal = document.getElementById('sector-modal');
+    modalBody = document.getElementById('modal-body');
+    closeModalBtn = document.querySelector('.modal-close-btn');
+
+    if(closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    window.addEventListener('click', function(event) {
+        if (event.target == sectorModal) {
+            closeModal();
+        }
+    });
+}
+
+function openModal() {
+    sectorModal.style.display = 'block';
+}
+
+function closeModal() {
+    sectorModal.style.display = 'none';
+    modalBody.innerHTML = ''; // Limpiar contenido al cerrar
+}
+
+async function loadSectorContent(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const bodyContent = doc.body.innerHTML;
+
+        // Eliminar etiquetas de script para evitar la re-ejecución
+        const sanitizedContent = bodyContent.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+
+        if (sanitizedContent.trim()) {
+            modalBody.innerHTML = sanitizedContent;
+        } else {
+            modalBody.innerHTML = '<p>No se pudo encontrar el contenido del sector.</p>';
+        }
+    } catch (error) {
+        console.error('Error al cargar el contenido del sector:', error);
+        modalBody.innerHTML = '<p>Error al cargar el contenido. Por favor, inténtalo de nuevo más tarde.</p>';
+    }
+    openModal(); // Abrir el modal DESPUÉS de cargar el contenido
+}
+
+if(closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModal);
+}
+
+window.addEventListener('click', function(event) {
+    if (event.target == sectorModal) {
+        closeModal();
+    }
+});
+
 // Intersection Observer para animaciones
 document.addEventListener('DOMContentLoaded', function() {
   const observerOptions = {
@@ -966,13 +1036,7 @@ Características implementadas:
 Desarrollado con amor y código limpio por Elanrey.
 `);
 
-function redirectToSector(url) {
-    if (url) {
-        window.location.href = url;
-    } else {
-        alert('Por favor, elige un sector de la lista.');
-    }
-}
+
 
 // Funcionalidad de búsqueda de sectores
 document.addEventListener('DOMContentLoaded', function() {
@@ -1018,7 +1082,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resultItem.textContent = sector.name;
             resultItem.addEventListener('click', function() {
                 sectorSearchInput.value = sector.name;
-                redirectToSector(sector.url);
+                loadSectorContent(sector.url); // Cargar contenido en el modal
                 searchResultsDiv.innerHTML = '';
                 searchResultsDiv.style.display = 'none';
             });
