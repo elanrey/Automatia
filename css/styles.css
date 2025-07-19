@@ -481,12 +481,12 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 100vh; /* Full height for immersion */
+  min-height: 70vh; /* Reduced height for a more compact hero */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  /* Removed justify-content: center; */
   overflow: hidden;
-  padding-top: 20px; /* Add space for fixed header */
+  padding-top: 0; /* Move content to the very top */
   perspective: 300px; /* This creates the 3D space */
   background-color: #000; /* Fallback background */
 }
@@ -547,7 +547,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 2rem 1rem; /* Reducido el padding superior/inferior para móviles */
+  padding: 4rem 1rem; /* Adjusted padding for better spacing */
 }
 
 @media (min-width: 768px) {
@@ -2014,11 +2014,11 @@ body {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* 5% desde arriba y centrado */
+    margin: 2% auto; /* Reduced margin from top/bottom */
     padding: 2rem;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
+    width: 90%; /* Increased width */
+    max-width: 900px; /* Increased max-width */
     border-radius: var(--radius-xl);
     position: relative;
     animation: slide-down 0.5s ease-out;
@@ -2036,18 +2036,28 @@ body {
 }
 
 .modal-close-btn {
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.7); /* White with transparency */
     position: absolute;
     top: 1rem;
     right: 1.5rem;
     font-size: 2rem;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark, semi-transparent background */
+    border-radius: 50%; /* Make it circular */
+    width: 40px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px); /* Blurred background */
+    z-index: 1001; /* Ensure it's on top of everything */
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-    color: black;
+    color: white; /* Solid white on hover */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
     text-decoration: none;
     cursor: pointer;
 }
