@@ -883,6 +883,10 @@ async function loadSectorContent(url) {
 
         if (sanitizedContent.trim()) {
             modalBody.innerHTML = sanitizedContent;
+            // Asegurarse de que el scroll se aplique después de que el contenido se haya renderizado
+            setTimeout(() => {
+                modalBody.scrollTop = 0;
+            }, 0);
         } else {
             modalBody.innerHTML = '<p>No se pudo encontrar el contenido del sector.</p>';
         }

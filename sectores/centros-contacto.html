@@ -1,12 +1,121 @@
-<!-- Contenido específico para Centros de Contacto -->
-<section class="hero-small">
+<!-- Hero Section -->
+<section class="hero">
     <div class="hero-particles"></div>
     <div class="container hero-content">
-        <h1 class="hero-title text-center">Automatización e IA para Centros de Contacto</h1>
+        <div class="hero-grid" style="grid-template-columns: 1fr; justify-items: center;">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Transforma tu Centro de Contacto</span>
+                    <span class="hero-title-highlight">
+                        <span class="text-gradient">con Inteligencia Artificial</span>
+                    </span>
+                </h1>
+                <p class="hero-description">
+                    <strong>¿La gestión de llamadas y la atención al cliente te desbordan?</strong><br>
+                    Implementamos asistentes virtuales que resuelven dudas frecuentes, automatizamos el enrutamiento de llamadas y analizamos interacciones para mejorar la calidad. Dedícate a ofrecer un servicio excepcional, no a la saturación.
+                </p>
+                <div class="hero-buttons">
+                    <button onclick="window.location.href='../casos.html'" class="btn btn-primary btn-hero">
+                        <span>Ver Casos de Éxito</span>
+                    </button>
+                    <button onclick="scrollToSection('contacto')" class="btn btn-primary btn-hero">
+                        <span>Solicitar Demostración Gratuita</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </section>
-<section class="section-padding">
+
+<!-- Solutions Section for Restaurants -->
+<section id="soluciones-restaurantes" class="sectores" style="padding: 5rem 0; background-color: #f9f9f9;">
     <div class="container">
-        <p>Contenido detallado sobre cómo la automatización y la IA pueden ayudar al sector de Centros de Contacto.</p>
+        <div class="section-header">
+            <h2 class="section-title">Soluciones de IA para tu Restaurante o Cafetería</h2>
+            <p class="section-description">Ejemplos de cómo la IA puede optimizar desde la cocina hasta la mesa.</p>
+        </div>
+        <div class="sectores-list">
+            <div class="sector-card">
+                <h2>Optimización de la Operación</h2>
+                <ul>
+                    <li><strong>Sistema de Reservas Inteligente:</strong> Un bot en WhatsApp que gestiona reservas, confirma y envía recordatorios, reduciendo las ausencias y liberando a tu personal.</li>
+                    <li><strong>Predicción de Demanda:</strong> Usa IA para analizar ventas históricas y predecir qué platillos serán más populares, optimizando la compra de ingredientes y reduciendo el desperdicio.</li>
+                    <li><strong>Control de Inventario Automatizado:</strong> Recibe alertas predictivas cuando un ingrediente esté por agotarse, basándose en el consumo en tiempo real.</li>
+                </ul>
+            </div>
+            <div class="sector-card">
+                <h2>Fidelización y Marketing</h2>
+                <ul>
+                    <li><strong>Recomendaciones Personalizadas:</strong> Analiza el historial de pedidos de tus clientes para ofrecer sugerencias y promociones a medida que aumentan el ticket promedio.</li>
+                    <li><strong>Encuestas de Satisfacción Automáticas:</strong> Envía una encuesta por WhatsApp después de cada visita para medir la satisfacción y obtener reseñas valiosas para tu negocio.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section id="beneficios" class="benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Beneficios Directos para tu Negocio</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-purple">
+                    <img src="../img/productividad.png" alt="Productividad" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Mesas Siempre Llenas</h3>
+                <p class="benefit-description">Optimiza la ocupación y reduce las ausencias con un sistema de reservas inteligente.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-red">
+                    <img src="../img/costos.png" alt="Reduccion de Costos" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Menos Desperdicio</h3>
+                <p class="benefit-description">Compra de forma más inteligente y reduce los costos de inventario gracias a la predicción de demanda.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon bg-gradient-blue">
+                    <img src="../img/tiempo.png" alt="Ahorro de Tiempo" style="width: 50px; height: 50px;">
+                </div>
+                <h3 class="benefit-title">Clientes Más Fieles</h3>
+                <p class="benefit-description">Sorprende a tus clientes con un servicio personalizado que los hará volver.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="contacto" class="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2 class="contact-title">¿Listo para Cocinar el Futuro?</h2>
+                <p class="contact-description">
+                    Contáctanos para una demostración gratuita y descubre cómo la IA puede llevar la eficiencia y la experiencia del cliente a otro nivel en tu restaurante.
+                </p>
+            </div>
+            <div class="contact-form-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre completo *</label>
+                        <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">¿Qué proceso te gustaría automatizar? *</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                        <span>Solicitar Demostración</span>
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
