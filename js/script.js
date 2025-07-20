@@ -1,33 +1,3 @@
-// Datos de los usuarios para la animación de la tabla
-const allUsers = [
-    { name: "Ana García", email: "ana.garcia@email.com" },
-    { name: "Luis Pérez", email: "luis.perez@email.com" },
-    { name: "Sofía Rodríguez", email: "sofia.rodriguez@email.com" },
-    { name: "Carlos Sánchez", email: "carlos.sanchez@email.com" },
-    { name: "María López", email: "maria.lopez@email.com" },
-    { name: "Javier Fernández", email: "javier.fernandez@email.com" },
-    { name: "Laura González", email: "laura.gonzalez@email.com" },
-    { name: "Diego Martínez", email: "diego.martinez@email.com" },
-    { name: "Elena Ruiz", email: "elena.ruiz@email.com" },
-    { name: "Pablo Díaz", email: "pablo.diaz@email.com" },
-    { name: "Carmen Hernández", email: "carmen.hernandez@email.com" },
-    { name: "Jorge Moreno", email: "jorge.moreno@email.com" },
-    { name: "Isabel Jiménez", email: "isabel.jimenez@email.com" },
-    { name: "Ricardo Alonso", email: "ricardo.alons@email.com" },
-    { name: "Natalia Gutiérrez", email: "natalia.gutierrez@email.com" },
-    { name: "Fernando Romero", email: "fernando.romero@email.com" },
-    { name: "Andrea Navarro", email: "andrea.navarro@email.com" },
-    { name: "Miguel Torres", email: "miguel.torres@email.com" },
-    { name: "Patricia Gil", email: "patricia.gil@email.com" },
-    { name: "Sergio Vázquez", email: "sergio.vazquez@email.com" }
-];
-
-const allSubjects = [
-    "Consulta", "Soporte", "Pedido", "Factura", "Reclamo",
-    "Oferta", "Actualización", "Confirmación", "Bienvenida", "Recordatorio",
-    "Urgente", "Información", "Seguimiento", "Cotización", "Novedad"
-];
-
 const allSectors = [
     { name: "Agricultura", url: "sectores/agricultura.html" },
     { name: "Agencia de Marketing", url: "sectores/marketing.html" },
@@ -1037,7 +1007,7 @@ Características implementadas:
 - Menú móvil
 - Accesibilidad mejorada
 
-Desarrollado con amor y código limpio por Elanrey.
+Desarrollado con IA por Elanrey.
 `);
 
 
@@ -1095,4 +1065,3 @@ document.addEventListener('DOMContentLoaded', function() {
         searchResultsDiv.style.display = 'block';
     }
 });
-
