@@ -114,11 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Función para manejar el scroll a la sección inicial si hay un hash en la URL
 function handleInitialHashScroll() {
   if (window.location.hash) {
-    const sectionId = window.location.hash.substring(1);
-    // Pequeño retraso para asegurar que todos los elementos estén renderizados
-    setTimeout(() => {
-      scrollToSection(sectionId);
-    }, 100);
+    // Eliminar el hash de la URL inmediatamente al cargar
+    history.replaceState(null, '', window.location.pathname);
   }
 }
 
