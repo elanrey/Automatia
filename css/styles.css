@@ -616,6 +616,7 @@ body {
   font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.1;
+  margin-top: 4rem; /* Increased to push the title down further */
   margin-bottom: 1.5rem;
   color: var(--white);
 }
@@ -791,12 +792,7 @@ body {
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .hero-features {
-    justify-content: flex-start;
-  }
+  margin-bottom: 4rem; /* Increased space below the features */
 }
 
 .hero-feature {
@@ -1042,7 +1038,7 @@ body {
 
 /* Services Section */
 .services {
-  padding: 0 0 5rem 0;
+  padding: 5rem 0 5rem 0;
   background-color: var(--white);
 }
 
@@ -1287,8 +1283,8 @@ body {
 
 /* Benefits Section */
 .benefits {
-  padding: var(--section-padding);
-  background-color: var(--white);
+  padding: 5rem 0 3rem 0;
+  background-color: var(--light);
   scroll-margin-top: var(--header-height); /* Adjust for fixed header */
 }
 
@@ -1367,7 +1363,7 @@ body {
 /* What is Automation Section */
 .what-is-automation {
   padding: var(--section-padding);
-  background-color: var(--light);
+  background-color: var(--white);
 }
 
 .what-is-automation .section-header {
