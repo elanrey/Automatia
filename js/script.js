@@ -66,6 +66,26 @@ const services = [
     problem: '"Tengo diferentes programas o plataformas (CRM, sistema de ventas, contabilidad, base de datos) que no se comunican entre sí. La información está en silos y nos toca pasarla a mano de un lado a otro."',
     solution: "Diseño integraciones que permiten que todos sus sistemas trabajen como uno solo, compartiendo información sin intervención humana. Los flujos automáticos aseguran que cuando algo ocurra en un sistema, se actualice automáticamente en los demás.",
     benefit: "Eliminación de la duplicidad de datos, reducción de errores, visión unificada de su operación y procesos optimizados con datos siempre actualizados."
+  },
+  {
+    id: 5,
+    title: "Eficiencia en la Gestión de Nuevos Clientes",
+    icon: "fas fa-chart-line",
+    gradient: "from-green-50 to-emerald-50",
+    iconBg: "bg-gradient-green",
+    problem: "Una empresa de servicios financieros dedicaba un equipo completo a procesar manualmente las solicitudes de nuevos clientes. Esto implicaba revisar documentos, ingresar datos en múltiples sistemas y validar información, generando retrasos y una alta tasa de errores.",
+    solution: "Diseñé un sistema que toma automáticamente las solicitudes, extrae la información clave de los documentos y la verifica en tiempo real. Luego distribuye los datos entre los sistemas internos sin intervención humana.",
+    benefit: "La empresa redujo el tiempo de procesamiento en un 70% y los errores humanos en un 95%. Esto permitió que: El equipo se enfocara en atención personalizada y generación de valor, dejando atrás tareas mecánicas."
+  },
+  {
+    id: 6,
+    title: "Soporte al Cliente 24/7 con IA",
+    icon: "fas fa-headset",
+    gradient: "from-blue-50 to-cyan-50",
+    iconBg: "bg-gradient-blue",
+    problem: "Una compañía de seguros recibía cientos de llamadas diarias con preguntas repetidas sobre pólizas y coberturas. Los agentes se saturaban con estas consultas, lo que afectaba la atención de casos más importantes.",
+    solution: "Desarrollé un asistente virtual inteligente en su sitio web, entrenado con la documentación interna: pólizas, preguntas frecuentes y procedimientos. El asistente comprende preguntas mal formuladas y responde de forma clara.",
+    benefit: "El 80% de las preguntas frecuentes ahora se resuelven automáticamente. Bajaron los tiempos de espera y mejoró la satisfacción del cliente. Esto permitió que: La empresa ofreciera soporte constante y de alta calidad, y su equipo se dedicara a tareas de mayor impacto."
   }
 ];
 
