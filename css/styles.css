@@ -1038,14 +1038,14 @@ body {
 
 /* Services Section */
 .services {
-  padding: 5rem 0 5rem 0;
+  padding: 2rem 0 5rem 0; /* Reducido el padding superior */
   background-color: var(--white);
 }
 
 .carousel-container {
   position: relative;
   max-width: 56rem;
-  margin: 0 auto;
+  margin: 1rem auto 0;
 }
 
 .carousel {
@@ -1055,7 +1055,7 @@ body {
 
 .service-slide {
   display: none;
-  padding: 3rem;
+  padding: 1.5rem; /* Reducido el padding interno */
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
   transform: translateX(100%);
@@ -1283,7 +1283,7 @@ body {
 
 /* Benefits Section */
 .benefits {
-  padding: 5rem 0 3rem 0;
+  padding: 2rem 0 3rem 0; /* Padding ajustado */
   background-color: var(--light);
   scroll-margin-top: var(--header-height); /* Adjust for fixed header */
 }
@@ -1362,7 +1362,7 @@ body {
 
 /* What is Automation Section */
 .what-is-automation {
-  padding: var(--section-padding);
+  padding: 2rem 0 5rem 0; /* Padding ajustado */
   background-color: var(--white);
 }
 
@@ -1426,7 +1426,7 @@ body {
 
 /* Contact Section */
 .contact {
-  padding: var(--section-padding);
+  padding: 2rem 0 5rem 0; /* Padding ajustado */
   background-color: var(--light);
 }
 
