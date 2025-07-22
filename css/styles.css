@@ -1784,7 +1784,8 @@ body {
   }
 
   .hero-title {
-    font-size: 1.8rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.7rem;
   }
 
   .hero-stats {
