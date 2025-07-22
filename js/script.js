@@ -3,7 +3,7 @@ const allSectors = [
     { name: "Agencia de Marketing", url: "sectores/marketing.html" },
     { name: "Centros de Contacto", url: "sectores/centros-contacto.html" },
     { name: "Clínica o Consultorio Médico", url: "sectores/medicos.html" },
-    { name: "Comercio Minorista (Retail)", url: "sectores/comercio-minorista.html" },
+    { name: "Comercio Minorista (Retail)", url: "sectores/comercio.html" },
     { name: "Construcción", url: "sectores/construccion.html" },
     { name: "Consultoría", url: "sectores/consultoria.html" },
     { name: "Despacho Contable", url: "sectores/contadores.html" },
