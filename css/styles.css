@@ -1846,55 +1846,6 @@ body {
   }
 }
 
-/* Animation CSS */
-.automation-container {
-    /* Animation specific CSS Variables */
-    --background-start: #1e3c72;
-    --background-end: #2a5298;
-    --excel-green: #217346;
-    --envelope-color: #f0f0f0;
-    --text-dark: #333;
-    --text-light: #fff;
-
-    position: relative;
-    width: 550px; /* Reduced width */
-    height: 350px; /* Reduced height */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    
-    border-radius: 15px;
-    
-}
-
-
-
-
-
-@media (max-width: 768px) {
-    .modal-close-btn {
-        top: 0.5rem; /* Ajusta la posición superior para móviles */
-        right: 0.5rem; /* Ajusta la posición derecha para móviles */
-        font-size: 1.5rem; /* Reduce el tamaño de la fuente para móviles */
-        width: 30px; /* Reduce el tamaño del botón */
-        height: 30px; /* Reduce el tamaño del botón */
-    }
-
-    .automation-container {
-        width: 90%; /* Make it fluid */
-        height: 300px; /* Smaller height */
-    }
-
-    .excel-sheet {
-        width: 95%; /* Make it fluid */
-    }
-
-    .excel-sheet th, .excel-sheet td {
-        padding: 3px 4px; /* Further reduced padding for tighter cells */
-        font-size: 11px; /* Reduced font size */
-    }
-}
-
 /* Interactive Selector Styles */
 .interactive-selector {
     position: relative;
