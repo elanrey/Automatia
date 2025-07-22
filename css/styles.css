@@ -772,6 +772,27 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 1280px) {
+  .btn-hero {
+    font-size: 1rem; /* Slightly smaller for 1280px */
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btn-hero {
+    font-size: 0.9rem; /* Smaller for 1024px */
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-hero {
+    font-size: 0.8rem; /* Even smaller for 768px */
+    padding: 0.6rem 1.2rem;
+  }
+}
+
 .btn-hero::before {
   content: '';
   position: absolute;
@@ -2077,14 +2098,36 @@ body {
 
 .modal-content {
     background-color: #fff;
-    margin: 2% auto; /* Reduced margin from top/bottom */
+    margin: 2% auto;
     padding: 0.5rem;
     height: 95%;
-    width: 90%; /* Increased width */
-    max-width: 80%; /* Increased max-width */
+    width: 80%; /* Default for larger screens */
+    max-width: 800px; /* Max width for desktop */
     border-radius: var(--radius-xl);
     position: relative;
     animation: slide-down 0.5s ease-out;
+}
+
+@media (max-width: 1280px) {
+    .modal-content {
+        width: 70%;
+        margin: 2% auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .modal-content {
+        width: 80%;
+        margin: 3% auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        height: 90%; /* Adjust height for smaller screens */
+    }
 }
 
 @keyframes slide-down {
