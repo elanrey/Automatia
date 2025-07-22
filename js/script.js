@@ -159,55 +159,7 @@ document.addEventListener('click', function(e) {
 });
 
 // Animaciones del héroe
-function initializeHeroAnimations() {
-  // Animar estadísticas del héroe con efecto de conteo
-  const heroStats = document.querySelectorAll('.hero-stat-number');
-  const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -50px 0px'
-  };
 
-  const statsObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        statsObserver.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  heroStats.forEach(stat => statsObserver.observe(stat));
-
-  // Animar barras del gráfico del héroe
-  const chartBars = document.querySelectorAll('.hero-chart-bar');
-  const chartObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-        chartObserver.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  chartBars.forEach(bar => {
-    bar.style.animationPlayState = 'paused';
-    chartObserver.observe(bar);
-  });
-
-  // Añadir efecto de escritura al título del héroe
-  const heroTitle = document.querySelector('.hero-title');
-  if (heroTitle) {
-    setTimeout(() => {
-      heroTitle.classList.add('animate-fade-in');
-    }, 500);
-  }
-
-  // Crear partículas dinámicas
-  createDynamicParticles();
-
-  // Inicializar animación de Excel a Email
-  initializeExcelToEmailAnimation();
-}
 
 function createDynamicParticles() {
   const container = document.querySelector('.hero-particles');
@@ -259,207 +211,9 @@ function typeText(element, text, delay, callback) {
     type();
 }
 
-function initializeExcelToEmailAnimation() {
-    console.log('Initializing Excel to Email Animation...');
-    const container = document.querySelector('.automation-container');
-    if (!container) return; // Asegurarse de que el contenedor de la animación exista
 
-    const excelSheetBody = document.querySelector('.excel-sheet tbody');
-    const envelopes = Array.from(document.querySelectorAll('.envelope'));
-    const animationLayer = document.getElementById('animation-layer');
-    let clones = [];
 
-    // Función para seleccionar 5 usuarios aleatorios
-    function getRandomUsers(count) {
-        const shuffled = allUsers.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, count);
-    }
 
-    // Función para actualizar la tabla con nuevos datos
-    function updateTable(users) {
-        excelSheetBody.innerHTML = ''; // Limpiar tabla existente
-        const selectedSubjects = allSubjects.sort(() => 0.5 - Math.random()).slice(0, users.length); // Seleccionar 5 asuntos aleatorios
-
-        users.forEach((user, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `<td>${user.email}</td><td>${user.name}</td><td>${selectedSubjects[index]}</td>`; // Asignar asunto aleatorio
-            excelSheetBody.appendChild(row);
-        });
-    }
-
-    // New function to animate typing row by row
-    async function animateRowsTyping() {
-        for (let i = 0; i < clones.length; i++) {
-            const clone = clones[i];
-            const cells = Array.from(clone.children);
-            for (let j = 0; j < cells.length; j++) {
-                const cell = cells[j];
-                await new Promise(resolve => {
-                    typeText(cell, cell.dataset.fullText, 20, resolve); // Pass resolve to typeText
-                });
-            }
-            await new Promise(resolve => setTimeout(resolve, 100)); // Short delay between rows
-        }
-    }
-
-    function prepareClones() {
-        // Limpiar clones anteriores
-        while (animationLayer.firstChild) {
-            animationLayer.removeChild(animationLayer.firstChild);
-        }
-        clones = [];
-
-        const containerRect = container.getBoundingClientRect();
-        const tableRows = Array.from(document.querySelectorAll('.excel-sheet tbody tr'));
-
-        tableRows.forEach(row => {
-            const rowRect = row.getBoundingClientRect();
-            const clone = document.createElement('div');
-            clone.classList.add('data-row-clone');
-            
-            Array.from(row.children).forEach(cell => {
-                const cellClone = document.createElement('div');
-                cellClone.dataset.fullText = cell.textContent;
-                cellClone.textContent = ''; // Start with empty text
-                cellClone.style.width = `${cell.getBoundingClientRect().width}px`;
-                clone.appendChild(cellClone);
-            });
-
-            clone.style.left = `${rowRect.left - containerRect.left}px`;
-            clone.style.top = `${rowRect.top - containerRect.top}px`;
-            
-            animationLayer.appendChild(clone);
-            clones.push(clone);
-        });
-    }
-
-    async function startAnimation() {
-        // Seleccionar y actualizar la tabla con nuevos datos
-        const selectedUsers = getRandomUsers(5);
-        updateTable(selectedUsers);
-
-        // Preparar los clones para la nueva tabla
-        prepareClones();
-
-        // The table no longer fades out.
-        const excelSheet = document.querySelector('.excel-sheet');
-
-        // Wait a bit before starting the clone animation
-        await new Promise(resolve => setTimeout(resolve, 100));
-
-        // Animate typing row by row
-        await animateRowsTyping();
-
-        // Make envelopes visible after typing is done
-        envelopes.forEach(e => e.classList.add('visible'));
-
-        // Animate clones to envelopes
-        await animateClonesToEnvelopes();
-
-        // Launch envelopes
-        await new Promise(resolve => setTimeout(resolve, 300));
-        launchEnvelopes();
-
-        // Wait for envelopes to launch and then reset and restart animation
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Tiempo de visibilidad de la tabla ajustado
-        resetExcelToEmailAnimation();
-        await new Promise(resolve => setTimeout(resolve, 750)); // Adjusted delay to ensure excel sheet is visible
-        setTimeout(startAnimation, 250); // Adjusted delay before restarting
-    }
-
-    function animateClonesToEnvelopes() {
-        const containerRect = container.getBoundingClientRect();
-        const promises = clones.map((clone, index) => {
-            return new Promise(resolve => {
-                const targetEnvelope = envelopes[index];
-                const targetRect = targetEnvelope.getBoundingClientRect();
-                const cloneRect = clone.getBoundingClientRect();
-
-                // Stagger the start of each animation
-                setTimeout(() => {
-                    // Force reflow to ensure initial state is rendered
-                    clone.offsetHeight; 
-
-                    const targetX = targetRect.left - containerRect.left + (targetRect.width / 2) - (cloneRect.width / 2);
-                    const targetY = targetRect.top - containerRect.top + (targetRect.height / 2) - (cloneRect.height / 2);
-
-                    // Apply transform immediately
-                    clone.style.transform = `translate(${targetX - clone.offsetLeft}px, ${targetY - clone.offsetTop}px) scale(0.2)`;
-
-                    clone.addEventListener('transitionend', (event) => {
-                        // Ensure we only listen for the transform transition end
-                        if (event.propertyName === 'transform') {
-                            clone.style.opacity = 0; // Start fading out the clone
-                            targetEnvelope.classList.add('open'); // Open the envelope
-
-                            // After a short delay, close the envelope and remove the clone
-                            setTimeout(() => {
-                                targetEnvelope.classList.remove('open'); // Close the envelope
-                                // After envelope closes, remove the clone and resolve
-                                setTimeout(() => {
-                                    clone.remove();
-                                    resolve();
-                                }, 100); // Allow envelope to close
-                            }, 400); // Allow clone to fade and envelope to be open briefly
-                        }
-                    }, { once: true });
-                }, index * 150);
-            });
-        });
-        return Promise.all(promises);
-    }
-
-    function launchEnvelopes() {
-        envelopes.forEach(envelope => {
-            envelope.classList.add('launched');
-            const angle = (Math.random() - 0.5) * 2 * Math.PI;
-            const distance = Math.max(window.innerWidth, window.innerHeight);
-            const translateX = Math.cos(angle) * distance;
-            const translateY = Math.sin(angle) * distance;
-            envelope.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${Math.random() * 720 - 360}deg)`;
-            envelope.style.opacity = 0;
-        });
-    }
-
-    function resetExcelToEmailAnimation() {
-        const excelSheet = document.querySelector('.excel-sheet');
-        const envelopes = Array.from(document.querySelectorAll('.envelope'));
-        const animationLayer = document.getElementById('animation-layer');
-
-        excelSheet.classList.remove('fade-out');
-
-        envelopes.forEach(e => {
-            e.classList.remove('visible', 'open', 'launched');
-            e.style.transform = ''; // Reset transform
-            e.style.opacity = ''; // Reset opacity
-        });
-
-        // Remove all clones from the animation layer
-        while (animationLayer.firstChild) {
-            animationLayer.removeChild(animationLayer.firstChild);
-        }
-        clones.length = 0; // Clear the clones array
-    }
-
-    // Iniciar la animación
-    setTimeout(startAnimation, 1500);
-}
-
-function animateCounter(element) {
-  const target = element.textContent;
-  const isPercentage = target.includes('%');
-  const targetNumber = parseFloat(target);
-  let current = 0;
-  const increment = targetNumber / 50; // 50 steps
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= targetNumber) {
-      current = targetNumber;
-      clearInterval(timer);
-    }
-    element.textContent = Math.floor(current) + (isPercentage ? '%' : '');
-  }, 40);
-}
 
 // Función para scroll suave
 function scrollToSection(sectionId) {
@@ -809,10 +563,7 @@ function showToast(title, description, type = 'success') {
   }, 5000);
 }
 
-function hideToast() {
-  const toast = document.getElementById('toast');
-  toast.classList.remove('show');
-}
+
 
 // Cerrar toast al hacer clic
 document.addEventListener('click', function(e) {
@@ -821,10 +572,7 @@ document.addEventListener('click', function(e) {
   }
 });
 
-function hideToast() {
-  const toast = document.getElementById('toast');
-  toast.classList.remove('show');
-}
+
 
 // Funcionalidad del Modal de Sectores
 let sectorModal, modalBody, closeModalBtn;

@@ -1997,6 +1997,14 @@ body {
 #envelope5 { top: 80%; left: 85%; }
 
 @media (max-width: 768px) {
+    .modal-close-btn {
+        top: 0.5rem; /* Ajusta la posición superior para móviles */
+        right: 0.5rem; /* Ajusta la posición derecha para móviles */
+        font-size: 1.5rem; /* Reduce el tamaño de la fuente para móviles */
+        width: 30px; /* Reduce el tamaño del botón */
+        height: 30px; /* Reduce el tamaño del botón */
+    }
+
     .automation-container {
         width: 90%; /* Make it fluid */
         height: 300px; /* Smaller height */
