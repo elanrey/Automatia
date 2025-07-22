@@ -143,6 +143,45 @@ body {
   box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.15), 0 12px 15px -6px rgba(0, 0, 0, 0.08); /* Stronger shadow */
 }
 
+@media (max-width: 1280px) {
+  .sector-card {
+    padding: 1.8rem;
+  }
+  .sector-card h2 {
+    font-size: 1.5rem;
+  }
+  .sectores-list li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sector-card {
+    padding: 1.5rem;
+  }
+  .sector-card h2 {
+    font-size: 1.4rem;
+  }
+  .sectores-list li {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sector-card {
+    padding: 1.2rem;
+  }
+  .sector-card h2 {
+    font-size: 1.3rem;
+  }
+  .sectores-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
     padding: 0 2rem;
@@ -1047,7 +1086,25 @@ body {
 
 @media (min-width: 768px) {
   .section-title {
+    font-size: 2.5rem; /* Default for larger screens */
+  }
+}
+
+@media (max-width: 1280px) {
+  .section-title {
     font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
   }
 }
 
