@@ -563,7 +563,12 @@ function showToast(title, description, type = 'success') {
   }, 5000);
 }
 
-
+function hideToast() {
+  const toast = document.getElementById('toast');
+  if (toast) {
+    toast.classList.remove('show');
+  }
+}
 
 // Cerrar toast al hacer clic
 document.addEventListener('click', function(e) {
