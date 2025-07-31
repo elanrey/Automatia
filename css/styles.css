@@ -1937,6 +1937,72 @@ body {
     background-color: var(--gray-light);
 }
 
+/* Privacy Policy Styles */
+.privacy-policy-content {
+    background-color: var(--light);
+}
+
+.privacy-card {
+    background-color: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 3rem;
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+}
+
+.privacy-section {
+    margin-bottom: 2rem;
+}
+
+.privacy-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.privacy-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray);
+}
+
+.privacy-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.privacy-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 0.75rem;
+}
+
+.privacy-list li::before {
+    content: '\f058'; /* Font Awesome check-circle icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.privacy-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.privacy-link:hover {
+    text-decoration: underline;
+}
+
+/* Final de .search-result-item:not(:last-child) */
 .search-result-item:not(:last-child) {
     border-bottom: 1px solid var(--gray-light);
 }
