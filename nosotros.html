@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Automatia</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <meta name="description" content="Conoce la misión y visión de Automatia, tu socio en la transformación digital a través de la automatización y la inteligencia artificial.">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Nosotros - Automatia">
+    <meta property="og:description" content="Conoce la misión y visión de Automatia.">
+    <meta property="og:type" content="website">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css?v=1.3">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-badge">
+                    <img src="img/logo-small.png"/>
+                </div>
+                <a href="index.html" class="logo-text">Automat<em>IA</em></a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html#que-es" class="nav-link">¿Qué es?</a>
+                <a href="index.html#beneficios" class="nav-link">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link">Casos de Éxito</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+                <a href="nosotros.html" class="nav-link nav-link-active">Nosotros</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="nav-mobile">
+                <a href="index.html#que-es" class="nav-link-mobile">¿Qué es?</a>
+                <a href="index.html#beneficios" class="nav-link-mobile">Beneficios</a>
+                <a href="index.html#servicios" class="nav-link-mobile">Casos de Éxito</a>
+                <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
+                <a href="nosotros.html" class="nav-link-mobile nav-link-active">Nosotros</a>
+                <a href="faq.html" class="nav-link-mobile">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section for Nosotros -->
+    <section class="hero hero-small">
+        <div class="hero-particles"></div>
+        <div class="container hero-content">
+            <div class="hero-text" style="text-align: center;">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Nuestra Identidad</span>
+                    <span class="hero-title-highlight">
+                        <span class="text-gradient">AutomatIA</span>
+                    </span>
+                </h1>
+                <p class="hero-description">
+                    Somos el motor que impulsa la transformación digital de tu empresa.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="mision-vision" class="benefits" style="padding: 4rem 0; background-color: var(--light);">
+        <div class="container">
+            <!-- Misión Card -->
+            <div class="benefit-card" style="max-width: 800px; margin: 0 auto 2.5rem auto; text-align: center; padding: 2rem;">
+                <div class="benefit-icon bg-gradient-purple" style="margin-left: auto; margin-right: auto;">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="benefit-title" style="font-size: 1.75rem; margin-top: 1rem;">Misión</h3>
+                <p class="benefit-description" style="max-width: none; font-size: 1.1rem; line-height: 1.7;">
+                    Ayudar a las empresas a optimizar su eficiencia, reducir costos y minimizar errores mediante la implementación de soluciones de automatización de procesos a medida, impulsando su crecimiento y competitividad.
+                </p>
+            </div>
+            <!-- Visión Card -->
+            <div class="benefit-card" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem;">
+                <div class="benefit-icon bg-gradient-blue" style="margin-left: auto; margin-right: auto;">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="benefit-title" style="font-size: 1.75rem; margin-top: 1rem;">Visión</h3>
+                <p class="benefit-description" style="max-width: none; font-size: 1.1rem; line-height: 1.7;">
+                    Convertir la automatización en un pilar fundamental y accesible para empresas de cualquier tamaño, creando un entorno donde la tecnología potencie el talento humano y permita a las organizaciones centrarse en la innovación y el crecimiento estratégico.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-badge">
+                            <img src="img/logo.png"/>
+                        </div>
+                        <span class="logo-text">Automat<em>IA</em></span>
+                    </div>
+                    <p class="footer-description">
+                        Transformamos la forma en que trabajas con soluciones de automatización y procesos
+                        potenciados por inteligencia artificial.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-links-title">Información Legal</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="politica-privacidad.html" class="footer-link">Política de Privacidad</a></li>
+                        <li><a href="terminos-servicio.html" class="footer-link">Términos de Servicio</a></li>
+                        <li><a href="mapa-sitio.html" class="footer-link">Mapa del Sitio</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 AutomatIA. Todos los derechos reservados. | Diseñado para transformar tu negocio con IA.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
