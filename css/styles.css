@@ -2,14 +2,14 @@
 :root {
   /* Colors */
   --primary: #1d45fa;
-  --primary-dark: #4f46e5;
-  --secondary: #06b6d4;
+  --primary-dark: #4653e5;
+  --secondary: #dc41f1;
   --dark: #0f1729;
   --light: #f8fafc;
-  --gray: #666666;
-  --gray-light: #e0e0e0;
   --white: #ffffff;
   --black: #000000;
+  --gray: #666666;
+  --gray-light: #e0e0e0;
 
   /* Spacing */
   --container-max-width: 1280px;
@@ -22,14 +22,12 @@
   --radius-xl: 1rem;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* Transitions */
   --transition: all 0.3s ease;
-  --transition-fast: all 0.15s ease;
 }
 
 html {
@@ -406,7 +404,7 @@ body {
 .logo-icon {
   width: 2rem;
   height: 2rem;
-  background-color: var(--primary-dark);
+  background-color: var(--primary);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
@@ -747,7 +745,7 @@ body {
 
 @media (min-width: 1024px) {
   .hero-description {
-    
+    font-size: 1.3rem;
   }
 }
 
@@ -1318,12 +1316,6 @@ body {
   font-size: 1.5rem;
 }
 
-.case-study-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-}
-
 .case-study-content {
   display: grid;
   gap: 1.5rem;
@@ -1341,27 +1333,11 @@ body {
   line-height: 1.7;
 }
 
-.case-study-result {
-  padding: 1rem;
-  border-radius: var(--radius-lg);
-}
-
 .case-study-subtitle {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--secondary);
   margin-bottom: 0.5rem;
-}
-
-.result-text {
-  color: hsl(215, 16%, 25%);
-  line-height: 1.7;
-  margin-bottom: 0.5rem;
-}
-
-.impact-text {
-  font-size: 0.875rem;
-  color: hsl(215, 16%, 40%);
 }
 
 /* Benefits Section */
@@ -1429,15 +1405,6 @@ body {
 .benefit-description {
   color: var(--gray);
   margin-bottom: 0.5rem; /* Add some space for the source */
-  max-width: 300px; /* Increased width */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.benefit-source {
-  font-size: 1rem; /* Reverted font size */
-  font-style: italic;
-  color: #999;
   max-width: 300px; /* Increased width */
   margin-left: auto;
   margin-right: auto;
