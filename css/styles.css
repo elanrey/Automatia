@@ -2,7 +2,6 @@
 :root {
   /* Colors */
   --primary: #1d45fa;
-  --primary-dark: #4653e5;
   --secondary: #dc41f1;
   --dark: #0f1729;
   --light: #f8fafc;
@@ -309,13 +308,13 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: var(--white);
   box-shadow: var(--shadow-lg);
 }
 
 .btn-primary:hover {
-  background-color: rgb(41, 188, 134);
+  background-color: var(--secondary);
   box-shadow: var(--shadow-xl);
 }
 
@@ -424,6 +423,11 @@ body {
   font-style: italic;
   color: var(--primary);
   text-shadow: -1px -1px 0 #aaaaaa, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  transition: color 0.3s ease;
+}
+
+.logo-text:hover em {
+  color: var(--secondary);
 }
 
 .nav-desktop {
@@ -771,6 +775,10 @@ body {
 .hero-stat:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+}
+
+.hero-stat:hover .hero-stat-number {
+  color: var(--secondary);
 }
 
 .hero-stat-number {
@@ -1244,7 +1252,7 @@ body {
 }
 
 .carousel-btn:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--secondary);
   transform: scale(1.1);
 }
 
@@ -1839,11 +1847,31 @@ body {
     background: rgba(30, 41, 59, 0.8);
 }
 
+.interactive-selector:hover h3 {
+    color: var(--secondary);
+}
+
 .interactive-selector h3 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--secondary);
     margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.interactive-selector h3 em {
+  font-style: italic;
+  color: var(--primary);
+  text-shadow: -1px -1px 0 #aaaaaa, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  transition: color 0.3s ease;
+}
+
+.interactive-selector:hover h3 em {
+  color: var(--secondary);
+}
+
+.interactive-selector h3 .automat-white {
+  color: var(--white);
 }
 
 #sector-selector {
