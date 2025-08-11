@@ -115,11 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function handleInitialHashScroll() {
   if (window.location.hash) {
     const sectionId = window.location.hash.substring(1);
-    // Se usa un timeout para dar tiempo a que el navegador renderice el contenido
-    // y calcule correctamente la posición de la sección de destino.
-    setTimeout(() => {
-      scrollToSection(sectionId, 'auto'); // 'auto' para posicionamiento instantáneo
-    }, 0);
+    scrollToSection(sectionId, 'auto'); // 'auto' para posicionamiento instantáneo
   }
 }
 
