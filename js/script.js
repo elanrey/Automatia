@@ -118,8 +118,8 @@ function handleInitialHashScroll() {
     // Se usa un timeout para dar tiempo a que el navegador renderice el contenido
     // y calcule correctamente la posición de la sección de destino.
     setTimeout(() => {
-      scrollToSection(sectionId);
-    }, 500);
+      scrollToSection(sectionId, 'auto'); // 'auto' para posicionamiento instantáneo
+    }, 0);
   }
 }
 
@@ -220,14 +220,14 @@ function typeText(element, text, delay, callback) {
 
 
 // Función para scroll suave
-function scrollToSection(sectionId) {
+function scrollToSection(sectionId, behavior = 'smooth') {
   const element = document.getElementById(sectionId);
   if (element) {
     const headerHeight = 80;
     const targetPosition = element.offsetTop - headerHeight;
     window.scrollTo({
       top: targetPosition,
-      behavior: 'smooth'
+      behavior: behavior
     });
     history.replaceState(null, '', `#${sectionId}`);
   }
