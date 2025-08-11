@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Automatia</title>
+    <title>AutomatIA - Casos de Éxito</title>
     <link rel="icon" href="img/logo.png" type="image/png">
-    <meta name="description" content="Conoce la misión y visión de Automatia, tu socio en la transformación digital a través de la automatización y la inteligencia artificial.">
+    <meta name="description" content="Descubre cómo hemos ayudado a empresas como la tuya a transformarse con nuestras soluciones de automatización e inteligencia artificial.">
 
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Nosotros - Automatia">
-    <meta property="og:description" content="Conoce la misión y visión de Automatia.">
+    <meta property="og:title" content="AutomatIA - Casos de Éxito">
+    <meta property="og:description" content="Resultados reales y tangibles. Explora nuestros casos de éxito y ve el impacto de la automatización con IA.">
     <meta property="og:type" content="website">
 
     <!-- Font Awesome -->
@@ -38,9 +38,9 @@
             <nav class="nav-desktop">
                 <a href="index.html#que-es" class="nav-link">¿Qué es?</a>
                 <a href="index.html#beneficios" class="nav-link">Beneficios</a>
-                <a href="index.html#servicios" class="nav-link">Casos de Éxito</a>
+                <a href="casos-exito.html" class="nav-link nav-link-active">Casos de Éxito</a>
                 <a href="index.html#contacto" class="nav-link">Contacto</a>
-                <a href="nosotros.html" class="nav-link nav-link-active">Nosotros</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
                 <a href="faq.html" class="nav-link">FAQ</a>
             </nav>
 
@@ -54,53 +54,58 @@
                 <a href="index.html#que-es" class="nav-link-mobile">¿Qué es?</a>
                 <a href="index.html#beneficios" class="nav-link-mobile">Beneficios</a>
                 <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
-                <a href="casos-exito.html" class="nav-link-mobile">Casos de Éxito</a>
-                <a href="nosotros.html" class="nav-link-mobile nav-link-active">Nosotros</a>
+                <a href="casos-exito.html" class="nav-link-mobile nav-link-active">Casos de Éxito</a>
+                <a href="sectores.html" class="nav-link-mobile">Sectores</a>
                 <a href="faq.html" class="nav-link-mobile">FAQ</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section for Nosotros -->
+    <!-- Hero Section for Case Studies -->
     <section class="hero hero-small">
         <div class="hero-particles"></div>
         <div class="container hero-content">
             <div class="hero-text" style="text-align: center;">
                 <h1 class="hero-title">
-                    <span class="hero-title-line">Nuestra Identidad</span>
+                    <span class="hero-title-line">Casos de Éxito</span>
                     <span class="hero-title-highlight">
-                        <span class="text-gradient">AutomatIA</span>
+                        <span class="text-gradient">Resultados Reales</span>
                     </span>
                 </h1>
                 <p class="hero-description">
-                    Somos el motor que impulsa la transformación digital de tu empresa.
+                    Descubre cómo hemos ayudado a empresas a optimizar procesos y crecer.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="mision-vision" class="benefits" style="padding: 4rem 0; background-color: var(--light);">
+    <!-- Services Section -->
+    <section id="servicios" class="services">
         <div class="container">
-            <!-- Misión Card -->
-            <div class="benefit-card" style="max-width: 800px; margin: 0 auto 2.5rem auto; text-align: center; padding: 2rem;">
-                <div class="benefit-icon bg-gradient-purple" style="margin-left: auto; margin-right: auto;">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3 class="benefit-title" style="font-size: 1.75rem; margin-top: 1rem;">Misión</h3>
-                <p class="benefit-description" style="max-width: none; font-size: 1.1rem; line-height: 1.7;">
-                    Ayudar a las empresas a optimizar su eficiencia, reducir costos y minimizar errores mediante la implementación de soluciones de automatización de procesos a medida, impulsando su crecimiento y competitividad.
-                </p>
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Casos de Éxito</h2>
             </div>
-            <!-- Visión Card -->
-            <div class="benefit-card" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem;">
-                <div class="benefit-icon bg-gradient-blue" style="margin-left: auto; margin-right: auto;">
-                    <i class="fas fa-bullseye"></i>
+
+            <!-- Services Carousel -->
+            <div class="carousel-container">
+                <div class="carousel" id="services-carousel">
+                    <!-- Slides will be generated by JavaScript -->
                 </div>
-                <h3 class="benefit-title" style="font-size: 1.75rem; margin-top: 1rem;">Visión</h3>
-                <p class="benefit-description" style="max-width: none; font-size: 1.1rem; line-height: 1.7;">
-                    Convertir la automatización en un pilar fundamental y accesible para empresas de cualquier tamaño, creando un entorno donde la tecnología potencie el talento humano y permita a las organizaciones centrarse en la innovación y el crecimiento estratégico.
-                </p>
+
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev" onclick="prevSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="carousel-indicators">
+                    <!-- Indicators will be generated by JavaScript -->
+                </div>
             </div>
         </div>
     </section>
@@ -144,6 +149,28 @@
         </div>
     </footer>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i id="toast-icon" class="toast-icon"></i>
+            <div class="toast-text">
+                <div id="toast-title" class="toast-title"></div>
+                <div id="toast-description" class="toast-description"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
+
+    <!-- Sector Modal -->
+    <div id="sector-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <div id="modal-body">
+                <!-- Contenido del sector se cargará aquí -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
