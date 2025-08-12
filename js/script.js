@@ -596,6 +596,11 @@ function initializeModal() {
             closeModal();
         }
     });
+
+    const footerLogo = document.getElementById('footer-logo');
+    if (footerLogo) {
+        footerLogo.addEventListener('click', closeModal);
+    }
 }
 
 function openModal() {
