@@ -1997,6 +1997,60 @@ body {
     top: 5px;
 }
 
+
+/* Legal Pages (Privacy, Terms, etc.) */
+.legal-page {
+    padding-top: calc(var(--header-height) + 3rem);
+    padding-bottom: 5rem;
+    background-color: var(--light);
+}
+
+.legal-page .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.legal-page .section-title {
+    color: var(--dark); /* Fix for white title on light background */
+}
+
+.legal-page .section-header p {
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+.legal-page .content-frame h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.legal-page .content-frame h2:first-of-type {
+    margin-top: 0;
+    border-top: none;
+}
+
+.legal-page .content-frame p {
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.legal-page .content-frame a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.legal-page .content-frame a:hover {
+    text-decoration: underline;
+}
+
+
 .privacy-link {
 }
 
