@@ -1600,7 +1600,7 @@ body {
   display: flex;
   justify-content: flex-start; /* Align content to the left */
   text-align: left; /* Align text to the left */
-  gap: 2rem;
+  gap: 8rem;
   margin-bottom: 2rem;
 }
 
@@ -1998,6 +1998,30 @@ body {
 }
 
 .privacy-link {
+}
+
+/* Styles for footers in /sectores pages */
+.footer-sectores .footer-description,
+.footer-sectores .social-links,
+.footer-sectores .footer-links {
+  display: none;
+}
+
+.footer-sectores .footer-content {
+  justify-content: center; /* Center the remaining content */
+  flex-direction: column; /* Stack content vertically if needed */
+  align-items: center; /* Center items horizontally in column layout */
+  text-align: center; /* Center text within the brand section */
+}
+
+.footer-sectores .footer-brand {
+  max-width: 100%; /* Allow brand to take full width */
+}
+
+.footer-sectores .footer-bottom {
+  text-align: center; /* Center the copyright text */
+}
+
     color: var(--primary);
     text-decoration: none;
     font-weight: 600;
