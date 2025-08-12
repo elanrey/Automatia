@@ -786,6 +786,7 @@ body {
 
 .hero-stat-label {
   font-size: 0.8rem;
+  font-weight: bold;
   color: hsl(0, 0%, 75%);
 }
 
@@ -1417,7 +1418,7 @@ body {
 /* What is Automation Section */
 .what-is-automation {
   padding: 2rem 0 5rem 0; /* Padding ajustado */
-  background-color: var(--white);
+  background-color: var(--light);
 }
 
 .what-is-automation .section-header {
