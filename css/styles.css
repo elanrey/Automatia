@@ -2306,3 +2306,9 @@ body {
   position: absolute;
   z-index: -1; /* Behind the inner content */
 }
+
+.automation-card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
