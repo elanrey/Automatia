@@ -1313,12 +1313,14 @@ body {
 .privacy-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--gray);
+    color: var(--black);
 }
 
 .privacy-list {
     list-style: none;
     padding-left: 0;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 
 .privacy-list li {
@@ -1328,13 +1330,12 @@ body {
 }
 
 .privacy-list li::before {
-    content: '\f00c'; /* Checkmark icon from sectores-list */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: var(--primary); /* Color from sectores-list */
+    content: '•';
+    color: var(--primary);
+    font-size: 1rem;
     position: absolute;
-    left: 5px;
-    top: 0px;
+    left: 8px;
+    top: -1px;
 }
 
 
@@ -1671,7 +1672,7 @@ body {
 }
 
 .hero-stat-number {
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .hero-stat {
@@ -1804,9 +1805,7 @@ section.hero {
   padding: 0 0.5rem;
 }
 
-section.hero {
-  min-height: auto;
-}
+
 
 .footer-content {
   gap: 2rem;
@@ -1837,6 +1836,7 @@ section.hero {
 
 html, body {
     overflow-x: hidden;
+    height: 100%;
 }
 
 .check-circle {

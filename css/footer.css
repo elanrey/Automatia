@@ -2,16 +2,17 @@
 .footer {
   background-color: var(--dark);
   color: var(--white);
-  padding: 3rem 0 1rem;
+  padding: 1.5rem 0 1rem;
   border-top: 1px solid hsl(215, 16%, 25%);
 }
 
 .footer-content {
   display: flex;
-  justify-content: flex-start; /* Align content to the left */
-  text-align: left; /* Align text to the left */
-  gap: 8rem;
-  margin-bottom: 2rem;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text within the brand section */
+  gap: 1rem; /* Adjust gap for vertical stacking */
+  margin-bottom: 0; /* Remove bottom margin */
 }
 
 
@@ -21,10 +22,13 @@
 }
 
 .footer-description {
-  color: hsl(215, 16%, 70%);
-  margin: 1.5rem 0;
+  color: var(--white);
+  margin: 1.5rem auto;
   line-height: 1.6;
   text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .social-links {
@@ -53,10 +57,10 @@
 .footer-links-title {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 .footer-links-list {
+  margin-bottom: 0.5rem;
   list-style: none;
   padding-left: 0; /* Remove default ul padding */
   display: flex;
@@ -74,7 +78,7 @@
   text-decoration: none;
   padding: 0;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .footer-link:hover {
@@ -83,8 +87,8 @@
 
 .footer-bottom {
   border-top: 1px solid hsl(215, 16%, 25%);
-  padding-top: 2rem;
-  text-align: left; /* Align copyright text to the left */
+  padding-top: 0.5rem;
+  text-align: center; /* Align copyright text to the left */
   color: hsl(215, 16%, 60%);
 }
 
@@ -110,31 +114,12 @@
   text-align: center; /* Center the copyright text */
 }
 
-.footer-link {
-  text-align: center;
-}
-
-.footer-content {
-  gap: 2rem;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-bottom {
-  text-align: center;
-}
 
 
 
-.social-links {
-  justify-content: center;
-}
 
-.footer-links {
-  text-align: center;
-}
 
-.footer-link {
-  text-align: center;
-}
+
+
+
+
