@@ -7,7 +7,7 @@
   align-items: start;
   min-height: 100vh;
   position: relative;
-  overflow: visible;
+  overflow-x: hidden;
   background-color: #000;
   perspective: 300px; /* Keep for 3D particles */
 }
@@ -206,20 +206,7 @@
   color: var(--primary);
 }
 
-.check-circle {
-  width: 20px;
-  height: 20px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.check-circle img {
-  width: 12px;
-  height: 12px;
-}
 
 
 /* Hero Visuals (Cards, Charts, etc) */

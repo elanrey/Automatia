@@ -410,6 +410,7 @@ body {
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -1049,91 +1050,6 @@ body {
   gap: 0.5rem;
 }
 
-/* Footer */
-.footer {
-  background-color: var(--dark);
-  color: var(--white);
-  padding: 3rem 0 1rem;
-  border-top: 1px solid hsl(215, 16%, 25%);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: flex-start; /* Align content to the left */
-  text-align: left; /* Align text to the left */
-  gap: 8rem;
-  margin-bottom: 2rem;
-}
-
-
-
-.footer-brand {
-  max-width: 24rem;
-}
-
-.footer-description {
-  color: hsl(215, 16%, 70%);
-  margin: 1.5rem 0;
-  line-height: 1.6;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-link {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: hsla(0, 0%, 100%, 0.1);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.social-link:hover {
-  background-color: var(--secondary);
-}
-
-.footer-links-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.footer-links-list {
-  list-style: none;
-  display: grid;
-  gap: 0.5rem;
-}
-
-.footer-link {
-  background: none;
-  border: none;
-  color: hsl(215, 16%, 70%);
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  padding: 0;
-  text-align: left;
-  font-size: 1rem;
-}
-
-.footer-link:hover {
-  color: var(--secondary);
-}
-
-.footer-bottom {
-  border-top: 1px solid hsl(215, 16%, 25%);
-  padding-top: 2rem;
-  text-align: left; /* Align copyright text to the left */
-  color: hsl(215, 16%, 60%);
-}
-
 /* Toast Notification */
 .toast {
   position: fixed;
@@ -1742,4 +1658,198 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   object-fit: contain;
+}
+
+/* Eliminado para corregir desbordamiento */
+
+.footer-link {
+  text-align: center;
+}
+
+.hero-stat-label {
+  font-size: 0.6rem;
+}
+
+.hero-stat-number {
+  font-size: 1.2rem;
+}
+
+.hero-stat {
+  padding: 0.4rem;
+}
+
+.hero-stats {
+  gap: 0.25rem;
+}
+
+.hero-title {
+  margin-top: 2rem;
+}
+
+.hero-features {
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  font-size: 1rem;
+}
+
+.interactive-selector {
+  padding: 1.5rem;
+}
+
+.interactive-selector h3 {
+  font-size: 1.2rem;
+}
+
+.btn-hero {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+}
+
+.hero-buttons {
+  margin: 1.5rem 0;
+}
+
+.hero-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+section.hero {
+  padding-top: 4rem;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+}
+
+.logo-badge {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.logo-badge img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header {
+  height: 60px;
+}
+
+.nav-link-mobile {
+  padding: 0.5rem;
+}
+
+.nav-mobile {
+  gap: 0.5rem;
+}
+
+.mobile-menu-btn {
+  font-size: 1rem;
+}
+
+.header-container {
+  padding: 0 0.5rem;
+}
+
+.logo {
+  gap: 0.25rem;
+}
+
+.hero-card-chat, .hero-card-notification {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-card-chat, .hero-card-notification {
+    display: block;
+  }
+}
+
+.hero-visual {
+  padding-bottom: 0;
+}
+
+.hero-grid {
+  gap: 2rem;
+}
+
+.hero-features {
+  margin-top: 1.5rem;
+}
+
+.hero-stats {
+  margin: 1rem 0;
+}
+
+.hero-title {
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  margin-bottom: 1.5rem;
+}
+
+.interactive-selector {
+  margin-top: 1.5rem;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+}
+
+.hero-content {
+  padding: 0 0.5rem;
+}
+
+section.hero {
+  min-height: auto;
+}
+
+.footer-content {
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-brand {
+  max-width: none;
+}
+
+.social-links {
+  justify-content: center;
+}
+
+.footer-links {
+  text-align: center;
+}
+
+.footer-link {
+  text-align: center;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.check-circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-circle img {
+  width: 12px;
+  height: 12px;
 }
