@@ -1547,8 +1547,8 @@ body {
     transition: all 0.3s ease;
     background-color: rgba(0, 0, 0, 0.5); /* Dark, semi-transparent background */
     border-radius: 50%; /* Make it circular */
-    width: 40px; /* Adjust size */
-    height: 40px; /* Adjust size */
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1852,4 +1852,9 @@ html, body {
 .check-circle img {
   width: 12px;
   height: 12px;
+}
+
+.modal-close-icon {
+    width: 15px;
+    height: 15px;
 }
