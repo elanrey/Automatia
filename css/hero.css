@@ -97,11 +97,11 @@
 
 /* Hero Description */
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 0.9rem; /* Even further adjusted font size */
   line-height: 1.7;
   color: hsl(0, 0%, 85%);
   margin-bottom: 2rem;
-  max-width: 42rem;
+  max-width: 30rem; /* Further reduced max-width */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -543,7 +543,7 @@
     font-size: 3rem;
   }
   .hero-description {
-    font-size: 2rem;
+    font-size: 1.25rem; /* Even further adjusted font size for large devices */
   }
   .btn-hero {
     font-size: 0.9rem;
@@ -586,9 +586,7 @@
   margin-bottom: 2rem;
 }
 
-.hero-description {
-  font-size: 1rem;
-}
+
 
 .btn-hero {
   padding: 0.8rem 1.5rem;

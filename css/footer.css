@@ -2,7 +2,7 @@
 .footer {
   background-color: var(--dark);
   color: var(--white);
-  padding: 1.5rem 0 1rem;
+  padding: 0.5rem 0 1rem; /* Reduced top padding */
   border-top: 1px solid hsl(215, 16%, 25%);
 }
 
@@ -18,15 +18,14 @@
 
 
 .footer-brand {
-  max-width: 24rem;
 }
 
 .footer-description {
   color: var(--white);
-  margin: 1.5rem auto;
+  margin: 0.5rem auto; /* Reduced vertical margin */
   line-height: 1.6;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* Reduced font size */
   font-weight: 600;
   font-style: italic;
 }
@@ -34,20 +33,21 @@
 .social-links {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .social-link {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.75rem; /* Further reduced size */
+  height: 1.75rem; /* Further reduced size */
   background-color: hsla(0, 0%, 100%, 0.1);
-  border-radius: var(--radius-lg);
+  border-radius: 0.3rem; /* Slightly more square */
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   text-decoration: none;
   transition: var(--transition);
-  font-size: 1.5rem;
+  font-size: 1rem; /* Reduced font size for icon symbol */
 }
 
 .social-link:hover {
@@ -55,7 +55,7 @@
 }
 
 .footer-links-title {
-  font-size: 1.125rem;
+  font-size: 1rem; /* Reduced font size */
   font-weight: 600;
 }
 
@@ -78,7 +78,7 @@
   text-decoration: none;
   padding: 0;
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* Reduced font size */
 }
 
 .footer-link:hover {
@@ -90,6 +90,8 @@
   padding-top: 0.5rem;
   text-align: center; /* Align copyright text to the left */
   color: hsl(215, 16%, 60%);
+  font-size: 0.7rem; /* Reduced font size */
+  width: 100%; /* Make it span full width */
 }
 
 /* Styles for footers in /sectores pages */
