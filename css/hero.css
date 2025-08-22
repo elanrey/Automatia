@@ -7,7 +7,6 @@
   align-items: start;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
   background-color: #000;
   perspective: 300px; /* Keep for 3D particles */
 }
@@ -136,16 +135,10 @@
 }
 
 .hero-stat-number {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--secondary);
   margin-bottom: 0.25rem;
-}
-
-.hero-stat-label {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: hsl(0, 0%, 75%);
 }
 
 /* Hero Buttons */
@@ -492,7 +485,7 @@
     padding: 0.5rem;
   }
   .hero .hero-stat-number {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .hero .hero-stat-label {
     font-size: 0.7rem;
@@ -513,6 +506,16 @@
 @media (max-width: 480px) {
   .hero-stats {
     grid-template-columns: 1fr;
+    gap: 1rem; /* Add a bit more gap for single column layout */
+  }
+  .hero-stat {
+    padding: 0.5rem;
+  }
+  .hero-stat-number {
+    font-size: 1.1rem;
+  }
+  .hero-stat-label {
+    font-size: 0.6rem;
   }
 }
 
@@ -563,11 +566,9 @@
 }
 
 .hero-stat-label {
-  font-size: 0.6rem;
-}
-
-.hero-stat-number {
-  font-size: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 75%);
 }
 
 .hero-stat {
