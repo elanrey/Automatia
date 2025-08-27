@@ -22,6 +22,9 @@
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .hero-text {
@@ -96,10 +99,10 @@
 
 /* Hero Description */
 .hero-description {
-  font-size: 0.9rem; /* Even further adjusted font size */
-  line-height: 1.7;
+  font-size: 0.8rem;
+  
   color: hsl(0, 0%, 85%);
-  margin-bottom: 2rem;
+  margin: 2rem;
   max-width: 30rem; /* Further reduced max-width */
   margin-left: auto;
   margin-right: auto;
@@ -133,16 +136,16 @@
 
 .hero-stat:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .hero-stat:hover .hero-stat-number {
   transform: translateY(-2px);
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 .hero-stat-number {
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--secondary);
   margin-bottom: 0.25rem;
@@ -205,9 +208,6 @@
 .hero-feature i {
   color: var(--primary);
 }
-
-
-
 
 /* Hero Visuals (Cards, Charts, etc) */
 .hero-visual {
@@ -537,9 +537,6 @@
 
 /* Large devices (1024px and up) */
 @media (min-width: 1024px) {
-  .hero {
-    /* align-items: center; */
-  }
   .hero-content {
     padding: 0 1rem; /* Keep horizontal padding */
   }
@@ -551,7 +548,7 @@
     font-size: 3rem;
   }
   .hero-description {
-    font-size: 1.25rem; /* Even further adjusted font size for large devices */
+    font-size: 1.1rem; /* Even further adjusted font size for large devices */
   }
   .btn-hero {
     font-size: 0.9rem;
@@ -628,6 +625,11 @@ section.hero {
     min-height: 100vh;
 }
 
+.hero.hero-small {
+  min-height: 40vh;
+  align-items: center;
+}
+
 .hero-card-chat, .hero-card-notification {
   display: none;
 }
@@ -656,10 +658,6 @@ section.hero {
 
 .hero-title {
   margin-bottom: 1rem;
-}
-
-.hero-description {
-  margin-bottom: 1.5rem;
 }
 
 .hero-buttons {

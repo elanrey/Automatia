@@ -758,9 +758,9 @@ body {
 }
 
 .automation-icon {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1476,8 +1476,8 @@ body {
 }
 
 .automation-card-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   object-fit: contain;
 }
 
