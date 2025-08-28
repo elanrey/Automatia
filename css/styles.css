@@ -60,122 +60,6 @@ body {
   }
 }
 
-/* Sectores Section */
-.sectores-list {
-  margin-top: 3rem;
-  display: grid;
-  gap: 2rem;
-}
-
-.sector-card {
-  background-color: #f0f0f0;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  transition: var(--transition);
-  border: 1px solid #ccc;
-}
-
-.sector-card-header {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem; /* Increased gap for better spacing */
-  margin-bottom: 1.5rem;
-}
-
-.sector-icon {
-  width: 4rem; /* Slightly larger icon */
-  height: 4rem;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 1.75rem; /* Larger icon font size */
-  flex-shrink: 0; /* Prevent icon from shrinking */
-}
-
-.sector-card h2 {
-  font-size: 1.6rem; /* Slightly larger title */
-  font-weight: 700;
-  color: var(--dark);
-  line-height: 1.2; /* Adjust line height for better readability */
-}
-
-.sector-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sectores-list li {
-  font-size: 1.05rem;
-  color: var(--gray);
-  line-height: 1.6;
-  margin-bottom: 0.6rem;
-  /* display: flex; */
-  /* align-items: flex-start; */
-}
-
-.sectores-list li::before {
-  content: '\f00c';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  color: var(--secondary);
-  margin-right: 0.8rem;
-  flex-shrink: 0;
-  padding-top: 0.1rem; /* Ajuste fino para la alineación vertical */
-}
-
-.sector-card:hover {
-  transform: translateY(-12px); /* More pronounced lift effect */
-  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.15), 0 12px 15px -6px rgba(0, 0, 0, 0.08); /* Stronger shadow */
-}
-
-@media (max-width: 1280px) {
-  .sector-card {
-    padding: 1.8rem;
-  }
-  .sector-card h2 {
-    font-size: 1.5rem;
-  }
-  .sectores-list li {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .sector-card {
-    padding: 1.5rem;
-  }
-  .sector-card h2 {
-    font-size: 1.4rem;
-  }
-  .sectores-list li {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .sector-card {
-    padding: 1.2rem;
-  }
-  .sector-card h2 {
-    font-size: 1.3rem;
-  }
-  .sectores-list li {
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 2rem;
-  }
-}
-
 /* FAQ Section */
 .faq {
   padding: 0rem 0 5rem 0; /* Reduced top padding */
@@ -385,6 +269,35 @@ body {
 
 
 /* Section Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.5rem; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
 .services .section-header {
   margin-bottom: 0;
   text-align: center;
@@ -392,30 +305,6 @@ body {
 
 .services .section-header .section-title {
   margin-bottom: 0;
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 2.5rem; /* Default for larger screens */
-  }
-}
-
-@media (max-width: 1280px) {
-  .section-title {
-    font-size: 2.25rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .section-title {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 1.75rem;
-  }
 }
 
 .section-description {
