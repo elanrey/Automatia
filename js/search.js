@@ -23,7 +23,17 @@ const allSectors = [
     { name: "Seguros", url: "sectores/seguros.html" },
     { name: "Taller Mecánico", url: "sectores/talleres.html" },
     { name: "Telecomunicaciones", url: "sectores/telecomunicaciones.html" },
-    { name: "Tienda en Línea (eCommerce)", url: "sectores/ecommerce.html" }
+    { name: "Tienda en Línea (eCommerce)", url: "sectores/ecommerce.html" },
+    { name: "Gobierno", url: "sectores/gobierno.html" },
+    { name: "Energía", url: "sectores/energia.html" },
+    { name: "Farmacéutica", url: "sectores/farmaceutica.html" },
+    { name: "Medios de Comunicación", url: "sectores/medios-comunicacion.html" },
+    { name: "Transporte Aéreo", url: "sectores/transporte-aereo.html" },
+    { name: "Servicios Públicos", url: "sectores/servicios-publicos.html" },
+    { name: "Investigación y Desarrollo", url: "sectores/investigacion-desarrollo.html" },
+    { name: "Arte y Diseño", url: "sectores/arte-diseno.html" },
+    { name: "Gestión de Residuos", url: "sectores/gestion-residuos.html" },
+    { name: "Veterinaria", url: "sectores/veterinaria.html" }
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
