@@ -1,102 +1,95 @@
-#!/usr/bin/env python3
-"""
-Simple HTTP server for serving the AutomatIA static website.
-"""
 
-import http.server
-import socketserver
 import os
-import json
-from urllib.parse import urlparse, parse_qs
-import sys
+import requests
+from fastapi import FastAPI, Response
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, EmailStr
 
-PORT = 5000
+# --- Modelo de Datos ---
+# Define la estructura de los datos que esperas recibir.
+# FastAPI lo usará para validar automáticamente la información.
+class ContactForm(BaseModel):
+    name: str
+    email: EmailStr
+    subject: str
+    message: str
 
-class AutomatIAHandler(http.server.SimpleHTTPRequestHandler):
-    """Custom handler for AutomatIA website with API endpoints."""
-    
-    def do_GET(self):
-        """Handle GET requests."""
-        if self.path == '/':
-            self.path = '/index.html'
-        return super().do_GET()
-    
-    def do_POST(self):
-        """Handle POST requests for contact form."""
-        parsed_path = urlparse(self.path)
-        
-        if parsed_path.path == '/api/contact':
-            self.handle_contact_form()
-        else:
-            self.send_error(404, "Endpoint not found")
-    
-    def handle_contact_form(self):
-        """Handle contact form submissions."""
-        try:
-            # Get the content length
-            content_length = int(self.headers['Content-Length'])
-            
-            # Read the POST data
-            post_data = self.rfile.read(content_length)
-            data = json.loads(post_data.decode('utf-8'))
-            
-            # Log the contact submission (in a real app, save to database)
-            print(f"📧 New contact submission:")
-            print(f"   Name: {data.get('name', 'N/A')}")
-            print(f"   Email: {data.get('email', 'N/A')}")
-            print(f"   Subject: {data.get('subject', 'N/A')}")
-            print(f"   Message: {data.get('message', 'N/A')}")
-            print("-" * 50)
-            
-            # Send success response
-            self.send_response(200)
-            self.send_header('Content-type', 'application/json')
-            self.send_header('Access-Control-Allow-Origin', '*')
-            self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
-            self.send_header('Access-Control-Allow-Headers', 'Content-Type')
-            self.end_headers()
-            
-            response = {
-                'success': True,
-                'message': 'Contact form submitted successfully'
-            }
-            
-            self.wfile.write(json.dumps(response).encode('utf-8'))
-            
-        except Exception as e:
-            print(f"❌ Error handling contact form: {e}")
-            self.send_error(500, f"Server error: {str(e)}")
-    
-    def do_OPTIONS(self):
-        """Handle OPTIONS requests for CORS."""
-        self.send_response(200)
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
-        self.end_headers()
-    
-    def end_headers(self):
-        """Add CORS headers to all responses."""
-        self.send_header('Access-Control-Allow-Origin', '*')
-        super().end_headers()
+# --- Inicialización de la App ---
+app = FastAPI()
 
-def main():
-    """Start the server."""
-    # Change to the directory containing the script
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    
-    # Create the server
-    with socketserver.TCPServer(("0.0.0.0", PORT), AutomatIAHandler) as httpd:
-        print(f"╭────────────────────────────────────────╮")
-        print(f"│ AutomatIA Server starting on port {PORT} │ ")
-        print(f"│ Visit: http://localhost:{PORT}           │ ")
-        print(f"╰────────────────────────────────────────╯")
-        
-        try:
-            httpd.serve_forever()
-        except KeyboardInterrupt:
-            print("\n👋 Server stopping...")
-            httpd.shutdown()
+# --- Configuración de CORS ---
+# Permite que tu frontend (ej. localhost) se comunique con esta API.
+origins = [
+    "http://localhost",
+    "http://localhost:5000",
+    "http://127.0.0.1:5000",
+    # Añade aquí el dominio de tu web cuando la despliegues
+    # "https://www.automatia.com",
+]
 
-if __name__ == "__main__":
-    main()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # O especifica los orígenes en la lista `origins`
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# --- Endpoints de la API ---
+
+
+@app.get('/favicon.ico', include_in_schema=False)
+async def favicon():
+    return Response(status_code=204)
+
+
+@app.post("/api/contact")
+async def handle_contact(form: ContactForm):
+    """
+    Endpoint para recibir los datos del formulario de contacto.
+    """
+    print(f"📧 Nueva solicitud de contacto recibida:")
+    print(f"   Nombre: {form.name}")
+    print(f"   Email: {form.email}")
+    print(f"   Asunto: {form.subject}")
+    print(f"   Mensaje: {form.message}")
+    print("-" * 50)
+
+    # --- Aquí es donde procesas los datos ---
+    # Opción 1: Enviar a un webhook de n8n (recomendado)
+    send_to_n8n(form)
+    
+    # Opción 2: Enviar directamente por email (más abajo explico cómo)
+    # send_email_notification(form)
+
+    return {"success": True, "message": "Datos recibidos correctamente"}
+
+# --- Lógica de Procesamiento ---
+def send_to_n8n(form: ContactForm):
+    """
+    Envía los datos del formulario a un webhook de n8n.
+    """
+    # DEBES REEMPLAZAR ESTA URL POR LA DE TU WEBHOOK DE N8N
+    n8n_webhook_url = os.getenv("N8N_WEBHOOK_URL", "https://tu-instancia-n8n.com/webhook/...")
+
+    if "tu-instancia-n8n.com" in n8n_webhook_url:
+        print("⚠️ Alerta: La URL del webhook de n8n no está configurada.")
+        return
+
+    try:
+        # `form.dict()` convierte los datos Pydantic a un diccionario
+        response = requests.post(n8n_webhook_url, json=form.dict())
+        response.raise_for_status()  # Lanza un error si la petición falla
+        print("✅ Datos enviados a n8n exitosamente.")
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Error al enviar datos a n8n: {e}")
+
+# --- Sirviendo Archivos Estáticos ---
+# Esto debe ir DESPUÉS de todos tus endpoints de API.
+app.mount("/", StaticFiles(directory=".", html=True), name="static")
+
+
+# --- Cómo ejecutar el servidor ---
+# En tu terminal (con el ambiente virtual activado):
+# uvicorn api:app --host 0.0.0.0 --port 8000 --reload

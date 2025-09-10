@@ -135,9 +135,8 @@ async function handleFormSubmit(event) {
       showToast('Error al enviar', 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
     }
   } catch (error) {
-    console.log('Contact form submitted:', formData);
-    showToast('¡Mensaje enviado!', 'Nos pondremos en contacto contigo pronto.', 'success');
-    form.reset();
+    console.error('Error submitting form:', error);
+    showToast('Error al enviar', 'Hubo un problema de red o el servidor no responde. Revisa la consola para más detalles.', 'error');
   } finally {
     submitBtn.disabled = false;
     submitText.style.display = 'inline';
