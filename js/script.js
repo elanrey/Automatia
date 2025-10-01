@@ -531,14 +531,17 @@ async function handleFormSubmit(event) {
 
   // Obtener datos del formulario
   const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    subject: form.subject.value,
-    message: form.message.value
+    nombre: form.name.value,
+    mail: form.email.value,
+    mensaje: form.message.value
   };
 
   // Validar formulario
-  if (!validateForm(formData)) {
+  if (!validateForm({
+    name: formData.nombre,
+    email: formData.mail,
+    message: formData.mensaje
+  })) {
     return;
   }
 
@@ -548,8 +551,7 @@ async function handleFormSubmit(event) {
   submitLoader.style.display = 'flex';
 
   try {
-    // Simular llamada a la API (reemplazar con el endpoint real de la API)
-    const response = await fetch('/api/contact', {
+    const response = await fetch('https://www.automatia.cc/api/enviar-mensaje', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -566,10 +568,9 @@ async function handleFormSubmit(event) {
       showToast('Error al enviar', 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
     }
   } catch (error) {
-    // Error de red o API no disponible - mostrar mensaje de éxito de todos modos para demostración
-    console.log('Contact form submitted:', formData);
-    showToast('¡Mensaje enviado!', 'Nos pondremos en contacto contigo pronto.', 'success');
-    form.reset();
+    // Error de red o API no disponible
+    console.error('Error en el formulario de contacto:', error);
+    showToast('Error de conexión', 'No se pudo conectar con el servidor. Inténtalo más tarde.', 'error');
   } finally {
     // Restablecer estado del botón
     submitBtn.disabled = false;

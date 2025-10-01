@@ -251,25 +251,21 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" novalidate>
                         <div class="form-group">
-                            <label for="name" class="form-label">Nombre completo *</label>
+                            <label for="name" class="form-label">Nombre completo</label>
                             <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
-                            <span class="form-error" id="name-error"></span>
+                            <span id="name-error" class="form-error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
+                            <label for="email" class="form-label">Email</label>
                             <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
-                            <span class="form-error" id="email-error"></span>
+                            <span id="email-error" class="form-error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="subject" class="form-label">Asunto</label>
-                            <input type="text" id="subject" name="subject" class="form-input" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Mensaje *</label>
+                            <label for="message" class="form-label">Mensaje</label>
                             <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
-                            <span class="form-error" id="message-error"></span>
+                            <span id="message-error" class="form-error"></span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-hero" id="submit-btn">
                             <span id="submit-text">Contáctanos</span>

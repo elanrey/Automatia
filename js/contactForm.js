@@ -107,7 +107,6 @@ async function handleFormSubmit(event) {
   const formData = {
     name: form.name.value,
     email: form.email.value,
-    subject: form.subject.value,
     message: form.message.value
   };
 
@@ -120,7 +119,7 @@ async function handleFormSubmit(event) {
   submitLoader.style.display = 'flex';
 
   try {
-    const response = await fetch('http://localhost:8000/api/contact', {
+    const response = await fetch('https://www.automatia.cc/api/enviar-mensaje', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
