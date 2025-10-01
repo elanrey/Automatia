@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://automatia.lat/sitemap.xml
+Sitemap: https://www.automatia.cc/sitemap.xml
