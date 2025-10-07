@@ -23,7 +23,7 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="css/output.css">
 </head>
-<body class="font-sans bg-white text-gray">
+<body class="font-sans bg-white text-gray overflow-x-hidden">
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
         <div class="container mx-auto flex h-full items-center justify-between px-4">
@@ -61,76 +61,74 @@
         </div>
     </header>
 
-    <!-- Hero Section for Privacy Policy -->
-    <section class="relative grid min-h-[50vh] place-items-center bg-dark pt-24 pb-12">
-        <div class="hero-particles">
-            <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-        </div>
-        <div class="relative z-10 mx-auto max-w-7xl px-4 text-center text-white">
-            <h1 class="font-outfit text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-                <span class="block">Política de</span>
-                <span class="text-gradient block">Privacidad</span>
-            </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
-                Tu confianza y la seguridad de tus datos son nuestra máxima prioridad.
-            </p>
-        </div>
-    </section>
-
-    <!-- Privacy Policy Content -->
-    <section class="bg-light py-24 sm:py-32">
-        <div class="mx-auto max-w-3xl px-6 lg:px-8">
-            <div class="prose prose-lg max-w-none">
-                <p><strong>Última actualización:</strong> 31 de julio de 2025</p>
-
-                <h2>1. Introducción</h2>
-                <p>En esta Política de Privacidad, explicamos cómo recopilamos, utilizamos, compartimos y protegemos su información personal cuando visita nuestro sitio web o utiliza nuestros servicios. Nos comprometemos a proteger su privacidad y a gestionar sus datos de forma transparente y segura.</p>
-
-                <h2>2. Información que Recopilamos</h2>
-                <p>Podemos recopilar los siguientes tipos de información:</p>
-                <ul>
-                    <li><strong>Información de Contacto:</strong> Nombre, dirección de correo electrónico, número de teléfono y asunto cuando utiliza nuestro formulario de contacto.</li>
-                    <li><strong>Información de Uso:</strong> Datos sobre cómo interactúa con nuestro sitio web, como las páginas que visita, el tiempo que pasa en ellas y los enlaces en los que hace clic. Esta información se recopila a través de cookies y tecnologías similares.</li>
-                    <li><strong>Información del Dispositivo:</strong> Dirección IP, tipo de navegador, sistema operativo y otros detalles técnicos sobre el dispositivo que utiliza para acceder a nuestro sitio.</li>
-                </ul>
-
-                <h2>3. Cómo Utilizamos su Información</h2>
-                <p>Utilizamos la información que recopilamos para los siguientes propósitos:</p>
-                <ul>
-                    <li>Para responder a sus consultas y proporcionarle la información que solicita.</li>
-                    <li>Para mejorar nuestro sitio web y nuestros servicios, analizando cómo los utiliza.</li>
-                    <li>Para enviarle comunicaciones de marketing, si ha dado su consentimiento para recibirlas.</li>
-                    <li>Para cumplir con nuestras obligaciones legales y proteger nuestros derechos.</li>
-                </ul>
-
-                <h2>4. Cómo Compartimos su Información</h2>
-                <p>No vendemos ni alquilamos su información personal a terceros. Podemos compartir su información con:</p>
-                <ul>
-                    <li><strong>Proveedores de Servicios:</strong> Empresas que nos ayudan a operar nuestro negocio, como proveedores de alojamiento web y herramientas de análisis.</li>
-                    <li><strong>Autoridades Legales:</strong> Si así lo exige la ley o para proteger nuestros derechos legales.</li>
-                </ul>
-
-                <h2>5. Seguridad de los Datos</h2>
-                <p>Implementamos medidas de seguridad técnicas y organizativas para proteger su información personal contra el acceso no autorizado, la alteración, la divulgación o la destrucción. Sin embargo, ningún método de transmisión por Internet o de almacenamiento electrónico es 100% seguro.</p>
-
-                <h2>6. Sus Derechos</h2>
-                <p>Usted tiene derecho a:</p>
-                <ul>
-                    <li>Acceder a la información personal que tenemos sobre usted.</li>
-                    <li>Solicitar la corrección de cualquier información inexacta.</li>
-                    <li>Solicitar la eliminación de su información personal.</li>
-                    <li>Oponerse al procesamiento de su información personal para fines de marketing.</li>
-                </ul>
-                <p>Para ejercer estos derechos, póngase en contacto con nosotros a través de la información proporcionada en la sección de contacto.</p>
-
-                <h2>7. Cambios en esta Política</h2>
-                <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Le notificaremos cualquier cambio publicando la nueva política en esta página. Le recomendamos que revise esta página periódicamente para estar al tanto de cualquier cambio.</p>
-
-                <h2>8. Contacto</h2>
-                <p>Si tiene alguna pregunta sobre esta Política de Privacidad, puede contactarnos a través de nuestro <a href="index.html#contacto" class="text-primary hover:underline">formulario de contacto</a>.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative grid place-items-center bg-dark pt-32 pb-16 sm:pt-40 sm:pb-20">
+            <div class="hero-particles">
+                <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
             </div>
-        </div>
-    </section>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="font-outfit text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+                    Política de Privacidad
+                </h1>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Content -->
+        <section class="bg-light py-20 sm:py-24">
+            <div class="mx-auto max-w-4xl px-6 lg:px-8">
+                <div class="bg-white p-8 sm:p-12 rounded-xl shadow-xl">
+                    <div class="prose prose-lg max-w-none text-gray prose-headings:text-dark prose-h3:font-outfit prose-h3:text-2xl prose-strong:text-dark prose-a:text-primary hover:prose-a:text-secondary">
+                        <h3>1. Introducción</h3>
+                        <p>En esta Política de Privacidad, explicamos cómo recopilamos, utilizamos, compartimos y protegemos su información personal cuando visita nuestro sitio web o utiliza nuestros servicios. Nos comprometemos a proteger su privacidad y a gestionar sus datos de forma transparente y segura.</p>
+
+                        <h3>2. Información que Recopilamos</h3>
+                        <p>Podemos recopilar los siguientes tipos de información:</p>
+                        <ul>
+                            <li><strong>Información de Contacto:</strong> Nombre, dirección de correo electrónico, número de teléfono y asunto cuando utiliza nuestro formulario de contacto.</li>
+                            <li><strong>Información de Uso:</strong> Datos sobre cómo interactúa con nuestro sitio web, como las páginas que visita, el tiempo que pasa en ellas y los enlaces en los que hace clic. Esta información se recopila a través de cookies y tecnologías similares.</li>
+                            <li><strong>Información del Dispositivo:</strong> Dirección IP, tipo de navegador, sistema operativo y otros detalles técnicos sobre el dispositivo que utiliza para acceder a nuestro sitio.</li>
+                        </ul>
+
+                        <h3>3. Cómo Utilizamos su Información</h3>
+                        <p>Utilizamos la información que recopilamos para los siguientes propósitos:</p>
+                        <ul>
+                            <li>Para responder a sus consultas y proporcionarle la información que solicita.</li>
+                            <li>Para mejorar nuestro sitio web y nuestros servicios, analizando cómo los utiliza.</li>
+                            <li>Para enviarle comunicaciones de marketing, si ha dado su consentimiento para recibirlas.</li>
+                            <li>Para cumplir con nuestras obligaciones legales y proteger nuestros derechos.</li>
+                        </ul>
+
+                        <h3>4. Cómo Compartimos su Información</h3>
+                        <p>No vendemos ni alquilamos su información personal a terceros. Podemos compartir su información con:</p>
+                        <ul>
+                            <li><strong>Proveedores de Servicios:</strong> Empresas que nos ayudan a operar nuestro negocio, como proveedores de alojamiento web y herramientas de análisis.</li>
+                            <li><strong>Autoridades Legales:</strong> Si así lo exige la ley o para proteger nuestros derechos legales.</li>
+                        </ul>
+
+                        <h3>5. Seguridad de los Datos</h3>
+                        <p>Implementamos medidas de seguridad técnicas y organizativas para proteger su información personal contra el acceso no autorizado, la alteración, la divulgación o la destrucción. Sin embargo, ningún método de transmisión por Internet o de almacenamiento electrónico es 100% seguro.</p>
+
+                        <h3>6. Sus Derechos</h3>
+                        <p>Usted tiene derecho a:</p>
+                        <ul>
+                            <li>Acceder a la información personal que tenemos sobre usted.</li>
+                            <li>Solicitar la corrección de cualquier información inexacta.</li>
+                            <li>Solicitar la eliminación de su información personal.</li>
+                            <li>Oponerse al procesamiento de su información personal para fines de marketing.</li>
+                        </ul>
+                        <p>Para ejercer estos derechos, póngase en contacto con nosotros a través de la información proporcionada en la sección de contacto.</p>
+
+                        <h3>7. Cambios en esta Política</h3>
+                        <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Le notificaremos cualquier cambio publicando la nueva política en esta página. Le recomendamos que revise esta página periódicamente para estar al tanto de cualquier cambio.</p>
+
+                        <h3>8. Contacto</h3>
+                        <p>Si tiene alguna pregunta sobre esta Política de Privacidad, puede contactarnos a través de nuestro <a href="index.html#contacto">formulario de contacto</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer id="footer" class="bg-dark text-white">

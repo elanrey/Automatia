@@ -7,116 +7,148 @@
     <link rel="icon" href="img/logo.png" type="image/png">
     <meta name="description" content="Explora todas las secciones de nuestro sitio web.">
 
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="AutomatIA - Automatización de Procesos con IA">
+    <meta property="og:description" content="Transformamos su negocio con soluciones de automatización e inteligencia artificial. Eliminamos tareas manuales repetitivas.">
+    <meta property="og:type" content="website">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/output.css">
 </head>
-<body>
+<body class="font-sans bg-white text-gray">
     <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-badge">
-                    <img src="img/logo-small.png"/>
+    <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
+        <div class="container mx-auto flex h-full items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
+                    <img src="img/logo-small.png" class="h-6 w-6"/>
                 </div>
-                <a href="index.html" class="logo-text">Automat<em>IA</em></a>
+                <a href="index.html" class="text-2xl font-bold text-white no-underline">Automat<em class="font-orbitron not-italic text-primary">IA</em></a>
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <a href="index.html#que-es" class="nav-link">¿Qué es?</a>
-                <a href="index.html#beneficios" class="nav-link">Beneficios</a>
-                <a href="index.html#contacto" class="nav-link">Contacto</a>
-                <a href="casos-exito.html" class="nav-link">Casos de Éxito</a>
-                <a href="nosotros.html" class="nav-link">Nosotros</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
+            <nav class="hidden items-center gap-6 md:flex">
+                <a href="index.html#que-es" class="text-white transition hover:text-secondary">¿Qué es?</a>
+                <a href="index.html#beneficios" class="text-white transition hover:text-secondary">Beneficios</a>
+                <a href="index.html#contacto" class="text-white transition hover:text-secondary">Contacto</a>
+                <a href="casos-exito.html" class="text-white transition hover:text-secondary">Casos de Éxito</a>
+                <a href="nosotros.html" class="text-white transition hover:text-secondary">Nosotros</a>
+                <a href="faq.html" class="text-white transition hover:text-secondary">FAQ</a>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-toggle-btn" class="text-white md:hidden">
+                <i class="fas fa-bars text-xl"></i>
             </button>
 
             <!-- Mobile Navigation -->
-            <nav id="mobile-nav" class="nav-mobile">
-                <a href="index.html#que-es" class="nav-link-mobile">¿Qué es?</a>
-                <a href="index.html#beneficios" class="nav-link-mobile">Beneficios</a>
-                <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
-                <a href="casos-exito.html" class="nav-link-mobile">Casos de Éxito</a>
-                <a href="nosotros.html" class="nav-link-mobile">Nosotros</a>
-                <a href="faq.html" class="nav-link-mobile">FAQ</a>
+            <nav id="mobile-nav" class="absolute top-full left-0 right-0 hidden flex-col gap-2 bg-dark p-4">
+                <a href="index.html#que-es" class="rounded p-2 text-white hover:bg-slate-800">¿Qué es?</a>
+                <a href="index.html#beneficios" class="rounded p-2 text-white hover:bg-slate-800">Beneficios</a>
+                <a href="index.html#contacto" class="rounded p-2 text-white hover:bg-slate-800">Contacto</a>
+                <a href="casos-exito.html" class="rounded p-2 text-white hover:bg-slate-800">Casos de Éxito</a>
+                <a href="nosotros.html" class="rounded p-2 text-white hover:bg-slate-800">Nosotros</a>
+                <a href="faq.html" class="rounded p-2 text-white hover:bg-slate-800">FAQ</a>
             </nav>
         </div>
     </header>
 
-    <main class="legal-page">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-title">Mapa del Sitio</h1>
-                <p>Explora todas las secciones y páginas de nuestro sitio web.</p>
+    <main class="bg-light pt-24 pb-20 sm:pt-24 sm:pb-24">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h1 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">Mapa del Sitio</h1>
             </div>
 
-            <div class="content-frame">
-                <h2>Páginas Principales</h2>
-                <ul>
-                    <li><a href="index.html">Inicio</a>
-                        <ul>
-                            <li><a href="index.html#que-es">¿Qué es la Automatización Inteligente?</a></li>
-                            <li><a href="index.html#beneficios">Beneficios</a></li>
-                            <li><a href="index.html#contacto">Contacto</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="casos-exito.html">Casos de Éxito</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="faq.html">Preguntas Frecuentes (FAQ)</a></li>
-                </ul>
+            <div class="mt-16 space-y-12">
+                <!-- Páginas Principales -->
+                <div>
+                    <h2 class="font-outfit text-2xl font-bold text-dark border-b border-gray-light pb-2 mb-6">Páginas Principales</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-lg transition hover:-translate-y-1">
+                            <h3 class="font-bold text-lg text-dark mb-2"><a href="index.html" class="hover:text-primary">Inicio</a></h3>
+                            <ul class="space-y-2 pl-4 list-disc list-inside text-gray">
+                                <li><a href="index.html#que-es" class="hover:text-secondary">¿Qué es?</a></li>
+                                <li><a href="index.html#beneficios" class="hover:text-secondary">Beneficios</a></li>
+                                <li><a href="index.html#contacto" class="hover:text-secondary">Contacto</a></li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg transition hover:-translate-y-1">
+                            <h3 class="font-bold text-lg text-dark"><a href="casos-exito.html" class="hover:text-primary">Casos de Éxito</a></h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg transition hover:-translate-y-1">
+                            <h3 class="font-bold text-lg text-dark"><a href="nosotros.html" class="hover:text-primary">Nosotros</a></h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg transition hover:-translate-y-1">
+                            <h3 class="font-bold text-lg text-dark"><a href="faq.html" class="hover:text-primary">Preguntas Frecuentes</a></h3>
+                        </div>
+                    </div>
+                </div>
 
-                <h2>Sectores Atendidos</h2>
-                <ul>
-                    <li><a href="sectores/agricultura.html">Agricultura</a></li>
-                    <li><a href="sectores/centros-contacto.html">Centros de Contacto</a></li>
-                    <li><a href="sectores/comercio.html">Comercio</a></li>
-                    <li><a href="sectores/construccion.html">Construcción</a></li>
-                    <li><a href="sectores/consultoria.html">Consultoría</a></li>
-                    <li><a href="sectores/contadores.html">Contadores</a></li>
-                    <li><a href="sectores/ecommerce.html">E-commerce</a></li>
-                    <li><a href="sectores/entretenimiento.html">Entretenimiento</a></li>
-                    <li><a href="sectores/escuelas.html">Escuelas</a></li>
-                    <li><a href="sectores/finanzas.html">Finanzas</a></li>
-                    <li><a href="sectores/gimnasios.html">Gimnasios</a></li>
-                    <li><a href="sectores/hoteles.html">Hoteles</a></li>
-                    <li><a href="sectores/inmobiliarias.html">Inmobiliarias</a></li>
-                    <li><a href="sectores/juridico.html">Jurídico</a></li>
-                    <li><a href="sectores/logistica.html">Logística</a></li>
-                    <li><a href="sectores/manufactura.html">Manufactura</a></li>
-                    <li><a href="sectores/marketing.html">Marketing</a></li>
-                    <li><a href="sectores/medicos.html">Médicos</a></li>
-                    <li><a href="sectores/recursos-humanos.html">Recursos Humanos</a></li>
-                    <li><a href="sectores/restaurantes.html">Restaurantes</a></li>
-                    <li><a href="sectores/seguridad-privada.html">Seguridad Privada</a></li>
-                    <li><a href="sectores/seguros.html">Seguros</a></li>
-                    <li><a href="sectores/talleres.html">Talleres</a></li>
-                    <li><a href="sectores/telecomunicaciones.html">Telecomunicaciones</a></li>
-                </ul>
+                <!-- Sectores Atendidos -->
+                <div>
+                    <h2 class="font-outfit text-2xl font-bold text-dark border-b border-gray-light pb-2 mb-6">Sectores Atendidos</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <a href="sectores/agricultura.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Agricultura</a>
+                        <a href="sectores/arte-diseno.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Arte y Diseño</a>
+                        <a href="sectores/centros-contacto.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Centros de Contacto</a>
+                        <a href="sectores/comercio.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Comercio</a>
+                        <a href="sectores/construccion.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Construcción</a>
+                        <a href="sectores/consultoria.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Consultoría</a>
+                        <a href="sectores/contadores.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Contadores</a>
+                        <a href="sectores/ecommerce.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">E-commerce</a>
+                        <a href="sectores/energia.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Energía</a>
+                        <a href="sectores/entretenimiento.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Entretenimiento</a>
+                        <a href="sectores/escuelas.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Escuelas</a>
+                        <a href="sectores/farmaceutica.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Farmacéutica</a>
+                        <a href="sectores/finanzas.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Finanzas</a>
+                        <a href="sectores/gestion-residuos.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Gestión de Residuos</a>
+                        <a href="sectores/gimnasios.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Gimnasios</a>
+                        <a href="sectores/gobierno.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Gobierno</a>
+                        <a href="sectores/hoteles.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Hoteles</a>
+                        <a href="sectores/inmobiliarias.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Inmobiliarias</a>
+                        <a href="sectores/investigacion-desarrollo.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Investigación y Desarrollo</a>
+                        <a href="sectores/juridico.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Jurídico</a>
+                        <a href="sectores/logistica.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Logística</a>
+                        <a href="sectores/manufactura.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Manufactura</a>
+                        <a href="sectores/marketing.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Marketing</a>
+                        <a href="sectores/medicos.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Médicos</a>
+                        <a href="sectores/medios-comunicacion.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Medios de Comunicación</a>
+                        <a href="sectores/recursos-humanos.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Recursos Humanos</a>
+                        <a href="sectores/restaurantes.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Restaurantes</a>
+                        <a href="sectores/seguridad-privada.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Seguridad Privada</a>
+                        <a href="sectores/seguros.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Seguros</a>
+                        <a href="sectores/servicios-publicos.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Servicios Públicos</a>
+                        <a href="sectores/talleres.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Talleres</a>
+                        <a href="sectores/telecomunicaciones.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Telecomunicaciones</a>
+                        <a href="sectores/transporte-aereo.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Transporte Aéreo</a>
+                        <a href="sectores/veterinaria.html" class="bg-white p-4 rounded-lg shadow-md text-center text-dark font-semibold transition hover:shadow-xl hover:text-primary">Veterinaria</a>
+                    </div>
+                </div>
 
-                <h2>Información Legal</h2>
-                <ul>
-                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
-                    <li><a href="terminos-servicio.html">Términos de Servicio</a></li>
-                </ul>
+                <!-- Información Legal -->
+                <div>
+                    <h2 class="font-outfit text-2xl font-bold text-dark border-b border-gray-light pb-2 mb-6">Información Legal</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-lg transition hover:-translate-y-1">
+                            <h3 class="font-bold text-lg text-dark"><a href="politica-privacidad.html" class="hover:text-primary">Política de Privacidad</a></h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg transition hover:-translate-y-1">
+                            <h3 class="font-bold text-lg text-dark"><a href="terminos-servicio.html" class="hover:text-primary">Términos de Servicio</a></h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer id="footer" class="bg-dark text-white">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="pt-6 pb-2 md:flex md:justify-between">

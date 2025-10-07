@@ -20,7 +20,7 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="css/output.css">
 </head>
-<body class="font-sans bg-white text-gray">
+<body class="font-sans bg-white text-gray overflow-x-hidden">
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
         <div class="container mx-auto flex h-full items-center justify-between px-4">
@@ -77,76 +77,106 @@
     <section id="faq-list-section" class="bg-light py-24 sm:py-32">
         <div class="mx-auto max-w-4xl px-6 lg:px-8">
             <div class="space-y-4">
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                <!-- Pregunta 1 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Qué es la automatización de procesos con IA?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Es la aplicación de tecnologías de inteligencia artificial para realizar tareas repetitivas y basadas en reglas que antes requerían intervención humana. Esto incluye desde la entrada de datos hasta la generación de informes complejos, liberando a su equipo para tareas más estratégicas.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        Es la aplicación de tecnologías de inteligencia artificial para realizar tareas repetitivas y basadas en reglas que antes requerían intervención humana. Esto incluye desde la entrada de datos hasta la generación de informes complejos, liberando a su equipo para tareas más estratégicas.
+                    </div>
+                </details>
+                <!-- Pregunta 2 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Cómo puede AutomatIA ayudar a mi negocio?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">AutomatIA identifica procesos ineficientes en su empresa y diseña soluciones personalizadas de IA y automatización para optimizarlos. Esto se traduce en ahorro de tiempo, reducción de errores, mayor productividad y una mejor toma de decisiones.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        AutomatIA identifica procesos ineficientes en su empresa y diseña soluciones personalizadas de IA y automatización para optimizarlos. Esto se traduce en ahorro de tiempo, reducción de errores, mayor productividad y una mejor toma de decisiones.
+                    </div>
+                </details>
+                <!-- Pregunta 3 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Necesito conocimientos técnicos avanzados para usar sus soluciones?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">No. Nuestras soluciones están diseñadas para ser intuitivas y fáciles de usar. Nos encargamos de toda la implementación técnica y le proporcionamos la capacitación necesaria para que usted y su equipo puedan aprovechar al máximo las herramientas sin complicaciones.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        No. Nuestras soluciones están diseñadas para ser intuitivas y fáciles de usar. Nos encargamos de toda la implementación técnica y le proporcionamos la capacitación necesaria para que usted y su equipo puedan aprovechar al máximo las herramientas sin complicaciones.
+                    </div>
+                </details>
+                <!-- Pregunta 4 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Qué tipo de empresas se benefician de la automatización con IA?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Prácticamente cualquier empresa con procesos repetitivos o grandes volúmenes de datos puede beneficiarse. Hemos trabajado con despachos contables, clínicas médicas, escuelas, restaurantes, inmobiliarias, agencias de marketing y más. Si tiene tareas que se repiten, podemos automatizarlas.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        Prácticamente cualquier empresa con procesos repetitivos o grandes volúmenes de datos puede beneficiarse. Hemos trabajado con despachos contables, clínicas médicas, escuelas, restaurantes, inmobiliarias, agencias de marketing y más. Si tiene tareas que se repiten, podemos automatizarlas.
+                    </div>
+                </details>
+                <!-- Pregunta 5 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Cuánto tiempo toma implementar una solución de automatización?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">El tiempo de implementación varía según la complejidad del proceso a automatizar y el tamaño de su empresa. Sin embargo, nos esforzamos por ofrecer soluciones rápidas y eficientes, con resultados visibles en pocos días o semanas.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        El tiempo de implementación varía según la complejidad del proceso a automatizar y el tamaño de su empresa. Sin embargo, nos esforzamos por ofrecer soluciones rápidas y eficientes, con resultados visibles en pocos días o semanas.
+                    </div>
+                </details>
+                <!-- Pregunta 6 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Es segura la información de mi empresa con sus sistemas de IA?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">La seguridad y privacidad de sus datos son nuestra máxima prioridad. Implementamos protocolos de seguridad robustos, cifrado de datos y cumplimos con las normativas de protección de datos para asegurar que su información esté siempre protegida.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        La seguridad y privacidad de sus datos son nuestra máxima prioridad. Implementamos protocolos de seguridad robustos, cifrado de datos y cumplimos con las normativas de protección de datos para asegurar que su información esté siempre protegida.
+                    </div>
+                </details>
+                <!-- Pregunta 7 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Qué diferencia a AutomatIA de otras empresas de tecnología?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Nos especializamos en soluciones de IA y automatización personalizadas, enfocándonos en entender a fondo sus necesidades específicas para ofrecer resultados tangibles. Nuestro enfoque es práctico, orientado a la eficiencia y al retorno de inversión para su negocio.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        Nos especializamos en soluciones de IA y automatización personalizadas, enfocándonos en entender a fondo sus necesidades específicas para ofrecer resultados tangibles. Nuestro enfoque es práctico, orientado a la eficiencia y al retorno de inversión para su negocio.
+                    </div>
+                </details>
+                <!-- Pregunta 8 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Pueden integrar sus soluciones con mis sistemas actuales (CRM, ERP, etc.)?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Sí, la integración es una de nuestras especialidades. Diseñamos soluciones que se conectan y sincronizan con sus plataformas existentes (CRM, ERP, software de contabilidad, etc.) para crear un ecosistema de trabajo unificado.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        Sí, la integración es una de nuestras especialidades. Diseñamos soluciones que se conectan y sincronizan con sus plataformas existentes (CRM, ERP, software de contabilidad, etc.) para crear un ecosistema de trabajo unificado.
+                    </div>
+                </details>
+                <!-- Pregunta 9 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Qué es un asistente virtual inteligente y cómo funciona?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Un asistente virtual inteligente es un chatbot o sistema conversacional entrenado con la información específica de su empresa (manuales, documentos, FAQs). Responde preguntas de clientes o empleados de forma instantánea y precisa, liberando a su personal de consultas repetitivas.</p>
-                </div>
-                <div class="faq-item rounded-lg bg-white shadow-md">
-                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        Un asistente virtual inteligente es un chatbot o sistema conversacional entrenado con la información específica de su empresa (manuales, documentos, FAQs). Responde preguntas de clientes o empleados de forma instantánea y precisa, liberando a su personal de consultas repetitivas.
+                    </div>
+                </details>
+                <!-- Pregunta 10 -->
+                <details class="group rounded-lg bg-white shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
                         <span>¿Cómo puedo solicitar una consulta o un presupuesto?</span>
-                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
-                    </h3>
-                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Puede contactarnos a través del formulario en nuestra sección de Contacto, enviarnos un correo electrónico o llamarnos directamente. Estaremos encantados de agendar una reunión para entender sus necesidades y ofrecerle una propuesta personalizada.</p>
-                </div>
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray">
+                        Puede contactarnos a través del formulario en nuestra sección de Contacto, enviarnos un correo electrónico o llamarnos directamente. Estaremos encantados de agendar una reunión para entender sus necesidades y ofrecerle una propuesta personalizada.
+                    </div>
+                </details>
             </div>
         </div>
     </section>

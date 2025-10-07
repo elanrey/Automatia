@@ -18,7 +18,7 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="css/output.css">
 </head>
-<body class="font-sans bg-white text-gray">
+<body class="font-sans bg-white text-gray overflow-x-hidden">
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
         <div class="container mx-auto flex h-full items-center justify-between px-4">
@@ -56,60 +56,58 @@
         </div>
     </header>
 
-    <!-- Hero Section for Terms of Service -->
-    <section class="relative grid min-h-[50vh] place-items-center bg-dark pt-24 pb-12">
-        <div class="hero-particles">
-            <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-        </div>
-        <div class="relative z-10 mx-auto max-w-7xl px-4 text-center text-white">
-            <h1 class="font-outfit text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-                <span class="block">Términos de</span>
-                <span class="text-gradient block">Servicio</span>
-            </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
-                Reglas y directrices para el uso de nuestros servicios.
-            </p>
-        </div>
-    </section>
-
-    <!-- Terms of Service Content -->
-    <section class="bg-light py-24 sm:py-32">
-        <div class="mx-auto max-w-3xl px-6 lg:px-8">
-            <div class="prose prose-lg max-w-none">
-                <p><strong>Última actualización:</strong> 12 de agosto de 2025</p>
-
-                <h2>1. Aceptación de los Términos</h2>
-                <p>Al acceder y utilizar nuestro sitio web y nuestros servicios, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones de uso. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios.</p>
-
-                <h2>2. Descripción del Servicio</h2>
-                <p>AutomatIA proporciona soluciones de automatización de procesos de negocio y consultoría utilizando inteligencia artificial. Nuestros servicios están diseñados para ayudar a las empresas a optimizar operaciones, reducir costos y mejorar la productividad.</p>
-
-                <h2>3. Uso del Sitio Web</h2>
-                <p>Usted se compromete a utilizar este sitio web únicamente con fines lícitos y de una manera que no infrinja los derechos de, restrinja o inhiba el uso y disfrute de este sitio por parte de terceros.</p>
-
-                <h2>4. Propiedad Intelectual</h2>
-                <p>Todo el contenido incluido en este sitio, como texto, gráficos, logotipos e imágenes, es propiedad de AutomatIA o sus proveedores y está protegido por las leyes de derechos de autor. No está permitida la reproducción o distribución sin nuestro consentimiento expreso por escrito.</p>
-
-                <h2>5. Confidencialidad</h2>
-                <p>Cualquier información compartida por el cliente con AutomatIA será tratada con estricta confidencialidad y no se divulgará a terceros sin el consentimiento previo del cliente, salvo que sea requerido por ley.</p>
-
-                <h2>6. Limitación de Responsabilidad</h2>
-                <p>AutomatIA no será responsable de ningún daño directo, indirecto, incidental o consecuente que resulte del uso o la incapacidad de usar nuestros servicios. No garantizamos que los servicios satisfagan todos sus requisitos o que estén libres de errores.</p>
-
-                <h2>7. Política de Privacidad</h2>
-                <p>El uso de nuestro sitio web también se rige por nuestra <a href="politica-privacidad.html" class="text-primary hover:underline">Política de Privacidad</a>, que se incorpora a estos términos por referencia.</p>
-
-                <h2>8. Modificaciones a los Términos</h2>
-                <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Anunciaremos los cambios publicando los nuevos términos en el sitio. El uso continuado del servicio constituirá su consentimiento a dichos cambios.</p>
-
-                <h2>9. Ley Aplicable y Jurisdicción</h2>
-                <p>Estos términos se regirán por las leyes de <strong>[Su País/Estado]</strong>. Cualquier disputa se resolverá en los tribunales de <strong>[Su Ciudad/Jurisdicción]</strong>.</p>
-
-                <h2>10. Contacto</h2>
-                <p>Si tiene alguna pregunta sobre estos Términos, puede contactarnos a través de nuestro <a href="index.html#contacto" class="text-primary hover:underline">formulario de contacto</a> o por correo a <a href="mailto:contacto@automatia.com" class="text-primary hover:underline">contacto@automatia.com</a>.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative grid place-items-center bg-dark pt-32 pb-16 sm:pt-40 sm:pb-20">
+            <div class="hero-particles">
+                <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
             </div>
-        </div>
-    </section>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="font-outfit text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+                    Térmenos de Servicio
+                </h1>
+            </div>
+        </section>
+
+        <!-- Terms Content Section -->
+        <section class="bg-light py-20 sm:py-24">
+            <div class="mx-auto max-w-4xl px-6 lg:px-8">
+                <div class="bg-white p-8 sm:p-12 rounded-xl shadow-xl">
+                    <div class="prose prose-lg max-w-none text-gray prose-headings:text-dark prose-h2:font-outfit prose-h2:text-2xl prose-strong:text-dark prose-a:text-primary hover:prose-a:text-secondary">
+                        <h2>1. Aceptación de los Términos</h2>
+                        <p>Al acceder y utilizar nuestro sitio web y nuestros servicios, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones de uso. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios.</p>
+
+                        <h2>2. Descripción del Servicio</h2>
+                        <p>AutomatIA proporciona soluciones de automatización de procesos de negocio y consultoría utilizando inteligencia artificial. Nuestros servicios están diseñados para ayudar a las empresas a optimizar operaciones, reducir costos y mejorar la productividad.</p>
+
+                        <h2>3. Uso del Sitio Web</h2>
+                        <p>Usted se compromete a utilizar este sitio web únicamente con fines lícitos y de una manera que no infrinja los derechos de, restrinja o inhiba el uso y disfrute de este sitio por parte de terceros.</p>
+
+                        <h2>4. Propiedad Intelectual</h2>
+                        <p>Todo el contenido incluido en este sitio, como texto, gráficos, logotipos e imágenes, es propiedad de AutomatIA o sus proveedores y está protegido por las leyes de derechos de autor. No está permitida la reproducción o distribución sin nuestro consentimiento expreso por escrito.</p>
+
+                        <h2>5. Confidencialidad</h2>
+                        <p>Cualquier información compartida por el cliente con AutomatIA será tratada con estricta confidencialidad y no se divulgará a terceros sin el consentimiento previo del cliente, salvo que sea requerido por ley.</p>
+
+                        <h2>6. Limitación de Responsabilidad</h2>
+                        <p>AutomatIA no será responsable de ningún daño directo, indirecto, incidental o consecuente que resulte del uso o la incapacidad de usar nuestros servicios. No garantizamos que los servicios satisfagan todos sus requisitos o que estén libres de errores.</p>
+
+                        <h2>7. Política de Privacidad</h2>
+                        <p>El uso de nuestro sitio web también se rige por nuestra <a href="politica-privacidad.html">Política de Privacidad</a>, que se incorpora a estos términos por referencia.</p>
+
+                        <h2>8. Modificaciones a los Términos</h2>
+                        <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Anunciaremos los cambios publicando los nuevos términos en el sitio. El uso continuado del servicio constituirá su consentimiento a dichos cambios.</p>
+
+                        <h2>9. Ley Aplicable y Jurisdicción</h2>
+                        <p>Estos términos se regirán por las leyes de <strong>México</strong>. Cualquier disputa se resolverá en los tribunales de la <strong>Ciudad de México</strong>.</p>
+
+                        <h2>10. Contacto</h2>
+                        <p>Si tiene alguna pregunta sobre estos Términos, puede contactarnos a través de nuestro <a href="index.html#contacto">formulario de contacto</a> o por correo a <a href="mailto:contacto@automatia.com">contacto@automatia.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer id="footer" class="bg-dark text-white">

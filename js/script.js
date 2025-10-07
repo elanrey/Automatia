@@ -1,39 +1,4 @@
-const allSectors = [
-    { name: "Agencia de Marketing", url: "sectores/marketing.html" },
-    { name: "Agricultura", url: "sectores/agricultura.html" },
-    { name: "Arte y Diseño", url: "sectores/arte-diseno.html" },
-    { name: "Centros de Contacto", url: "sectores/centros-contacto.html" },
-    { name: "Clínica o Consultorio Médico", url: "sectores/medicos.html" },
-    { name: "Comercio Minorista (Retail)", url: "sectores/comercio.html" },
-    { name: "Construcción", url: "sectores/construccion.html" },
-    { name: "Consultoría", url: "sectores/consultoria.html" },
-    { name: "Despacho Contable", url: "sectores/contadores.html" },
-    { name: "Energía", url: "sectores/energia.html" },
-    { name: "Entretenimiento", url: "sectores/entretenimiento.html" },
-    { name: "Escuela o Academia", url: "sectores/escuelas.html" },
-    { name: "Farmacéutica", url: "sectores/farmaceutica.html" },
-    { name: "Finanzas y Banca", url: "sectores/finanzas.html" },
-    { name: "Gestión de Residuos", url: "sectores/gestion-residuos.html" },
-    { name: "Gimnasio", url: "sectores/gimnasios.html" },
-    { name: "Gobierno", url: "sectores/gobierno.html" },
-    { name: "Hoteles y Turismo", url: "sectores/hoteles.html" },
-    { name: "Inmobiliaria", url: "sectores/inmobiliarias.html" },
-    { name: "Investigación y Desarrollo", url: "sectores/investigacion-desarrollo.html" },
-    { name: "Jurídico/Notarías", url: "sectores/juridico.html" },
-    { name: "Logística y Transporte", url: "sectores/logistica.html" },
-    { name: "Manufactura", url: "sectores/manufactura.html" },
-    { name: "Medios de Comunicación", url: "sectores/medios-comunicacion.html" },
-    { name: "Recursos Humanos", url: "sectores/recursos-humanos.html" },
-    { name: "Restaurante o Cafetería", url: "sectores/restaurantes.html" },
-    { name: "Seguridad Privada", url: "sectores/seguridad-privada.html" },
-    { name: "Seguros", url: "sectores/seguros.html" },
-    { name: "Servicios Públicos", url: "sectores/servicios-publicos.html" },
-    { name: "Taller Mecánico", url: "sectores/talleres.html" },
-    { name: "Telecomunicaciones", url: "sectores/telecomunicaciones.html" },
-    { name: "Tienda en Línea (eCommerce)", url: "sectores/ecommerce.html" },
-    { name: "Transporte Aéreo", url: "sectores/transporte-aereo.html" },
-    { name: "Veterinaria", url: "sectores/veterinaria.html" }
-];
+
 
 // Datos de los servicios
 const services = [
@@ -667,34 +632,90 @@ function closeModal() {
     modalBody.innerHTML = ''; // Limpiar contenido al cerrar
 }
 
-async function loadSectorContent(url) {
+async function loadSectorContent(sectorName) {
+    const modalBody = document.getElementById('modal-body');
+    if (!modalBody) return;
+
+    // 1. Mostrar modal con estado de carga
+    modalBody.innerHTML = `
+        <div class="modal-loading" style="text-align: center; padding: 40px;">
+            <i class="fas fa-spinner fa-spin fa-3x" style="color: #4F46E5;"></i>
+            <p style="margin-top: 20px; font-size: 1.1em;">Generando contenido para <strong>${sectorName}</strong>...</p>
+        </div>`;
+    openModal();
+
+    // 2. Llamar a la API
+    const apiUrl = `https://www.automatia.cc/api/v1/content?name=${encodeURIComponent(sectorName)}`;
+
     try {
-        const response = await fetch(url);
+        const response = await fetch(apiUrl);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`Error ${response.status}: No se pudo obtener la información.`);
         }
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const bodyContent = doc.body.innerHTML;
+        const data = await response.json();
 
-        // Eliminar etiquetas de script para evitar la re-ejecución
-        const sanitizedContent = bodyContent.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
-
-        if (sanitizedContent.trim()) {
-            modalBody.innerHTML = sanitizedContent;
-            // Asegurarse de que el scroll se aplique después de que el contenido se haya renderizado
-            setTimeout(() => {
-                modalBody.scrollTop = 0;
-            }, 0);
+        // 3. Procesar la respuesta JSON anidada
+        if (data.length > 0 && data[0].output) {
+            const content = JSON.parse(data[0].output);
+            const modalHtml = buildModalHtml(content);
+            modalBody.innerHTML = modalHtml;
         } else {
-            modalBody.innerHTML = '<p>No se pudo encontrar el contenido del sector.</p>';
+            throw new Error("La respuesta de la API no tiene el formato esperado.");
         }
+
     } catch (error) {
-        console.error('Error al cargar el contenido del sector:', error);
-        modalBody.innerHTML = '<p>Error al cargar el contenido. Por favor, inténtalo de nuevo más tarde.</p>';
+        console.error('Error al cargar contenido del sector:', error);
+        modalBody.innerHTML = `
+            <div class="modal-error" style="text-align: center; padding: 40px;">
+                <i class="fas fa-exclamation-triangle fa-3x" style="color: #DC2626;"></i>
+                <h3 style="margin-top: 20px; font-size: 1.5em; color: #1F2937;">Error al generar contenido</h3>
+                <p style="margin-top: 10px;">${error.message}</p>
+                <p style="margin-top: 5px;">Por favor, intenta con otro término o vuelve a intentarlo más tarde.</p>
+            </div>`;
     }
-    openModal(); // Abrir el modal DESPUÉS de cargar el contenido
+}
+
+function buildModalHtml(content) {
+    // Construir la lista de soluciones
+    const solutionsHtml = content.solutions.items.map(item => `
+        <li style="margin-bottom: 1em;">
+            <strong>${item.title}:</strong> ${item.description}
+        </li>
+    `).join('');
+
+    // Devolver el HTML completo para el modal
+    return `
+        <section class="hero-sector" style="padding: 2rem 1rem; text-align: center;">
+            <div class="hero-content">
+                <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 0.5em;">
+                    <span class="text-gradient">${content.hero.title}</span>
+                </h1>
+                <p class="hero-description" style="font-size: 1.2em; max-width: 600px; margin: 0 auto;">${content.hero.subtitle}</p>
+            </div>
+        </section>
+
+        <section class="sectores" style="padding: 2rem 1rem;">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 2em;">${content.solutions.heading}</h2>
+                </div>
+                <div class="sectores-list">
+                    <div class="sector-card" style="background: #f9fafb; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <ul style="list-style-type: none; padding-left: 0;">${solutionsHtml}</ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" style="background: #111827; color: white; padding: 3rem 1rem; text-align: center;">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <div class="contact-info">
+                    <h2 class="contact-title" style="font-size: 2em; margin-bottom: 0.5em;">${content.contact.title}</h2>
+                    <p class="contact-description" style="font-size: 1.1em;">${content.contact.message}</p>
+                </div>
+            </div>
+        </section>
+    `;
 }
 
 if(closeModalBtn) {
@@ -826,56 +847,19 @@ Desarrollado con IA por Elanrey.
 
 
 
-// Funcionalidad de búsqueda de sectores
+// Funcionalidad de búsqueda de sectores con IA
 document.addEventListener('DOMContentLoaded', function() {
     const sectorSearchInput = document.getElementById('sector-search');
-    const searchResultsDiv = document.getElementById('search-results');
+    if (!sectorSearchInput) return;
 
-    if (!sectorSearchInput || !searchResultsDiv) return;
-
-    sectorSearchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase();
-        if (query.length === 0) {
-            displayResults(allSectors, query); // Mostrar todos los sectores si la búsqueda está vacía
-        } else {
-            const filteredSectors = allSectors.filter(sector => 
-                sector.name.toLowerCase().includes(query)
-            );
-            displayResults(filteredSectors, query);
+    sectorSearchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Evitar que el formulario se envíe (si lo hubiera)
+            const sectorName = this.value.trim();
+            if (sectorName) {
+                // Llamaremos a la nueva versión de loadSectorContent que crearemos en el siguiente paso
+                loadSectorContent(sectorName);
+            }
         }
     });
-
-    sectorSearchInput.addEventListener('focus', function() {
-        displayResults(allSectors, ""); // Mostrar todos los sectores al enfocar
-    });
-
-    // Ocultar resultados al hacer clic fuera
-    document.addEventListener('click', function(event) {
-        if (!sectorSearchInput.contains(event.target) && !searchResultsDiv.contains(event.target)) {
-            searchResultsDiv.innerHTML = '';
-            searchResultsDiv.style.display = 'none';
-        }
-    });
-
-    function displayResults(results, query) {
-        searchResultsDiv.innerHTML = '';
-        if (results.length === 0 && query.length > 0) { // Solo ocultar si no hay resultados Y hay una búsqueda activa
-            searchResultsDiv.style.display = 'none';
-            return;
-        }
-
-        results.forEach(sector => {
-            const resultItem = document.createElement('div');
-            resultItem.classList.add('search-result-item');
-            resultItem.textContent = sector.name;
-            resultItem.addEventListener('click', function() {
-                sectorSearchInput.value = sector.name;
-                loadSectorContent(sector.url); // Cargar contenido en el modal
-                searchResultsDiv.innerHTML = '';
-                searchResultsDiv.style.display = 'none';
-            });
-            searchResultsDiv.appendChild(resultItem);
-        });
-        searchResultsDiv.style.display = 'block';
-    }
 });
