@@ -17,148 +17,174 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/output.css">
 </head>
-<body>
+<body class="font-sans bg-white text-gray">
     <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-badge">
-                    <img src="img/logo-small.png"/>
+    <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
+        <div class="container mx-auto flex h-full items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
+                    <img src="img/logo-small.png" class="h-6 w-6"/>
                 </div>
-                <a href="index.html" class="logo-text">Automat<em>IA</em></a>
+                <a href="index.html" class="text-2xl font-bold text-white no-underline">Automat<em class="font-orbitron not-italic text-primary">IA</em></a>
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <a href="index.html#que-es" class="nav-link">¿Qué es?</a>
-                <a href="index.html#beneficios" class="nav-link">Beneficios</a>
-                <a href="index.html#contacto" class="nav-link">Contacto</a>
-                <a href="casos-exito.html" class="nav-link">Casos de Éxito</a>
-                <a href="nosotros.html" class="nav-link">Nosotros</a>
-                <a href="faq.html" class="nav-link nav-link-active">FAQ</a>
+            <nav class="hidden items-center gap-6 md:flex">
+                <a href="index.html#que-es" class="text-white transition hover:text-secondary">¿Qué es?</a>
+                <a href="index.html#beneficios" class="text-white transition hover:text-secondary">Beneficios</a>
+                <a href="index.html#contacto" class="text-white transition hover:text-secondary">Contacto</a>
+                <a href="casos-exito.html" class="text-white transition hover:text-secondary">Casos de Éxito</a>
+                <a href="nosotros.html" class="text-white transition hover:text-secondary">Nosotros</a>
+                <a href="faq.html" class="font-semibold text-secondary">FAQ</a>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-toggle-btn" class="text-white md:hidden">
+                <i class="fas fa-bars text-xl"></i>
             </button>
 
             <!-- Mobile Navigation -->
-            <nav id="mobile-nav" class="nav-mobile">
-                <a href="index.html#que-es" class="nav-link-mobile">¿Qué es?</a>
-                <a href="index.html#beneficios" class="nav-link-mobile">Beneficios</a>
-                <a href="index.html#contacto" class="nav-link-mobile">Contacto</a>
-                <a href="casos-exito.html" class="nav-link-mobile">Casos de Éxito</a>
-                <a href="sectores.html" class="nav-link-mobile">Sectores</a>
-                <a href="faq.html" class="nav-link-mobile nav-link-active">FAQ</a>
+            <nav id="mobile-nav" class="absolute top-full left-0 right-0 hidden flex-col gap-2 bg-dark p-4">
+                <a href="index.html#que-es" class="rounded p-2 text-white hover:bg-slate-800">¿Qué es?</a>
+                <a href="index.html#beneficios" class="rounded p-2 text-white hover:bg-slate-800">Beneficios</a>
+                <a href="index.html#contacto" class="rounded p-2 text-white hover:bg-slate-800">Contacto</a>
+                <a href="casos-exito.html" class="rounded p-2 text-white hover:bg-slate-800">Casos de Éxito</a>
+                <a href="nosotros.html" class="rounded p-2 text-white hover:bg-slate-800">Nosotros</a>
+                <a href="faq.html" class="rounded bg-slate-800 p-2 text-white">FAQ</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section for FAQ -->
-    <section class="hero hero-small">
-        <div class="hero-particles"></div>
-        <div class="container hero-content">
-            <div class="hero-text" style="text-align: center;">
-                <h1 class="hero-title">
-                    <span class="hero-title-line">Preguntas Frecuentes</span>
-                    <span class="hero-title-highlight">
-                        <span class="text-gradient">AutomatIA</span>
-                    </span>
-                </h1>
-                <p class="hero-description">
-                    Encuentra respuestas a las dudas más comunes sobre la automatización y la inteligencia artificial en tu negocio.
-                </p>
-            </div>
+    <section id="hero-faq" class="relative grid min-h-[50vh] place-items-center bg-dark pt-24 pb-12">
+        <div class="hero-particles">
+            <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        </div>
+        <div class="relative z-10 mx-auto max-w-7xl px-4 text-center text-white">
+            <h1 class="font-outfit text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+                <span class="block">Preguntas Frecuentes</span>
+                <span class="text-gradient block">AutomatIA</span>
+            </h1>
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
+                Encuentra respuestas a las dudas más comunes sobre la automatización y la inteligencia artificial en tu negocio.
+            </p>
         </div>
     </section>
 
-    <section class="faq">
-        <div class="container">
-            <div class="faq-list">
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Qué es la automatización de procesos con IA? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">Es la aplicación de tecnologías de inteligencia artificial para realizar tareas repetitivas y basadas en reglas que antes requerían intervención humana. Esto incluye desde la entrada de datos hasta la generación de informes complejos, liberando a su equipo para tareas más estratégicas.</p>
+    <section id="faq-list-section" class="bg-light py-24 sm:py-32">
+        <div class="mx-auto max-w-4xl px-6 lg:px-8">
+            <div class="space-y-4">
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Qué es la automatización de procesos con IA?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Es la aplicación de tecnologías de inteligencia artificial para realizar tareas repetitivas y basadas en reglas que antes requerían intervención humana. Esto incluye desde la entrada de datos hasta la generación de informes complejos, liberando a su equipo para tareas más estratégicas.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Cómo puede AutomatIA ayudar a mi negocio? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">AutomatIA identifica procesos ineficientes en su empresa y diseña soluciones personalizadas de IA y automatización para optimizarlos. Esto se traduce en ahorro de tiempo, reducción de errores, mayor productividad y una mejor toma de decisiones.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Cómo puede AutomatIA ayudar a mi negocio?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">AutomatIA identifica procesos ineficientes en su empresa y diseña soluciones personalizadas de IA y automatización para optimizarlos. Esto se traduce en ahorro de tiempo, reducción de errores, mayor productividad y una mejor toma de decisiones.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Necesito conocimientos técnicos avanzados para usar sus soluciones? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">No. Nuestras soluciones están diseñadas para ser intuitivas y fáciles de usar. Nos encargamos de toda la implementación técnica y le proporcionamos la capacitación necesaria para que usted y su equipo puedan aprovechar al máximo las herramientas sin complicaciones.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Necesito conocimientos técnicos avanzados para usar sus soluciones?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">No. Nuestras soluciones están diseñadas para ser intuitivas y fáciles de usar. Nos encargamos de toda la implementación técnica y le proporcionamos la capacitación necesaria para que usted y su equipo puedan aprovechar al máximo las herramientas sin complicaciones.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Qué tipo de empresas se benefician de la automatización con IA? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">Prácticamente cualquier empresa con procesos repetitivos o grandes volúmenes de datos puede beneficiarse. Hemos trabajado con despachos contables, clínicas médicas, escuelas, restaurantes, inmobiliarias, agencias de marketing y más. Si tiene tareas que se repiten, podemos automatizarlas.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Qué tipo de empresas se benefician de la automatización con IA?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Prácticamente cualquier empresa con procesos repetitivos o grandes volúmenes de datos puede beneficiarse. Hemos trabajado con despachos contables, clínicas médicas, escuelas, restaurantes, inmobiliarias, agencias de marketing y más. Si tiene tareas que se repiten, podemos automatizarlas.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Cuánto tiempo toma implementar una solución de automatización? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">El tiempo de implementación varía según la complejidad del proceso a automatizar y el tamaño de su empresa. Sin embargo, nos esforzamos por ofrecer soluciones rápidas y eficientes, con resultados visibles en pocos días o semanas.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Cuánto tiempo toma implementar una solución de automatización?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">El tiempo de implementación varía según la complejidad del proceso a automatizar y el tamaño de su empresa. Sin embargo, nos esforzamos por ofrecer soluciones rápidas y eficientes, con resultados visibles en pocos días o semanas.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Es segura la información de mi empresa con sus sistemas de IA? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">La seguridad y privacidad de sus datos son nuestra máxima prioridad. Implementamos protocolos de seguridad robustos, cifrado de datos y cumplimos con las normativas de protección de datos para asegurar que su información esté siempre protegida.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Es segura la información de mi empresa con sus sistemas de IA?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">La seguridad y privacidad de sus datos son nuestra máxima prioridad. Implementamos protocolos de seguridad robustos, cifrado de datos y cumplimos con las normativas de protección de datos para asegurar que su información esté siempre protegida.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Qué diferencia a AutomatIA de otras empresas de tecnología? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">Nos especializamos en soluciones de IA y automatización personalizadas, enfocándonos en entender a fondo sus necesidades específicas para ofrecer resultados tangibles. Nuestro enfoque es práctico, orientado a la eficiencia y al retorno de inversión para su negocio.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Qué diferencia a AutomatIA de otras empresas de tecnología?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Nos especializamos en soluciones de IA y automatización personalizadas, enfocándonos en entender a fondo sus necesidades específicas para ofrecer resultados tangibles. Nuestro enfoque es práctico, orientado a la eficiencia y al retorno de inversión para su negocio.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Pueden integrar sus soluciones con mis sistemas actuales (CRM, ERP, etc.)? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">Sí, la integración es una de nuestras especialidades. Diseñamos soluciones que se conectan y sincronizan con sus plataformas existentes (CRM, ERP, software de contabilidad, etc.) para crear un ecosistema de trabajo unificado.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Pueden integrar sus soluciones con mis sistemas actuales (CRM, ERP, etc.)?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Sí, la integración es una de nuestras especialidades. Diseñamos soluciones que se conectan y sincronizan con sus plataformas existentes (CRM, ERP, software de contabilidad, etc.) para crear un ecosistema de trabajo unificado.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Qué es un asistente virtual inteligente y cómo funciona? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">Un asistente virtual inteligente es un chatbot o sistema conversacional entrenado con la información específica de su empresa (manuales, documentos, FAQs). Responde preguntas de clientes o empleados de forma instantánea y precisa, liberando a su personal de consultas repetitivas.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Qué es un asistente virtual inteligente y cómo funciona?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Un asistente virtual inteligente es un chatbot o sistema conversacional entrenado con la información específica de su empresa (manuales, documentos, FAQs). Responde preguntas de clientes o empleados de forma instantánea y precisa, liberando a su personal de consultas repetitivas.</p>
                 </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">¿Cómo puedo solicitar una consulta o un presupuesto? <i class="fas fa-chevron-down faq-icon"></i></h3>
-                    <p class="faq-answer">Puede contactarnos a través del formulario en nuestra sección de Contacto, enviarnos un correo electrónico o llamarnos directamente. Estaremos encantados de agendar una reunión para entender sus necesidades y ofrecerle una propuesta personalizada.</p>
+                <div class="faq-item rounded-lg bg-white shadow-md">
+                    <h3 class="faq-question flex cursor-pointer items-center justify-between p-6 font-semibold text-dark transition hover:bg-primary hover:text-white">
+                        <span>¿Cómo puedo solicitar una consulta o un presupuesto?</span>
+                        <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                    </h3>
+                    <p class="faq-answer max-h-0 overflow-hidden px-6 leading-7 text-gray transition-all duration-500 ease-in-out">Puede contactarnos a través del formulario en nuestra sección de Contacto, enviarnos un correo electrónico o llamarnos directamente. Estaremos encantados de agendar una reunión para entender sus necesidades y ofrecerle una propuesta personalizada.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                <div class="logo">
-                    <div class="logo-badge">
-                        <img src="img/logo.png"/>
+    <footer id="footer" class="bg-dark text-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="pt-6 pb-2 md:flex md:justify-between">
+                <div class="mb-8 md:mb-0 md:w-1/3">
+                    <div class="flex items-center gap-2">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
+                            <img src="img/logo.png" class="h-8 w-8 object-contain"/>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Automat<em class="font-orbitron not-italic text-primary">IA</em></span>
                     </div>
-                    <span class="logo-text">Automat<em>IA</em></span>
+                    <p class="mt-4 text-base text-slate-300">
+                        Automatización y procesos con IA para tu negocio.
+                    </p>
                 </div>
-                <p class="footer-description">
-                    Automatización y procesos con IA para tu negocio
-                </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <div class="md:w-2/3 md:flex md:justify-end">
+                    <div class="">
+                        <h3 class="font-semibold text-white">Información Legal</h3>
+                        <ul class="mt-2 space-y-2">
+                            <li><a href="politica-privacidad.html" class="text-sm text-slate-400 transition hover:text-secondary">Política de Privacidad</a></li>
+                            <li><a href="terminos-servicio.html" class="text-sm text-slate-400 transition hover:text-secondary">Términos de Servicio</a></li>
+                            <li><a href="mapa-sitio.html" class="text-sm text-slate-400 transition hover:text-secondary">Mapa del Sitio</a></li>
+                        </ul>
                     </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3 class="footer-links-title">Información Legal</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="politica-privacidad.html" class="footer-link">Política de Privacidad</a></li>
-                        <li><a href="terminos-servicio.html" class="footer-link">Términos de Servicio</a></li>
-                        <li><a href="mapa-sitio.html" class="footer-link">Mapa del Sitio</a></li>
-                    </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>© 2025 AutomatIA. Todos los derechos reservados.</p>
+            <div class="mt-4 border-t border-slate-800 py-2 md:flex md:items-center md:justify-between">
+                <p class="text-center text-xs text-slate-500 md:text-left">&copy; 2025 AutomatIA. Todos los derechos reservados.</p>
+                <div class="mt-4 flex justify-center space-x-6 md:mt-0">
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </footer>

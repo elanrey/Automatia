@@ -20,152 +20,142 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/sectores.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/output.css">
 </head>
-<body>
+<body class="font-sans bg-white text-gray">
     <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-badge">
-                    <img src="img/logo-small.png"/>
+    <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
+        <div class="container mx-auto flex h-full items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
+                    <img src="img/logo-small.png" class="h-6 w-6"/>
                 </div>
-                <a href="index.html" class="logo-text">Automat<em>IA</em></a>
+                <a href="index.html" class="text-2xl font-bold text-white no-underline">Automat<em class="font-orbitron not-italic text-primary">IA</em></a>
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <a href="#que-es" class="nav-link">¿Qué es?</a>
-                <a href="#beneficios" class="nav-link">Beneficios</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-                <a href="casos-exito.html" class="nav-link">Casos de Éxito</a>
-                <a href="nosotros.html" class="nav-link">Nosotros</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
+            <nav class="hidden items-center gap-6 md:flex">
+                <a href="#que-es" class="text-white transition hover:text-secondary">¿Qué es?</a>
+                <a href="#beneficios" class="text-white transition hover:text-secondary">Beneficios</a>
+                <a href="#contacto" class="text-white transition hover:text-secondary">Contacto</a>
+                <a href="casos-exito.html" class="text-white transition hover:text-secondary">Casos de Éxito</a>
+                <a href="nosotros.html" class="text-white transition hover:text-secondary">Nosotros</a>
+                <a href="faq.html" class="text-white transition hover:text-secondary">FAQ</a>
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-toggle-btn" class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-toggle-btn" class="text-white md:hidden">
+                <i class="fas fa-bars text-xl"></i>
             </button>
 
             <!-- Mobile Navigation -->
-            <nav id="mobile-nav" class="nav-mobile">
-                <a href="#que-es" class="nav-link-mobile">¿Qué es?</a>
-                <a href="#beneficios" class="nav-link-mobile">Beneficios</a>
-                <a href="#contacto" class="nav-link-mobile">Contacto</a>
-                <a href="casos-exito.html" class="nav-link-mobile">Casos de Éxito</a>
-                <a href="nosotros.html" class="nav-link-mobile">Nosotros</a>
-                <a href="faq.html" class="nav-link-mobile">FAQ</a>
+            <nav id="mobile-nav" class="absolute top-full left-0 right-0 hidden flex-col gap-2 bg-dark p-4">
+                <a href="#que-es" class="rounded p-2 text-white hover:bg-slate-800">¿Qué es?</a>
+                <a href="#beneficios" class="rounded p-2 text-white hover:bg-slate-800">Beneficios</a>
+                <a href="#contacto" class="rounded p-2 text-white hover:bg-slate-800">Contacto</a>
+                <a href="casos-exito.html" class="rounded p-2 text-white hover:bg-slate-800">Casos de Éxito</a>
+                <a href="nosotros.html" class="rounded p-2 text-white hover:bg-slate-800">Nosotros</a>
+                <a href="faq.html" class="rounded p-2 text-white hover:bg-slate-800">FAQ</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-particles"></div>
-        <div class="hero-content">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="hero-title-line">Transforma tu Negocio</span>
-                        <span class="hero-title-line">con</span>
-                        <span class="hero-title-highlight">
-                            <span class="text-glow-container">
-                                <span class="text-gradient">Inteligencia Artificial</span>
-                            </span>
-                        </span>
-                        <span class="hero-title-line">y</span>
-                        <span class="hero-title-highlight">
-                            <span class="text-glow-container">
-                                <span class="text-gradient">Automatización</span>
-                            </span>
-                        </span>
-                    </h1>
-                    <p class="hero-description">
-                        <strong>¿Tu empresa pierde tiempo en tareas repetitivas?</strong><br>
-                        Implementa soluciones de automatización con inteligencia artificial que eliminen procesos manuales, integren sistemas y ejecuten tareas en segundos.
-                    </p>
-                    <div class="hero-features">
-                        <div class="hero-feature">
-                            <div class="check-circle">
-                                <img src="img/check.png" alt="Check Icon">
-                            </div>
-                            <span>Consulta gratuita</span>
-                        </div>
-                        <div class="hero-feature">
-                            <div class="check-circle">
-                                <img src="img/check.png" alt="Check Icon">
-                            </div>
-                            <span>Implementación rápida</span>
-                        </div>
-                        <div class="hero-feature">
-                            <div class="check-circle">
-                                <img src="img/check.png" alt="Check Icon">
-                            </div>
-                            <span>Soporte personalizado</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-stats">
-                      <div class="hero-stat">
-                        <div class="hero-stat-number">60%</div>
-                        <div class="hero-stat-label">MENOS TIEMPO</div>
-                        <div class="hero-stat-label">EN TAREAS</div>
-                      </div>
-                      <div class="hero-stat">
-                        <div class="hero-stat-number">40%</div>
-                        <div class="hero-stat-label">AHORRO</div>
-                        <div class="hero-stat-label">EN COSTOS</div>
-                      </div>
-                      <div class="hero-stat">
-                        <div class="hero-stat-number">25%</div>
-                        <div class="hero-stat-label">MÁS</div>
-                        <div class="hero-stat-label">PRODUCTIVIDAD</div>
-                      </div>
-                    </div>
-                    <div class="interactive-selector">
-                        <h3>Selecciona tu tipo de empresa y descubre algunas de las soluciones que &nbsp;<span class="automat-white">Automat</span><em>IA</em>&nbsp; te ofrece</h3>
-                        <div class="search-container">
-                            <input type="text" id="sector-search" class="form-input" placeholder="Selecciona tu Sector">
-                            <div id="search-results" class="search-results"></div>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#contacto" class="btn btn-primary btn-hero">Automatizar mi Negocio</a>
-                    </div>
-                </div>
+        <!-- Hero Section -->
+        <section id="hero-section" class="relative grid min-h-[calc(100vh-60px)] place-items-center bg-dark pt-24 pb-12">
+            <div class="hero-particles">
+                <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
             </div>
-        </div>
-    </section>
-
+            <div class="container relative z-10 mx-auto px-4">
+                <div class="grid items-center gap-8 md:grid-cols-2">
+                    <div id="hero-text-content" class="text-center text-white md:text-center">
+                        <h1 class="font-outfit text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl">
+                            <span class="block">Transforma tu Negocio</span>
+                            <span class="block">con</span>
+                            <span class="text-gradient block">Inteligencia Artificial</span>
+                            <span class="block">y</span>
+                            <span class="text-gradient block">Automatización</span>
+                        </h1>
+                        <p class="mx-auto mt-6 max-w-md text-lg text-slate-300">
+                            <strong>¿Tu empresa pierde tiempo en tareas repetitivas?</strong><br>
+                            Implementa soluciones de IA que eliminen procesos manuales, integren sistemas y ejecuten tareas en segundos.
+                        </p>
+                        <div class="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-center">
+                            <div class="flex items-center gap-2">
+                                <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
+                                    <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
+                                </div>
+                                <span class="text-sm text-slate-300">Consulta gratuita</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
+                                    <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
+                                </div>
+                                <span class="text-sm text-slate-300">Implementación rápida</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
+                                    <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
+                                </div>
+                                <span class="text-sm text-slate-300">Soporte personalizado</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div id="hero-visuals" class="flex flex-col items-center">
+                          <div class="flex w-full max-w-md gap-2">
+                            <div id="stat-card-tiempo" class="flex-1 rounded-lg border border-white/10 bg-dark/70 p-4 text-center backdrop-blur-md">
+                              <div class="font-orbitron text-4xl font-bold text-secondary">60%</div>
+                              <div class="text-sm font-bold text-slate-300">MENOS TIEMPO</div>
+                              <div class="text-sm font-bold text-slate-300">EN TAREAS</div>
+                            </div>
+                            <div id="stat-card-costos" class="flex-1 rounded-lg border border-white/10 bg-dark/70 p-4 text-center backdrop-blur-md">
+                              <div class="font-orbitron text-4xl font-bold text-secondary">40%</div>
+                              <div class="text-sm font-bold text-slate-300">AHORRO</div>
+                              <div class="text-sm font-bold text-slate-300">EN COSTOS</div>
+                            </div>
+                            <div id="stat-card-productividad" class="flex-1 rounded-lg border border-white/10 bg-dark/70 p-4 text-center backdrop-blur-md">
+                              <div class="font-orbitron text-4xl font-bold text-secondary">25%</div>
+                              <div class="text-sm font-bold text-slate-300">MÁS</div>
+                              <div class="text-sm font-bold text-slate-300">PRODUCTIVIDAD</div>
+                            </div>
+                          </div>
+                          <div id="interactive-selector-container" class="mt-6 w-full max-w-md rounded-xl border border-white/10 bg-dark/70 p-6 text-center shadow-xl backdrop-blur-md">
+                              <h3 class="text-lg font-bold text-secondary">Selecciona tu tipo de empresa y descubre algunas de las soluciones que <span class="text-white">Automat</span><em class="not-italic text-primary">IA</em> te ofrece</h3>
+                              <div class="relative mt-4">
+                                  <input type="text" id="sector-search" class="w-full rounded-lg border-2 border-transparent bg-white/90 p-3 text-dark placeholder-slate-500 focus:border-secondary focus:outline-none" placeholder="Selecciona tu Sector">
+                                  <div id="search-results" class="absolute top-full left-0 right-0 z-10 mt-1 hidden max-h-48 overflow-y-auto rounded-lg bg-white shadow-lg"></div>
+                              </div>
+                          </div>
+                          <div class="mt-6 flex justify-center">
+                              <a href="#contacto" class="rounded-full bg-primary py-3 px-8 text-lg font-semibold text-white shadow-lg transition hover:bg-secondary">Automatizar mi Negocio</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
     <!-- What is Automation Section -->
-    <section id="que-es" class="what-is-automation">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">¿Qué es la Automatización Inteligente?</h2>
-                <p>Descubre cómo la automatización y la inteligencia artificial se unen para potenciar tu negocio.</p>
+    <section id="que-es" class="bg-light py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">¿Qué es la Automatización Inteligente?</h2>
+                <p class="mt-6 text-lg leading-8 text-gray">Descubre cómo la automatización y la inteligencia artificial se unen para potenciar tu negocio.</p>
             </div>
-            <div class="automation-grid">
-                <div class="automation-card">
-                    <div class="automation-icon">
-                        <img src="img/ia.png" alt="Icono de Inteligencia Artificial" class="automation-card-icon">
+            <div class="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-2">
+                <div id="automation-card-ia" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
+                    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-purple border border-white">
+                        <img src="img/ia.png" alt="Icono de Inteligencia Artificial" class="h-12 w-12 object-contain">
                     </div>
-                    <h3 class="automation-title">Inteligencia Artificial</h3>
-                    <p class="automation-description">
+                    <h3 class="mt-6 text-2xl font-bold text-dark">Inteligencia Artificial</h3>
+                    <p class="mt-4 text-base leading-7 text-gray">
                         La IA añade una capa de "inteligencia" a la automatización. Mientras la automatización básica sigue reglas fijas, la IA permite a los sistemas entender el lenguaje humano, reconocer patrones, analizar documentos complejos (como correos o PDFs) y tomar decisiones. Esto permite automatizar procesos que requieren juicio y adaptación.
                     </p>
                 </div>
-                <div class="automation-card">
-                    <div class="automation-icon">
-                        <img src="img/auto.png" alt="Icono de Automatización" class="automation-card-icon">
+                <div id="automation-card-procesos" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
+                    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-blue border border-white">
+                        <img src="img/auto.png" alt="Icono de Automatización" class="h-12 w-12 object-contain">
                     </div>
-                    <h3 class="automation-title">Automatización de Procesos</h3>
-                    <p class="automation-description">
+                    <h3 class="mt-6 text-2xl font-bold text-dark">Automatización de Procesos</h3>
+                    <p class="mt-4 text-base leading-7 text-gray">
                         Consiste en usar tecnología para realizar tareas repetitivas que antes hacían las personas. Imagina un "robot" de software que trabaja 24/7, sin errores, rellenando formularios, copiando datos y moviendo archivos. Esto libera a tu equipo para que se concentre en actividades más estratégicas y creativas.
                     </p>
                 </div>
@@ -174,44 +164,44 @@
     </section>
 
     <!-- Benefits Section -->
-    <section id="beneficios" class="benefits">
-        <div class="container">
-            <div class="content-frame">
-                <div class="section-header">
-                    <h2 class="section-title">¿Por qué elegir nuestras soluciones?</h2>
+    <section id="beneficios" class="bg-light py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="rounded-xl bg-white p-8 shadow-xl sm:p-12">
+                <div class="text-center">
+                    <h2 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">¿Por qué elegir nuestras soluciones?</h2>
                 </div>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon bg-gradient-purple">
-                            <img src="img/productividad.png" alt="Productividad" class="benefit-card-icon">
+                <div class="mx-auto mt-16 grid max-w-lg gap-y-12 gap-x-8 sm:max-w-none md:grid-cols-2">
+                    <div id="benefit-card-productividad" class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-purple">
+                            <img src="img/productividad.png" alt="Productividad" class="h-9 w-9 object-contain">
                         </div>
-                        <h3 class="benefit-title">Mayor Productividad</h3>
-                        <p class="benefit-description"><strong>20-25%</strong> de incremento en productividad en equipos que usan asistentes con IA, permitiendo que su personal se enfoque en tareas de alto valor.</p>
-                        <span class="benefit-source">Fuente: McKinsey, 2022</span>
+                        <h3 class="mt-4 text-xl font-bold text-dark">Mayor Productividad</h3>
+                        <p class="mt-2 text-base text-gray"><strong>20-25%</strong> de incremento en productividad en equipos que usan asistentes con IA, permitiendo que su personal se enfoque en tareas de alto valor.</p>
+                        <span class="mt-1 block text-xs text-gray-500">Fuente: McKinsey, 2022</span>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon bg-gradient-red">
-                            <img src="img/costos.png" alt="Reduccion de Costos" class="benefit-card-icon">
+                    <div id="benefit-card-costos" class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-red">
+                            <img src="img/costos.png" alt="Reduccion de Costos" class="h-9 w-9 object-contain">
                         </div>
-                        <h3 class="benefit-title">Reducción de Costos</h3>
-                        <p class="benefit-description"><strong>30-40%</strong> de ahorro en costos operativos y un ROI promedio de <strong>200-300%</strong> en el primer año, gracias a la optimización de procesos.</p>
-                        <span class="benefit-source">Fuente: Deloitte & Forrester</span>
+                        <h3 class="mt-4 text-xl font-bold text-dark">Reducción de Costos</h3>
+                        <p class="mt-2 text-base text-gray"><strong>30-40%</strong> de ahorro en costos operativos y un ROI promedio de <strong>200-300%</strong> en el primer año, gracias a la optimización de procesos.</p>
+                        <span class="mt-1 block text-xs text-gray-500">Fuente: Deloitte & Forrester</span>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon bg-gradient-blue">
-                            <img src="img/tiempo.png" alt="Ahorro de Tiempo" class="benefit-card-icon">
+                    <div id="benefit-card-tiempo" class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-blue">
+                            <img src="img/tiempo.png" alt="Ahorro de Tiempo" class="h-9 w-9 object-contain">
                         </div>
-                        <h3 class="benefit-title">Ahorro de Tiempo</h3>
-                        <p class="benefit-description"><strong>50-60%</strong> de reducción en el tiempo de procesamiento de tareas y un <strong>60%</strong> de reducción en el tiempo de atención al cliente.</p>
-                        <span class="benefit-source">Fuente: UiPath & Salesforce</span>
+                        <h3 class="mt-4 text-xl font-bold text-dark">Ahorro de Tiempo</h3>
+                        <p class="mt-2 text-base text-gray"><strong>50-60%</strong> de reducción en el tiempo de procesamiento de tareas y un <strong>60%</strong> de reducción en el tiempo de atención al cliente.</p>
+                        <span class="mt-1 block text-xs text-gray-500">Fuente: UiPath & Salesforce</span>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon bg-gradient-green">
-                            <img src="img/errores.png" alt="Reducción de Errores" class="benefit-card-icon">
+                    <div id="benefit-card-errores" class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-green">
+                            <img src="img/errores.png" alt="Reducción de Errores" class="h-9 w-9 object-contain">
                         </div>
-                        <h3 class="benefit-title">Menos Errores</h3>
-                        <p class="benefit-description"><strong>65%</strong> de reducción en errores humanos al automatizar tareas repetitivas, garantizando mayor precisión y calidad en los resultados.</p>
-                        <span class="benefit-source">Fuente: IBM Automation Survey</span>
+                        <h3 class="mt-4 text-xl font-bold text-dark">Menos Errores</h3>
+                        <p class="mt-2 text-base text-gray"><strong>65%</strong> de reducción en errores humanos al automatizar tareas repetitivas, garantizando mayor precisión y calidad en los resultados.</p>
+                        <span class="mt-1 block text-xs text-gray-500">Fuente: IBM Automation Survey</span>
                     </div>
                 </div>
             </div>
@@ -219,100 +209,104 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2 class="contact-title">¿Listo para Automatizar tu Negocio?</h2>
-                    <p class="contact-description">
-                        Contáctanos hoy mismo y descubre cómo la inteligencia artificial puede transformar
-                        tu empresa. Te ayudamos a identificar oportunidades de automatización y diseñamos
-                        soluciones personalizadas para tus necesidades específicas.
-                    </p>
-                    <div class="contact-benefits">
-                        <div class="contact-benefit">
-                            <div class="check-circle">
-                                <img src="img/check.png" alt="Check Icon">
-                            </div>
-                            <span>Consulta gratuita inicial</span>
+    <section id="contacto" class="bg-light py-20 sm:py-24">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-16 gap-y-16 px-6 lg:grid-cols-2 lg:px-8">
+            <div id="contact-info">
+                <h2 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">¿Listo para Automatizar tu Negocio?</h2>
+                <p class="mt-4 text-lg leading-8 text-gray">
+                    Contáctanos hoy mismo y descubre cómo la inteligencia artificial puede transformar tu empresa. Te ayudamos a identificar oportunidades de automatización y diseñamos soluciones personalizadas para tus necesidades específicas.
+                </p>
+                <div class="mt-8 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary">
+                            <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
                         </div>
-                        <div class="contact-benefit">
-                            <div class="check-circle">
-                                <img src="img/check.png" alt="Check Icon">
-                            </div>
-                            <span>Análisis personalizado de procesos</span>
+                        <span class="text-dark">Consulta gratuita inicial</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary">
+                            <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
                         </div>
-                        <div class="contact-benefit">
-                            <div class="check-circle">
-                                <img src="img/check.png" alt="Check Icon">
-                            </div>
-                            <span>Propuesta de solución a medida</span>
+                        <span class="text-dark">Análisis personalizado de procesos</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary">
+                            <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
                         </div>
+                        <span class="text-dark">Propuesta de solución a medida</span>
                     </div>
                 </div>
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form" novalidate>
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nombre completo</label>
-                            <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
-                            <span id="name-error" class="form-error"></span>
+            </div>
+            <div id="contact-form-container" class="rounded-xl bg-white p-8 shadow-xl">
+                <form id="contact-form" class="space-y-6" novalidate>
+                    <div>
+                        <label for="name" class="block text-sm font-semibold leading-6 text-dark">Nombre completo</label>
+                        <div class="mt-2.5">
+                            <input type="text" id="name" name="name" required autocomplete="name" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-inset ring-gray-light placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6">
                         </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
-                            <span id="email-error" class="form-error"></span>
+                        <span id="name-error" class="text-sm font-medium text-red-600"></span>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold leading-6 text-dark">Email</label>
+                        <div class="mt-2.5">
+                            <input type="email" id="email" name="email" required autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-inset ring-gray-light placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6">
                         </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="4" required autocomplete="off"></textarea>
-                            <span id="message-error" class="form-error"></span>
+                        <span id="email-error" class="text-sm font-medium text-red-600"></span>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-semibold leading-6 text-dark">Mensaje</label>
+                        <div class="mt-2.5">
+                            <textarea id="message" name="message" rows="4" required autocomplete="off" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-inset ring-gray-light placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-hero" id="submit-btn">
+                        <span id="message-error" class="text-sm font-medium text-red-600"></span>
+                    </div>
+                    <div>
+                        <button type="submit" id="submit-btn" class="flex w-full items-center justify-center rounded-full bg-primary py-3 px-8 text-lg font-semibold text-white shadow-lg transition hover:bg-secondary">
                             <span id="submit-text">Contáctanos</span>
-                            <span id="submit-loader" class="submit-loader" style="display: none;">
+                            <span id="submit-loader" class="hidden items-center gap-2" style="display: none;">
                                 <i class="fas fa-spinner fa-spin"></i> Enviando...
                             </span>
                         </button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                <div class="logo">
-                    <div class="logo-badge">
-                        <img src="img/logo.png"/>
+    <footer id="footer" class="bg-dark text-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="pt-6 pb-2 md:flex md:justify-between">
+                <div class="mb-8 md:mb-0 md:w-1/3">
+                    <div class="flex items-center gap-2">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
+                            <img src="img/logo.png" class="h-8 w-8 object-contain"/>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Automat<em class="font-orbitron not-italic text-primary">IA</em></span>
                     </div>
-                    <span class="logo-text">Automat<em>IA</em></span>
+                    <p class="mt-4 text-base text-slate-300">
+                        Automatización y procesos con IA para tu negocio.
+                    </p>
                 </div>
-                <p class="footer-description">
-                    Automatización y procesos con IA para tu negocio
-                </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <div class="md:w-2/3 md:flex md:justify-end">
+                    <div class="">
+                        <h3 class="font-semibold text-white">Información Legal</h3>
+                        <ul class="mt-2 space-y-2">
+                            <li><a href="politica-privacidad.html" class="text-sm text-slate-400 transition hover:text-secondary">Política de Privacidad</a></li>
+                            <li><a href="terminos-servicio.html" class="text-sm text-slate-400 transition hover:text-secondary">Términos de Servicio</a></li>
+                            <li><a href="mapa-sitio.html" class="text-sm text-slate-400 transition hover:text-secondary">Mapa del Sitio</a></li>
+                        </ul>
                     </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3 class="footer-links-title">Información Legal</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="politica-privacidad.html" class="footer-link">Política de Privacidad</a></li>
-                        <li><a href="terminos-servicio.html" class="footer-link">Términos de Servicio</a></li>
-                        <li><a href="mapa-sitio.html" class="footer-link">Mapa del Sitio</a></li>
-                    </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>© 2025 AutomatIA. Todos los derechos reservados.</p>
+            <div class="mt-4 border-t border-slate-800 py-2 md:flex md:items-center md:justify-between">
+                <p class="text-center text-xs text-slate-500 md:text-left">&copy; 2025 AutomatIA. Todos los derechos reservados.</p>
+                <div class="mt-4 flex justify-center space-x-6 md:mt-0">
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </footer>

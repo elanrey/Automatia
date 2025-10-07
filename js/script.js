@@ -205,7 +205,7 @@ function initializeHeaderAndNav() {
 function createDynamicParticles() {
   const container = document.querySelector('.hero-particles');
   if (!container) return;
-  container.innerHTML = '';
+  // container.innerHTML = '';
   const starCount = 400; // A lot of stars for a dense field
 
   for (let i = 0; i < starCount; i++) {
@@ -423,16 +423,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Funcionalidad del formulario de contacto
 function initializeContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
+  // Use event delegation to handle form submission for any form with the .contact-form class
+  document.body.addEventListener('submit', function(event) {
+    if (event.target && event.target.classList.contains('contact-form')) {
+      handleFormSubmit(event);
+    }
+  });
 
-  form.addEventListener('submit', handleFormSubmit);
+  // Use event delegation for real-time validation on inputs within any .contact-form
+  document.body.addEventListener('blur', function(event) {
+    if (event.target && event.target.matches('.contact-form input, .contact-form textarea')) {
+      validateField(event);
+    }
+  }, true); // Use capture phase to ensure this runs reliably
 
-  // Añadir validación en tiempo real
-  const inputs = form.querySelectorAll('input, textarea');
-  inputs.forEach(input => {
-    input.addEventListener('blur', validateField);
-    input.addEventListener('input', clearFieldError);
+  document.body.addEventListener('input', function(event) {
+    if (event.target && event.target.matches('.contact-form input, .contact-form textarea')) {
+      clearFieldError(event);
+    }
   });
 }
 
@@ -528,6 +536,11 @@ async function handleFormSubmit(event) {
   const submitBtn = document.getElementById('submit-btn');
   const submitText = document.getElementById('submit-text');
   const submitLoader = document.getElementById('submit-loader');
+
+  console.log('Diagnóstico de elementos del formulario:');
+  console.log('submitBtn:', submitBtn);
+  console.log('submitText:', submitText);
+  console.log('submitLoader:', submitLoader);
 
   // Obtener datos del formulario
   const formData = {
@@ -802,20 +815,11 @@ document.addEventListener('keydown', function(e) {
 
 // Mensaje de consola para desarrolladores
 console.log(`
-🤖 AutomatIA - Automatización con Inteligencia Artificial
-=====================================
+===========================================================
+ 🤖 AutomatIA - Automatización con Inteligencia Artificial
+===========================================================
 Automatizamos procesos para que tu negocio sea más eficiente y productivo.
-Visita nuestro sitio web para más información: https://automatIA.com
-
-Características implementadas:
-- Navegación suave entre secciones
-- Carrusel de servicios con autoplay
-- Formulario de contacto con validación
-- Diseño responsive
-- Animaciones y transiciones
-- Notificaciones toast
-- Menú móvil
-- Accesibilidad mejorada
+Visita nuestro sitio web para más información: www.automatia.cc
 
 Desarrollado con IA por Elanrey.
 `);
