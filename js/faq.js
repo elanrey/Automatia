@@ -1,8 +1,3 @@
-
-document.addEventListener('DOMContentLoaded', function() {
-    initializeFaqAccordion();
-});
-
 function initializeFaqAccordion() {
   const faqQuestions = document.querySelectorAll('.faq-question');
 

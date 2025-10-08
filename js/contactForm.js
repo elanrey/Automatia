@@ -1,8 +1,3 @@
-
-document.addEventListener('DOMContentLoaded', function() {
-    initializeContactForm();
-});
-
 function initializeContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -33,7 +28,7 @@ function validateField(event) {
       }
       break;
     case 'email':
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (!emailRegex.test(value)) {
         isValid = false;
         errorMessage = 'Por favor ingresa un email válido';
@@ -78,7 +73,7 @@ function validateForm(formData) {
     isValid = false;
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!emailRegex.test(formData.email.trim())) {
     errors.email = 'Por favor ingresa un email válido';
     isValid = false;
@@ -118,57 +113,35 @@ async function handleFormSubmit(event) {
   submitText.style.display = 'none';
   submitLoader.style.display = 'flex';
 
+  const payload = {
+    nombre: formData.name,
+    mail: formData.email,
+    mensaje: formData.message
+  };
+
   try {
-    const response = await fetch('https://www.automatia.cc/api/enviar-mensaje', {
+    const response = await fetch('https://www.automatia.cc/api/v1/message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(payload)
     });
 
     if (response.ok) {
       showToast('¡Mensaje enviado!', 'Nos pondremos en contacto contigo pronto.', 'success');
       form.reset();
     } else {
-      showToast('Error al enviar', 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
+      const errorData = await response.json().catch(() => ({ message: 'No se pudo leer el cuerpo del error' }));
+      console.error('Error del servidor:', response.status, errorData);
+      showToast('Error del Servidor', `Error ${response.status}: ${errorData.message || 'Inténtalo de nuevo.'}`, 'error');
     }
   } catch (error) {
-    console.error('Error submitting form:', error);
-    showToast('Error al enviar', 'Hubo un problema de red o el servidor no responde. Revisa la consola para más detalles.', 'error');
+    console.error('Error de red al enviar el formulario:', error);
+    showToast('Error de Red', `No se pudo enviar el mensaje. Detalle: ${error.message}.`, 'error');
   } finally {
     submitBtn.disabled = false;
     submitText.style.display = 'inline';
     submitLoader.style.display = 'none';
   }
 }
-
-function showToast(title, description, type = 'success') {
-  const toast = document.getElementById('toast');
-  const toastIcon = document.getElementById('toast-icon');
-  const toastTitle = document.getElementById('toast-title');
-  const toastDescription = document.getElementById('toast-description');
-
-  toastTitle.textContent = title;
-  toastDescription.textContent = description;
-  toastIcon.className = type === 'success' ? 'toast-icon fas fa-check-circle' : 'toast-icon fas fa-exclamation-circle';
-  toast.className = `toast ${type}`;
-  toast.classList.add('show');
-
-  setTimeout(() => {
-    hideToast();
-  }, 5000);
-}
-
-function hideToast() {
-  const toast = document.getElementById('toast');
-  if (toast) {
-    toast.classList.remove('show');
-  }
-}
-
-document.addEventListener('click', function(e) {
-  if (e.target.closest('.toast')) {
-    hideToast();
-  }
-});
