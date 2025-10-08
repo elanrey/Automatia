@@ -44,26 +44,26 @@ function initializeCarousel() {
 function createServiceSlides(carousel) {
   services.forEach((service, index) => {
     const slide = document.createElement('div');
-    slide.className = `service-slide bg-gradient-to-br ${service.gradient}`;
+    slide.className = `service-slide bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2`;
     slide.innerHTML = `
       <div class="service-header">
-        <div class="service-icon ${service.iconBg}">
+        <div class="service-icon ${service.iconBg} mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-white">
           <i class="${service.icon}"></i>
         </div>
-        <h3 class="service-title">${service.title}</h3>
+        <h3 class="service-title mt-6 text-2xl font-bold text-dark">${service.title}</h3>
       </div>
       <div class="service-content">
         <div class="service-section">
           <h4>Problema del cliente:</h4>
-          <p class="service-problem">${service.problem}</p>
+          <p class="service-problem mt-4 text-base leading-7 text-gray">${service.problem}</p>
         </div>
         <div class="service-section">
           <h4>Solución que ofrezco:</h4>
-          <p class="service-solution">${service.solution}</p>
+          <p class="service-solution mt-4 text-base leading-7 text-gray">${service.solution}</p>
         </div>
         <div class="service-section">
           <h4>Beneficio / Resultado:</h4>
-          <p class="service-benefit">${service.benefit}</p>
+          <p class="service-benefit mt-4 text-base leading-7 text-gray">${service.benefit}</p>
         </div>
       </div>
     `;
