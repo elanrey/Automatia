@@ -105,6 +105,51 @@
     width: 15px;
     height: 15px;
   }
+
+  /* Toast Notification */
+  .toast {
+    @apply fixed bottom-8 right-8 bg-white rounded-lg shadow-xl p-4 min-w-[20rem] max-w-[24rem] z-[1100];
+    transform: translateX(calc(100% + 2rem));
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  .toast.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .toast-content {
+    @apply flex items-start gap-3;
+  }
+
+  .toast-icon {
+    @apply text-xl mt-1;
+  }
+
+  .toast.success .toast-icon {
+    @apply text-secondary;
+  }
+
+  .toast.error .toast-icon {
+    @apply text-red-600;
+  }
+
+  .toast-text {
+    @apply flex-grow;
+  }
+
+  .toast-title {
+    @apply font-semibold text-dark mb-1;
+  }
+
+  .toast-description {
+    @apply text-sm text-gray;
+  }
+
+  .toast-close {
+    @apply absolute top-2 right-2 bg-none border-none text-2xl cursor-pointer text-gray leading-none;
+  }
 }
 
 @keyframes gradient-shift {
