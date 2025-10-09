@@ -44,7 +44,7 @@ function initializeCarousel() {
 function createServiceSlides(carousel) {
   services.forEach((service, index) => {
     const slide = document.createElement('div');
-    slide.className = `service-slide bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2`;
+    slide.className = `service-slide bg-white p-8 shadow-xl rounded-xl border border-gray-light text-center transition hover:-translate-y-2`;
     slide.innerHTML = `
       <div class="service-header">
         <div class="service-icon ${service.iconBg} mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-white">

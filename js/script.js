@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof initializeContactForm === 'function') {
         initializeContactForm();
     }
-    initializeToast();
+    if (typeof initializeToast === 'function') {
+        initializeToast();
+    }
     if (typeof initializeSectorSearch === 'function') {
         initializeSectorSearch();
     }

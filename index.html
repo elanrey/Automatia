@@ -69,12 +69,12 @@
             <div class="container relative z-10 mx-auto px-4">
                 <div class="grid items-center gap-8 md:grid-cols-2">
                     <div id="hero-text-content" class="text-center text-white md:text-center">
-                        <h1 class="font-outfit text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl">
+                        <h1 class="font-sans text-3xl font-extrabold leading-tight tracking-normal md:text-4xl lg:text-5xl">
                             <span class="block">Transforma tu Negocio</span>
-                            <span class="block">con</span>
-                            <span class="text-gradient block">Inteligencia Artificial</span>
-                            <span class="block">y</span>
-                            <span class="text-gradient block">Automatización</span>
+                            <span class="block mt-2">con</span>
+                            <span class="text-gradient block tracking-wide mt-2 font-orbitron">Inteligencia Artificial</span>
+                            <span class="block mt-2">y</span>
+                            <span class="text-gradient block tracking-wide mt-2 font-orbitron">Automatización</span>
                         </h1>
                         <p class="mx-auto mt-6 max-w-md text-lg text-slate-300">
                             <strong>¿Tu empresa pierde tiempo en tareas repetitivas?</strong><br>
@@ -119,11 +119,10 @@
                               <div class="text-sm font-bold text-slate-300">PRODUCTIVIDAD</div>
                             </div>
                           </div>
-                          <div id="interactive-selector-container" class="mt-6 w-full max-w-md rounded-xl border border-white/10 bg-dark/70 p-6 text-center shadow-xl backdrop-blur-md">
+                          <div id="interactive-selector-container" class="mt-6 w-full max-w-md rounded-xl border border-white/10 bg-dark/70 p-6 text-center shadow-2xl backdrop-blur-md">
                               <h3 class="text-lg font-bold text-secondary">Selecciona tu tipo de empresa y descubre algunas de las soluciones que <span class="text-white">Automat</span><em class="not-italic text-primary">IA</em> te ofrece</h3>
                               <div class="relative mt-4">
-                                  <input type="text" id="sector-search" class="w-full rounded-lg border-2 border-transparent bg-white/90 p-3 text-dark placeholder-slate-500 focus:border-secondary focus:outline-none" placeholder="Selecciona tu Sector">
-                                  <div id="search-results" class="absolute top-full left-0 right-0 z-10 mt-1 hidden max-h-48 overflow-y-auto rounded-lg bg-white shadow-lg"></div>
+                                  <input type="text" id="sector-input" class="w-full rounded-lg border-2 border-transparent bg-white/90 p-3 text-dark placeholder-slate-500 focus:border-secondary focus:outline-none" placeholder="Introduce tu sector y presiona Enter">
                               </div>
                           </div>
                           <div class="mt-6 flex justify-center">
@@ -166,43 +165,41 @@
     <!-- Benefits Section -->
     <section id="beneficios" class="bg-light py-20 sm:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="rounded-xl bg-white p-8 shadow-xl sm:p-12">
-                <div class="text-center">
-                    <h2 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">¿Por qué elegir nuestras soluciones?</h2>
+            <div class="text-center">
+                <h2 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">¿Por qué elegir nuestras soluciones?</h2>
+            </div>
+            <div class="mx-auto mt-16 grid max-w-lg gap-y-12 gap-x-8 sm:max-w-none md:grid-cols-2">
+                <div id="benefit-card-productividad" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-purple">
+                        <img src="img/productividad.png" alt="Productividad" class="h-9 w-9 object-contain">
+                    </div>
+                    <h3 class="mt-6 text-2xl font-bold text-dark">Mayor Productividad</h3>
+                    <p class="mt-4 text-base leading-7 text-gray"><strong>20-25%</strong> de incremento en productividad en equipos que usan asistentes con IA, permitiendo que su personal se enfoque en tareas de alto valor.</p>
+                    <span class="mt-1 block text-xs text-gray-500">Fuente: McKinsey, 2022</span>
                 </div>
-                <div class="mx-auto mt-16 grid max-w-lg gap-y-12 gap-x-8 sm:max-w-none md:grid-cols-2">
-                    <div id="benefit-card-productividad" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-purple">
-                            <img src="img/productividad.png" alt="Productividad" class="h-9 w-9 object-contain">
-                        </div>
-                        <h3 class="mt-6 text-2xl font-bold text-dark">Mayor Productividad</h3>
-                        <p class="mt-4 text-base leading-7 text-gray"><strong>20-25%</strong> de incremento en productividad en equipos que usan asistentes con IA, permitiendo que su personal se enfoque en tareas de alto valor.</p>
-                        <span class="mt-1 block text-xs text-gray-500">Fuente: McKinsey, 2022</span>
+                <div id="benefit-card-costos" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-red">
+                        <img src="img/costos.png" alt="Reduccion de Costos" class="h-9 w-9 object-contain">
                     </div>
-                    <div id="benefit-card-costos" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-red">
-                            <img src="img/costos.png" alt="Reduccion de Costos" class="h-9 w-9 object-contain">
-                        </div>
-                        <h3 class="mt-6 text-2xl font-bold text-dark">Reducción de Costos</h3>
-                        <p class="mt-4 text-base leading-7 text-gray"><strong>30-40%</strong> de ahorro en costos operativos y un ROI promedio de <strong>200-300%</strong> en el primer año, gracias a la optimización de procesos.</p>
-                        <span class="mt-1 block text-xs text-gray-500">Fuente: Deloitte & Forrester</span>
+                    <h3 class="mt-6 text-2xl font-bold text-dark">Reducción de Costos</h3>
+                    <p class="mt-4 text-base leading-7 text-gray"><strong>30-40%</strong> de ahorro en costos operativos y un ROI promedio de <strong>200-300%</strong> en el primer año, gracias a la optimización de procesos.</p>
+                    <span class="mt-1 block text-xs text-gray-500">Fuente: Deloitte & Forrester</span>
+                </div>
+                <div id="benefit-card-tiempo" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-blue">
+                        <img src="img/tiempo.png" alt="Ahorro de Tiempo" class="h-9 w-9 object-contain">
                     </div>
-                    <div id="benefit-card-tiempo" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-blue">
-                            <img src="img/tiempo.png" alt="Ahorro de Tiempo" class="h-9 w-9 object-contain">
-                        </div>
-                        <h3 class="mt-6 text-2xl font-bold text-dark">Ahorro de Tiempo</h3>
-                        <p class="mt-4 text-base leading-7 text-gray"><strong>50-60%</strong> de reducción en el tiempo de procesamiento de tareas y un <strong>60%</strong> de reducción en el tiempo de atención al cliente.</p>
-                        <span class="mt-1 block text-xs text-gray-500">Fuente: UiPath & Salesforce</span>
+                    <h3 class="mt-6 text-2xl font-bold text-dark">Ahorro de Tiempo</h3>
+                    <p class="mt-4 text-base leading-7 text-gray"><strong>50-60%</strong> de reducción en el tiempo de procesamiento de tareas y un <strong>60%</strong> de reducción en el tiempo de atención al cliente.</p>
+                    <span class="mt-1 block text-xs text-gray-500">Fuente: UiPath & Salesforce</span>
+                </div>
+                <div id="benefit-card-errores" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-green">
+                        <img src="img/errores.png" alt="Reducción de Errores" class="h-9 w-9 object-contain">
                     </div>
-                    <div id="benefit-card-errores" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-green">
-                            <img src="img/errores.png" alt="Reducción de Errores" class="h-9 w-9 object-contain">
-                        </div>
-                        <h3 class="mt-6 text-2xl font-bold text-dark">Menos Errores</h3>
-                        <p class="mt-4 text-base leading-7 text-gray"><strong>65%</strong> de reducción en errores humanos al automatizar tareas repetitivas, garantizando mayor precisión y calidad en los resultados.</p>
-                        <span class="mt-1 block text-xs text-gray-500">Fuente: IBM Automation Survey</span>
-                    </div>
+                    <h3 class="mt-6 text-2xl font-bold text-dark">Menos Errores</h3>
+                    <p class="mt-4 text-base leading-7 text-gray"><strong>65%</strong> de reducción en errores humanos al automatizar tareas repetitivas, garantizando mayor precisión y calidad en los resultados.</p>
+                    <span class="mt-1 block text-xs text-gray-500">Fuente: IBM Automation Survey</span>
                 </div>
             </div>
         </div>
@@ -237,7 +234,7 @@
                     </div>
                 </div>
             </div>
-            <div id="contact-form-container" class="rounded-xl bg-white p-8 shadow-xl">
+            <div id="contact-form-container" class="rounded-xl bg-white p-8 shadow-lg border border-gray-light transition hover:-translate-y-2">
                 <form id="contact-form" class="space-y-6" novalidate>
                     <div>
                         <label for="name" class="block text-sm font-semibold leading-6 text-dark">Nombre completo</label>
@@ -330,15 +327,15 @@
     <script src="js/header.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/faq.js"></script>
-    <script src="js/modal.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/contactForm.js"></script>
     <script src="js/search.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/script.js"></script> <!-- El orquestador principal -->
+    <script src="js/sector-modal.js"></script>
 
     <!-- Sector Modal -->
-    <div id="sector-modal" class="modal">
+    <div id="sector-modal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="modal-close-btn"><img src="img/close.png" alt="Cerrar" class="modal-close-icon"></span>
             <div id="modal-body">

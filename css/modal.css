@@ -1,0 +1,33 @@
+/* Estilos para el contenedor principal del modal y el fondo oscuro */
+#sector-modal {
+  @apply fixed inset-0 z-[1500] flex justify-center bg-gray-900 bg-opacity-75;
+}
+
+/* Estilos para la caja de contenido del modal */
+.modal-content {
+  @apply bg-white rounded-lg shadow-2xl relative w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto mx-auto mb-4 mt-8;
+}
+
+/* Estilos para el botón de cerrar */
+.modal-close-btn {
+  @apply absolute top-3 right-4 text-gray-400 text-4xl font-bold transition-colors duration-300;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  @apply text-gray-800 cursor-pointer;
+}
+
+/* Estilos para el cuerpo del modal donde se inyecta el contenido */
+#modal-body {
+  @apply p-6 sm:p-8; /* Padding interno */
+}
+
+/* Estilos para los textos de carga y error */
+.loading-text, .error-text {
+  @apply text-center text-gray-600 text-xl p-12;
+}
+
+.error-text {
+  @apply text-red-500;
+}

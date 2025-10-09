@@ -2,16 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const sectorName = params.get("name");
 
-  if (!sectorName) {
-    displayError("No se ha especificado un sector.");
-    return;
-  }
-
-  // API endpoint (using the provided placeholder)
-  const apiUrl = `https://automatia.cc/api/v1/content?name=${encodeURIComponent(
-    sectorName
-  )}`;
-
   // --- DOM Elements ---
   const heroTitle = document.getElementById("hero-title");
   const heroDescription = document.getElementById("hero-description");
@@ -27,59 +17,96 @@ document.addEventListener("DOMContentLoaded", () => {
       "Por favor, verifica la URL o intenta de nuevo.";
   }
 
-  function updateMetadata(meta) {
-    document.title = meta.title;
-    document
-      .getElementById("meta-description")
-      .setAttribute("content", meta.description);
-    document.getElementById("og-title").setAttribute("content", meta.title);
-    document
-      .getElementById("og-description")
-      .setAttribute("content", meta.description);
+  function updateUI(data) {
+    const sectorData = data[0];
+
+    // Hero Section
+    heroTitle.innerHTML = `<span class="hero-title-line">${sectorData.Título}</span>`;
+    heroDescription.textContent = sectorData.Subtítulo;
+
+    // Solutions Section
+    solutionsTitle.textContent = sectorData.Solución;
+    solutionsList.innerHTML = sectorData.Items.map(
+      (item) => `
+      <li class="solution-item">
+        <h3 class="solution-item-title">${item.título}</h3>
+        <p class="solution-item-description">${item.descripción}</p>
+      </li>
+    `
+    ).join("");
+
+    // Contact Section
+    contactTitle.textContent = sectorData.Contacto;
+    contactDescription.textContent = sectorData.Mensaje;
   }
 
-  function renderHero(hero) {
-    heroTitle.innerHTML = hero.title
-      .map((line) => {
-        if (line === hero.highlight) {
-          return `<span class="hero-title-highlight"><span class="text-gradient">${line}</span></span>`;
+  if (!sectorName) {
+    displayError("No se ha especificado un sector en la URL.");
+    return;
+  }
+
+  // API endpoint for the POST request
+  const apiUrl = `https://automatia.cc/api/v1/content`;
+
+  // --- Mock Data ---
+  const mockApiResponse = [
+    {
+      "Título": "Automatiza tu práctica legal con Inteligencia Artificial",
+      "Subtítulo": "¿Cansado de tareas repetitivas y falta de tiempo? La IA automatiza procesos legales, reduciendo tiempo y errores.",
+      "Solución": "Descubre cómo la IA puede transformar tu práctica legal",
+      "Items": [
+        {
+          "título": "Análisis predictivo de casos legales",
+          "descripción": "La IA analiza datos históricos para prever resultados, optimizando estrategias de representación."
+        },
+        {
+          "título": "Automatización de documentación legal",
+          "descripción": "Genera y revisa contratos, resúmenes, y documentos jurídicos con precisión y rapidez."
+        },
+        {
+          "título": "Investigación legal avanzada",
+          "descripción": "Busca y analiza leyes, reglamentos, y documentos jurídicos en tiempo real, reduciendo la dependencia de recursos humanos."
+        },
+        {
+          "título": "Análisis de contratos inteligente",
+          "descripción": "Identifica cláusulas críticas, riesgos y oportunidades, mejorando la negociación y cumplimiento."
+        },
+        {
+          "título": "Gestión de cumplimiento regulatorio",
+          "descripción": "Monitorea y actualiza normativas en tiempo real, minimizando sanciones y errores."
         }
-        return `<span class="hero-title-line">${line}</span>`;
-      })
-      .join("");
-    heroDescription.innerHTML = hero.description;
-  }
+      ],
+      "Contacto": "Transforma tu negocio con IA",
+      "Mensaje": "Solicita una demostración gratuita de soluciones de inteligencia artificial para abogados"
+    }
+  ];
 
-  function renderSolutions(solutions) {
-    solutionsTitle.textContent = solutions.title;
-    solutionsList.innerHTML = solutions.list
-      .map((item) => `<li>${item}</li>`)
-      .join("");
-  }
-
-  function renderContact(contact) {
-    contactTitle.textContent = contact.title;
-    contactDescription.textContent = contact.description;
-  }
-
-  // --- Fetch Data ---
-  fetch(apiUrl)
+  // --- Fetch Data using POST (with mock response for testing) ---
+  fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name: sectorName }),
+  })
     .then((response) => {
+      // For testing, we ignore the actual response and use the mock data.
+      // When you want to use the real API, replace 'mockApiResponse' with 'response.json()'
+      // and remove the 'updateUI(mockApiResponse);' line below.
       if (!response.ok) {
-        throw new Error(`Error ${response.status}: No se pudo cargar el contenido.`);
+        // Even in testing, we can check if the request itself would have failed.
+        console.warn(`API call would have failed with status: ${response.status}`);
       }
-      return response.json();
+      return mockApiResponse; // Directly return the mock data.
     })
     .then((data) => {
-      // Assuming a JSON structure like:
-      // { meta: {..}, hero: {..}, solutions: {..}, contact: {..} }
-      updateMetadata(data.meta);
-      renderHero(data.hero);
-      renderSolutions(data.solutions);
-      renderContact(data.contact);
+      updateUI(data);
     })
     .catch((error) => {
-      console.error("Error fetching sector data:", error);
-      displayError(error.message);
+      // If the fetch itself fails (e.g., network error), we still want to see it.
+      console.error("Error during fetch:", error);
+      // Fallback to mock data for UI testing even if the network fails.
+      console.log("Displaying page with mock data due to fetch error.");
+      updateUI(mockApiResponse);
     });
 });
