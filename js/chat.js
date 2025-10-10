@@ -10,21 +10,19 @@
 class ChatWidget {
     constructor() {
         this.isOpen = false;
-        this.messages = [
-            {
-                id: 'initial',
-                type: 'bot',
-                content: '¡Hola! Soy el asistente de AutomatIA. ¿En qué puedo ayudarte hoy?',
-                timestamp: new Date()
-            }
-        ];
+        this.messages = [];
         this.isTyping = false;
+        this.sessionId = this.generateSessionId();
+        this.apiUrl = 'https://www.automatia.cc/api/v1/chat';
 
         // Crear elementos del chat
         this.createChatElement();
 
         // Configurar event listeners
         this.setupEventListeners();
+
+        // Mostrar mensaje de bienvenida después de inicializar
+        this.showWelcomeMessage();
     }
 
     createChatElement() {
@@ -153,7 +151,7 @@ class ChatWidget {
         this.input.blur();
     }
 
-    sendMessage() {
+    async sendMessage() {
         const message = this.input.value.trim();
         if (!message) return;
 
@@ -172,11 +170,31 @@ class ChatWidget {
         // Mostrar indicador de escritura
         this.showTypingIndicator();
 
-        // Responder automáticamente después de un delay
-        setTimeout(() => {
+        try {
+            // Hacer petición a la API
+            const response = await this.sendApiMessage(message);
+
+            // Ocultar indicador de escritura
             this.hideTypingIndicator();
-            this.generateBotResponse(message);
-        }, 1500 + Math.random() * 2000); // Delay variable
+
+            // Agregar respuesta del bot
+            this.addMessage({
+                type: 'bot',
+                content: response.output,
+                timestamp: new Date()
+            });
+
+        } catch (error) {
+            console.error('Error al enviar mensaje:', error);
+            this.hideTypingIndicator();
+
+            // Mensaje de error si falla la API
+            this.addMessage({
+                type: 'bot',
+                content: 'Lo siento, tuve un problema al procesar tu mensaje. Por favor intenta de nuevo.',
+                timestamp: new Date()
+            });
+        }
     }
 
     addMessage(message) {
@@ -198,49 +216,7 @@ class ChatWidget {
         // this.playMessageSound();
     }
 
-    generateBotResponse(userMessage) {
-        const responses = {
-            // Respuestas específicas
-            'hola': '¡Hola! 👋 ¿Cómo puedo ayudarte con automatización e IA?',
-            'precio': 'Ofrecemos precios flexibles según el tamaño de tu empresa. ¿Me puedes contar más sobre tu negocio?',
-            'contacto': 'Puedes contactarnos a través del formulario en la página principal o por email. ¿Qué tipo de proyecto tienes en mente?',
-            'demo': '¡Claro! Te puedo mostrar algunas funcionalidades básicas. ¿Qué área de tu negocio te gustaría automatizar?'
-        };
 
-        // Detectar keywords en el mensaje del usuario
-        const lowerMessage = userMessage.toLowerCase();
-        let response = null;
-
-        for (const [keyword, reply] of Object.entries(responses)) {
-            if (lowerMessage.includes(keyword)) {
-                response = reply;
-                break;
-            }
-        }
-
-        // Respuesta por defecto si no hay match
-        if (!response) {
-            const defaultResponses = [
-                'Entiendo. ¿Me puedes dar más detalles sobre tu proyecto?',
-                '¡Interesante! Cuéntame más sobre cómo podemos ayudar a tu empresa.',
-                'Gracias por tu mensaje. ¿En qué sector trabajas?',
-                'Perfecto. ¿Qué procesos en tu empresa crees que se pueden automatizar?',
-                '¡Excelente! ¿Has considerado antes implementar soluciones de IA?'
-            ];
-            response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
-        }
-
-        this.addMessage({
-            type: 'bot',
-            content: response,
-            timestamp: new Date()
-        });
-
-        // Mostrar nueva notificación si el chat está cerrado
-        if (!this.isOpen) {
-            this.showNotificationBadge();
-        }
-    }
 
     handleInput(e) {
         const value = e.target.value;
@@ -296,6 +272,60 @@ class ChatWidget {
             this.chatPanel.style.maxHeight = `${window.innerHeight * 0.8}px`;
         } else {
             this.chatPanel.style.maxHeight = '600px';
+        }
+    }
+
+    // Generar un ID único para la sesión usando crypto si está disponible
+    generateSessionId() {
+        if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+            return crypto.randomUUID();
+        } else {
+            // Fallback para navegadores sin crypto.randomUUID
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0;
+                const v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+    }
+
+    // Enviar mensaje a la API
+    async sendApiMessage(message) {
+        const response = await fetch(this.apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                session_id: this.sessionId,
+                message: message
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return await response.json();
+    }
+
+    // Mostrar mensaje de bienvenida inicial
+    async showWelcomeMessage() {
+        try {
+            const response = await this.sendApiMessage('hola');
+            this.addMessage({
+                type: 'bot',
+                content: response.output,
+                timestamp: new Date()
+            });
+        } catch (error) {
+            console.error('Error al obtener mensaje de bienvenida:', error);
+            // Mensaje por defecto si falla la API
+            this.addMessage({
+                type: 'bot',
+                content: '¡Hola! Soy el asistente de AutomatIA. ¿En qué puedo ayudarte hoy?',
+                timestamp: new Date()
+            });
         }
     }
 
@@ -489,7 +519,7 @@ const chatStyles = `
 }
 
 .chat-message-content {
-    background: var(--tw-primary);
+    background: linear-gradient(135deg, #1d45fa, #dc41f1);
     color: white;
     padding: 8px 12px;
     border-radius: 16px 16px 4px 16px;
@@ -500,7 +530,8 @@ const chatStyles = `
 }
 
 .chat-message-user .chat-message-content {
-    background: var(--tw-primary);
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    color: #0f1729;
     border-radius: 16px 16px 16px 4px;
 }
 
