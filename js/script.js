@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // El orden puede ser importante si un módulo depende de otro.
 
     // Datos globales (si son necesarios para otros scripts)
-    // const services = [ ... ]; 
+    // const services = [ ... ];
 
     if (typeof initializeHeaderAndNav === 'function') {
         initializeHeaderAndNav();
@@ -28,5 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (typeof initializeSectorSearch === 'function') {
         initializeSectorSearch();
+    }
+    if (typeof initializeChat === 'function') {
+        initializeChat();
     }
 });
