@@ -12,18 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = () => {
     sectorModal.style.display = "none";
     modalBody.innerHTML = ""; // Limpiar contenido al cerrar
+    document.body.style.overflow = ""; // Restaurar scroll del body
   };
 
   const openModal = () => {
     sectorModal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Bloquear scroll del body
   };
 
   closeBtn.addEventListener("click", closeModal);
-  window.addEventListener("click", (event) => {
-    if (event.target === sectorModal) {
-      closeModal();
-    }
-  });
 
   // --- Mock Data ---
   const mockApiResponse = {
@@ -97,7 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      sectorInput.blur(); // Quitar el foco del input
       openModal();
+      closeBtn.style.display = 'none'; // Ocultar el botón de cierre
+
       modalBody.innerHTML = `
         <div class="flex items-center justify-center p-12">
           <div class="loader-container">
@@ -108,31 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      try {
-        const response = await fetch("https://www.automatia.cc/api/v1/content", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ sector: sectorName }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`API request failed with status ${response.status}`);
+      // Simular una carga de 2 segundos
+      setTimeout(() => {
+        try {
+          // Simulamos el éxito y usamos los datos de prueba
+          renderContent(mockApiResponse['legal']);
+          if (typeof initializeParticles === 'function') {
+              initializeParticles();
+          }
+        } catch (error) {
+          console.error("Error rendering mock data:", error);
+          modalBody.innerHTML = '<p class="error-text">No se pudo cargar el contenido.</p>';
+        } finally {
+          closeBtn.style.display = 'block'; // Mostrar el botón de cierre
         }
-
-        const data = await response.json();
-
-        if (data && data.length > 0) {
-          renderContent(data);
-        } else {
-          throw new Error("API returned empty or invalid data.");
-        }
-
-      } catch (error) {
-        console.error("API call failed, falling back to mock data:", error);
-        renderContent(mockApiResponse['legal']);
-      }
+      }, 2000);
     }
   });
 });
