@@ -98,7 +98,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       openModal();
-      modalBody.innerHTML = '<p class="loading-text">Cargando...</p>';
+      modalBody.innerHTML = `
+        <div class="flex items-center justify-center p-12">
+          <div class="loader-container">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <img src="img/Logo color.png" alt="Cargando..." class="loader-logo">
+          </div>
+        </div>
+      `;
 
       try {
         const response = await fetch("https://www.automatia.cc/api/v1/content", {
