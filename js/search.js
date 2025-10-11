@@ -1,22 +1,16 @@
     // Funcionalidad para buscar sectores
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('Sector search functionality initialized');
 
         // Obtener el input de sector
         const sectorInput = document.getElementById('sector-input');
 
         if (!sectorInput) {
-            console.error('Sector input not found');
             return;
         }
-
-        console.log('Sector input ready');
 
         // Agregar event listener para detectar Enter
         sectorInput.addEventListener('keydown', async function(e) {
             if (e.key === 'Enter') {
-                console.log('Enter pressed');
-
                 e.preventDefault();
 
                 const sectorName = this.value.trim().toLowerCase();
@@ -26,43 +20,32 @@
                     return;
                 }
 
-                console.log(`Searching for sector: "${sectorName}"`);
-
                 // Limpiar el input
                 this.value = '';
 
                 try {
                     // Mostrar modal con loading
                     showSectorModal();
-
-                    console.log('Making API call...');
                     const response = await fetchSectorContent(sectorName);
-
-                    console.log('API response:', response);
 
                     if (response && response.length > 0) {
                         const sectorData = response[0];
-                        console.log('✅ SUCCESS - Sector data:', sectorData);
                         // Mostrar contenido en modal
                         updateSectorModal(sectorData, sectorName);
                     } else {
-                        console.warn('⚠️ No data found for sector');
                         showSectorModalError(`No se encontró información para el sector "${sectorName}".`);
                     }
                 } catch (error) {
-                    console.error('❌ API ERROR:', error);
                     showSectorModalError(`Error conectado con el servidor. Detalles: ${error.message}`);
                 }
             }
         });
 
-        console.log('Sector search functionality ready!');
     });
 
 // Función para hacer la llamada a la API
 async function fetchSectorContent(sectorName) {
     try {
-        console.log('Making API call to:', `https://www.automatia.cc/api/v1/content`);
         const response = await fetch('https://www.automatia.cc/api/v1/content', {
             method: 'POST',
             headers: {
@@ -78,17 +61,15 @@ async function fetchSectorContent(sectorName) {
         }
 
         const data = await response.json();
-        console.log('API response received:', data);
+
         return data;
     } catch (error) {
-        console.error('API call failed:', error);
         throw error;
     }
 }
 
 // Función para mostrar la modal de sector
 function showSectorModal() {
-    console.log('Showing sector modal with loading state');
 
     // Crear modal si no existe
     let modalWrapper = document.getElementById('sector-modal-wrapper');
@@ -111,7 +92,7 @@ function showSectorModal() {
 
         modalWrapper.innerHTML = `
             <div style="
-                background: white;
+                background: #f8f8f8;
                 border-radius: 16px;
                 max-width: 800px;
                 width: 100%;
@@ -257,7 +238,6 @@ function hideSectorModal() {
 
 // Función para actualizar el contenido de la modal
 function updateSectorModal(sectorData, originalSector) {
-    console.log('Updating modal content with data:', sectorData);
 
     const loadingDiv = document.getElementById('sector-modal-loading');
     const contentDiv = document.getElementById('sector-modal-content');
@@ -301,11 +281,13 @@ function updateSectorModal(sectorData, originalSector) {
         ">
             ${sectorData.Items ? sectorData.Items.map(item => `
                 <div style="
-                    background: #f8fafc;
-                    padding: 1.5rem;
+                    background: white;
+                    padding: 2rem;
                     border-radius: 0.75rem;
-                    border-left: 4px solid #1d45fa;
-                    transition: transform 0.2s ease;
+                    border: 1px solid #d0d0d0;
+                    box-shadow: 0 4px 2px 0 #d0d0d0;
+                    text-align: center;
+                    transition: transform 0.2s;
                 ">
                     <h4 style="
                         font-size: 1.125rem;
@@ -322,6 +304,7 @@ function updateSectorModal(sectorData, originalSector) {
                     <p style="
                         color: #64748b;
                         line-height: 1.5;
+                        text-align: justify;
                         margin: 0;
                     ">
                         ${item.descripción || 'Descripción detallada próximamente.'}
@@ -333,13 +316,14 @@ function updateSectorModal(sectorData, originalSector) {
         <div style="
             margin-top: 2.5rem;
             padding: 2rem;
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            background: white;
             border-radius: 0.75rem;
             text-align: center;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #d0d0d0;
+            box-shadow: 0 4px 2px 0 #d0d0d0;
         ">
             <h3 style="
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 font-weight: 600;
                 color: #0f1729;
                 margin-bottom: 0.75rem;
@@ -354,7 +338,7 @@ function updateSectorModal(sectorData, originalSector) {
                 margin: 0 auto 1.5rem auto;
                 line-height: 1.5;
             ">
-                Contacta con nuestros expertos en automatización y descubre cómo podemos ayudarte a implementar soluciones personalizadas para tu sector.
+                Contáctanos y descubre cómo impulsar tus resultados con soluciones diseñadas a tu medida.
             </p>
             <button style="
                 background: linear-gradient(135deg, #1d45fa, #dc41f1);
@@ -385,7 +369,6 @@ function updateSectorModal(sectorData, originalSector) {
 
 // Función para mostrar error en la modal
 function showSectorModalError(message) {
-    console.log('Showing modal error:', message);
 
     const loadingDiv = document.getElementById('sector-modal-loading');
     const contentDiv = document.getElementById('sector-modal-content');
