@@ -1,62 +1,98 @@
 const services = [
   {
-    id: 1,
-    title: "Automatización de Tareas Repetitivas",
-    icon: "fas fa-cogs",
-    gradient: "from-blue-50 to-indigo-50",
-    iconBg: "bg-gradient-blue",
-    problem: 'Una consultora de crecimiento invertía más de 20 horas semanales en tareas manuales, como la entrada de datos en su CRM, la gestión de archivos y la creación de informes. Este proceso no solo era ineficiente, sino que también generaba errores que afectaban la toma de decisiones.',
-    solution: "Se diseñaron flujos automáticos que imitan y ejecutan esas tareas repetitivas en su lugar. El sistema se encarga de realizar automáticamente lo que antes hacía su personal, desde la entrada de datos hasta la generación de informes.",
-    benefit: "Ahorro masivo de tiempo para su personal, reducción drástica de errores, mayor eficiencia operativa y la libertad de enfocar sus recursos en actividades de mayor valor para su negocio."
+    "titulo": "Atención al Cliente Automatizada",
+    "problema": "Los clientes esperan respuestas inmediatas, pero los equipos no siempre pueden atender en todo momento.",
+    "solucion": "Implementamos asistentes virtuales que responden preguntas, agendan citas y brindan soporte 24/7.",
+    "beneficio": "Mayor satisfacción del cliente, ahorro de tiempo y disponibilidad continua.",
+    "ejemplos": [
+      "Chat en WhatsApp que atiende y agenda citas automáticamente.",
+      "Asistente web que canaliza solicitudes y genera reportes.",
+      "Bot de atención que recopila datos del cliente y los envía al CRM en tiempo real."
+    ],
+    "icon": "fas fa-comments"
   },
   {
-    id: 2,
-    title: "Asistentes Virtuales Inteligentes",
-    icon: "fas fa-robot",
-    gradient: "from-emerald-50 to-teal-50",
-    iconBg: "bg-gradient-green",
-    problem: 'Una academia online se veía desbordada por la cantidad de preguntas repetitivas de sus estudiantes sobre horarios, materiales y acceso a las clases. El equipo de soporte no daba abasto, generando largos tiempos de espera y una baja satisfacción.',
-    solution: "Se desarrolló un asistente virtual (chatbot) entrenado con los documentos, manuales y archivos relevantes de la academia. Este asistente puede responder preguntas, buscar información específica y brindar respuestas claras y precisas al instante.",
-    benefit: "Mejora en la atención al cliente o soporte interno, respuestas rápidas y consistentes, y una reducción significativa en la carga de trabajo de su equipo."
+    "titulo": "Automatización de Marketing",
+    "problema": "Las campañas requieren demasiado tiempo para segmentar, escribir y enviar mensajes personalizados.",
+    "solucion": "Automatizamos el envío y la generación de contenido según el comportamiento del cliente.",
+    "beneficio": "Aumento en la tasa de conversión y reducción significativa del trabajo manual.",
+    "ejemplos": [
+      "Correos automáticos con promociones personalizadas según las compras previas.",
+      "Publicaciones en redes sociales generadas y programadas por IA.",
+      "Mensajes automatizados por WhatsApp tras una visita o registro en la web."
+    ],
+    "icon": "fas fa-chart-line"
   },
   {
-    id: 3,
-    title: "Extracción Inteligente de Información",
-    icon: "fas fa-search-plus",
-    gradient: "from-purple-50 to-pink-50",
-    iconBg: "bg-gradient-purple",
-    problem: 'Un despacho de abogados necesitaba analizar cientos de documentos legales y extraer cláusulas específicas, un trabajo que tomaba días y era propenso a omisiones. La recolección manual de esta información crítica retrasaba la preparación de sus casos.',
-    solution: "Se implementaron soluciones que extraen datos de documentos, los procesan con inteligencia artificial y los convierten en contenido útil y estructurado, permitiendo, por ejemplo, transformar documentos legales en resúmenes ejecutivos.",
-    benefit: "Acceso rápido a información clave para tomar decisiones, eliminación del trabajo manual de recolección de datos y la capacidad de descubrir oportunidades antes invisibles."
+    "titulo": "Generación y Calificación de Prospectos",
+    "problema": "Los equipos comerciales pierden tiempo con contactos poco calificados.",
+    "solucion": "Automatizamos la captura, análisis y puntuación de leads según su nivel de interés.",
+    "beneficio": "Enfoque en prospectos con mayor probabilidad de compra y mejor uso del tiempo del equipo.",
+    "ejemplos": [
+      "Formularios que califican leads automáticamente según sus respuestas.",
+      "Sistema que analiza correos o chats y asigna un puntaje de interés.",
+      "Flujo que prioriza los leads más activos y notifica al equipo de ventas."
+    ],
+    "icon": "fas fa-users"
   },
   {
-    id: 4,
-    title: "Conexión y Sincronización de Sistemas",
-    icon: "fas fa-link",
-    gradient: "from-orange-50 to-red-50",
-    iconBg: "bg-gradient-orange",
-    problem: 'Una empresa de logística utilizaba un sistema para la gestión de inventario y otro para la contabilidad, sin conexión entre ellos. El equipo debía duplicar la información manualmente, lo que causaba inconsistencias en los datos y dificultaba la visibilidad financiera en tiempo real.',
-    solution: "Se diseñaron integraciones para que todos los sistemas trabajen como uno solo, compartiendo información sin intervención humana. Los flujos automáticos aseguran que cuando algo ocurra en un sistema, se actualice automáticamente en los demás.",
-    benefit: "Eliminación de la duplicidad de datos, reducción de errores, visión unificada de su operación y procesos optimizados con datos siempre actualizados."
+    "titulo": "Análisis de Datos y Reportes Automáticos",
+    "problema": "Analizar datos y generar reportes consume tiempo y requiere conocimientos técnicos.",
+    "solucion": "La IA transforma tus datos en reportes, gráficos y resúmenes automáticos.",
+    "beneficio": "Decisiones más rápidas y mejor entendimiento del desempeño de tu negocio.",
+    "ejemplos": [
+      "Reportes semanales de ventas generados automáticamente con gráficos.",
+      "Resúmenes diarios de desempeño enviados por correo al equipo.",
+      "Análisis predictivo que identifica tendencias en ventas o rotación de clientes."
+    ],
+    "icon": "fas fa-chart-bar"
   },
   {
-    id: 5,
-    title: "Eficiencia en la Gestión de Nuevos Clientes",
-    icon: "fas fa-chart-line",
-    gradient: "from-green-50 to-emerald-50",
-    iconBg: "bg-gradient-green",
-    problem: "Una empresa de servicios financieros dedicaba un equipo completo a procesar manualmente las solicitudes de nuevos clientes. Esto implicaba revisar documentos, ingresar datos en múltiples sistemas y validar información, generando retrasos y una alta tasa de errores.",
-    solution: "Se diseñó un sistema que toma automáticamente las solicitudes, extrae la información clave de los documentos y la verifica en tiempo real. Luego distribuye los datos entre los sistemas internos sin intervención humana.",
-    benefit: "La empresa redujo el tiempo de procesamiento en un 70% y los errores humanos en un 95%. Esto permitió que: El equipo se enfocara en atención personalizada y generación de valor, dejando atrás tareas mecánicas."
+    "titulo": "Procesamiento Inteligente de Documentos",
+    "problema": "Revisar, clasificar y registrar documentos es lento y propenso a errores.",
+    "solucion": "Los sistemas de IA extraen información de facturas, contratos y formularios de forma automática.",
+    "beneficio": "Ahorro de horas de trabajo y reducción de errores humanos.",
+    "ejemplos": [
+      "Lectura automática de facturas y carga contable en el sistema.",
+      "Clasificación de contratos y archivos por tipo y cliente.",
+      "Extracción de datos clave de documentos escaneados para análisis o archivo."
+    ],
+    "icon": "fas fa-file-alt"
   },
   {
-    id: 6,
-    title: "Soporte al Cliente 24/7 con IA",
-    icon: "fas fa-headset",
-    gradient: "from-blue-50 to-cyan-50",
-    iconBg: "bg-gradient-blue",
-    problem: "Una compañía de seguros recibía cientos de llamadas diarias con preguntas repetidas sobre pólizas y coberturas. Los agentes se saturaban con estas consultas, lo que afectaba la atención de casos más importantes.",
-    solution: "Se desarrolló un asistente virtual inteligente en su sitio web, entrenado con la documentación interna: pólizas, preguntas frecuentes y procedimientos. El asistente comprende preguntas mal formuladas y responde de forma clara.",
-    benefit: "El 80% de las preguntas frecuentes ahora se resuelven automáticamente. Bajaron los tiempos de espera y mejoró la satisfacción del cliente. Esto permitió que: La empresa ofreciera soporte constante y de alta calidad, y su equipo se dedicara a tareas de mayor impacto."
+    "titulo": "Gestión Interna y Productividad",
+    "problema": "La información interna se dispersa entre correos, chats y reuniones.",
+    "solucion": "Centralizamos la información y automatizamos tareas administrativas.",
+    "beneficio": "Equipos más organizados, menos errores y mejor comunicación.",
+    "ejemplos": [
+      "Asistente que resume reuniones y genera tareas automáticamente.",
+      "Sistema que responde preguntas internas sobre políticas o procesos.",
+      "Flujo que notifica al equipo sobre actualizaciones o pendientes diarios."
+    ],
+    "icon": "fas fa-cogs"
+  },
+  {
+    "titulo": "Soporte Administrativo y Contable",
+    "problema": "Las tareas contables y administrativas consumen tiempo y son repetitivas.",
+    "solucion": "Automatizamos la clasificación de gastos, conciliaciones y reportes financieros.",
+    "beneficio": "Procesos más rápidos, menos errores y mayor control financiero.",
+    "ejemplos": [
+      "Conciliación automática de movimientos bancarios con registros internos.",
+      "Clasificación de gastos según categoría y proveedor.",
+      "Generación de reportes contables y financieros mensuales de forma automática."
+    ],
+    "icon": "fas fa-calculator"
+  },
+  {
+    "titulo": "Flujos Operativos Automatizados",
+    "problema": "Muchos procesos dependen de pasos manuales entre distintas herramientas.",
+    "solucion": "Conectamos tus sistemas para que los procesos trabajen solos, de principio a fin.",
+    "beneficio": "Ahorro de tiempo, menos errores y operaciones más ágiles.",
+    "ejemplos": [
+      "Pedido recibido → factura generada → cliente notificado automáticamente.",
+      "Seguimiento postventa automatizado según historial de compra.",
+      "Sincronización entre inventario, facturación y notificaciones al cliente."
+    ],
+    "icon": "fas fa-sync"
   }
-];
+]

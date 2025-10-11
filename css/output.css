@@ -702,9 +702,17 @@ body {
   width: 100%;
 }
 
+.\!container {
+  width: 100% !important;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
+  }
+
+  .\!container {
+    max-width: 640px !important;
   }
 }
 
@@ -712,11 +720,19 @@ body {
   .container {
     max-width: 768px;
   }
+
+  .\!container {
+    max-width: 768px !important;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
+  }
+
+  .\!container {
+    max-width: 1024px !important;
   }
 }
 
@@ -724,11 +740,19 @@ body {
   .container {
     max-width: 1280px;
   }
+
+  .\!container {
+    max-width: 1280px !important;
+  }
 }
 
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+
+  .\!container {
+    max-width: 1536px !important;
   }
 }
 
@@ -2566,6 +2590,26 @@ body {
   padding-bottom: 1rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -2604,6 +2648,10 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .font-orbitron {
