@@ -62,7 +62,19 @@
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="css/output.css">
+
     <style>
+        body {
+            background: linear-gradient(45deg, #f8fafc 0%, #e2e8f0 100%);
+            height: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-behavior: smooth;
+            height: auto;
+            overflow: auto;
+        }
         .carousel-container {
             position: relative;
             display: flex;
@@ -70,33 +82,31 @@
             justify-content: center;
             width: 100%;
         }
-
         .carousel-wrapper {
             overflow: hidden;
             width: 100%;
             max-width: 1000px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
-
         .carousel-slides {
             display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
-
         .carousel-slide {
             min-width: 100%;
             display: flex;
             justify-content: center;
-            padding: 2rem 0;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
-
-        .carousel-prev,
-        .carousel-next {
+        .carousel-prev, .carousel-next {
             background: linear-gradient(135deg, #1d45fa, #dc41f1);
             border: none;
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.5rem;
@@ -104,19 +114,20 @@
             align-items: center;
             justify-content: center;
             margin: 0 1rem;
+            box-shadow: 0 8px 25px rgba(29, 69, 250, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
-
-        .carousel-prev:hover,
-        .carousel-next:hover {
-            transform: scale(1.1);
+        .carousel-prev:hover, .carousel-next:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 12px 35px rgba(29, 69, 250, 0.4);
         }
-
-        .carousel-slide.active {
-            display: flex;
+        .carousel-prev:hover {
+            transform: scale(1.15) rotate(-5deg);
         }
     </style>
 </head>
-<body class="font-sans bg-white text-gray overflow-x-hidden">
+<body class="font-sans bg-white text-gray overflow-x-hidden overflow-y-auto scroll-smooth">
+
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
         <div class="container mx-auto flex h-full items-center justify-between px-4">
@@ -152,77 +163,78 @@
         </div>
     </header>
 
-        <!-- Hero Section -->
-        <section id="hero-section" class="relative grid min-h-[calc(100vh-60px)] place-items-center bg-dark pt-24 pb-12">
-            <div class="hero-particles">
+    <!-- Hero Section -->
+    <section id="hero-section" class="relative grid min-h-[calc(100vh-60px)] place-items-center bg-dark pt-24 pb-12">
+        <div class="hero-particles">
                 <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-            </div>
-            <div class="container relative z-10 mx-auto px-4">
-                <div class="grid items-center gap-8 md:grid-cols-2">
-                    <div id="hero-text-content" class="text-center text-white md:text-center">
-                        <h1 class="font-sans text-3xl font-extrabold leading-tight tracking-normal md:text-4xl lg:text-5xl">
-                            <span class="block">Transforma tu Negocio</span>
-                            <span class="block mt-2">con</span>
-                            <span class="text-gradient block tracking-wide mt-2 font-orbitron">Inteligencia Artificial</span>
-                            <span class="block mt-2">y</span>
-                            <span class="text-gradient block tracking-wide mt-2 font-orbitron">Automatización</span>
-                        </h1>
-                        <p class="mx-auto mt-6 max-w-md text-lg text-slate-300">
-                            <strong>¿Tu empresa pierde tiempo en tareas repetitivas?</strong><br>
-                            Implementa soluciones de IA que eliminen procesos manuales, integren sistemas y ejecuten tareas en segundos.
-                        </p>
-                        <div class="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-center">
-                            <div class="flex items-center gap-2">
-                                <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
-                                    <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
-                                </div>
-                                <span class="text-sm text-slate-300">Consulta gratuita</span>
+        </div>
+        <div class="container relative z-10 mx-auto px-4">
+            <div class="grid items-center gap-8 md:grid-cols-2">
+                <div id="hero-text-content" class="text-center text-white md:text-center">
+                    <h1 class="font-sans text-3xl font-extrabold leading-tight tracking-normal md:text-4xl lg:text-5xl">
+                        <span class="block">Transforma tu Negocio</span>
+                        <span class="block mt-2">con</span>
+                        <span class="text-gradient block tracking-wide mt-2 font-orbitron">Inteligencia Artificial</span>
+                        <span class="block mt-2">y</span>
+                        <span class="text-gradient block tracking-wide mt-2 font-orbitron">Automatización</span>
+                    </h1>
+                    <p class="mx-auto mt-6 max-w-md text-lg text-slate-300">
+                        <strong>¿Tu empresa pierde tiempo en tareas repetitivas?</strong><br>
+                        Implementa soluciones de IA que eliminen procesos manuales, integren sistemas y ejecuten tareas en segundos.
+                    </p>
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-center">
+                        <div class="flex items-center gap-2">
+                            <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
+                                <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
                             </div>
-                            <div class="flex items-center gap-2">
-                                <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
-                                    <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
-                                </div>
-                                <span class="text-sm text-slate-300">Implementación rápida</span>
+                            <span class="text-sm text-slate-300">Consulta gratuita</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
+                                <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
                             </div>
-                            <div class="flex items-center gap-2">
-                                <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
-                                    <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
-                                </div>
-                                <span class="text-sm text-slate-300">Soporte personalizado</span>
-                              </div>
-                          </div>
-                      </div>
-                      <div id="hero-visuals" class="flex flex-col items-center">
-                          <div class="flex w-full max-w-md gap-2">
+                            <span class="text-sm text-slate-300">Implementación rápida</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary">
+                                <img src="img/check.png" alt="Check Icon" class="h-3 w-3">
+                            </div>
+                            <span class="text-sm text-slate-300">Soporte personalizado</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="hero-visuals" class="flex flex-col items-center">
+                    <div class="flex w-full max-w-md gap-2">
                             <div id="stat-card-tiempo" class="flex-1 rounded-lg border border-white/10 bg-dark/70 p-4 text-center backdrop-blur-md">
-                              <div class="font-orbitron text-4xl font-bold text-secondary">60%</div>
-                              <div class="text-sm font-bold text-slate-300">MENOS TIEMPO</div>
-                              <div class="text-sm font-bold text-slate-300">EN TAREAS</div>
-                            </div>
+                            <div class="font-orbitron text-4xl font-bold text-secondary">60%</div>
+                            <div class="text-sm font-bold text-slate-300">MENOS TIEMPO</div>
+                            <div class="text-sm font-bold text-slate-300">EN TAREAS</div>
+                        </div>
                             <div id="stat-card-costos" class="flex-1 rounded-lg border border-white/10 bg-dark/70 p-4 text-center backdrop-blur-md">
-                              <div class="font-orbitron text-4xl font-bold text-secondary">40%</div>
-                              <div class="text-sm font-bold text-slate-300">AHORRO</div>
-                              <div class="text-sm font-bold text-slate-300">EN COSTOS</div>
-                            </div>
+                            <div class="font-orbitron text-4xl font-bold text-secondary">40%</div>
+                            <div class="text-sm font-bold text-slate-300">AHORRO</div>
+                            <div class="text-sm font-bold text-slate-300">EN COSTOS</div>
+                        </div>
                             <div id="stat-card-productividad" class="flex-1 rounded-lg border border-white/10 bg-dark/70 p-4 text-center backdrop-blur-md">
-                              <div class="font-orbitron text-4xl font-bold text-secondary">25%</div>
-                              <div class="text-sm font-bold text-slate-300">MÁS</div>
-                              <div class="text-sm font-bold text-slate-300">PRODUCTIVIDAD</div>
+                            <div class="font-orbitron text-4xl font-bold text-secondary">25%</div>
+                            <div class="text-sm font-bold text-slate-300">MÁS</div>
+                            <div class="text-sm font-bold text-slate-300">PRODUCTIVIDAD</div>
                             </div>
                           </div>
                           <div id="interactive-selector-container" class="mt-6 w-full max-w-md rounded-xl border border-white/10 bg-dark/70 p-6 text-center shadow-2xl backdrop-blur-md">
                               <h3 class="text-xl font-bold text-secondary">Descubre algunas de las soluciones que te ofrece <span class="group"> <span class="text-white font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500" style="text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">IA</em></span></h3>
                               <div class="relative mt-4">
                                   <input type="text" id="sector-input" class="w-full rounded-lg border-2 border-transparent bg-white/90 p-3 text-dark placeholder-slate-500 focus:border-secondary focus:outline-none" placeholder="Busca una solución para tu negocio">
-                              </div>
-                          </div>
-                          <div class="mt-6 flex justify-center">
-                              <button style="background: linear-gradient(135deg, #1d45fa, #dc41f1); border: none; color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(29, 69, 250, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(29, 69, 250, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(29, 69, 250, 0.3)';" onclick="document.getElementById('contacto')?.scrollIntoView({behavior: 'smooth', block: 'start'});">Automatizar mi Negocio</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-center">
+                        <button style="background: linear-gradient(135deg, #1d45fa, #dc41f1); border: none; color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(29, 69, 250, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(29, 69, 250, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(29, 69, 250, 0.3)';" onclick="document.getElementById('contacto')?.scrollIntoView({behavior: 'smooth', block: 'start'});">Automatizar mi Negocio</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- What is Automation Section -->
     <section id="que-es" class="bg-light py-20 sm:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -233,20 +245,20 @@
             <div class="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-2">
                 <div id="automation-card-ia" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
                     <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-purple border border-white">
-                        <img src="img/ia.png" alt="Inteligencia Artificial - Automatización inteligente de procesos empresariales" class="h-12 w-12 object-contain">
+                        <img src="img/ia.png" alt="IA Icon" class="h-12 w-12 object-contain">
                     </div>
                     <h3 class="mt-6 text-2xl font-bold text-dark">Inteligencia Artificial</h3>
                     <p class="mt-4 text-base leading-7 text-gray">
-                        La IA añade una capa de "inteligencia" a la automatización. Mientras la automatización básica sigue reglas fijas, la IA permite a los sistemas entender el lenguaje humano, reconocer patrones, analizar documentos complejos (como correos o PDFs) y tomar decisiones. Esto permite automatizar procesos que requieren juicio y adaptación.
+                        La IA añade una capa de "inteligencia" a la automatización, permitiendo sistemas que entienden el lenguaje humano, reconocen patrones y toman decisiones inteligentes.
                     </p>
                 </div>
                 <div id="automation-card-procesos" class="bg-white p-8 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2">
                     <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-blue border border-white">
-                        <img src="img/auto.png" alt="Icono de Automatización" class="h-12 w-12 object-contain">
+                        <img src="img/auto.png" alt="Automation Icon" class="h-12 w-12 object-contain">
                     </div>
                     <h3 class="mt-6 text-2xl font-bold text-dark">Automatización de Procesos</h3>
                     <p class="mt-4 text-base leading-7 text-gray">
-                        Consiste en usar tecnología para realizar tareas repetitivas que antes hacían las personas. Imagina un "robot" de software que trabaja 24/7, sin errores, rellenando formularios, copiando datos y moviendo archivos. Esto libera a tu equipo para que se concentre en actividades más estratégicas y creativas.
+                        Consiste en usar tecnología para realizar tareas repetitivas, liberando a tu equipo para actividades estratégicas y creativas.
                     </p>
                 </div>
             </div>
@@ -258,16 +270,15 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">Algunas Soluciones de Automatización</h2>
+                <p class="mt-4 text-xl text-gray-600">Explora nuestros servicios personalizados para transformar tu negocio con inteligencia artificial.</p>
             </div>
             <div class="relative">
                 <div id="carousel-container" class="carousel-container">
-                    <button class="carousel-prev" aria-label="Servicios anteriores">&larr;</button>
+                    <button class="carousel-prev" aria-label="Prev">&larr;</button>
                     <div class="carousel-wrapper">
-                        <div class="carousel-slides">
-                            <!-- Slides will be generated by JS -->
-                        </div>
+                        <div class="carousel-slides"></div>
                     </div>
-                    <button class="carousel-next" aria-label="Servicios siguientes">&rarr;</button>
+                    <button class="carousel-next" aria-label="Next">&rarr;</button>
                 </div>
             </div>
         </div>
@@ -330,7 +341,7 @@
                     </div>
                     <h3 class="mt-6 text-3xl font-bold text-dark">Misión</h3>
                     <p class="mt-4 text-lg leading-7 text-gray">
-                        Ayudar a las empresas a optimizar su eficiencia, reducir costos y minimizar errores mediante la implementación de soluciones de automatización de procesos a medida, impulsando su crecimiento y competitividad.
+                        Ayudar a las empresas a optimizar su eficiencia, reducir costos y minimizar errores con soluciones de automatización personalizadas.
                     </p>
                 </div>
                 <!-- Visión Card -->
@@ -340,7 +351,7 @@
                     </div>
                     <h3 class="mt-6 text-3xl font-bold text-dark">Visión</h3>
                     <p class="mt-4 text-lg leading-7 text-gray">
-                        Convertir la automatización en un pilar fundamental y accesible para empresas de cualquier tamaño, creando un entorno donde la tecnología potencie el talento humano y permita a las organizaciones centrarse en la innovación y el crecimiento estratégico.
+                        Convertir la automatización en un pilar accesible para todas las empresas, potenciando el talento humano con innovación estratégica.
                     </p>
                 </div>
             </div>
@@ -352,9 +363,7 @@
         <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-16 gap-y-16 px-6 lg:grid-cols-2 lg:px-8">
             <div id="contact-info">
                 <h2 class="font-outfit text-3xl font-bold tracking-tight text-dark sm:text-4xl">¿Listo para Automatizar tu Negocio?</h2>
-                <p class="mt-4 text-lg leading-8 text-gray">
-                    Contáctanos hoy mismo y descubre cómo la inteligencia artificial puede transformar tu empresa. Te ayudamos a identificar oportunidades de automatización y diseñamos soluciones personalizadas para tus necesidades específicas.
-                </p>
+                <p class="mt-4 text-lg leading-8 text-gray">Contáctanos hoy mismo y descubre cómo la IA puede transformar tu empresa.</p>
                 <div class="mt-8 space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary">
@@ -379,23 +388,23 @@
             <div id="contact-form-container" class="rounded-xl bg-white p-8 shadow-lg border border-gray-light transition hover:-translate-y-2">
                 <form id="contact-form" class="space-y-6" novalidate>
                     <div>
-                        <label for="name" class="block text-sm font-semibold leading-6 text-dark">Nombre completo</label>
-                        <div class="mt-2.5">
-                            <input type="text" id="name" name="name" required autocomplete="name" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-inset ring-gray-light placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6">
+                        <label for="name" class="block text-sm font-semibold text-dark">Nombre</label>
+                        <div class="mt-2">
+                            <input type="text" id="name" name="name" required autocomplete="name" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-gray-light focus:ring-2 focus:ring-primary sm:text-sm">
                         </div>
                         <span id="name-error" class="text-sm font-medium text-red-600"></span>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-semibold leading-6 text-dark">Email</label>
-                        <div class="mt-2.5">
-                            <input type="email" id="email" name="email" required autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-inset ring-gray-light placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6">
+                        <label for="email" class="block text-sm font-semibold text-dark">Email</label>
+                        <div class="mt-2">
+                            <input type="email" id="email" name="email" required autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-gray-light focus:ring-2 focus:ring-primary sm:text-sm">
                         </div>
                         <span id="email-error" class="text-sm font-medium text-red-600"></span>
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-semibold leading-6 text-dark">Mensaje</label>
-                        <div class="mt-2.5">
-                            <textarea id="message" name="message" rows="4" required autocomplete="off" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-inset ring-gray-light placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"></textarea>
+                        <label for="message" class="block text-sm font-semibold text-dark">Mensaje</label>
+                        <div class="mt-2">
+                            <textarea id="message" name="message" rows="4" required autocomplete="off" class="block w-full rounded-md border-0 px-3.5 py-2 text-dark shadow-sm ring-1 ring-gray-light focus:ring-2 focus:ring-primary sm:text-sm"></textarea>
                         </div>
                         <span id="message-error" class="text-sm font-medium text-red-600"></span>
                     </div>
@@ -463,9 +472,8 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/data.js"></script> <!-- Datos globales -->
+    <script src="js/data.js"></script>
     <script>
-        // Función para crear las tarjetas del carousel de servicios
         function createServiceCards() {
             const slidesContainer = document.querySelector('.carousel-slides');
             if (!slidesContainer || !services) return;
@@ -488,12 +496,9 @@
                 `;
                 slidesContainer.appendChild(slideDiv);
             });
-
-            // Initialize carousel functionality
             initializeCarousel();
         }
 
-        // Función para inicializar el carousel
         function initializeCarousel() {
             const container = document.getElementById('carousel-container');
             if (!container) return;
@@ -513,33 +518,29 @@
             nextBtn.addEventListener('click', () => {
                 currentSlide = (currentSlide + 1) % slides.length;
                 updateSlide();
-                console.log('Next clicked, currentSlide:', currentSlide);
             });
 
             prevBtn.addEventListener('click', () => {
                 currentSlide = (currentSlide - 1 + slides.length) % slides.length;
                 updateSlide();
-                console.log('Prev clicked, currentSlide:', currentSlide);
             });
 
             // Auto-play optional
-            // setInterval(() => {
-            //     nextBtn.click();
-            // }, 5000);
+            setInterval(() => {
+                nextBtn.click();
+            }, 10000);
         }
 
-        // Iniciar creación de tarjetas
         createServiceCards();
     </script>
     <script src="js/toast.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/carousel.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/contactForm.js"></script>
     <script src="js/search.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/chat.js"></script> <!-- Chat flotante -->
-    <script src="js/script.js"></script> <!-- El orquestador principal -->
+    <script src="js/chat.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
