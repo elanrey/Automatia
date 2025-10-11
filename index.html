@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth overflow-auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,69 +64,12 @@
     <link rel="stylesheet" href="css/output.css">
 
     <style>
-        body {
-            background: linear-gradient(45deg, #f8fafc 0%, #e2e8f0 100%);
-            height: auto;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-            height: auto;
-            overflow: auto;
-        }
-        .carousel-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        .carousel-wrapper {
-            overflow: hidden;
-            width: 100%;
-            max-width: 1000px;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-        .carousel-slides {
-            display: flex;
-            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        .carousel-slide {
-            min-width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 3rem 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        .carousel-prev, .carousel-next {
-            background: linear-gradient(135deg, #1d45fa, #dc41f1);
-            border: none;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 1rem;
-            box-shadow: 0 8px 25px rgba(29, 69, 250, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        .carousel-prev:hover, .carousel-next:hover {
-            transform: scale(1.15) rotate(5deg);
-            box-shadow: 0 12px 35px rgba(29, 69, 250, 0.4);
-        }
-        .carousel-prev:hover {
-            transform: scale(1.15) rotate(-5deg);
+        .text-outline {
+            text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
         }
     </style>
 </head>
-<body class="font-sans bg-white text-gray overflow-x-hidden overflow-y-auto scroll-smooth">
+<body class="font-sans text-gray overflow-x-hidden overflow-y-auto bg-gradient-to-tr from-slate-50 to-slate-200">
 
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
@@ -135,7 +78,7 @@
                 <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
                     <img src="img/logo-small.png" class="h-6 w-6"/>
                 </div>
-                <a href="index.html" class="text-2xl font-bold text-white no-underline group"><span class="font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-4000" style="text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">IA</em></a>
+                <a href="index.html" class="text-2xl font-bold text-white no-underline group"><span class="font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-4000 text-outline">IA</em></a>
             </div>
 
             <!-- Desktop Navigation -->
@@ -222,13 +165,13 @@
                             </div>
                           </div>
                           <div id="interactive-selector-container" class="mt-6 w-full max-w-md rounded-xl border border-white/10 bg-dark/70 p-6 text-center shadow-2xl backdrop-blur-md">
-                              <h3 class="text-xl font-bold text-secondary">Descubre algunas de las soluciones que te ofrece <span class="group"> <span class="text-white font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500" style="text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">IA</em></span></h3>
+                              <h3 class="text-xl font-bold text-secondary">Descubre algunas de las soluciones que te ofrece <span class="group"> <span class="text-white font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500 text-outline">IA</em></span></h3>
                               <div class="relative mt-4">
                                   <input type="text" id="sector-input" class="w-full rounded-lg border-2 border-transparent bg-white/90 p-3 text-dark placeholder-slate-500 focus:border-secondary focus:outline-none" placeholder="Busca una solución para tu negocio">
                         </div>
                     </div>
                     <div class="mt-6 flex justify-center">
-                        <button style="background: linear-gradient(135deg, #1d45fa, #dc41f1); border: none; color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(29, 69, 250, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(29, 69, 250, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(29, 69, 250, 0.3)';" onclick="document.getElementById('contacto')?.scrollIntoView({behavior: 'smooth', block: 'start'});">Automatizar mi Negocio</button>
+                        <button class="bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform transition-shadow duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl" onclick="document.getElementById('contacto')?.scrollIntoView({behavior: 'smooth', block: 'start'});">Automatizar mi Negocio</button>
                     </div>
                 </div>
             </div>
@@ -273,12 +216,12 @@
                 <p class="mt-4 text-xl text-gray-600">Explora nuestros servicios personalizados para transformar tu negocio con inteligencia artificial.</p>
             </div>
             <div class="relative">
-                <div id="carousel-container" class="carousel-container">
-                    <button class="carousel-prev" aria-label="Prev">&larr;</button>
-                    <div class="carousel-wrapper">
-                        <div class="carousel-slides"></div>
+                <div id="carousel-container" class="relative flex items-center justify-center w-full">
+                    <button class="carousel-prev bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white w-[60px] h-[60px] rounded-full cursor-pointer text-2xl flex items-center justify-center mx-4 shadow-[0_8px_25px_rgba(29,69,250,0.3)] transition-all duration-300 ease-in-out hover:scale-115 hover:shadow-[0_12px_35px_rgba(29,69,250,0.4)] hover:-rotate-6" aria-label="Prev">&larr;</button>
+                    <div class="carousel-wrapper overflow-hidden w-full max-w-[1000px] rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
+                        <div class="carousel-slides flex transition-transform duration-600 ease-in-out"></div>
                     </div>
-                    <button class="carousel-next" aria-label="Next">&rarr;</button>
+                    <button class="carousel-next bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white w-[60px] h-[60px] rounded-full cursor-pointer text-2xl flex items-center justify-center mx-4 shadow-[0_8px_25px_rgba(29,69,250,0.3)] transition-all duration-300 ease-in-out hover:scale-115 hover:shadow-[0_12px_35px_rgba(29,69,250,0.4)] hover:rotate-6" aria-label="Next">&rarr;</button>
                 </div>
             </div>
         </div>
@@ -409,9 +352,9 @@
                         <span id="message-error" class="text-sm font-medium text-red-600"></span>
                     </div>
                     <div>
-                        <button type="submit" id="submit-btn" style="background: linear-gradient(135deg, #1d45fa, #dc41f1); border: none; color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(29, 69, 250, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(29, 69, 250, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(29, 69, 250, 0.3)';" class="flex w-full items-center justify-center">
+                        <button type="submit" id="submit-btn" class="flex w-full items-center justify-center bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform transition-shadow duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl">
                             <span id="submit-text">Contáctanos</span>
-                            <span id="submit-loader" class="hidden items-center gap-2" style="display: none;">
+                            <span id="submit-loader" class="hidden items-center gap-2">
                                 <i class="fas fa-spinner fa-spin"></i> Enviando...
                             </span>
                         </button>
@@ -430,7 +373,7 @@
                         <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
                             <img src="img/logo-small.png" class="h-6 w-6"/>
                         </div>
-                        <span class="text-2xl font-bold text-white group"><span class="font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500" style="text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">IA</em></span>
+                        <span class="text-2xl font-bold text-white group"><span class="font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500 text-outline">IA</em></span>
                     </div>
                     <p class="mt-4 text-base text-slate-300">
                         Automatización y procesos con IA para tu negocio.
@@ -473,66 +416,7 @@
 
     <!-- JavaScript -->
     <script src="js/data.js"></script>
-    <script>
-        function createServiceCards() {
-            const slidesContainer = document.querySelector('.carousel-slides');
-            if (!slidesContainer || !services) return;
-
-            services.forEach(service => {
-                const slideDiv = document.createElement('div');
-                slideDiv.className = 'carousel-slide';
-                slideDiv.innerHTML = `
-                    <div class="bg-white p-12 py-16 px-16 shadow-lg rounded-xl border border-gray-light text-center transition hover:-translate-y-2" style="min-height: 500px; max-width: 600px;">
-                        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-purple">
-                            <i class="${service.icon} text-2xl text-white"></i>
-                        </div>
-                        <h4 class="mt-6 text-xl font-bold text-dark">${service.titulo}</h4>
-                        <div class="mt-4 text-justify text-lg leading-8 text-gray-600">
-                            <p><strong>• Problema:</strong> ${service.problema}</p>
-                            <p class="mt-4"><strong>• Solución:</strong> ${service.solucion}</p>
-                            <p class="mt-4"><strong>• Beneficio:</strong> ${service.beneficio}</p>
-                        </div>
-                    </div>
-                `;
-                slidesContainer.appendChild(slideDiv);
-            });
-            initializeCarousel();
-        }
-
-        function initializeCarousel() {
-            const container = document.getElementById('carousel-container');
-            if (!container) return;
-
-            let currentSlide = 0;
-            const slides = container.querySelectorAll('.carousel-slide');
-            const prevBtn = container.querySelector('.carousel-prev');
-            const nextBtn = container.querySelector('.carousel-next');
-            const slidesContainer = container.querySelector('.carousel-slides');
-
-            if (!slides.length || !prevBtn || !nextBtn || !slidesContainer) return;
-
-            function updateSlide() {
-                slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-
-            nextBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                updateSlide();
-            });
-
-            prevBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                updateSlide();
-            });
-
-            // Auto-play optional
-            setInterval(() => {
-                nextBtn.click();
-            }, 10000);
-        }
-
-        createServiceCards();
-    </script>
+    <script src="js/carousel.js"></script>
     <script src="js/toast.js"></script>
     <script src="js/header.js"></script>
     <script src="js/particles.js"></script>
