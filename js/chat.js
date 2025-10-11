@@ -43,14 +43,14 @@ class ChatWidget {
         this.chatPanel.innerHTML = `
             <div class="chat-header">
                 <div class="chat-header-info">
-                    <img src="img/logo.png" alt="AutomatIA Logo" class="chat-avatar">
+                    <div class="chat-avatar-container">
+                        <img src="img/logo-small.png" alt="AutomatIA Logo" class="chat-avatar">
+                    </div>
                     <div>
-                        <div class="chat-title">Automat<span class="text-primary font-orbitron">IA</span></div>
-                        <div class="chat-subtitle">Soporte en línea</div>
+                        <a href="index.html" class="text-lg font-bold text-white no-underline group"><span class="font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500" style="text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">IA</em></a>
                     </div>
                 </div>
                 <button class="chat-close-btn" aria-label="Cerrar chat">
-                    <i class="fas fa-times"></i>
                 </button>
             </div>
 
@@ -448,12 +448,20 @@ const chatStyles = `
     gap: 12px;
 }
 
+.chat-avatar-container {
+    display: flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: #1d45fa;
+    border: 1px solid white;
+}
+
 .chat-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: white;
-    padding: 2px;
+    width: 1.5rem;
+    height: 1.5rem;
     object-fit: contain;
 }
 
@@ -471,16 +479,24 @@ const chatStyles = `
 
 .chat-close-btn {
     background: none;
+    background-image: url('../img/close.png');
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
     border: none;
-    color: white;
     cursor: pointer;
-    padding: 4px;
-    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
     transition: background-color 0.2s;
 }
 
-.chat-close-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+ chat-close-btn:hover {
+    /* No hover effect */
 }
 
 /* Mensajes */
@@ -621,7 +637,7 @@ const chatStyles = `
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--tw-primary);
+    background: #1d45fa;
     color: white;
     border: none;
     cursor: pointer;
@@ -632,7 +648,7 @@ const chatStyles = `
 }
 
 .chat-send-btn:hover:not(:disabled) {
-    background: var(--tw-secondary);
+    background: #dc41f1;
 }
 
 .chat-send-btn:disabled {

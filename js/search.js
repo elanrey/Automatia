@@ -135,30 +135,43 @@ function showSectorModal() {
                         align-items: center;
                         gap: 0.75rem;
                     ">
-                        <img src="img/logo.png" alt="AutomatIA Logo" style="
-                            width: 2.5rem;
+                        <div style="
+                            display: flex;
                             height: 2.5rem;
-                            border-radius: 50%;
-                            background: white;
-                            padding: 0.125rem;
-                            object-fit: contain;
+                            width: 2.5rem;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 0.5rem;
+                            background: #1d45fa;
+                            border: 1px solid white;
                         ">
+                            <img src="img/logo-small.png" alt="AutomatIA Logo" style="
+                                width: 1.5rem;
+                                height: 1.5rem;
+                                object-fit: contain;
+                            ">
+                        </div>
                         <div>
-                            <div style="font-weight: bold; font-size: 1.125rem; line-height: 1.2;">Automat<span style="color: #dc41f1;" class="font-orbitron">IA</span></div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;" id="sector-modal-subtitle">Información del Sector</div>
+                            <a href="index.html" class="text-lg font-bold text-white no-underline group"><span class="font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500" style="text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">IA</em></a>
                         </div>
                     </div>
                     <button style="
                         background: none;
+                        background-image: url('../img/close.png');
+                        background-size: 16px;
+                        background-repeat: no-repeat;
+                        background-position: center;
                         border: none;
-                        color: white;
                         cursor: pointer;
-                        padding: 0.25rem;
-                        border-radius: 0.25rem;
-                        font-size: 1.25rem;
-                    " id="sector-modal-close">
-                        ×
-                    </button>
+                        width: 24px;
+                        height: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+                        border-radius: 50%;
+                        transition: background-color 0.2s;
+                    " id="sector-modal-close"></button>
                 </div>
 
                 <div style="
@@ -249,12 +262,6 @@ function updateSectorModal(sectorData, originalSector) {
     const loadingDiv = document.getElementById('sector-modal-loading');
     const contentDiv = document.getElementById('sector-modal-content');
     const errorDiv = document.getElementById('sector-modal-error');
-    const subtitleDiv = document.getElementById('sector-modal-subtitle');
-
-    // Actualizar subtítulo
-    if (subtitleDiv) {
-        subtitleDiv.textContent = `Sector: ${originalSector.charAt(0).toUpperCase() + originalSector.slice(1)}`;
-    }
 
     // Construir el contenido con estilos inline
     contentDiv.innerHTML = `
