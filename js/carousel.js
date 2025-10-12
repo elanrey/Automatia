@@ -49,10 +49,10 @@ function initializeCarousel() {
         updateSlide();
     });
 
-    // Auto-play optional
-    setInterval(() => {
-        nextBtn.click();
-    }, 10000);
-}
+                // Auto-play optional
+                setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    updateSlide();
+                }, 10000);}
 
 createServiceCards();

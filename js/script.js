@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Datos globales (si son necesarios para otros scripts)
     // const services = [ ... ];
 
-    if (typeof initializeHeaderAndNav === 'function') {
-        initializeHeaderAndNav();
-    }
     if (typeof initializeCarousel === 'function') {
         initializeCarousel();
     }
@@ -31,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (typeof initializeChat === 'function') {
         initializeChat();
+    }
+    if (typeof initializeHeader === 'function') {
+        initializeHeader();
     }
 
     // Lógica para la modal de WhatsApp
