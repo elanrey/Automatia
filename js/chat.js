@@ -67,21 +67,20 @@ class ChatWidget {
 
             <div class="chat-input-container">
                 <div class="chat-input-wrapper">
-                    <input
-                        type="text"
-                        id="chat-input"
-                        placeholder="Escribe tu mensaje..."
-                        maxlength="500"
-                        autocomplete="off"
-                    >
-                    <button id="chat-send-btn" class="chat-send-btn" disabled>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-                <div class="chat-input-footer">
-                    <span class="chat-char-count">0/500</span>
-                </div>
-            </div>
+                                            <input
+                                                type="text"
+                                                id="chat-input"
+                                                placeholder="Escribe tu mensaje..."
+                                                maxlength="200"
+                                                autocomplete="off"
+                                            >
+                                            <button id="chat-send-btn" class="chat-send-btn" disabled>
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                        <div class="chat-input-footer">
+                                            <span class="chat-char-count">0/200</span>
+                                        </div>            </div>
         `;
 
         // Agregar elementos al DOM
@@ -231,9 +230,9 @@ class ChatWidget {
 
     updateCharCount() {
         const count = this.input.value.length;
-        this.charCount.textContent = `${count}/500`;
+        this.charCount.textContent = `${count}/200`;
 
-        if (count > 450) {
+        if (count > 180) { // 90% of 200
             this.charCount.classList.add('warning');
         } else {
             this.charCount.classList.remove('warning');
@@ -413,7 +412,7 @@ const chatStyles = `
     width: 350px;
     height: 500px;
     max-height: 70vh;
-    background: white;
+    background: #0f1729; /* bg-dark */
     border-radius: 16px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     z-index: 9998;
@@ -504,7 +503,7 @@ const chatStyles = `
     flex: 1;
     overflow-y: auto;
     padding: 16px 20px;
-    background: #f8fafc;
+    background: #1e293b; /* slate-800 */
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -546,14 +545,14 @@ const chatStyles = `
 }
 
 .chat-message-user .chat-message-content {
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-    color: #0f1729;
+    background: linear-gradient(135deg, #2d3a4b, #3a475a); /* Un gris más oscuro para el usuario */
+    color: white;
     border-radius: 16px 16px 16px 4px;
 }
 
 .chat-message-time {
     font-size: 0.625rem;
-    color: #64748b;
+    color: #94a3b8; /* slate-400 */
     margin-top: 2px;
     padding: 0 4px;
 }
@@ -564,21 +563,16 @@ const chatStyles = `
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: #f8fafc;
+    background: #0f1729; /* bg-dark */
     font-size: 0.75rem;
-    color: #64748b;
-}
-
-.typing-dots {
-    display: flex;
-    gap: 2px;
+    color: #94a3b8; /* slate-400 */
 }
 
 .typing-dots span {
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: #64748b;
+    background: #94a3b8; /* slate-400 */
     animation: typing 1.4s infinite;
 }
 
@@ -603,9 +597,9 @@ const chatStyles = `
 
 /* Input del chat */
 .chat-input-container {
-    background: white;
-    padding: 16px 20px;
-    border-top: 1px solid #e5e7eb;
+    background: #0f1729; /* bg-dark */
+    padding: 10px 10px;
+    border-top: 1px solid #475569; /* slate-700 */
     border-radius: 0 0 16px 16px;
 }
 
@@ -613,29 +607,34 @@ const chatStyles = `
     position: relative;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px; /* Aumentar el espacio */
 }
 
 #chat-input {
     flex: 1;
-    border: 2px solid #e5e7eb;
-    border-radius: 24px;
-    padding: 8px 12px;
+    border: 2px solid transparent;
+    border-radius: 8px; /* rounded-lg */
+    padding: 12px; /* p-3 */
     font-size: 0.875rem;
     outline: none;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.9); /* bg-white/90 */
     max-height: 80px;
     resize: none;
     line-height: 1.4;
+    color: #0f1729; /* text-dark */
+    /* Placeholder color */
+    &::placeholder {
+        color: #64748b; /* placeholder-slate-500 */
+    }
 }
 
 #chat-input:focus {
-    border-color: var(--tw-primary);
+    border-color: #dc41f1; /* focus:border-secondary */
 }
 
 .chat-send-btn {
-    width: 40px;
-    height: 40px;
+    width: 32px; /* Más pequeño */
+    height: 32px; /* Más pequeño */
     border-radius: 50%;
     background: #1d45fa;
     color: white;
@@ -652,7 +651,7 @@ const chatStyles = `
 }
 
 .chat-send-btn:disabled {
-    background: #9ca3af;
+    background: #64748b; /* slate-500 */
     cursor: not-allowed;
 }
 
@@ -665,7 +664,7 @@ const chatStyles = `
 
 .chat-char-count {
     font-size: 0.625rem;
-    color: #6b7280;
+    color: #94a3b8; /* slate-400 */
     transition: color 0.2s;
 }
 

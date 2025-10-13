@@ -8,38 +8,49 @@
             return;
         }
 
+        // Función para realizar la búsqueda
+        async function performSearch() {
+            const sectorName = sectorInput.value.trim().toLowerCase();
+
+            if (!sectorName) {
+                console.log('Empty sector name, ignoring');
+                return;
+            }
+
+            // Limpiar el input
+            sectorInput.value = '';
+
+            try {
+                // Mostrar modal con loading
+                showSectorModal();
+                const response = await fetchSectorContent(sectorName);
+
+                if (response && response.length > 0) {
+                    const sectorData = response[0];
+                    // Mostrar contenido en modal
+                    updateSectorModal(sectorData, sectorName);
+                } else {
+                    showSectorModalError(`No se encontró información para el sector "${sectorName}".`);
+                }
+            } catch (error) {
+                showSectorModalError(`Error conectado con el servidor. Detalles: ${error.message}`);
+            }
+        }
+
         // Agregar event listener para detectar Enter
         sectorInput.addEventListener('keydown', async function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
-
-                const sectorName = this.value.trim().toLowerCase();
-
-                if (!sectorName) {
-                    console.log('Empty sector name, ignoring');
-                    return;
-                }
-
-                // Limpiar el input
-                this.value = '';
-
-                try {
-                    // Mostrar modal con loading
-                    showSectorModal();
-                    const response = await fetchSectorContent(sectorName);
-
-                    if (response && response.length > 0) {
-                        const sectorData = response[0];
-                        // Mostrar contenido en modal
-                        updateSectorModal(sectorData, sectorName);
-                    } else {
-                        showSectorModalError(`No se encontró información para el sector "${sectorName}".`);
-                    }
-                } catch (error) {
-                    showSectorModalError(`Error conectado con el servidor. Detalles: ${error.message}`);
-                }
+                performSearch();
             }
         });
+
+        // Obtener el botón de búsqueda
+        const searchButton = document.getElementById('search-button');
+
+        if (searchButton) {
+            searchButton.addEventListener('click', performSearch);
+        }
 
     });
 
@@ -82,7 +93,7 @@ function showSectorModal() {
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             z-index: 10000;
             display: flex;
             justify-content: center;
@@ -92,7 +103,7 @@ function showSectorModal() {
 
         modalWrapper.innerHTML = `
             <div style="
-                background: #f8f8f8;
+                background: #0f1729; /* bg-dark */
                 border-radius: 16px;
                 max-width: 800px;
                 width: 100%;
@@ -172,14 +183,14 @@ function showSectorModal() {
                         <div style="
                             width: 3rem;
                             height: 3rem;
-                            border: 3px solid #e5e7eb;
+                            border: 3px solid #475569; /* slate-600 */
                             border-top: 3px solid #1d45fa;
                             border-radius: 50%;
                             animation: spin 1s linear infinite;
                             margin-bottom: 1rem;
                             animation: spin 1s linear infinite;
                         " id="loading-spinner"></div>
-                        <p style="color: #64748b; font-size: 1rem; margin: 0;">Cargando información del sector...</p>
+                        <p style="color: #cbd5e1; /* slate-300 */ font-size: 1rem; margin: 0;">Cargando información del sector...</p>
                     </div>
 
                     <div style="padding: 2rem; display: none;" id="sector-modal-content" class="sector-modal-content-area">
@@ -249,13 +260,14 @@ function updateSectorModal(sectorData, originalSector) {
             text-align: center;
             margin-bottom: 2.5rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #475569; /* slate-600 */
         ">
             <h2 style="
                 font-size: 1.75rem;
                 font-weight: 700;
                 line-height: 1.2;
                 margin-bottom: 1rem;
+                color: white; /* Título blanco */
             ">
                 <span style="
                     background: linear-gradient(135deg, #1d45fa, #dc41f1);
@@ -266,7 +278,7 @@ function updateSectorModal(sectorData, originalSector) {
             </h2>
             <p style="
                 font-size: 1.125rem;
-                color: #64748b;
+                color: #cbd5e1; /* slate-300 */
                 max-width: 600px;
                 margin: 0 auto;
                 line-height: 1.5;
@@ -281,18 +293,18 @@ function updateSectorModal(sectorData, originalSector) {
         ">
             ${sectorData.Items ? sectorData.Items.map(item => `
                 <div style="
-                    background: white;
+                    background: #1e293b; /* slate-800 */
                     padding: 2rem;
                     border-radius: 0.75rem;
-                    border: 1px solid #d0d0d0;
-                    box-shadow: 0 4px 2px 0 #d0d0d0;
+                    border: 1px solid #475569; /* slate-700 */
+                    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
                     text-align: center;
                     transition: transform 0.2s;
                 ">
                     <h4 style="
                         font-size: 1.125rem;
                         font-weight: 600;
-                        color: #0f1729;
+                        color: white; /* Título de ítem blanco */
                         margin-bottom: 0.75rem;
                         display: flex;
                         align-items: flex-start;
@@ -302,7 +314,7 @@ function updateSectorModal(sectorData, originalSector) {
                         ${item.título || 'Solución especializada'}
                     </h4>
                     <p style="
-                        color: #64748b;
+                        color: #cbd5e1; /* slate-300 */
                         line-height: 1.5;
                         text-align: justify;
                         margin: 0;
@@ -310,22 +322,22 @@ function updateSectorModal(sectorData, originalSector) {
                         ${item.descripción || 'Descripción detallada próximamente.'}
                     </p>
                 </div>
-            `).join('') : '<p>Información detallada próximamente.</p>'}
+            `).join('') : '<p style="color: #cbd5e1;">Información detallada próximamente.</p>'}
         </div>
 
         <div style="
             margin-top: 2.5rem;
             padding: 2rem;
-            background: white;
+            background: #1e293b; /* slate-800 */
             border-radius: 0.75rem;
             text-align: center;
-            border: 1px solid #d0d0d0;
-            box-shadow: 0 4px 2px 0 #d0d0d0;
+            border: 1px solid #475569; /* slate-700 */
+            box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
         ">
             <h3 style="
                 font-size: 1.5rem;
                 font-weight: 600;
-                color: #0f1729;
+                color: white; /* Título blanco */
                 margin-bottom: 0.75rem;
                 line-height: 1.4;
             ">
@@ -333,7 +345,7 @@ function updateSectorModal(sectorData, originalSector) {
             </h3>
             <p style="
                 font-size: 1rem;
-                color: #64748b;
+                color: #cbd5e1; /* slate-300 */
                 max-width: 500px;
                 margin: 0 auto 1.5rem auto;
                 line-height: 1.5;
@@ -376,11 +388,11 @@ function showSectorModalError(message) {
 
     if (errorDiv) {
         errorDiv.innerHTML = `
-            <div class="sector-error-content">
-                <i class="fas fa-exclamation-triangle sector-error-icon"></i>
+            <div class="sector-error-content" style="color: #cbd5e1;">
+                <i class="fas fa-exclamation-triangle sector-error-icon" style="color: #dc2626;"></i>
                 <h3>Error al cargar información</h3>
                 <p>${message}</p>
-                <p class="sector-error-suggestion">
+                <p class="sector-error-suggestion" style="color: #94a3b8;">
                     Verifica la conexión a internet e inténtalo de nuevo.
                 </p>
             </div>
