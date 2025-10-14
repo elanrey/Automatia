@@ -133,11 +133,9 @@ async function handleFormSubmit(event) {
       form.reset();
     } else {
       const errorData = await response.json().catch(() => ({ message: 'No se pudo leer el cuerpo del error' }));
-      console.error('Error del servidor:', response.status, errorData);
       showToast('Error del Servidor', `Error ${response.status}: ${errorData.message || 'Inténtalo de nuevo.'}`, 'error');
     }
   } catch (error) {
-    console.error('Error de red al enviar el formulario:', error);
     showToast('Error de Red', `No se pudo enviar el mensaje. Detalle: ${error.message}.`, 'error');
   } finally {
     submitBtn.disabled = false;

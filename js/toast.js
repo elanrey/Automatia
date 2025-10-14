@@ -1,9 +1,7 @@
 function showToast(title, description, type = 'success') {
-  console.log('showToast called with:', { title, description, type });
   const toast = document.getElementById('toast');
   
   if (!toast) {
-    console.error('Toast element with ID #toast not found!');
     return;
   }
 
@@ -12,7 +10,6 @@ function showToast(title, description, type = 'success') {
   const toastIcon = toast.querySelector('.toast-icon');
 
   if (!toastTitle || !toastDescription || !toastIcon) {
-    console.error('Child elements (.toast-title, .toast-description, .toast-icon) not found inside #toast. Check your HTML structure.');
     return;
   }
 
@@ -34,8 +31,7 @@ function showToast(title, description, type = 'success') {
 
   // Show the toast
   toast.classList.add('show');
-  console.log('Toast classes after showing:', toast.className);
-
+  
   setTimeout(() => {
     hideToast();
   }, 5000);
@@ -45,7 +41,6 @@ function hideToast() {
   const toast = document.getElementById('toast');
   if (toast) {
     toast.classList.remove('show');
-    console.log('Hiding toast. Classes:', toast.className);
   }
 }
 

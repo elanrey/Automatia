@@ -184,7 +184,6 @@ class ChatWidget {
             });
 
         } catch (error) {
-            console.error('Error al enviar mensaje:', error);
             this.hideTypingIndicator();
 
             // Mensaje de error si falla la API
@@ -210,12 +209,7 @@ class ChatWidget {
 
         this.messagesContainer.appendChild(messageElement);
         this.scrollToBottom();
-
-        // Agregar sonido sutil (opcional)
-        // this.playMessageSound();
     }
-
-
 
     handleInput(e) {
         const value = e.target.value;
@@ -223,9 +217,6 @@ class ChatWidget {
 
         // Habilitar/deshabilitar botón de enviar
         this.sendButton.disabled = value.trim().length === 0;
-
-        // Auto-resize del input (opcional)
-        this.autoResizeInput();
     }
 
     updateCharCount() {
@@ -309,27 +300,12 @@ class ChatWidget {
     }
 
     // Mostrar mensaje de bienvenida inicial
-    async showWelcomeMessage() {
-        try {
-            const response = await this.sendApiMessage('hola');
-            this.addMessage({
-                type: 'bot',
-                content: response.output,
-                timestamp: new Date()
-            });
-        } catch (error) {
-            console.error('Error al obtener mensaje de bienvenida:', error);
-            // Mensaje por defecto si falla la API
-            this.addMessage({
-                type: 'bot',
-                content: '¡Hola! Soy el asistente de AutomatIA. ¿En qué puedo ayudarte hoy?',
-                timestamp: new Date()
-            });
-        }
-    }
-
-    autoResizeInput() {
-        // Implementar si se necesita
+    async showWelcomeMessage() {    
+        this.addMessage({
+            type: 'bot',
+            content: '¡Hola! Soy el asistente de AutomatIA. ¿En qué puedo ayudarte hoy?',
+            timestamp: new Date()
+        });
     }
 
     escapeHtml(text) {

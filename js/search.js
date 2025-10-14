@@ -13,7 +13,6 @@
             const sectorName = sectorInput.value.trim().toLowerCase();
 
             if (!sectorName) {
-                console.log('Empty sector name, ignoring');
                 return;
             }
 
