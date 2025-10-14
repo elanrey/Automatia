@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
+<head>
+<style>
+    section {
+        background: linear-gradient(to right, rgb(0, 0, 0), rgb(10, 10, 80), rgb(0, 0, 0));
+    }
+    .text-outline {
+        text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +16,15 @@
     <link rel="icon" href="img/logo.png" type="image/png">
     <meta name="description" content="Términos y condiciones de uso de los servicios y el sitio web de AutomatIA.">
 
-    <!-- Font Awesome -->
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="css/output.css">
 </head>
-<body class="font-sans bg-white text-gray overflow-x-hidden">
+<body class="font-sans text-gray overflow-x-hidden">
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-[1000] h-[60px] bg-dark/70 backdrop-blur-lg transition-shadow">
         <div class="container mx-auto flex h-full items-center justify-between px-4">
@@ -58,14 +64,9 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative flex items-center justify-center min-h-[30vh] bg-dark pt-24 pb-12">
-            <div class="hero-particles">
-                <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-            </div>
+        <section id="hero-mapa" class="relative flex items-center justify-center min-h-[30vh] bg-dark pt-24 pb-12">
             <div class="relative z-10 text-center text-white px-4">
-                <h1 class="font-sans font-extrabold leading-tight tracking-normal">
-                    <span class="text-gradient block font-orbitron tracking-wide text-3xl md:text-4xl lg:text-5xl">Términos de Servicio</span>
-                </h1>
+                <span class="block mt-2 mb-2 font-orbitron text-3xl md:text-4xl lg:text-5xl">Términos de Servicio</span>
             </div>
         </section>
 
@@ -116,17 +117,21 @@
                 <div class="mb-8 md:mb-0 md:w-1/3">
                     <div class="flex items-center gap-2">
                         <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary border border-white">
-                            <img src="img/logo.png" class="h-8 w-8 object-contain"/>
+                            <img src="img/logo-small.png" class="h-6 w-6"/>
                         </div>
-                        <span class="text-2xl font-bold text-white">Automat<em class="font-orbitron not-italic text-primary">IA</em></span>
+                        <span class="text-2xl font-bold text-white group"><span class="font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500 text-outline">IA</em></span>
                     </div>
                     <p class="mt-4 text-base text-slate-300">
-                        Automatización y procesos con IA para tu negocio.
+                        Automatiza tu negocio con Inteligencia Artificial
                     </p>
+                    <div class="mt-6 flex gap-4">
+                        <a href="#" id="whatsapp-link" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-whatsapp text-2xl"></i></a>
+                        <a href="mailto:enrique.landeros.reyes@gmail.com" class="text-slate-400 transition hover:text-secondary"><i class="fas fa-envelope text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/elanrey/" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    </div>
                 </div>
                 <div class="md:w-2/3 md:flex md:justify-end">
                     <div class="">
-                        <h3 class="font-semibold text-white">Información Legal</h3>
                         <ul class="mt-2 space-y-2">
                             <li><a href="politica-privacidad.html" class="text-sm text-slate-400 transition hover:text-secondary">Política de Privacidad</a></li>
                             <li><a href="terminos-servicio.html" class="text-sm text-slate-400 transition hover:text-secondary">Términos de Servicio</a></li>
@@ -136,13 +141,8 @@
                 </div>
             </div>
             <div class="mt-4 border-t border-slate-800 py-2 md:flex md:items-center md:justify-between">
-                <p class="text-center text-xs text-slate-500 md:text-left">&copy; 2025 AutomatIA. Todos los derechos reservados.</p>
-                <div class="mt-4 flex justify-center space-x-6 md:mt-0">
-                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-slate-400 transition hover:text-secondary"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p class="text-center text-xs text-slate-400 md:text-left">&copy; 2025 AutomatIA. Todos los derechos reservados.</p>
+                <p class="text-center text-xs text-slate-500 md:text-right">Diseñado por AutomaIA con Inteligencia Artificial</p>
             </div>
         </div>
     </footer>
