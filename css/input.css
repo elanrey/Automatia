@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos personalizados globales */
+section {
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(10, 10, 80), rgb(0, 0, 0));
+}
+
 @layer base {
   html, body {
     height: 100%;
@@ -10,6 +15,12 @@
   body {
     margin: 0;
     padding: 0;
+  }
+}
+
+@layer components {
+  .sitemap-bg {
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(10, 10, 80), rgb(0, 0, 0));
   }
 }
 
