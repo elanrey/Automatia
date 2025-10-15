@@ -3526,6 +3526,11 @@ section {
     padding-bottom: 6rem;
   }
 
+  .sm\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
   .sm\:pb-24 {
     padding-bottom: 6rem;
   }
@@ -3536,6 +3541,10 @@ section {
 
   .sm\:pt-16 {
     padding-top: 4rem;
+  }
+
+  .sm\:pb-20 {
+    padding-bottom: 5rem;
   }
 
   .sm\:text-4xl {
@@ -3596,6 +3605,15 @@ section {
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .md\:pb-24 {
+    padding-bottom: 6rem;
   }
 
   .md\:text-left {
