@@ -14,11 +14,21 @@ function initializeHeaderAndNav() {
 
     // Toggle del menú móvil
     if (mobileMenuButton && mobileNav) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileNav.classList.toggle('hidden');
-            mobileNav.classList.toggle('flex');
-            mobileMenuButton.querySelector('i').classList.toggle('fa-bars');
-            mobileMenuButton.querySelector('i').classList.toggle('fa-times');
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isHidden = mobileNav.classList.contains('hidden');
+
+            if (isHidden) {
+                mobileNav.classList.remove('hidden');
+                mobileNav.classList.add('flex');
+                mobileMenuButton.querySelector('i').classList.remove('fa-bars');
+                mobileMenuButton.querySelector('i').classList.add('fa-times');
+            } else {
+                mobileNav.classList.add('hidden');
+                mobileNav.classList.remove('flex');
+                mobileMenuButton.querySelector('i').classList.add('fa-bars');
+                mobileMenuButton.querySelector('i').classList.remove('fa-times');
+            }
         });
     }
 

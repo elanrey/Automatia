@@ -664,27 +664,55 @@ const chatStyles = `
 @media (max-width: 768px) {
     .chat-panel {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        max-height: 100vh;
-        border-radius: 0;
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        width: 90%;
+        height: 80%;
+        max-height: 80vh;
+        border-radius: 16px;
     }
 
     .chat-header {
-        border-radius: 0;
+        border-radius: 16px 16px 0 0;
     }
 
     .chat-input-container {
-        border-radius: 0;
+        border-radius: 0 0 16px 16px;
     }
 
     .chat-floating-btn {
         bottom: 20px;
         right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .chat-floating-btn i {
+        font-size: 1.25rem;
+    }
+
+    .chat-messages {
+        padding: 12px 16px;
+    }
+
+    #chat-input {
+        padding: 10px 12px;
+        font-size: 0.875rem;
+    }
+
+    .chat-send-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-send-btn i {
+        font-size: 0.875rem;
+    }
+
+    .chat-char-count {
+        font-size: 0.75rem;
     }
 }
 

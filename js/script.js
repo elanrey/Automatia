@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof initializeChat === 'function') {
         initializeChat();
     }
-    if (typeof initializeHeader === 'function') {
-        initializeHeader();
+    if (typeof initializeHeaderAndNav === 'function') {
+        initializeHeaderAndNav();
     }
 });
