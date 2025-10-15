@@ -664,13 +664,13 @@ const chatStyles = `
 @media (max-width: 768px) {
     .chat-panel {
         position: fixed;
-        top: 10%;
-        left: 5%;
-        right: 5%;
-        bottom: 10%;
-        width: 90%;
-        height: 80%;
-        max-height: 80vh;
+        top: 5%;
+        left: 2.5%;
+        right: 2.5%;
+        bottom: 5%;
+        width: 95%;
+        height: 90%;
+        max-height: 90vh;
         border-radius: 16px;
     }
 
