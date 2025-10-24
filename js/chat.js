@@ -13,7 +13,7 @@ class ChatWidget {
         this.messages = [];
         this.isTyping = false;
         this.sessionId = this.generateSessionId();
-        this.apiUrl = 'https://www.automatia.cc/api/v1/chat';
+        this.apiUrl = 'https://api.automatia.cc/handle-chat';
 
         // Crear elementos del chat
         this.createChatElement();

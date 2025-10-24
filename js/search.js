@@ -56,7 +56,7 @@
 // Función para hacer la llamada a la API
 async function fetchSectorContent(sectorName) {
     try {
-        const response = await fetch('https://www.automatia.cc/api/v1/content', {
+        const response = await fetch('https://api.automatia.cc/generate-content', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

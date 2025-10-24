@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 def generate_sitemap():
-    base_url = "https://automatia.lat"
+    base_url = "https://automatia.cc"
     root_dir = os.path.dirname(os.path.abspath(__file__))
     sitemap_path = os.path.join(root_dir, "sitemap.xml")
 

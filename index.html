@@ -31,23 +31,59 @@
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "AutomatIA",
-      "description": "Servicios de automatización y inteligencia artificial para empresas",
-      "url": "https://www.automatia.cc",
-      "logo": "https://www.automatia.cc/img/logo.png",
-      "sameAs": [
-        "https://www.linkedin.com/company/automatia"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+52-XXX-XXX-XXXX",
-        "contactType": "customer service",
-        "availableLanguage": "Spanish"
-      },
-      "serviceType": ["Automatización", "Inteligencia Artificial", "Procesos Empresariales"],
-      "areaServed": "MX"
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "AutomatIA",
+        "description": "Automation and artificial intelligence services to optimize business processes and facilitate digital transformation.", // Desc. ampliada
+        "url": "https://www.automatia.cc",
+        "logo": "https://www.automatia.cc/img/logo.png",
+        
+        "sameAs": [
+            "https://www.linkedin.com/company/automatia",
+            "https://www.facebook.com/tu_pagina"
+        ],
+  
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Centenario 3012",
+            "addressLocality": "Ciudad de México",
+            "addressRegion": "CDMX",
+            "addressCountry": "MX"
+        },
+  
+        "telephone": "+52 55 1935 6818",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+52 55 1935 6818",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish", "English"]
+        },
+  
+        "serviceType": ["Automation", "Artificial intelligence", "Business processes"],  
+        "areaServed": [
+            { "@type": "Country", "name": "Mexico" },
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "Latin America" }
+        ],
+  
+        "hasOffer": [
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Process Automation",
+                "description": "Implementation of solutions to automate repetitive tasks and optimize workflows."
+            }
+        },
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Artificial Intelligence for Businesses",
+                "description": "Development of AI models for data analysis, predictions, and decision-making."
+            }
+        }
+        ]
     }
     </script>
 
@@ -130,14 +166,14 @@
                         </div>
                     </div>
                     <div class="mt-6 flex justify-center">
-                        <button class="bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform transition-shadow duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl" onclick="document.getElementById('contacto')?.scrollIntoView({behavior: 'smooth', block: 'start'});">Automatizar mi Negocio</button>
+                        <button class="bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl" onclick="document.getElementById('contacto')?.scrollIntoView({behavior: 'smooth', block: 'start'});">Automatizar mi Negocio</button>
                     </div>
                 </div>
                 <div id="hero-visuals" class="flex flex-col items-center">
                     <div id="interactive-selector-container" class="mt-6 w-full max-w-md rounded-xl border border-slate-700 bg-dark p-6 text-center shadow-2xl backdrop-blur-md">
                         <h3 class=" font-orbitron text-3xl font-bold text-secondary mb-2 mt-2">Descubre algunas de las soluciones que te ofrece <span class="group"> <span class="text-white font-orbitron">Automat</span><em class="font-orbitron not-italic text-primary ml-0.5 group-hover:text-secondary transition-colors duration-1500">IA</em></span></h3>
                         <input type="text" id="sector-input" class="w-full rounded-lg border-2 border-transparent bg-white/90 p-3 text-dark placeholder-slate-500 focus:border-secondary focus:outline-none" placeholder="Busca tu tipo de negocio">
-                        <button id="search-button" class="mt-4 bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform transition-shadow duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl">Buscar</button>
+                        <button id="search-button" class="mt-4 bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl">Buscar</button>
                     </div>
                     <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
                         <div class="flex items-center gap-2">
@@ -416,7 +452,7 @@
                         <span id="message-error" class="text-sm font-medium text-red-600"></span>
                     </div>
                     <div>
-                        <button type="submit" id="submit-btn" class="flex w-full items-center justify-center bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform transition-shadow duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl">
+                        <button type="submit" id="submit-btn" class="flex w-full items-center justify-center bg-gradient-to-br from-[#1d45fa] to-[#dc41f1] text-white py-3 px-8 rounded-lg text-base font-semibold cursor-pointer transition-transform duration-200 ease-in-out shadow-lg hover:-translate-y-0.5 hover:shadow-xl">
                             <span id="submit-text">Contáctanos</span>
                             <span id="submit-loader" class="hidden items-center gap-2">
                                 <i class="fas fa-spinner fa-spin"></i> Enviando...

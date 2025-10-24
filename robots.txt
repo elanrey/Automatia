@@ -3,7 +3,6 @@ Allow: /
 
 # Bloquear archivos sensibles o de desarrollo
 Disallow: /_next/
-Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
