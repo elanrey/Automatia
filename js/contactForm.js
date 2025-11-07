@@ -120,7 +120,7 @@ async function handleFormSubmit(event) {
   };
 
   try {
-    const response = await fetch('https://api.automatia.cc/send-message', {
+    const response = await fetch('https://api.automatia.cc/message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
