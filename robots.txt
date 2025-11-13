@@ -1,15 +1,6 @@
 User-agent: *
 Allow: /
 
-# Bloquear archivos sensibles o de desarrollo
-Disallow: /_next/
-Disallow: /admin/
-Disallow: /private/
-Disallow: /*.json$
-Disallow: /*.log$
-Disallow: /*.env$
-Disallow: /node_modules/
-
 # Permitir acceso a recursos importantes
 Allow: /img/
 Allow: /css/
@@ -18,6 +9,3 @@ Allow: /favicon.ico
 
 # Sitemap location
 Sitemap: https://www.automatia.cc/sitemap.xml
-
-# Crawl delay
-Crawl-delay: 1
