@@ -1,34 +1,34 @@
 function initializeCursorGlow() {
-    const cards = document.querySelectorAll('.glass-card, .card-hover');
+    const elements = document.querySelectorAll('.glass-card, .card-hover, .btn-primary');
 
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
+    elements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            // Calculate percentage position within the card
+            // Calculate percentage position within the element
             const xPercent = (x / rect.width) * 100;
             const yPercent = (y / rect.height) * 100;
 
             // Set CSS variables for the highlight position
-            card.style.setProperty('--x', `${xPercent}%`);
-            card.style.setProperty('--y', `${yPercent}%`);
+            element.style.setProperty('--x', `${xPercent}%`);
+            element.style.setProperty('--y', `${yPercent}%`);
 
             // For stat-glow cards, also update the box-shadow for extra effect
-            if (card.classList.contains('stat-glow')) {
+            if (element.classList.contains('stat-glow')) {
                 const glowX = (xPercent / 100 - 0.5) * 20; // Reduced offset for subtle effect
                 const glowY = (yPercent / 100 - 0.5) * 20;
                 const baseGlow = '0 0 20px rgba(29, 69, 250, 0.3), 0 0 40px rgba(220, 65, 241, 0.2)';
                 const cursorGlow = `${glowX}px ${glowY}px 25px rgba(29, 69, 250, 0.4), ${glowX * 0.5}px ${glowY * 0.5}px 50px rgba(220, 65, 241, 0.3)`;
-                card.style.boxShadow = `${baseGlow}, ${cursorGlow}`;
+                element.style.boxShadow = `${baseGlow}, ${cursorGlow}`;
             }
         });
 
-        card.addEventListener('mouseleave', () => {
+        element.addEventListener('mouseleave', () => {
             // Reset for stat-glow cards
-            if (card.classList.contains('stat-glow')) {
-                card.style.boxShadow = '0 0 20px rgba(29, 69, 250, 0.3), 0 0 40px rgba(220, 65, 241, 0.2)';
+            if (element.classList.contains('stat-glow')) {
+                element.style.boxShadow = '0 0 20px rgba(29, 69, 250, 0.3), 0 0 40px rgba(220, 65, 241, 0.2)';
             }
         });
     });
