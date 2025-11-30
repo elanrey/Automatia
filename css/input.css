@@ -30,6 +30,44 @@ section {
   .sitemap-bg {
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(10, 10, 80), rgb(0, 0, 0));
   }
+
+  /* Carousel fade effect on sides */
+  #carousel-container {
+    position: relative;
+  }
+
+  #carousel-container::before,
+  #carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  #carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 20%,
+      rgba(0, 0, 0, 0.6) 40%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.1) 80%,
+      rgba(0, 0, 0, 0) 100%);
+  }
+
+  #carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 20%,
+      rgba(0, 0, 0, 0.6) 40%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.1) 80%,
+      rgba(0, 0, 0, 0) 100%);
+  }
 }
 
 @layer components {
