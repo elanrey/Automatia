@@ -9,9 +9,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1d45fa',
-        secondary: '#dc41f1',
-        dark: '#0f1729',
+        primary: {
+          DEFAULT: '#1d45fa',
+          light: '#4d6fff',
+          dark: '#0a2acc',
+          glow: 'rgba(29, 69, 250, 0.5)'
+        },
+        secondary: {
+          DEFAULT: '#dc41f1',
+          light: '#e96ff7',
+          dark: '#b31dd6',
+          glow: 'rgba(220, 65, 241, 0.5)'
+        },
+        accent: {
+          cyan: '#00f5ff',
+          purple: '#8b5cf6',
+          pink: '#ec4899',
+          emerald: '#10b981'
+        },
+        dark: {
+          DEFAULT: '#0f1729',
+          lighter: '#1a2332',
+          card: 'rgba(15, 23, 41, 0.8)'
+        },
         light: '#f8fafc',
         gray: {
           DEFAULT: '#666666',

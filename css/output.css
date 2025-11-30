@@ -1672,6 +1672,172 @@ body {
   color: rgb(102 102 102 / var(--tw-text-opacity, 1));
 }
 
+/* Glassmorphism Premium */
+
+.glass-card {
+  background: rgba(15, 23, 41, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+      0 8px 32px 0 rgba(31, 38, 135, 0.37),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at var(--x, 50%) var(--y, 50%),
+      rgba(220, 65, 241, 0.25) 0%,
+      rgba(220, 65, 241, 0.15) 25%,
+      rgba(220, 65, 241, 0.05) 50%,
+      transparent 85%
+    );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Botón con efecto Ripple */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(29, 69, 250, 0.4), 0 5px 20px rgba(220, 65, 241, 0.3);
+}
+
+/* Card con efecto de brillo */
+
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at var(--x, 50%) var(--y, 50%),
+      rgba(220, 65, 241, 0.2) 0%,
+      rgba(220, 65, 241, 0.12) 25%,
+      rgba(220, 65, 241, 0.04) 50%,
+      transparent 85%
+    );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+.card-hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  z-index: 2;
+}
+
+.card-hover:hover::before {
+  opacity: 1;
+}
+
+.card-hover:hover::after {
+  left: 100%;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Estadísticas con glow que sigue el cursor */
+
+.stat-glow {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 0 20px rgba(29, 69, 250, 0.3), 0 0 40px rgba(220, 65, 241, 0.2);
+}
+
+/* Desactivar animaciones pesadas en móvil */
+
+@media (max-width: 768px) {
+  .stat-glow {
+    animation: none;
+    box-shadow: 0 0 15px rgba(29, 69, 250, 0.3);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-hover::after {
+    display: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Mejoras de espaciado móvil */
+
+@media (max-width: 640px) {
+  .glass-card {
+    backdrop-filter: blur(10px) saturate(150%);
+  }
+}
+
 .pointer-events-auto {
   pointer-events: auto;
 }
@@ -2054,6 +2220,10 @@ body {
   height: 4rem;
 }
 
+.h-2 {
+  height: 0.5rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -2204,6 +2374,10 @@ body {
 
 .min-w-\[20rem\] {
   min-width: 20rem;
+}
+
+.min-w-\[90px\] {
+  min-width: 90px;
 }
 
 .min-w-full {
@@ -2390,6 +2564,10 @@ body {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .gap-12 {
@@ -3395,6 +3573,10 @@ body {
   transition-duration: 150ms;
 }
 
+.duration-100 {
+  transition-duration: 100ms;
+}
+
 .duration-1000 {
   transition-duration: 1000ms;
 }
@@ -3421,6 +3603,15 @@ section {
   background: linear-gradient(to right, rgb(0, 0, 0), rgb(10, 10, 80), rgb(0, 0, 0));
 }
 
+/* Reducir padding en móvil */
+
+@media (max-width: 640px) {
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
 @keyframes gradient-shift {
   0%, 100% {
     filter: hue-rotate(0deg);
@@ -3444,6 +3635,28 @@ section {
   to {
     transform: translateZ(300px);
     opacity: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(29, 69, 250, 0.3), 0 0 40px rgba(220, 65, 241, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(29, 69, 250, 0.5), 0 0 60px rgba(220, 65, 241, 0.4);
+  }
+}
+
+@keyframes counter-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -3560,6 +3773,10 @@ section {
 }
 
 @media (min-width: 640px) {
+  .sm\:mt-8 {
+    margin-top: 2rem;
+  }
+
   .sm\:h-12 {
     height: 3rem;
   }
@@ -3570,6 +3787,14 @@ section {
 
   .sm\:h-20 {
     height: 5rem;
+  }
+
+  .sm\:h-3 {
+    height: 0.75rem;
+  }
+
+  .sm\:h-5 {
+    height: 1.25rem;
   }
 
   .sm\:h-6 {
@@ -3588,6 +3813,14 @@ section {
     width: 5rem;
   }
 
+  .sm\:w-3 {
+    width: 0.75rem;
+  }
+
+  .sm\:w-5 {
+    width: 1.25rem;
+  }
+
   .sm\:w-6 {
     width: 1.5rem;
   }
@@ -3596,17 +3829,47 @@ section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+
   .sm\:p-12 {
     padding: 3rem;
+  }
+
+  .sm\:p-3 {
+    padding: 0.75rem;
+  }
+
+  .sm\:p-4 {
+    padding: 1rem;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem;
   }
 
   .sm\:p-8 {
     padding: 2rem;
   }
 
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .sm\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .sm\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .sm\:pb-20 {
@@ -3636,6 +3899,11 @@ section {
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .sm\:leading-7 {
@@ -3685,6 +3953,11 @@ section {
     text-align: right;
   }
 
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -3717,6 +3990,11 @@ section {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:text-5xl {
